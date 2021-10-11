@@ -1,0 +1,47 @@
+// Sizing & Spacing
+@mixin font-family($family) {
+	font-family: $family, Arial, Helvetica, sans-serif;
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+@mixin min-size($width, $height: $width) {
+	min-width: $width;
+	min-height: $height;
+}
+@mixin max-size($width, $height: $width) {
+	max-width: $width;
+	max-height: $height;
+}
+
+@mixin absolute-pos($top, $right: $top, $bot: $right, $left: $bot) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bot;
+	left: $left;
+}
+
+// Styling
+
+
+// Selection
+@mixin user-select($type) {
+	-webkit-touch-callout: $type;
+    -webkit-user-select: $type;
+    -khtml-user-select: $type;
+    -moz-user-select: $type;
+    -ms-user-select: $type;
+    user-select: $type;
+}
+@mixin tap-highlight($transparent) {
+	-webkit-tap-highlight-color: $transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@mixin selection($bg, $colour) {
+	background-color: $bg;
+    color: $colour;
+}
