@@ -3,7 +3,7 @@ import styles from './Icon.module.scss';
 
 const Icon: React.FC = () => (
   <div className={styles.Icon}>
-    Icon Component
+    <h2>X</h2>
   </div>
 );
 

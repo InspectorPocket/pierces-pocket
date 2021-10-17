@@ -1,21 +1,23 @@
 import React from 'react';
 import colours from './sass/_foundation/_colours.module.scss';
-import Logo from './components/atoms/Logo/Logo';
-import PanelLeft from './components/organisms/PanelLeft/PanelLeft';
-import PanelRight from './components/organisms/PanelRight/PanelRight';
-import Home from './components/pages/Home/Home';
+import Home from './pages/Home/Home';
 import './styles.scss';
-import Panels from './components/organisms/Panels/Panels';
+import Panels from './components/Panels/Panels';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   let backgroundColour: string = colours.pink;
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
-      {/* <PanelLeft/> */}
-      {/* <PanelRight/> */}
-      <Home/>
-      <Panels/>
+      <Router>
+        <Panels/>
+        <div className='container'>
+          <Switch>
+            <Home/>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

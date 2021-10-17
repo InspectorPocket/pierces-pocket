@@ -55,8 +55,8 @@
 }
 
 // BREAKPOINTS
-@mixin bp-x-sm {
-	@media (min-width: rem(480)) {
+@mixin bp_1 {
+	@media (min-width: rem(400)) {
 	  @content;
 	}
 }
