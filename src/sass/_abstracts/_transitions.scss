@@ -1,0 +1,6 @@
+$trans-short: 0.2s ease-in-out;
+$trans-long: 0.4s ease-in-out;
+$trans-delayed: .3s cubic-bezier(.82,-0.01,1,1);
+
+%trans-short { transition: $trans-short; }
+%trans-long { transition: $trans-long; }

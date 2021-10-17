@@ -1,0 +1,46 @@
+%highlight-remove {
+    @include user-select(text);
+    -webkit-tap-highlight-color: transparent;
+}
+
+// STYLES
+%dot {
+    background: $dark;
+    border-radius: rem(50);
+}
+
+// ALIGNMENT
+%center-items {
+    align-items: center; 
+}
+%justify-center {
+    justify-content: center; 
+}
+%align-start {
+    justify-content: flex-start;
+    align-items: center; 
+}
+%align-center {
+    justify-content: center;
+    align-items: center; 
+}
+%align-end {
+    justify-content: center;
+    align-items: flex-end; 
+}
+%justify-end {
+    justify-content: flex-end;
+    align-items: center; 
+}
+%justify-between {
+    justify-content: space-between;
+    align-items: center; 
+}
+
+%pos-wrap {
+    @include absolute-pos(0);
+    margin: auto;
+}
+
+%flex-row { flex-direction: row; }
+%flex-column { flex-direction: column; }

@@ -1,3 +1,6 @@
+@function strip-units($value) {
+	@return ($value / ($value * 0 + 1));
+}
 //Set font size as pixels and rems {px}
 @function rem($pxval) {
 	@if not unitless($pxval) {

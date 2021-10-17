@@ -1,0 +1,10 @@
+@import "/src/sass/_foundation/colours.module";
+
+.Panel {
+    background: $white;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $grey-100;
+    // position: relative;
+    // padding: 16px;
+}

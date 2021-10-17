@@ -1,7 +1,7 @@
-::selection { @include selection($grey-700, $white); }
+::selection { @include selection($dark, $white); }
 
 html {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 }
 
 body {
@@ -13,16 +13,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html, body, #root, .app {
     @include size(100%);
     -webkit-font-smoothing: antialiased;
     text-shadow: rem(1) rem(1) rem(1) rgba(0,0,0,0.004);
     background-color: $white;
-    color: $grey-700;
+    color: $dark;
 }
 
 *, *::before, *::after {
-    @include box-sizing(inherit);
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
     font-family: system-ui;

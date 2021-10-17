@@ -1,12 +1,16 @@
 // Colours
 $white: #ffffff;
-$grey-100: #FDFFFC;
+$grey-100: #FAFAFA;
 $grey-200: #E7E7E8;
 $grey-400: #A2A1A1;
-$grey-600: #3C3D42;
-$grey-700: #2B2626;
-$grey-800: #191919;
-$black: #000000;
+$dark: #35485C; 
+$darker: #071F37;
+$black: #191919;
+
+$pink: #FF7878; 
+
+
+
 $blue-dark: #2270EB;
 $blue: #73A8FD;
 $blue-light: #BAE2FF;
@@ -26,10 +30,16 @@ $purple-dark: #3A076E;
 $purple: #915EC6;
 $purple-light: #DFC0FF;
 
-$shadow-colour: rgba($grey-700, 0.25);
+$shadow-colour: rgba($dark, 0.25);
 
-// Screen Sizes
-$screen-tablet-portrait: 481px !default;
-$screen-tablet-landscape: 768px !default;
-$screen-desktop: 1024px !default;
-$screen-hd: 1920px !default;
+:export {
+    white: $white;
+    grey1: $grey-100;
+    grey2: $grey-200;
+    grey4: $grey-400;
+    dark: $dark;
+    darker: $darker;
+    black: $black;
+
+    pink: $pink;
+}
