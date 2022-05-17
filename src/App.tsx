@@ -6,7 +6,7 @@ import Panels from './components/Panels/Panels';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  let backgroundColour: string = colours.pink;
+  let backgroundColour: string = colours.darker;
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
