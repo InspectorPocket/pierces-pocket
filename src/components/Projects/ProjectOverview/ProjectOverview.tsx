@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './ProjectOverview.module.scss';
 // import ProjectProps from "../../../pages/Home/Home";
 import useFetch from "../../../hooks/useFetch";
@@ -11,23 +12,22 @@ interface ProjectsOverviewProps {
   title?: string;
 }
 
-const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, title }) => {
-  // const { error, isPending, data: projects } = useFetch('../../../assets/json/projects.json')
-  console.log(projects);
+const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
   
   return (
     <div className={styles.ProjectOverview}>
-      <h2>{ title }</h2>
       {projects.map(project => (
-        <div className="project-preview" key={project.id} >
+        <Link to={`/projects/${project.id}`} key={project.id} className={styles.ProjectOverview__project}>
+          <span className={styles.ProjectOverview__project__indicator}></span>
+          <h5>{ project.date }</h5>
           <h2>{ project.title }</h2>
           <img src={ project.img } />
           <p>{ project.vocation }</p>
-          {/* <button onClick={() => handleDelete(project.id)}>delete blog</button> */}
-        </div>
+        </Link>
       ))}
     </div>
   );
+  
 }
 
 export default ProjectOverview;

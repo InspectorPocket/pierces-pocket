@@ -1,3 +1,5 @@
+@import '/src/sass/_foundation/_colours.module.scss';
+
 %highlight-remove {
     @include user-select(text);
     -webkit-tap-highlight-color: transparent;
@@ -10,6 +12,12 @@
 }
 
 // ALIGNMENT
+%f-c-col {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 %center-items {
     align-items: center; 
 }

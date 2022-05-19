@@ -1,1 +1,36 @@
-.ProjectOverview {}
+@import '/src/sass/essentials';
+
+.ProjectOverview {
+    @extend %f-c-col;
+    &__project {
+        @extend %f-c-col;
+        position: relative;
+        text-align: center;
+        padding-bottom: rem(16);
+        margin: rem(44) 0;
+        & > * {
+            z-index: 1;
+        }
+        &::before {
+            content: '';
+            background-color: $white;
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        &__indicator {
+            width: rem(12);
+            height: rem(12);
+            border: 1px $black solid;
+            border-radius: 50%;
+            position: relative;
+            margin: rem(18);
+            z-index: 1;
+
+            background: aqua;
+        }
+    }
+}

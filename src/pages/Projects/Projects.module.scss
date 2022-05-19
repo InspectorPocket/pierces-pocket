@@ -1,0 +1,22 @@
+@import '/src/sass/essentials';
+
+.projects {
+    @extend %f-c-col;
+    position: relative;
+    width: 100%;
+}
+
+.projectsPreview {
+    @extend %f-c-col;
+    position: relative;
+    margin-bottom: rem(24);
+    &::before {
+        content: '';
+        background-color: $darker;
+        width: 1px;
+        height: calc(100% + #{rem(48)});
+        position: absolute;
+        top: rem(-24);
+        bottom: 0;
+    }
+}

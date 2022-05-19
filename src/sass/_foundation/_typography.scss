@@ -5,6 +5,13 @@
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
+@font-face {
+    font-family: playfair;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
 html { font-size: 100%; }
 
 h1, h2, h3, h4, h5, p, ul, li, a {
@@ -12,23 +19,26 @@ h1, h2, h3, h4, h5, p, ul, li, a {
     list-style: none;
     color: $dark;
     line-height: 1.5;
+    font-family: system-ui;
 }
 h5, p, a, ul, li {
     text-transform: none;
     font-size: rem(16);
     font-weight: 300;
 }
-h1, h2, h3 { transform: translateX(-#{rem(1)}); }
+h1, h2, h3 { transform: translateX(rem(-1)); }
 h1 {
-    font-size: rem(32);
+    font-size: rem(56);
     font-weight: bold;
+    font-family: playfair;
+    line-height: 1.1;
 }
 h2 { font-size: rem(28); }
 h3 { font-size: rem(22); }
 h4 { font-size: rem(18); }
 h5 {
     text-transform: uppercase;
-    letter-spacing: rem(16);
+    // letter-spacing: rem(16);
 }
 
 p > a {

@@ -1,6 +1,8 @@
+// npx generate-react-cli component MyComponent
 import React from 'react';
 import colours from './sass/_foundation/_colours.module.scss';
 import Home from './pages/Home/Home';
+import Projects from './pages/Projects/Projects';
 import './styles.scss';
 import Panels from './components/Panels/Panels';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,7 +16,18 @@ function App() {
         <Panels/>
         <div className='container'>
           <Switch>
-            <Home/>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            {/* <Route path="/projects/:id">
+              <ProjectDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route> */}
           </Switch>
         </div>
       </Router>
