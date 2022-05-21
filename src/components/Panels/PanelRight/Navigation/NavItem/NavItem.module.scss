@@ -1,1 +1,8 @@
-.NavItem {}
+@import '/src/sass/essentials';
+
+.NavItem {
+    padding: rem(12) 0;
+    &::before {
+        content: none;
+    }
+}

@@ -13,9 +13,9 @@ const Projects: React.FC<ProjectsProps> = () => {
     <div className={styles.projects}>
       <Intro page="projects" scrollable={true} />
       <div className={styles.projectsPreview}>
+        { projects && <ProjectOverview projects={projects} /> }
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
-        { projects && <ProjectOverview projects={projects} /> }
       </div>
       <a href="#">
         <p className="mg-t-16 mg-b-16">back to top</p>

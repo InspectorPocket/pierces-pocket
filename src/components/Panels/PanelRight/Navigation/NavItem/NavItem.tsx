@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './NavItem.module.scss';
+import { Link } from 'react-router-dom';
 
-const NavItem: React.FC = () => (
-  <div className={styles.NavItem}>
-    <p>x</p>
-  </div>
-);
+
+interface NavItemProps {
+  title: string;
+}
+
+
+const NavItem: React.FC<NavItemProps> = ({title}) => {
+
+  return (
+    <li className={styles.NavItem}>
+      <Link to={`/${title}`}>{title}</Link>
+    </li>
+  )
+};
 
 export default NavItem;

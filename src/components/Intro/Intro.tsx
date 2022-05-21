@@ -26,19 +26,16 @@ interface IntroProps {
 // // Try changing to isLoggedIn={true}:
 // root.render(<Greeting isLoggedIn={false} />);
 
-const Intro: React.FC<IntroProps> = () => {
-
-  const scrollable: boolean = true;
-  const page: string = 'projects';
+const Intro: React.FC<IntroProps> = ({page, scrollable}) => {
 
   return (
     // set state based on input from parent page
     <div className={styles.intro}>
       { page === 'home' &&
-        <h1 className={styles.intro__heading}>pierce's pocket</h1>
+        <h1 className={`${styles.intro__heading} ${styles.intro__heading_top}`}>&#8592; pierce's pocket &#8594;</h1>
       }
       { page === 'projects' &&
-        <h1 className={styles.intro__heading}>projects</h1>
+        <h1 className={`${styles.intro__heading} ${styles.intro__heading_centered}`}>&#8592; projects &#8594;</h1>
       }
       { scrollable &&
         <p className={styles.scroll}>scroll</p>

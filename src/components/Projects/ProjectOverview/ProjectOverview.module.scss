@@ -32,5 +32,30 @@
 
             background: aqua;
         }
+        &__date {
+
+        }
+        &__heading {
+            margin-bottom: rem(16);
+        }
+        &__img {
+            display: flex;
+            width: 100%;
+            margin-bottom: rem(16);
+            &:hover {
+                & > img {
+                    // transform: translateY(-12px);
+                    // transition: .3s ease-in-out;
+                }
+            }
+            & > img {
+                width: 100%;
+                height: auto;
+                // transition: .4s ease-in-out;
+            }
+        }
+        &__vocation {
+
+        }
     }
 }

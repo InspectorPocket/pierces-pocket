@@ -7,9 +7,14 @@
     position: relative;
     text-align: center;
     &__heading {
-        padding-top: calc(6.6666vw + #{rem(46) + #{rem(32)}});
         text-align: center;
-        font-size: 6.6666vw;
+        font-size: 8.8888vw;
+        &_top {
+            padding-top: calc(6.6666vw + #{rem(46) + #{rem(32)}});
+        }
+        &_centered {
+            padding-top: calc(50vh - 6.6666vh);
+        }
     }
     .scroll {
         position: absolute;
@@ -24,3 +29,10 @@
 }
 
 // breakpoint fixes size for heading
+@media screen and (min-width: 728px) {
+    .intro {
+        &__heading {
+            font-size: 6.6666vw;
+        }
+    }
+}

@@ -14,14 +14,18 @@ interface ProjectsOverviewProps {
 
 const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
   
+  const imgUrl: string = '/images/';
+  
   return (
     <div className={styles.ProjectOverview}>
       {projects.map(project => (
         <Link to={`/projects/${project.id}`} key={project.id} className={styles.ProjectOverview__project}>
           <span className={styles.ProjectOverview__project__indicator}></span>
-          <h5>{ project.date }</h5>
-          <h2>{ project.title }</h2>
-          <img src={ project.img } />
+          <h5 className={styles.ProjectOverview__project__date}>{ project.date }</h5>
+          <h2 className={styles.ProjectOverview__project__heading}>{ project.title }</h2>
+          <div className={styles.ProjectOverview__project__img}>
+            <img src={ (imgUrl + project.img) } />
+          </div>
           <p>{ project.vocation }</p>
         </Link>
       ))}

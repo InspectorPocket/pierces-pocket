@@ -1,3 +1,73 @@
+@import '/src/sass/essentials';
+
 .Icon {
+    height: rem(48);
+    width: rem(48);
+    padding: rem(12);
     z-index: 2;
+    &__menu {
+        width: 100%;
+        height: 100%;
+        padding: rem(4.5) rem(3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        & > span {
+            width: rem(18);
+            height: 1px;
+            border-radius: 1px;
+            background-color: $dark;
+            transition: .3s ease-in-out;
+        }
+        &_focus {
+            // align-items: center;
+            & > span {
+                background-color: $dark;
+                transition: .3s ease-in-out;
+                &:nth-of-type(1) {
+                    transform: rotate(45deg) translate(5.5px, 5.5px);
+                }
+                &:nth-of-type(2) {
+                    transform: scaleX(0);
+                    opacity: 0;
+                }
+                &:nth-of-type(3) {
+                    transform: rotate(-45deg) translate(4.5px, -4.5px);
+                }
+            }
+        }
+    }
+    &:hover & {
+        &__menu {
+            & > span {
+                background-color: $darker;
+                transition: .2s ease-in-out;
+                &:nth-of-type(1) {
+                    width: rem(16);
+                }
+                &:nth-of-type(2) {
+                    width: rem(20);
+                }
+                &:nth-of-type(3) {
+                    width: rem(12);
+                }
+            }
+            &_focus {
+                & > span {
+                    background-color: $darker;
+                    transition: .2s ease-in-out;
+                    &:nth-of-type(1) {
+                        width: rem(18);
+                    }
+                    &:nth-of-type(2) {
+                        width: rem(18);
+                    }
+                    &:nth-of-type(3) {
+                        width: rem(18);
+                    }
+                }
+            }
+        }
+    }
 }

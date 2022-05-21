@@ -18,8 +18,8 @@ const Home: React.FC<ProjectsProps> = () => {
 
   return (
     <div className={`${styles.home} ${intro.intro}`}>
-      <div className={'piercespocket_heading'}>
-        <Link to={`/projects`} >GO TO PROJECTS</Link>
+      <div className={'piercespocket__heading'}>
+        <Intro page="home" scrollable={false} />
       </div>
     </div>
   );

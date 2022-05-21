@@ -1,47 +1,42 @@
-// import {React, useState} from 'react';
-// import styles from './Icon.module.scss';
-// import {useFetch} from "../../hooks/useFetch";
+import styles from './Icon.module.scss';
 
-const myArray = ['apple', 'banana', 'orange'];
+interface NavItemProps {
+  icon: string;
+  iconIndex: number;
+  onClick: any;
+  styling: boolean;
+}
 
+const Icon: React.FC<NavItemProps> = ({icon, iconIndex, styling, onClick}) => {
+  // object array? assign id with value. pass in value as icon and assign id
+  const availableIcons = [
+    'icon'
+  ];
+  
+  let outputIcon = '';
 
-// const availableIcons = [
-//   'menu'
-// ];
-// const myList = myArray.map((item) => <p>{item}</p>)
+  function iconSelector(icon:string, index: number) {
+    if (icon != 'menu') {
+      outputIcon = availableIcons[0];
+    } else {
+      outputIcon = 'menu';
+    }
+  }
+  
+  iconSelector(icon, iconIndex);
 
-// function iconSelector(icon:string, isInline:boolean) {
-//   if (icon != 'menu') {
-//     // show normal icon as img
-//     console.log('normal icon');
-//   } else {
-//     // Show menu icon as div and spans or inline svg
-//     console.log('menu icon');
-    
-//     icon = availableIcons[0];
-//   }
-//   if (isLoggedIn) {
-//     return <UserGreeting />;
-//   }
-//   return <GuestGreeting />;
-// }
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// // Try changing to isLoggedIn={true}:
-// root.render(<Greeting isLoggedIn={false} />);
-
-const Icon = () => {
-  // const [projects, setProjects] = useState([
-  //   { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
-  //   { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
-  //   { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
-  // ])
-
-  // return (
-  //   <div className="styles.Icon">
-  //     { projects && <Project projects={projects} /> }
-  //   </div>
-  // );
+  return (
+    <a href='#' className={styles.Icon} onClick={onClick}>
+      { icon != 'menu' && <img src={outputIcon} alt="" /> }
+      { icon == 'menu' &&
+        <div className={`${styles.Icon__menu} ${(styling ? styles.Icon__menu_focus : '')}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      }
+    </a>
+  );
 }
 
 export default Icon;
