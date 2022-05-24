@@ -26,7 +26,7 @@ const Icon: React.FC<NavItemProps> = ({icon, iconIndex, styling, onClick}) => {
   iconSelector(icon, iconIndex);
 
   return (
-    <a href='#' className={styles.Icon} onClick={onClick}>
+    <a className={styles.Icon} onClick={onClick}>
       { icon != 'menu' && <img src={outputIcon} alt="" /> }
       { icon == 'menu' &&
         <div className={`${styles.Icon__menu} ${(styling ? styles.Icon__menu_focus : '')}`}>

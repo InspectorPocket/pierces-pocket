@@ -86,7 +86,8 @@ const Panels: React.FC = () => {
         <Panel/>
         <Panel/>
       </MediaQuery>
-      <PanelRight/>
+      {/* <PanelRight/> */}
+      <Panel/>
     </div>
   )
 };

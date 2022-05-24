@@ -8,9 +8,7 @@
         text-align: center;
         padding-bottom: rem(16);
         margin: rem(44) 0;
-        & > * {
-            z-index: 1;
-        }
+        & > * { z-index: 1; }
         &::before {
             content: '';
             background-color: $white;
@@ -20,6 +18,16 @@
             top: 0;
             bottom: 0;
             z-index: -1;
+        }
+        &:nth-of-type(even) & {
+            &__img {
+                border-radius: 50% 0;
+            }
+        }
+        &:nth-of-type(odd) & {
+            &__img {
+                border-radius: 0 50%;
+            }
         }
         &__indicator {
             width: rem(12);
@@ -42,6 +50,7 @@
             display: flex;
             width: 100%;
             margin-bottom: rem(16);
+            overflow: hidden;
             &:hover {
                 & > img {
                     // transform: translateY(-12px);

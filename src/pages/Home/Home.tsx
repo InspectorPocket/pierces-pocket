@@ -7,6 +7,7 @@ import ProjectsProps from "../../props/projectsProps";
 import Intro from '../../components/Intro/Intro';
 
 import intro from '../../components/Intro/Intro.module.scss';
+import Circles from '../../components/Circles/Circles';
 
 const Home: React.FC<ProjectsProps> = () => {
 
@@ -21,6 +22,7 @@ const Home: React.FC<ProjectsProps> = () => {
       <div className={'piercespocket__heading'}>
         <Intro page="home" scrollable={false} />
       </div>
+      <Circles />
     </div>
   );
 }

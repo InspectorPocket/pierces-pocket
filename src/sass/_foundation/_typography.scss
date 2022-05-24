@@ -20,7 +20,7 @@ html { font-size: 100%; }
 
 body, h5, h6 {
   font-family: system-ui, serif;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: $dark;
 }
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a {
 h6, p, a, ul, li {
     text-transform: none;
     font-size: rem(16);
-    font-weight: 400;
+    font-weight: 300;
 }
 h1, h2, h3 { transform: translateX(rem(-1)); }
 h1 {

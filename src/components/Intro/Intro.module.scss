@@ -6,9 +6,30 @@
     height: 100vh;
     position: relative;
     text-align: center;
+    transition: .2s;
     &__heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         text-align: center;
+        // calculate vh + vw
         font-size: 8.8888vw;
+        width: auto;
+        &::before, &::after {
+            // font-size: rem(48.86);
+            font-size: 8.8888vw;
+            position: absolute;
+            font-family: 'Playfair Display';
+        }
+        &::before {
+            content: '\2190';
+            right: 100%;
+        }
+        &::after {
+            content: '\2192';
+            left: 100%;
+        }
         &_top {
             padding-top: calc(6.6666vw + #{rem(46) + #{rem(32)}});
         }

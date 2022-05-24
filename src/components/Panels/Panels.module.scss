@@ -11,8 +11,8 @@
     z-index: 0;
 }
 
-@media (min-width: rem(400)) {
-    .panels {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
+// @media (min-width: rem(320)) {
+//     .panels {
+//         grid-template-columns: repeat(6, 1fr);
+//     }
+// }

@@ -32,10 +32,10 @@ const Intro: React.FC<IntroProps> = ({page, scrollable}) => {
     // set state based on input from parent page
     <div className={styles.intro}>
       { page === 'home' &&
-        <h1 className={`${styles.intro__heading} ${styles.intro__heading_top}`}>&#8592; pierce's pocket &#8594;</h1>
+        <h1 className={`${styles.intro__heading} ${styles.intro__heading_top}`}>pierce's pocket</h1>
       }
       { page === 'projects' &&
-        <h1 className={`${styles.intro__heading} ${styles.intro__heading_centered}`}>&#8592; projects &#8594;</h1>
+        <h1 className={`${styles.intro__heading} ${styles.intro__heading_centered}`}>projects</h1>
       }
       { scrollable &&
         <p className={styles.scroll}>scroll</p>

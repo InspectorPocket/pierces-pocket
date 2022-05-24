@@ -1,5 +1,215 @@
+@import '/src/sass/essentials';
+
 .Navigation {
+    &__container {
+        width: rem(48);
+        height: 100%;
+        position: relative;
+    }
+    &__bg {
+        &::before {
+            content: '';
+            height: 100%;
+            top: 0;
+            position: fixed;
+            background-color: rgba($color: $white, $alpha: 0.9);
+            // background-color: rgba($color: $yellow, $alpha: 0.9);
+            z-index: -1;
+            width: 40vw;
+            // border-left: .5px solid $grey-100;
+            right: 0;
+            transform: translateX(40vw);
+            transition: .4s ease-in-out;
+        }
+        &_open {
+            &::before {
+                transform: translateX(0) !important;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    width: 200%;
+    height: calc(100% + 2.2222vw + #{rem(60)});
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: calc(2.2222vw + #{rem(60)});
+    // TODO remove bg colour on larger displays that have the space to not overlsp on content
+
+    transform:
+        translateX(calc(100% + #{rem(60)}))
+        translateY(calc(-2.2222vw - #{rem(48)}));
+    transition: .4s ease-in-out;
+    &_open {
+        transform:
+            translateX(0)
+            translateY(calc(-2.2222vw - #{rem(48)}));
+        transition: .3s ease-in-out;
+    }
+}
+
+@include bp_320 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 50vw;
+                transform: translateX(50vw);
+            }
+        }
+    }
+}
+@include bp_460 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 33.3333vw;
+                transform: translateX(33.3333vw);
+            }
+        }
+    }
+}
+@include bp_620 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 28.5vw;
+                transform: translateX(28.5vw);
+            }
+        }
+    }
+}
+@include bp_728 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 25vw;
+                transform: translateX(25vw);
+            }
+        }
+    }
+}
+@include bp_880 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 22.2222vw;
+                transform: translateX(22.2222vw);
+            }
+        }
+    }
+}
+@include bp_1024 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 20vw;
+                transform: translateX(20vw);
+            }
+        }
+    }
+}
+@include bp_1140 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 18.2222vw;
+                transform: translateX(18.2222vw);
+            }
+        }
+    }
+}
+@include bp_1280 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 16.6666vw;
+                transform: translateX(16.6666vw);
+                
+            }
+        }
+    }
+}
+@include bp_1336 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 15.3333vw;
+                transform: translateX(15.3333vw);
+
+            }
+        }
+    }
+}
+@include bp_1440 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 14.2222vw;
+                transform: translateX(14.2222vw);
+            }
+        }
+    }
+}
+@include bp_1700 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 13.3333vw;
+                transform: translateX(13.3333vw);
+            }
+        }
+    }
+}
+@include bp_1920 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 12.5vw;
+                transform: translateX(12.5vw);
+            }
+        }
+    }
+}
+@include bp_2100 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 11.1111vw;
+                transform: translateX(11.1111vw);
+            }
+        }
+    }
+}
+@include bp_2400 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 10vw;
+                transform: translateX(10vw);
+            }
+        }
+    }
+}
+@include bp_2800 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 9.1111vw;
+                transform: translateX(9.1111vw);
+            }
+        }
+    }
+}
+@include bp_3400 {
+    .Navigation {
+        &__bg {
+            &::before {
+                width: 8.3333vw;
+                transform: translateX(8.3333vw);
+            }
+        }
+    }
 }
