@@ -1,8 +1,10 @@
 .Circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     bottom: 10vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 360px;
-    height: 360px;
+    height: 50vh;
 }

@@ -8,6 +8,7 @@ import './styles.scss';
 import Panels from './components/Panels/Panels';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PanelRight from './components/Panels/PanelRight/PanelRight';
+import Project from "./components/Projects/Project/Project";
 
 function App() {
   let backgroundColour: string = colours.darker;
@@ -24,10 +25,10 @@ function App() {
             <Route path="/projects">
               <Projects />
             </Route>
-            {/* <Route path="/projects/:id">
-              <ProjectDetails />
+            <Route path="/project/:id">
+              <Project />
             </Route>
-            <Route path="*">
+            {/* <Route path="*">
               <NotFound />
             </Route> */}
           </Switch>

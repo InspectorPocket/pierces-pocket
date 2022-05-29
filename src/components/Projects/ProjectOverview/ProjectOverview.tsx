@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectOverview.module.scss';
 // import ProjectProps from "../../../pages/Home/Home";
-import useFetch from "../../../hooks/useFetch";
+// import useFetch from "../../../hooks/useFetch";
 import ProjectsProps from "../../../props/projectsProps";
 
 let _pProps: ProjectsProps;
@@ -19,7 +19,10 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
   return (
     <div className={styles.ProjectOverview}>
       {projects.map(project => (
-        <Link to={`/projects/${project.id}`} key={project.id} className={styles.ProjectOverview__project}>
+        <Link to={{
+            pathname: `/project/${project.id}`,
+            state: { project: project }
+          }} key={project.id} className={styles.ProjectOverview__project}>
           <span className={styles.ProjectOverview__project__indicator}></span>
           <h5 className={styles.ProjectOverview__project__date}>{ project.date }</h5>
           <h2 className={styles.ProjectOverview__project__heading}>{ project.title }</h2>
