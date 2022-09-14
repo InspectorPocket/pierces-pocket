@@ -23,13 +23,17 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
             pathname: `/project/${project.id}`,
             state: { project: project }
           }} key={project.id} className={styles.ProjectOverview__project}>
-          <span className={styles.ProjectOverview__project__indicator}></span>
-          <h5 className={styles.ProjectOverview__project__date}>{ project.date }</h5>
-          <h2 className={styles.ProjectOverview__project__heading}>{ project.title }</h2>
+          {/* <span className={styles.ProjectOverview__project__indicator}></span> */}
+          {/* <h5 className={styles.ProjectOverview__project__date}>{ project.date }</h5> */}
+          
           <div className={styles.ProjectOverview__project__img}>
             <img src={ (imgUrl + project.img) } />
           </div>
-          <p>{ project.vocation }</p>
+
+          <div className={styles.ProjectOverview__project__text}>
+            <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
+            <h6 className={styles.ProjectOverview__project__text__vocation}>{ project.vocation }</h6>
+          </div>
         </Link>
       ))}
     </div>

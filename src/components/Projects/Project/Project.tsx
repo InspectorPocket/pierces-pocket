@@ -48,79 +48,14 @@ const Project: React.FC<ProjectProps> = () => {
           {/* <img src={ (imgUrl + from.img) } /> */}
         </div>
         <div className={styles.project__title}>
-          <h1 className={styles.project__title__heading}>{from.title}</h1>
-          <p className={styles.project__title__vocation}>{from.vocation}</p>
-          <div className={`${styles.project__title__panels} ${styles.project__title__panels_4}`}>
-          {/* <div className={`${styles.project__title__panels} ${styles.project__title__panels_4} ${helpers.h_0_c}`}> */}
-            <Panel height={50}/>
-            <Panel/>
-            {/* 5 */}
-            <MediaQuery minWidth={320}>
-              <Panel/>
-            </MediaQuery>
-            {/* 6 */}
-            <MediaQuery minWidth={460}>
-              <Panel/>
-            </MediaQuery>
-            {/* 7 */}
-            <MediaQuery minWidth={620}>
-              <Panel/>
-            </MediaQuery>
-            {/* 8 */}
-            <MediaQuery minWidth={728}>
-              <Panel/>
-            </MediaQuery>
-            {/* 9 / 10 */}
-            <MediaQuery minWidth={880} maxWidth={1024}>
-              <Panel/>
-            </MediaQuery>
-            {/* 11 */}
-            <MediaQuery minWidth={1140}>
-              <Panel/>
-            </MediaQuery>
-            {/* 12 */}
-            <MediaQuery minWidth={1280}>
-              <Panel/>
-            </MediaQuery>
-            {/* 13 */}
-            <MediaQuery minWidth={1336}>
-              <Panel/>
-            </MediaQuery>
-            {/* 14 */}
-            <MediaQuery minWidth={1440}>
-              <Panel/>
-            </MediaQuery>
-            {/* 15 */}
-            <MediaQuery minWidth={1700}>
-              <Panel/>
-            </MediaQuery>
-            {/* 16 */}
-            <MediaQuery minWidth={1920}>
-              <Panel/>
-            </MediaQuery>
-            {/* 17/18 */}
-            <MediaQuery minWidth={2100}>
-              <Panel/>
-              <Panel/>
-            </MediaQuery>
-            {/* 19/20 */}
-            <MediaQuery minWidth={2400}>
-              <Panel/>
-              <Panel/>
-            </MediaQuery>
-            {/* 21/22 */}
-            <MediaQuery minWidth={2800}>
-              <Panel/>
-              <Panel/>
-            </MediaQuery>
-            {/* 23/24 */}
-            <MediaQuery minWidth={3400}>
-              <Panel/>
-              <Panel/>
-            </MediaQuery>
-          </div>
+          <h2 className={styles.project__title__heading}>{from.title}</h2>
+          <h6 className={styles.project__title__vocation}>{from.vocation}</h6>
         </div>
-        <p className={intro.scroll}>scroll</p>
+        <div className={styles.project__arrow}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
       <div className={styles.project__main}>
         

@@ -3,53 +3,21 @@
 .ProjectOverview {
     @extend %f-c-col;
     &__project {
-        @extend %f-c-col;
+        display: flex;
+        width: 100%;
         position: relative;
-        text-align: center;
-        padding-bottom: rem(16);
-        margin: rem(44) 0;
+        margin: rem(8) 0;
+        background-color: $grey-100;
         & > * { z-index: 1; }
-        &::before {
-            content: '';
-            background-color: $white;
-            width: 1px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            z-index: -1;
-        }
-        &:nth-of-type(even) & {
-            &__img {
-                border-radius: 50% 0;
-            }
-        }
-        &:nth-of-type(odd) & {
-            &__img {
-                border-radius: 0 50%;
-            }
-        }
-        &__indicator {
-            width: rem(12);
-            height: rem(12);
-            border: 1px $black solid;
-            border-radius: 50%;
-            position: relative;
-            margin: rem(18);
-            z-index: 1;
-
-            background: aqua;
-        }
-        &__date {
-
-        }
-        &__heading {
-            margin-bottom: rem(16);
-        }
         &__img {
             display: flex;
-            width: 100%;
-            margin-bottom: rem(16);
+            align-items: center;
+            justify-content: center;
+            height: 126px;
+            min-width: 126px;
+            max-width: 126px;
+            // height: 12vh;
+            // min-width: 50%;
             overflow: hidden;
             &:hover {
                 & > img {
@@ -58,13 +26,25 @@
                 }
             }
             & > img {
-                width: 100%;
-                height: auto;
+                width: auto;
+                height: 100%;
                 // transition: .4s ease-in-out;
             }
         }
-        &__vocation {
-
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12px;
+            &__heading {
+                margin-bottom: rem(4);
+            }
+            &__vocation {
+    
+            }
+        }
+        &_selected {
+            background-color: $grey-200;
         }
     }
 }

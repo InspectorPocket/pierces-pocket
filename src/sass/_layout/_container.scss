@@ -1,13 +1,13 @@
 .container {
     width: 100%;
-    padding: 0 25%;
+    padding: 0 rem(16);
     display: flex;
 }
 
 // TODO calculate exact percentages for each using MATH
 @media (min-width: 320px) {
     .container {
-        padding: 0 20%;
+        padding: 0 rem(16);
     }
 }
 @media (min-width: 460px) {

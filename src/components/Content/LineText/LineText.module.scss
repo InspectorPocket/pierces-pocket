@@ -1,0 +1,20 @@
+@import '/src/sass/essentials';
+@import '/src/sass/_abstracts/transitions';
+
+.LineText {
+    position: relative;
+    text-align: left;
+    margin-left: calc(20vw - #{rem(16)});
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: $dark;
+        transform: translateX(-.5px);
+    }
+    & > p, & > h5 {
+        padding: rem(6) 0 rem(6) rem(12);
+    }
+}

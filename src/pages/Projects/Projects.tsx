@@ -30,17 +30,17 @@ const Projects: React.FC<ProjectsProps> = () => {
     <div className={styles.projects}>
 
       {/* Projects */}
-      { projects && <Intro page="projects" scrollable={true} /> }
+      { projects && <Intro page="projects" /> }
       { projects &&
         <div className={styles.projectsPreview}>
           <ProjectOverview projects={projects} />
         </div>
       }
-      { projects && 
+      {/* { projects && 
         <a href="#">
           <p className="mg-t-16 mg-b-16">back to top</p>
         </a>
-      }
+      } */}
 
       {/* Project */}
       {/* { projects && !projectActive && <Project projects={projects} id={0} /> } */}

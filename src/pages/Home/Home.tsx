@@ -8,6 +8,8 @@ import Intro from '../../components/Intro/Intro';
 
 import intro from '../../components/Intro/Intro.module.scss';
 import Circles from '../../components/Circles/Circles';
+import LineText from "../../components/Content/LineText/LineText";
+import Email from "../../components/Content/Email/Email";
 
 const Home: React.FC<ProjectsProps> = () => {
 
@@ -20,7 +22,12 @@ const Home: React.FC<ProjectsProps> = () => {
   return (
     <div className={`${styles.home} ${intro.intro}`}>
       <div className={'piercespocket__heading'}>
-        <Intro page="home" scrollable={false} />
+        <Intro page="home" />
+        <LineText
+          font='p'
+          content='UX/UI &amp; Brand Designer. Expanded into a Front End Developer. Now married all skills to become a Design Engineer.'
+        />
+        <Email point={true} topSpace={true} />
       </div>
       <Circles />
     </div>

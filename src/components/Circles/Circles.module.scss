@@ -3,8 +3,9 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50vh;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(50vW) translateY(50vh) rotate(-8deg);
 }

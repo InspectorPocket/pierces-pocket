@@ -1,68 +1,106 @@
 @import '/src/sass/essentials';
 
-// @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-@font-face {
-    font-family: system-ui;
-    font-style: normal;
-    font-weight: 300;
-    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-}
-
-@font-face {
-    font-family: 'Playfair Display', serif;
-    font-style: normal;
-    font-weight: 600;
-    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-}
+// p {margin-bottom: 1rem;}
+// h1, h2, h3, h4, h5 {
+//   margin: 3rem 0 1.38rem;
+// }
 
 html { font-size: 100%; }
 
-body, h5, h6 {
-  font-family: system-ui, serif;
-  font-weight: 300;
-  line-height: 1.5;
-  color: $dark;
-}
 
-// p {margin-bottom: 1rem;}
+// FONT-FACE DEFINITION
 
-h1, h2, h3, h4 {
-//   margin: 3rem 0 1.38rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  line-height: 1.3;
-}
+    @font-face {
+        font-family: system-ui;
+        font-style: normal;
+        font-weight: 300;
+        src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    }
 
-small, .text_small {font-size: 0.8rem;}
+    @font-face {
+        font-family: 'Playfair Display', serif;
+        font-style: normal;
+        font-weight: 600;
+        src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+    }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, a {
-    text-decoration: none;
-    list-style: none;
-    color: $dark;
-}
-h6, p, a, ul, li {
-    text-transform: none;
-    font-size: rem(16);
-    font-weight: 300;
-}
-h1, h2, h3 { transform: translateX(rem(-1)); }
-h1 {
-    font-size: rem(48.86);
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-    line-height: 1.1;
-}
+    // TODO add Open Sans and try light font with that
 
-h2 { font-size: rem(39.06); }
-h3 { font-size: rem(31.25); }
-h4 { font-size: rem(25); }
-h5 {
-    font-size: rem(20);
-    text-transform: uppercase;
-    // letter-spacing: rem(16);
-}
 
+// FONT RESETS, FONT-FAMILY, LINE-HEIGHT
+
+    h1, h2, h3, h4, h5, body, p, h6, span, .small, .xsmall, a {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    h1, h2, h3 {
+        line-height: 1;
+    }
+
+    h4, h5 {
+        line-height: 1.15;
+    }
+
+    body, p, h6, span, .small, .xsmall, a {
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+    }
+
+
+// LETTER-SPACING
+
+    h1 { letter-spacing: -1.9px; }
+    h2 { letter-spacing: -1.2px; }
+    h3 { letter-spacing: -0.9px; }
+    h4 { letter-spacing: -0.7px; }
+    h5 { letter-spacing: -0.5px; }
+    small { letter-spacing: 0.5px; }
+
+    h1 { transform: translateX(-2px); }
+    h2 { transform: translateX(rem(-1)); }
+
+
+// FONT SIZE
+
+    h1 { font-size: rem(48); }
+    h2 { font-size: rem(38); }
+    h3 { font-size: rem(30); }
+    h4 { font-size: rem(24); }
+    h5 { font-size: rem(19); }
+    p { font-size: rem(16); }
+    h6 { font-size: rem(12); }
+    small { font-size: rem(9.6); }
+    .xsmall { font-size: rem(7.68); }
+
+
+// FONT WEIGHT
+
+    h1 { font-weight: 700; } // bold
+    h2 { font-weight: 600; } // semi-bold
+    h3, h4 { font-weight: 500; } // medium
+    h5, small, .xsmall { font-weight: 400; } // regular
+    p, h6, a { font-weight: 200; } // light
+
+
+// FONT COLOUR
+
+    h1, h2, h3, h4, h5, body, p, h6, span, small, .xsmall, ul, li {
+        color: $dark;
+    }
+
+    a {
+        // temporary
+        color: $blue;
+    }
+
+
+
+    
 p > a {
     padding-bottom: rem(1);
     @include background-pos(0 100%, repeat-x, rem(4) rem(4));

@@ -3,6 +3,7 @@ import React from 'react';
 import colours from './sass/_foundation/_colours.module.scss';
 import styles from "./components/Panels/PanelRight/PanelRight.module.scss";
 import Home from './pages/Home/Home';
+import Extras from './pages/Extras/Extras';
 import Projects from './pages/Projects/Projects';
 import './styles.scss';
 import Panels from './components/Panels/Panels';
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/project/:id">
               <Project />
+            </Route>
+            <Route path="/extras">
+              <Extras />
             </Route>
             {/* <Route path="*">
               <NotFound />

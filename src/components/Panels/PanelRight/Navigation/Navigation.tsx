@@ -11,7 +11,7 @@ const Navigation: React.FC<NavigationProps> = ({navState}) => {
   
   return (
     <div className={`${styles.Navigation__container}`}>
-      {/* For loop through using json data */}
+      {/* TODO set closed nav state on selection or click out */}
       <ul className={`${styles.Navigation} ${(navState ? styles.Navigation_open : '')}`}>
         <NavItem title="projects" />
         <NavItem title="extras" />
