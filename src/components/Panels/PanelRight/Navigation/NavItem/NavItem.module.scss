@@ -12,7 +12,7 @@
         align-items: center;
         justify-content: flex-end;
         width: 100%;
-        padding: rem(12) rem(16);
+        padding: rem(12) rem(16) rem(12) 0;
         &::after {
             content: '';
             height: 1px;

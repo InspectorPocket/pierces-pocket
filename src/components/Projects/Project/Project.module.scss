@@ -1,1 +1,101 @@
-.Project {}
+@import '/src/sass/essentials';
+
+$top_spacing: 6.6666vw + #{rem(44)};
+$img_height: calc(85vh - ((#{$top_spacing}) + (6.6666vw * 2)));
+
+// @keyframes slideUp {
+//     from {
+//         height: 0;
+//     }
+//     to {
+//         height: auto;
+//     }
+// }
+
+.project {
+    width: 100%;
+    &__intro {
+        height: 100vh;
+        padding-top: calc(#{$top_spacing});
+        // display: flex;
+        // justify-content: center;  
+    }
+    &__img {
+        width: 100%;
+        display: flex;
+        position: relative;
+        height: $img_height;
+        & > span {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        & > img {
+            width: 100%;
+        }
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        text-align: center;
+        &__heading {
+            // transform: translateY(rem(-32));
+            margin-top: rem(-32);
+            margin-bottom: rem(16);
+            text-transform: lowercase;
+            z-index: 2;
+        }
+        &__vocation {
+            text-transform: lowercase;
+            z-index: 2;
+        }
+        &__panels {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            height: $img_height;
+            // height: 20vh;
+            position: absolute;
+            bottom: 100%;
+            & > span {
+                height: 0;
+                transition: .2s ease-in-out all;
+            }
+            &_4 {
+                & > span {
+                    // animation: slideUp 2s forwards;
+                    transition: .3s ease-in-out all;
+                    &:nth-of-type(1) {
+                        height: 6vh;
+                    }
+                    &:nth-of-type(2) {
+                        height: 14vh;
+                    }
+                    &:nth-of-type(3) {
+                        height: 11vh;
+                    }
+                    &:nth-of-type(4) {
+                        height: 7vh;
+                    }
+                }
+            }
+        }
+    }
+    &__main {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &::before {
+            content: '';
+            background-color: $darker;
+            width: 1px;
+            height: calc(100% + #{rem(48)});
+            position: absolute;
+            top: rem(-24);
+        }  
+    }
+}

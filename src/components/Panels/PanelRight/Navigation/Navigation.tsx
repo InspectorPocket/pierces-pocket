@@ -14,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = ({navState}) => {
       {/* For loop through using json data */}
       <ul className={`${styles.Navigation} ${(navState ? styles.Navigation_open : '')}`}>
         <NavItem title="projects" />
-        <NavItem title="about" />
+        <NavItem title="extras" />
       </ul>
     </div>
   )

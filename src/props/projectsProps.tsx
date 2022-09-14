@@ -4,6 +4,7 @@ interface ProjectsProps {
     body?: string;
     vocation?: string;
     img?: string;
+    panels?: number;
     id?: number;
 }
 

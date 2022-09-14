@@ -14,38 +14,55 @@
         position: relative;
         text-align: center;
         // calculate vh + vw
-        font-size: 8.8888vw;
+        font-size: rem(48);
         width: auto;
-        &::before, &::after {
-            // font-size: rem(48.86);
-            font-size: 8.8888vw;
-            position: absolute;
-            font-family: 'Playfair Display';
-        }
-        &::before {
-            content: '\2190';
-            right: 100%;
-        }
-        &::after {
-            content: '\2192';
-            left: 100%;
-        }
+        
         &_top {
             padding-top: calc(6.6666vw + #{rem(46) + #{rem(32)}});
         }
         &_centered {
             padding-top: calc(50vh - 6.6666vh);
+            &::before, &::after {
+                // font-size: rem(48.86);
+                font-size: rem(48);
+                display: flex;
+                position: relative;
+                font-family: 'Playfair Display';
+            }
+            &::before {
+                content: '\2190';
+                padding-right: rem(12);
+                // right: 100%;
+            }
+            &::after {
+                content: '\2192';
+                padding-left: rem(12);
+                // left: 100%;
+            }
         }
     }
-    .scroll {
+    &__subtext {
         position: absolute;
-        // bottom: calc(#{rem(24)} + 3.333vw);
-        bottom: rem(44);
-        left: 0;
-        right: 0;
-        &::before {
-            content: '';
+        font-size: rem(12);
+        padding-top: calc(50vh - 6.6666vh + 2px);
+        font-style: italic;
+        &_left {
+            right: calc(50% + 16px);
         }
+        &_right {
+            left: calc(50% + 2px);
+        }
+    }
+}
+.scroll {
+    position: absolute;
+    // bottom: calc(#{rem(24)} + 3.333vw);
+    bottom: rem(44);
+    left: 0;
+    right: 0;
+    text-align: center;
+    &::before {
+        content: '';
     }
 }
 
@@ -53,7 +70,7 @@
 @media screen and (min-width: 728px) {
     .intro {
         &__heading {
-            font-size: 6.6666vw;
+            // font-size: 5vw;
         }
     }
 }
