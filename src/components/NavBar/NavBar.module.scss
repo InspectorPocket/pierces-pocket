@@ -1,139 +1,130 @@
 @import '/src/sass/essentials';
-@import '/src/sass/_abstracts/transitions';
 
-.Logo {
-    &__container {
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding-top: 2.2222vw;
+    z-index: 10;
+    &__menu {
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
         position: relative;
         width: 20%;
     }
-    height: rem(40);
-    margin: 8px;
-    // min-width: rem(32);
-    // max-width: rem(36);
-    opacity: .9;
-    // position: fixed;
-    @extend %trans-long;
-    & > svg, & > img {
-        @include size(100%);
-    }
-    &:hover {
-        @extend %trans-short;
-        opacity: 1;
-    }
 }
 
-
 @include bp_320 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 25%;
         }
     }
 }
 @include bp_460 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 16.6666%;
         }
     }
 }
 @include bp_620 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 14.3333%;
         }
     }
 }
 @include bp_728 {
-    .Logo {
-        width: rem(36);
-        &__container {
+    .NavBar {
+        &__menu {
             width: 12.5%;
         }
     }
 }
 @include bp_880 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 11.1111%;
         }
     }
 }
 @include bp_1024 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 10%;
         }
     }
 }
 @include bp_1140 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 9%;
         }
     }
 }
 @include bp_1280 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 8.3333%;
         }
     }
 }
 @include bp_1336 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 7.5%;
         }
     }
 }
 @include bp_1440 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 7%;
         }
     }
 }
 @include bp_1700 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 6.5%;
         }
     }
 }
 @include bp_1920 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 6%;
         }
     }
 }
 @include bp_2100 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 5.5%;
         }
     }
 }
 @include bp_2400 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 5%;
         }
     }
 }
 @include bp_2800 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 4.5%;
         }
     }
 }
 @include bp_3400 {
-    .Logo { 
-        &__container {
+    .NavBar {
+        &__menu {
             width: 4.2%;
         }
     }

@@ -1,9 +1,7 @@
 import React from 'react';
 import Panel from './Panel/Panel';
-import PanelLeft from './PanelLeft/PanelLeft';
 import styles from './Panels.module.scss';
 import MediaQuery from 'react-responsive';
-import PanelRight from './PanelRight/PanelRight';
 
 const Panels: React.FC = () => {
   // const isDesktopOrLaptop = useMediaQuery({
@@ -15,7 +13,7 @@ const Panels: React.FC = () => {
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
   return (
     <div className={styles.panels}>
-      <PanelLeft/>
+      <Panel/>
       <Panel/>
       <Panel/>
       {/* 5 */}
@@ -86,7 +84,6 @@ const Panels: React.FC = () => {
         <Panel/>
         <Panel/>
       </MediaQuery>
-      {/* <PanelRight/> */}
       <Panel/>
     </div>
   )

@@ -1,15 +1,14 @@
 // npx generate-react-cli component MyComponent
 import React from 'react';
 import colours from './sass/_foundation/_colours.module.scss';
-import styles from "./components/Panels/PanelRight/PanelRight.module.scss";
 import Home from './pages/Home/Home';
 import Extras from './pages/Extras/Extras';
 import Projects from './pages/Projects/Projects';
 import './styles.scss';
 import Panels from './components/Panels/Panels';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PanelRight from './components/Panels/PanelRight/PanelRight';
 import Project from "./components/Projects/Project/Project";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   let backgroundColour: string = colours.darker;
@@ -18,6 +17,7 @@ function App() {
     <div className="app" style={{backgroundColor: backgroundColour}}>
       <Router>
         <Panels/>
+        <NavBar />
         <div className='container'>
           <Switch>
             <Route exact path="/">
@@ -36,9 +36,6 @@ function App() {
               <NotFound />
             </Route> */}
           </Switch>
-        </div>
-        <div className={styles.PanelRight__container}>
-          <PanelRight/>
         </div>
       </Router>
     </div>

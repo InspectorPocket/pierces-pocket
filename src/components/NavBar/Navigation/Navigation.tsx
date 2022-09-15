@@ -1,7 +1,6 @@
 import React from 'react';
-import Icon from '../../../Icon/Icon';
 import styles from './Navigation.module.scss';
-import NavItem from './NavItem/NavItem';
+import NavItem from '../Navigation/NavItem/NavItem';
 
 interface NavigationProps {
   navState?: boolean;
