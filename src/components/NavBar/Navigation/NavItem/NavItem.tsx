@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 
 interface NavItemProps {
   title: string;
+  destination: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({title}) => {
+const NavItem: React.FC<NavItemProps> = ({title, destination}) => {
 
   return (
     <li className={styles.NavItem}>
       {/* TODO Set navbar to closed on click */}
-      <Link to={`/${title}`}>{title}</Link>
+      <Link to={`/${destination}`}>{title}</Link>
     </li>
   )
 };

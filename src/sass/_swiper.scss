@@ -17,9 +17,6 @@
         background: $dark;
     }
     & .swiper {
-        &-slide {
-            height: 75vh;
-        }
         &-pagination {
             position: fixed;
             &-numbers {

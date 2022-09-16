@@ -52,3 +52,11 @@
     }
 
 }
+
+.mySwiper {
+    & .swiper {
+        &-slide {
+            height: 75vh;
+        }
+    }
+}

@@ -36,7 +36,6 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
     }
   })
 
-  
   return (
     <div className={styles.ProjectOverview}>
       <Swiper
@@ -47,7 +46,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className={"mySwiper"}
         onSlideNextTransitionStart={() => {
           setSlideIndex(slideIndex = slideIndex + 1)
         }}
@@ -55,7 +54,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
           setSlideIndex(slideIndex = slideIndex - 1)
         }}
         // onSwiper={(swiper) => console.log(swiper)}
-        onSwiper={(swiper) => setTotalSlides(totalSlides = document.querySelectorAll(".swiper-slide").length)}
+        onSwiper={() => setTotalSlides(totalSlides = document.querySelectorAll(".swiper-slide").length)}
       >
 
         { slide1.length != 0 &&
