@@ -20,8 +20,8 @@ const Home: React.FC<ProjectsProps> = () => {
     <div className={columns.col}></div> */}
 
   return (
-    <div className={`${styles.home} ${intro.intro}`}>
-      <div className={'piercespocket__heading'}>
+    <div className={`${intro.intro}`}>
+      <div>
         <Intro page="home" />
         <LineText
           font='p'

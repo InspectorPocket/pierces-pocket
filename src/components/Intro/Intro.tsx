@@ -36,8 +36,8 @@ const Intro: React.FC<IntroProps> = ({page, scrollable}) => {
       }
       { page === 'projects' &&
       <div className={`${styles.intro__heading}`}>
-        <span className={`${styles.intro__subtext} ${styles.intro__subtext_left}`}>here be</span>
-        <span className={`${styles.intro__subtext} ${styles.intro__subtext_right}`}>my</span>
+        <span className={`${styles.intro__subtext} ${styles.intro__subtext_left}`}>here</span>
+        <span className={`${styles.intro__subtext} ${styles.intro__subtext_right}`}>are my</span>
         <h1>Projects</h1>
       </div>
       }

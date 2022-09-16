@@ -1,11 +1,9 @@
 interface ProjectsProps {
+    id?: number;
     title?: string;
-    date?: number;
-    body?: string;
     vocation?: string;
     img?: string;
-    panels?: number;
-    id?: number;
+    body?: string;
 }
 
 export default ProjectsProps;

@@ -13,7 +13,8 @@ $top_spacing: 6.6666vw + #{rem(44)};
 // }
 
 .project {
-    width: 100%;
+    // display: flex;
+    margin-top: 90px;
     &__intro {
         position: relative;
         height: calc(100vh - (#{$top_spacing}) - 64px);

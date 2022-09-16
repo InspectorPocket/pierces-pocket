@@ -32,9 +32,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       {/* Projects */}
       { projects && <Intro page="projects" /> }
       { projects &&
-        <div className={styles.projectsPreview}>
-          <ProjectOverview projects={projects} />
-        </div>
+        <ProjectOverview projects={projects} />
       }
       {/* { projects && 
         <a href="#">

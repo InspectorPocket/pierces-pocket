@@ -1,13 +1,16 @@
 @import '/src/sass/essentials';
 
 .ProjectOverview {
-    @extend %f-c-col;
+    // @extend %f-c-col;
     &__project {
         display: flex;
         width: 100%;
         position: relative;
-        margin: rem(8) 0;
+        margin: rem(16) 0;
         background-color: $grey-100;
+        &:nth-of-type(1) {
+            margin-top: rem(12);
+        }
         & > * { z-index: 1; }
         &__img {
             display: flex;
@@ -47,4 +50,5 @@
             background-color: $grey-200;
         }
     }
+
 }

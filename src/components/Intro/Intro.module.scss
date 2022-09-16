@@ -7,8 +7,8 @@
     position: relative;
     text-align: center;
     transition: .2s;
+    margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
     margin-bottom: rem(20);
-    pointer-events: none;
     &__heading {
         display: flex;
         // justify-content: center;
@@ -17,7 +17,6 @@
         text-align: left;
         // calculate vh + vw
         width: auto;
-        margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
         pointer-events: none;
         /*
         &_top {
@@ -50,13 +49,13 @@
         font-size: rem(12);
         // padding-top: calc(50vh - 6.6666vh + 2px);
         font-style: italic;
-        top: 2px;
+        top: 1px;
         &_left {
             // right: calc(50% + 16px);
-            left: calc(28px);
+            left: 44px;
         }
         &_right {
-            left: calc(87px);
+            left: 88px;
         }
     }
 }

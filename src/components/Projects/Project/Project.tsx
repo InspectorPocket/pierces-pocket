@@ -4,9 +4,8 @@ import helpers from '../../../sass/_abstracts/_helpers.module.scss';
 import ProjectsProps from "../../../props/projectsProps";
 import MediaQuery from 'react-responsive';
 import { RouteComponentProps, useLocation } from "react-router-dom";
-import intro from '../../Intro/Intro.module.scss';
-import Panel from '../../Panels/Panel/Panel';
-// import panel from '../../Panels/Panel/Panel.module.scss';
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.css';
 
 let _pProps: ProjectsProps;
 
@@ -18,13 +17,11 @@ interface ProjectProps {
 
 interface LocationState {
   project: {
-    body: string;
-    date: string;
-    panels: number;
     id: number;
-    img: string;
     title: string;
     vocation: string;
+    img: string;
+    body: string;
   }
 }
 
@@ -42,6 +39,7 @@ const Project: React.FC<ProjectProps> = () => {
 
   return (
     <div className={styles.project}>
+      
       <div className={styles.project__intro}>
         <div className={styles.project__img}>
           <span style={{backgroundImage: `url("${(imgUrl + from.img)}")`}} />
@@ -58,8 +56,9 @@ const Project: React.FC<ProjectProps> = () => {
         </div>
       </div>
       <div className={styles.project__main}>
-        
+        {from.body}
       </div>
+
     </div>
   )
 };
