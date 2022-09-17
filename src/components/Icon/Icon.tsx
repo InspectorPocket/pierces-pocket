@@ -6,7 +6,7 @@ interface NavItemProps {
   iconIndex: number;
   onClick?: any;
   styling?: boolean;
-  projectNumber?: number;
+  projectNumber?: any;
 }
 
 const Icon: React.FC<NavItemProps> = ({icon, iconIndex, styling, onClick, projectNumber}) => {

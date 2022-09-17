@@ -52,32 +52,9 @@ $top_spacing: 6.6666vw + #{rem(44)};
             z-index: 2;
         }
     }
-    &__arrow {
+    &__main {
         display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        position: absolute;
-        right: rem(4);
-        bottom: rem(20);
-        height: 24px;
-        width: 24px;
-        & > span {
-            display: block;
-            background-color: $dark;
-            width: 1px;
-            border-radius: 8px;
-            &:nth-of-type(1) {
-                height: rem(10);
-                transform: rotate(-35deg) translateX(-2px);
-            }
-            &:nth-of-type(2) {
-                height: rem(20);
-            }
-            &:nth-of-type(3) {
-                height: rem(10);
-                transform: rotate(35deg) translateX(2px);
-            }
-        }
+        margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
     }
 
     &__gridview {
@@ -88,6 +65,19 @@ $top_spacing: 6.6666vw + #{rem(44)};
         left: 0;
         width: 20%;
         padding: 2.2222vw 0;
+    }
+}
+
+.projects {
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        &_hide {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }
 

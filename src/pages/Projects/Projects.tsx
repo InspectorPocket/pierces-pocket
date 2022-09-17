@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import styles from './Projects.module.scss';
 import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
@@ -6,9 +7,10 @@ import Project from "../../components/Projects/Project/Project";
 import useFetch from "../../hooks/useFetch";
 import ProjectsProps from "../../props/projectsProps";
 import Intro from '../../components/Intro/Intro';
+// import Icon from "../../components/Icon/Icon";
 
 const Projects: React.FC<ProjectsProps> = () => {
-  const { error, isPending, data: projects } = useFetch('http://localhost:8000/projects');
+  const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
 
   const urlId = useParams();
   const [projectActive, setProjectActive] = useState(false);
@@ -34,6 +36,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       { projects &&
         <ProjectOverview projects={projects} />
       }
+
       {/* { projects && 
         <a href="#">
           <p className="mg-t-16 mg-b-16">back to top</p>

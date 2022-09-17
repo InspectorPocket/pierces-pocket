@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import useFetch from "../../../hooks/useFetch";
+// import { Link } from 'react-router-dom';
 import styles from './Project.module.scss';
-import helpers from '../../../sass/_abstracts/_helpers.module.scss';
+// import helpers from '../../../sass/_abstracts/_helpers.module.scss';
 import ProjectsProps from "../../../props/projectsProps";
-import MediaQuery from 'react-responsive';
+// import MediaQuery from 'react-responsive';
 import { RouteComponentProps, useLocation } from "react-router-dom";
 import Icon from "../../Icon/Icon";
+import Intro from "../../Intro/Intro";
+import ProjectOverview from "../ProjectOverview/ProjectOverview";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
@@ -39,6 +42,15 @@ const Project: React.FC<ProjectProps> = () => {
   let [slideIndex, setSlideIndex] = useState(1);
   let [totalSlides, setTotalSlides] = useState(0);
 
+  const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
+
+  let [projectNumber, setProjectNumber] = useState(4);
+  let [hideProjects, setHideProjects] = useState(true);
+
+  // if (projects) {
+  //   setProjectNumber(projects.length);
+  // }
+
   // Remove height upon load
   function addHeight() {
     
@@ -55,17 +67,29 @@ const Project: React.FC<ProjectProps> = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className={`mySwiper ${styles.mySwiper}`}
+        className={`mySwiper mySwiperProject ${styles.mySwiper} ${(hideProjects ? '' : styles.projects__wrapper_hide)}`}
         onSlideNextTransitionStart={() => {
           setSlideIndex(slideIndex = slideIndex + 1)
         }}
         onSlidePrevTransitionStart={() => {
           setSlideIndex(slideIndex = slideIndex - 1)
         }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        onSwiper={() => setTotalSlides(totalSlides = document.querySelectorAll(".swiper-slide").length)}
+        onSwiper={() => {
+          const swiperEl: any = document.querySelector(".mySwiperProject");
+          setTotalSlides(totalSlides = swiperEl.querySelectorAll(".swiper-slide").length)
+        }}
       >
       
+
+        <SwiperSlide>
+
+          <div className={styles.project__main}>
+            {/* from body to fill slide 1 */}
+            {from.body}
+          </div>
+
+        </SwiperSlide>
+
         <SwiperSlide>
 
           <div className={styles.project__intro}>
@@ -81,14 +105,7 @@ const Project: React.FC<ProjectProps> = () => {
 
         </SwiperSlide>
 
-        <SwiperSlide>
-
-          <div className={styles.project__main}>
-            {/* from body to fill slide 1 */}
-            {from.body}
-          </div>
-
-        </SwiperSlide>
+        
 
         { totalSlides > 1 &&
           <div className='swiper-pagination swiper-pagination-numbers'>
@@ -97,27 +114,27 @@ const Project: React.FC<ProjectProps> = () => {
           </div>
         }
 
-        <div className={styles.project__gridview}>
-          {/* Replace 2 with number of projects */}
-          {/* styling={INSERT_OPEN/CLOSE_STATE of button} */}
-          <Link to={{
-            pathname: `/projects`
-          }} style={{display: 'flex'}}>
-
-          {/* <Link to={{
-            pathname: `/project/${project.id}`,
-                  state: { project: project }
-                }} key={project.id} className={styles.ProjectOverview__project}> */}
-
-            {/* instead of linking to project - display the projects component on top? */}
-            {/* I can pass through the project id from here then from.id - worst case from query */}
-            {/* may have to temperarily hide pagination from this page whilst showing the projects one */}
-            {/* means this icon can have a smooth transition into a close state (x) */}
-            <Icon icon="projects" iconIndex={0} projectNumber={2} onClick={() => {}} />
-          </Link>
-        </div>
-
       </Swiper>
+        
+      { projects && 
+        <div className={`container ${styles.projects__wrapper} ${(hideProjects ? styles.projects__wrapper_hide : '')}`}>
+          <Intro page="projects" />
+          <ProjectOverview projects={projects}></ProjectOverview>
+        </div>
+      }
+
+      <div className={styles.project__gridview}>
+        {/* Replace 2 with number of projects */}
+        {/* styling={INSERT_OPEN/CLOSE_STATE of button} */}
+
+          {/* means this icon can have a smooth transition into a close state (x) */}
+          <Icon icon="projects" iconIndex={0} 
+            // TODO set project number dynamically - query params? https://v5.reactrouter.com/web/example/query-parameters
+            projectNumber={4}
+            onClick={() => { setHideProjects(!hideProjects); }
+          } />
+        {/* </Link> */}
+      </div>
 
     </div>
   )

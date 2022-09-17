@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './ProjectOverview.module.scss';
 // import ProjectProps from "../../../pages/Home/Home";
 // import useFetch from "../../../hooks/useFetch";
 import ProjectsProps from "../../../props/projectsProps";
@@ -8,26 +7,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import 'swiper/swiper-bundle.css';
+import styles from './ProjectOverview.module.scss';
 
 
 let _pProps: ProjectsProps;
 
 interface ProjectsOverviewProps {
   projects: typeof _pProps[];
-  title?: string;
 }
 
 const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
   
   const imgUrl: string = '/images/';
-  let slide1: Array<typeof Object> = [];
-  let slide2: Array<typeof Object> = [];
-  // let slideIndex: number = 1;
+  let slide1: Array<any> = [];
+  let slide2: Array<any> = [];
+
   let [slideIndex, setSlideIndex] = useState(1);
   let [totalSlides, setTotalSlides] = useState(0);
 
   projects.map(project => {
-    // console.log(project);
     if (project.id === 1 || project.id === 2 || project.id === 3) {
       slide1.push(project);
     } 
@@ -36,34 +34,38 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
     }
   })
 
+  
+
   return (
     <div className={styles.ProjectOverview}>
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
-        pagination={{
-          type: "progressbar"
-        }}
+        pagination={{ type: "progressbar" }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className={"mySwiper"}
+        className={`mySwiper mySwiperProjectOverview ${styles.mySwiper}`}
         onSlideNextTransitionStart={() => {
           setSlideIndex(slideIndex = slideIndex + 1)
         }}
         onSlidePrevTransitionStart={() => {
           setSlideIndex(slideIndex = slideIndex - 1)
         }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        onSwiper={() => setTotalSlides(totalSlides = document.querySelectorAll(".swiper-slide").length)}
+        onSwiper={() => {
+          const swiperEl: any = document.querySelector(".mySwiperProjectOverview");
+          setTotalSlides(totalSlides = swiperEl.querySelectorAll(".swiper-slide").length)
+        }}
       >
 
-        { slide1.length != 0 &&
-          <SwiperSlide>
+        {/* <p>{projects}</p> */}
+
+        { slide1.length != 0 && projects &&
+          <SwiperSlide className={styles.mySwiper__swiper_slide}>
 
             {slide1.map(project => (
 
               <Link to={{
-                  pathname: `/project/${project.id}`,
+                  pathname: `/project/${project.id}?t=${projects.length}`,
                   state: { project: project }
                 }} key={project.id} className={styles.ProjectOverview__project}>
 
@@ -83,7 +85,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
           </SwiperSlide>
         }
         { slide2.length != 0 &&
-          <SwiperSlide>
+          <SwiperSlide className={styles.mySwiper__swiper_slide}>
             
             {slide2.map(project => (
 

@@ -4,6 +4,15 @@
     // @extend %f-c-col;
     position: relative;
     width: 100%;
+    &__gridview {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        padding: 2.2222vw 0;
+    }
 }
 
 // .projectsPreview {

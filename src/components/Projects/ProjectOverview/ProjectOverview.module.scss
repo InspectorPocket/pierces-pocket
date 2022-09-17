@@ -54,8 +54,8 @@
 }
 
 .mySwiper {
-    & .swiper {
-        &-slide {
+    &__swiper {
+        &_slide {
             height: 75vh;
         }
     }
