@@ -12,7 +12,9 @@ import ProjectOverview from "../ProjectOverview/ProjectOverview";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
-import 'swiper/swiper-bundle.css';
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
 
 let _pProps: ProjectsProps;
 
@@ -79,16 +81,6 @@ const Project: React.FC<ProjectProps> = () => {
           setTotalSlides(totalSlides = swiperEl.querySelectorAll(".swiper-slide").length)
         }}
       >
-      
-
-        <SwiperSlide>
-
-          <div className={styles.project__main}>
-            {/* from body to fill slide 1 */}
-            {from.body}
-          </div>
-
-        </SwiperSlide>
 
         <SwiperSlide>
 
@@ -105,7 +97,14 @@ const Project: React.FC<ProjectProps> = () => {
 
         </SwiperSlide>
 
-        
+        <SwiperSlide>
+
+          <div className={styles.project__main}>
+            {/* from body to fill slide 1 */}
+            {from.body}
+          </div>
+
+        </SwiperSlide>
 
         { totalSlides > 1 &&
           <div className='swiper-pagination swiper-pagination-numbers'>

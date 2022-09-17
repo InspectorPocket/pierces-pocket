@@ -6,7 +6,9 @@ import ProjectsProps from "../../../props/projectsProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
-import 'swiper/swiper-bundle.css';
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
 import styles from './ProjectOverview.module.scss';
 
 
