@@ -3,7 +3,6 @@ interface ProjectsProps {
     title?: string;
     vocation?: string;
     img?: string;
-    body?: string;
 }
 
 export default ProjectsProps;

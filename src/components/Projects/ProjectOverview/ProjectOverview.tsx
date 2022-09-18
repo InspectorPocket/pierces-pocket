@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 // import ProjectProps from "../../../pages/Home/Home";
 // import useFetch from "../../../hooks/useFetch";
 import ProjectsProps from "../../../props/projectsProps";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
+
 import styles from './ProjectOverview.module.scss';
 
 
@@ -36,7 +38,6 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
     }
   })
 
-  
 
   return (
     <div className={styles.ProjectOverview}>
@@ -58,8 +59,6 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
           setTotalSlides(totalSlides = swiperEl.querySelectorAll(".swiper-slide").length)
         }}
       >
-
-        {/* <p>{projects}</p> */}
 
         { slide1.length != 0 && projects &&
           <SwiperSlide className={styles.mySwiper__swiper_slide}>

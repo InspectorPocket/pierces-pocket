@@ -17,4 +17,9 @@
     & > p, & > h5 {
         padding: rem(6) 0 rem(6) rem(12);
     }
+    &__spacing {
+        &_20 {
+            margin: rem(20) 0;
+        }
+    }
 }

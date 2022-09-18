@@ -1,0 +1,39 @@
+@import '/src/sass/essentials';
+
+$top_spacing: 6.6666vw + #{rem(44)};
+
+.project {
+    &__intro {
+        position: relative;
+        height: calc(100vh - (#{$top_spacing}) - 64px);
+        height: 100vh;
+        padding-top: calc(#{$top_spacing});
+    }
+    &__img {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        height: calc(100% - (#{$top_spacing}) - 148px);
+        & > span {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    &__title {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: rem(16);
+        margin-bottom: rem(16);
+        &__heading {
+            margin-bottom: rem(6);
+            z-index: 2;
+        }
+        &__vocation {
+            z-index: 2;
+        }
+    }
+}

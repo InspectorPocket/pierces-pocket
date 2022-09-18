@@ -1,0 +1,19 @@
+@import '/src/sass/essentials';
+
+$top_spacing: 6.6666vw + #{rem(44)};
+
+.project {
+    // display: flex;
+    // margin-top: 90px;
+    &__main {
+        display: flex;
+        margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
+    }
+}
+
+.mySwiper {
+    height: 100vh;;
+    .swiper {
+        
+    }
+}

@@ -1,53 +1,31 @@
-import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import styles from './Projects.module.scss';
-import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
-import Project from "../../components/Projects/Project/Project";
 import useFetch from "../../hooks/useFetch";
+import styles from './Projects.module.scss';
+
 import ProjectsProps from "../../props/projectsProps";
+
 import Intro from '../../components/Intro/Intro';
-// import Icon from "../../components/Icon/Icon";
+import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
 
 const Projects: React.FC<ProjectsProps> = () => {
+
+  // TODO Can I put Project data here isntead of making a call?
   const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
 
   const urlId = useParams();
-  const [projectActive, setProjectActive] = useState(false);
-
-  // console.log(urlId);
-
-  // console.log('Before: ');
-  // console.log(projectActive);
-  // if (urlId != null) {
-  //   setProjectActive(!projectActive);
-  // }
-  // console.log('After: ');
-  // console.log(projectActive);
-  
-  // if router has an id
-  //    post id through
 
   return (
     <div className={styles.projects}>
 
       {/* Projects */}
       { projects && <Intro page="projects" /> }
-      { projects &&
-        <ProjectOverview projects={projects} />
-      }
-
-      {/* { projects && 
-        <a href="#">
-          <p className="mg-t-16 mg-b-16">back to top</p>
-        </a>
-      } */}
-
-      {/* Project */}
-      {/* { projects && !projectActive && <Project projects={projects} id={0} /> } */}
+      { projects && <ProjectOverview projects={projects} /> }
 
       { error && <div>{ error }</div> }
+      {/* TODO Replace with a loading component */}
       { isPending && <div>Loading...</div> }
+
     </div>
   );
 };

@@ -1,12 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './CardText.module.scss';
 
-interface CardTextProps {}
+interface CardTextProps {
+  content: string;
+  spacing?: number;
+}
 
-const CardText: FC<CardTextProps> = () => (
-  <div className={styles.CardText}>
-    CardText Component
-  </div>
-);
+const CardText: React.FC<CardTextProps> = ({spacing, content}) => {
+  return (
+
+    <div className={`${styles.CardText} ${spacing ? `mg-t-${spacing} mg-b-${spacing}` : ''}`}>
+      <p>
+        {content}
+      </p>
+    </div>
+
+  )
+};
 
 export default CardText;

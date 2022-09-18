@@ -1,1 +1,18 @@
-.CardText {}
+@import '/src/sass/essentials';
+@import '/src/sass/_abstracts/transitions';
+
+.CardText {
+    position: relative;
+    padding: rem(16);
+    margin-left: calc(20vw - #{rem(16)});
+    background-color: $grey-100;
+    &::before {
+        content: '';
+        width: rem(16);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: rem(-16);
+        background-color: $grey-100;
+    }
+}
