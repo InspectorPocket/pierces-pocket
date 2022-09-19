@@ -27,7 +27,8 @@ const PiercesPocket: React.FC<PiercesPocketProps> = ({img, title, vocation}) => 
   return (
     <div className={styles.Project1}>
       
-      {/* If swiper slide is 1 -> set logo to shrink -> else make full */}
+      {/* TODO If swiper slide is 1 -> set logo to shrink -> else make full */}
+      {/* DO this by passing updated slideIndex up to Logo */}
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
@@ -57,7 +58,7 @@ const PiercesPocket: React.FC<PiercesPocketProps> = ({img, title, vocation}) => 
 
           <div className={styles.project__main}>
             <h3>The Project</h3>
-            <LineText spacing={20} font='p' content='Pierce’s Pocket is a project to allow me to host my works in a clean and elegant way.' />
+            <LineText spacing={20} font='p' content='Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work.' />
             <img className='mg-b-16' src="/images/clear_uk.jpeg" alt="" />
             <p>The style is simple but elegant with LV monogram being recognizable all over the world. But it’s the combination of quality, exclusivity and innovation that make the timeless success.</p>
           </div>

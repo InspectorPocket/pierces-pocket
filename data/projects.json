@@ -3,26 +3,50 @@
     {
       "id": 1,
       "title": "Pierce's Pocket",
-      "vocation": "Brand & Web Design, Web Development",
+      "vocation": "Brand & UX Design, Front End Development",
       "img": "pierces_pocket.jpeg"
     },
     {
       "id": 2,
-      "title": "Clear UK",
-      "vocation": "Brand & Web Design",
-      "img": "clear_uk.jpeg"
+      "title": "LocalThrones",
+      "vocation": "UX Design",
+      "img": "localthrones.jpeg"
     },
     {
       "id": 3,
       "title": "Fluid Ads",
-      "vocation": "Graphic Design & Web Development",
+      "vocation": "Graphic Design & Front End Development",
       "img": "fluid_ads.jpeg"
     },
     {
       "id": 4,
       "title": "Wild.Self",
-      "vocation": "Graphic Design & Web Development",
-      "img": "fluid_ads.jpeg"
+      "vocation": "Brand & UX Design, Front End Development",
+      "img": "wild_self.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Clear UK",
+      "vocation": "UX Design",
+      "img": "clear_uk.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Codedump",
+      "vocation": "Brand & UX Design",
+      "img": "codedump.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Rozafa",
+      "vocation": "UX Design",
+      "img": "rozafa.jpeg"
+    },
+    {
+      "id": 8,
+      "title": "Brand Design",
+      "vocation": "A collection of branding work",
+      "img": "brand_design.jpeg"
     }
   ]
 }

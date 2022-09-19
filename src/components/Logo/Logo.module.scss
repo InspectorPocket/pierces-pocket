@@ -8,8 +8,11 @@
         position: relative;
         width: 20%;
     }
-    height: rem(40);
-    margin: 8px;
+    position: relative;
+    height: rem(48);
+    width: rem(48);
+    padding: rem(8);
+    // margin: 0 rem(12);
     // min-width: rem(32);
     // max-width: rem(36);
     opacity: .9;
@@ -18,6 +21,17 @@
     & > svg, & > img {
         @include size(100%);
     }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 9.7778px;
+        height: 23px;
+        border-radius: 0 0 5px 5px;;
+        background-color: $darker;
+        @extend %trans-short;
+    }
+
     &:hover {
         @extend %trans-short;
         opacity: 1;
