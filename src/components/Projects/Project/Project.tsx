@@ -6,6 +6,7 @@ import ProjectsProps from "../../../props/projectsProps";
 // import MediaQuery from 'react-responsive';
 import { RouteComponentProps, useLocation } from "react-router-dom";
 import Icon from "../../Icon/Icon";
+import Loading from '../../Loading/Loading';
 
 import Intro from "../../Intro/Intro";
 import ProjectOverview from "../ProjectOverview/ProjectOverview";
@@ -72,6 +73,9 @@ const Project: React.FC<ProjectProps> = () => {
             onClick={() => { setHideProjects(!hideProjects); }
           } />
       </div>
+
+      { error && <div>{ error }</div> }
+      {/* { isPending && <Loading /> } */}
 
     </div>
   )

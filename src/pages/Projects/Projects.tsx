@@ -7,6 +7,7 @@ import ProjectsProps from "../../props/projectsProps";
 
 import Intro from '../../components/Intro/Intro';
 import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
+import Loading from '../../components/Loading/Loading';
 
 const Projects: React.FC<ProjectsProps> = () => {
 
@@ -23,8 +24,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       { projects && <ProjectOverview projects={projects} /> }
 
       { error && <div>{ error }</div> }
-      {/* TODO Replace with a loading component */}
-      { isPending && <div>Loading...</div> }
+      { isPending && <Loading /> }
 
     </div>
   );
