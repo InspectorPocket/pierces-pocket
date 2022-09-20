@@ -5,15 +5,18 @@ interface NavItemProps {
   icon: string;
   iconIndex: number;
   onClick?: any;
-  styling?: boolean;
-  projectNumber?: any;
+  active?: boolean;
+  projectsNumber?: any;
+  currentProject?: number;
 }
 
-const Icon: React.FC<NavItemProps> = ({icon, iconIndex, styling, onClick, projectNumber}) => {
+const Icon: React.FC<NavItemProps> = ({icon, iconIndex, active, onClick, projectsNumber, currentProject}) => {
   // object array? assign id with value. pass in value as icon and assign id
   const availableIcons = [
     'icon'
   ];
+  
+  console.log(active);
   
   let outputIcon = '';
 
@@ -33,19 +36,40 @@ const Icon: React.FC<NavItemProps> = ({icon, iconIndex, styling, onClick, projec
     <a className={styles.Icon} onClick={onClick}>
       { icon != 'menu' && icon != 'projects' && <img src={outputIcon} alt="" /> }
       { icon == 'menu' &&
-        <div className={`${styles.Icon__menu} ${(styling ? styles.Icon__menu_focus : '')}`}>
+        <div className={`${styles.Icon__menu} ${(active ? styles.Icon__menu_focus : '')}`}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       }
       { icon == 'projects' &&
-        <div className={`${styles.Icon__projects} ${(styling ? styles.Icon__projects_focus : '')}`}>
-          {/* show bg colour on icon related to project index currently selected */}
-          <span style={{backgroundColor: iconColour}}></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className={`${styles.Icon__grid} ${((projectsNumber == 1) ? styles.Icon__grid_big : '')} ${((projectsNumber >= 6) ? styles.Icon__grid_small : '')} ${(active ? styles.Icon__grid_active : '')}`}>
+          {/* TODO replace with for loop and pass through class data to 1 span */}
+          <span className={currentProject === 1 ? styles.Icon__grid_active_span : ''}></span>
+          { projectsNumber > 1 &&
+            <span className={(currentProject === 2) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 2 &&
+            <span className={(currentProject === 3) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 3 &&
+            <span className={(currentProject === 4) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 4 &&
+            <span className={(currentProject === 5) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 5 &&
+            <span className={(currentProject === 6) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 6 &&
+            <span className={(currentProject === 7) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 7 &&
+            <span className={(currentProject === 8) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 8 &&
+            <span className={(currentProject === 9) ? styles.Icon__grid_active_span : ''}></span>
+          }
         </div>
       }
     </a>

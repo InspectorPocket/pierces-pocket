@@ -29,6 +29,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
 
   let [slideIndex, setSlideIndex] = useState(1);
   let [totalSlides, setTotalSlides] = useState(0);
+  let [activeState, setActiveState] = useState(false);
 
   projects.map(project => {
     if (project.id === 1 || project.id === 2 || project.id === 3) {
@@ -70,10 +71,15 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
 
             {slide1.map(project => (
 
+              // TODO Make this a component
+              // TODO make active on click
               <Link to={{
-                  pathname: `/project/${project.id}?t=${projects.length}`,
-                  state: { project: project }
-                }} key={project.id} className={styles.ProjectOverview__project}>
+                  pathname: `/project/${project.id}`,
+                  state: { project: project, projects: projects }
+                }}
+                key={project.id} className={styles.ProjectOverview__project}
+                onClick={() => {setActiveState(!activeState)
+              }}>
 
                 <div className={styles.ProjectOverview__project__img}>
                   <img src={ (imgUrl + project.img) } />
@@ -96,9 +102,9 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
             {slide2.map(project => (
 
               <Link to={{
-                  pathname: `/project/${project.id}`,
-                  state: { project: project }
-                }} key={project.id} className={styles.ProjectOverview__project}>
+                pathname: `/project/${project.id}`,
+                state: { project: project, projects: projects }
+              }} key={project.id} className={styles.ProjectOverview__project}>
 
                 <div className={styles.ProjectOverview__project__img}>
                   <img src={ (imgUrl + project.img) } />
@@ -121,9 +127,9 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
             {slide3.map(project => (
 
               <Link to={{
-                  pathname: `/project/${project.id}`,
-                  state: { project: project }
-                }} key={project.id} className={styles.ProjectOverview__project}>
+                pathname: `/project/${project.id}`,
+                state: { project: project, projects: projects }
+              }} key={project.id} className={styles.ProjectOverview__project}>
 
                 <div className={styles.ProjectOverview__project__img}>
                   <img src={ (imgUrl + project.img) } />

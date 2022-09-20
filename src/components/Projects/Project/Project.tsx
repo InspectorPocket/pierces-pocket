@@ -16,65 +16,68 @@ import Project2 from "../../../pages/Projects/Project2/Project2";
 let _pProps: ProjectsProps;
 
 interface ProjectProps {
-  projects?: typeof _pProps[];
-  id?: number;
+  // projects?: typeof _pProps[];
 }
 
 interface LocationState {
+  projects?: typeof _pProps[];
   project: {
     id: number;
     title: string;
     vocation: string;
     img: string;
   }
+  active?: boolean;
 }
 
 const Project: React.FC<ProjectProps> = () => {
-
+  
+  // Gets current project
   const location = useLocation<LocationState>();
-  const from = location.state.project || { from: { pathname: "/projects" } };
+  const project = location.state.project || { from: { pathname: "/projects" } };
+  const projects = location.state.projects;
+  const active = location.state.active;
 
-  const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
-
-  let [hideProjects, setHideProjects] = useState(true);
+  let [hideProjectsMenu, setHideProjectsMenu] = useState(false);
 
   return (
     <div className={styles.project}>
 
-      <div className={(hideProjects ? '' : styles.projects__wrapper_hide)}>
+      <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
-        { from.id === 1 &&
-          <Project1 img={from.img} title={from.title} vocation={from.vocation} />
+        { project.id === 1 &&
+          <Project1 project={project} projects={projects} />
         }
 
-        { from.id === 2 &&
-          <Project2 img={from.img} title={from.title} vocation={from.vocation} />
+        { project.id === 2 &&
+          <Project2 project={project} projects={projects} />
         }
 
       </div>
         
       {/* Projects Overview */}
       { projects && 
-        <div className={`container ${styles.projects__wrapper} ${(hideProjects ? styles.projects__wrapper_hide : '')}`}>
+        <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
           <Intro page="projects" />
           <ProjectOverview projects={projects}></ProjectOverview>
         </div>
       }
 
       {/* Grid Icon */}
-      <div className={styles.project__gridview}>
-        {/* Replace 2 with number of projects */}
-        {/* styling={INSERT_OPEN/CLOSE_STATE of button} */}
+      { projects && 
+        <div className={styles.project__gridview}>
 
-          {/* means this icon can have a smooth transition into a close state (x) */}
           <Icon icon="projects" iconIndex={0} 
-            // TODO set project number dynamically - query params? https://v5.reactrouter.com/web/example/query-parameters
-            projectNumber={4}
-            onClick={() => { setHideProjects(!hideProjects); }
-          } />
-      </div>
+            currentProject={project.id}
+            projectsNumber={projects.length}
+            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
+            active={hideProjectsMenu}
+          />
 
-      { error && <div>{ error }</div> }
+        </div>
+      }
+
+      {/* { error && <div>{ error }</div> } */}
       {/* { isPending && <Loading /> } */}
 
     </div>

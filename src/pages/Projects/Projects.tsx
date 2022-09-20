@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectsProps> = () => {
 
   // TODO Can I put Project data here isntead of making a call?
   const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
-
+  
   const urlId = useParams();
 
   return (
