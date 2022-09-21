@@ -1,0 +1,17 @@
+@import '/src/sass/essentials';
+
+.Image {
+    &__one {
+        display: flex;
+        & img {
+            width: 100%;
+        }
+    }
+    &__two {
+        display: flex;
+        justify-content: space-between;
+        & img {
+            width: calc(50% - #{rem(8)});
+        }
+    }
+}

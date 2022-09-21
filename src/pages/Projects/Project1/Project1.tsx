@@ -11,6 +11,7 @@ import 'swiper/scss/pagination';
 import '../../../sass/_layout/_mg_pd.scss';
 
 import ProjectIntro from '../../../components/Projects/Project/ProjectIntro/ProjectIntro';
+import Image from '../../../components/Content/Image/Image';
 import LineText from '../../../components/Content/LineText/LineText';
 import CardText from '../../../components/Content/CardText/CardText';
 import NextProject from '../../../components/Content/NextProject/NextProject';
@@ -62,7 +63,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
           <div className={styles.project__slide}>
             <h3>The Project</h3>
             <LineText spacing={20} font='p' content='Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work.' />
-            <img className='mg-b-16' src="/images/clear_uk.jpeg" alt="" />
+            <Image src="clear_uk.jpeg" alt="" margin="mg-b-16" />
             <p>
               The style is minimal &amp; clean. The work I produce needs to be easily accessible, whilst being pleasant to look at.
               <br/>
@@ -80,7 +81,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
               When designing the logo I had two things in mind. I wanted it to look like it was cutout of the page, and that two "p's" were present - one inside the other.
             </p>
             <LineText spacing={16} font='h5' content='The design utilises the golden ratio.' />
-            <img className='mg-b-16' src="/images/fluid_ads.jpeg" alt="" />
+            <Image src="fluid_ads.jpeg" alt="" margin="mg-b-16" />
           </div>
 
         </SwiperSlide>
@@ -93,7 +94,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
               The style is simple but effective. Less is always more. I opted for a monochrome aesthetic, leaving space for images to bring in the colours that adds the spice!
             </p>
             {/* <CardText spacing={16} content='Playfair Display and Open Sans dance beautifully together on a white canvas.' /> */}
-            <img src="/images/fluid_ads.jpeg" alt="" />
+            <Image src="clear_uk.jpeg" alt="" margin="mg-b-16" />
             <LineText spacing={16} font='h5' content='Playfair Display and Open Sans dance harmoniously together on a white canvas.' />
             {/* <LineText spacing={16} font='h5' content='Make things as simple as possible but no simpler.' /> */}
             {/* styleguide picture */}
@@ -105,7 +106,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
 
           <div className={styles.project__slide}>
             {/* <h3 className='mg-b-20'>Design</h3> */}
-            <img className='mg-b-16' src="/images/fluid_ads.jpeg" alt="" />
+            <Image src="fluid_ads.jpeg" alt="" margin="mg-b-16" />
             <p className='mg-b-16'>
               Creative freedom allowed for a less than conventional grid system. Whilst the traditional rules of spacing are applied, the grid follows the same layout as the panels in the background.
             </p>
@@ -121,7 +122,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
             <p className='mg-r-64 mg-b-16'>I developed the app with React and used Sass for the styling.</p>
             <CardText spacing={16} content="I had never used react before starting this project - however I was familiar with Angular - so it didn't take too long to get things moving." />
             <p className='mg-b-16'>You can view the code over on <a href="https://github.com/InspectorPocket/pierces-pocket">GitHub</a>.</p>
-            <img src="/images/pierces_pocket.jpeg" alt="" />
+            <Image src="pierces_pocket.jpeg" alt="" margin="mg-b-16" />
           </div>
 
         </SwiperSlide>
@@ -129,9 +130,9 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects}) => {
         <SwiperSlide>
 
           <div className={styles.project__slide}>
-            <img src="/images/fluid_ads.jpeg" alt="" />
-            <img src="/images/fluid_ads.jpeg" alt="" />
-            <img src="/images/fluid_ads.jpeg" alt="" />
+            <Image src="pierces_pocket.jpeg" alt="" margin="mg-b-16" />
+            <Image src="pierces_pocket.jpeg" src2="pierces_pocket.jpeg" alt="" margin="mg-b-16" />
+            <Image src="pierces_pocket.jpeg" alt="" margin="mg-b-16" />
           </div>
 
         </SwiperSlide>
