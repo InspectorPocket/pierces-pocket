@@ -11,7 +11,7 @@ import Loading from '../../Loading/Loading';
 import Intro from "../../Intro/Intro";
 import ProjectOverview from "../ProjectOverview/ProjectOverview";
 import Project1 from "../../../pages/Projects/Project1/Project1";
-import Project2 from "../../../pages/Projects/Project2/Project2";
+// import Project2 from "../../../pages/Projects/Project2/Project2";
 
 let _pProps: ProjectsProps;
 
@@ -45,13 +45,15 @@ const Project: React.FC<ProjectProps> = () => {
 
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
-        { project.id === 1 &&
+        {/* Pierce's Pocket */}
+        { project.id === 0 &&
           <Project1 project={project} projects={projects} />
         }
 
-        { project.id === 2 &&
+        {/* LocalThrones */}
+        {/* { project.id === 1 &&
           <Project2 project={project} projects={projects} />
-        }
+        } */}
 
       </div>
         

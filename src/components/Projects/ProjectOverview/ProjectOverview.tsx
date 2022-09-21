@@ -32,13 +32,13 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
   let [activeState, setActiveState] = useState(false);
 
   projects.map(project => {
-    if (project.id === 1 || project.id === 2 || project.id === 3) {
+    if (project.id === 0 || project.id === 1 || project.id === 2) {
       slide1.push(project);
     } 
-    if (project.id === 4 || project.id === 5 || project.id === 6) {
+    if (project.id === 3 || project.id === 4 || project.id === 5) {
       slide2.push(project);
     }
-    if (project.id === 7 || project.id === 8 || project.id === 9) {
+    if (project.id === 6 || project.id === 7 || project.id === 8) {
       slide3.push(project);
     }
   })
@@ -74,7 +74,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
               // TODO Make this a component
               // TODO make active on click
               <Link to={{
-                  pathname: `/project/${project.id}`,
+                  pathname: `/project/${project.title.toLowerCase().split(' ').join('-')}`,
                   state: { project: project, projects: projects }
                 }}
                 key={project.id} className={styles.ProjectOverview__project}

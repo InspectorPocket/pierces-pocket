@@ -16,8 +16,6 @@ const Icon: React.FC<NavItemProps> = ({icon, iconIndex, active, onClick, project
     'icon'
   ];
   
-  console.log(active);
-  
   let outputIcon = '';
 
   function iconSelector(icon:string, index: number) {
@@ -45,30 +43,30 @@ const Icon: React.FC<NavItemProps> = ({icon, iconIndex, active, onClick, project
       { icon == 'projects' &&
         <div className={`${styles.Icon__grid} ${((projectsNumber == 1) ? styles.Icon__grid_big : '')} ${((projectsNumber >= 6) ? styles.Icon__grid_small : '')} ${(active ? styles.Icon__grid_active : '')}`}>
           {/* TODO replace with for loop and pass through class data to 1 span */}
-          <span className={currentProject === 1 ? styles.Icon__grid_active_span : ''}></span>
+          <span className={currentProject === 0 ? styles.Icon__grid_active_span : ''}></span>
           { projectsNumber > 1 &&
-            <span className={(currentProject === 2) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 1) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 2 &&
-            <span className={(currentProject === 3) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 2) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 3 &&
-            <span className={(currentProject === 4) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 3) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 4 &&
-            <span className={(currentProject === 5) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 4) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 5 &&
-            <span className={(currentProject === 6) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 5) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 6 &&
-            <span className={(currentProject === 7) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 6) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 7 &&
-            <span className={(currentProject === 8) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 7) ? styles.Icon__grid_active_span : ''}></span>
           }
           { projectsNumber > 8 &&
-            <span className={(currentProject === 9) ? styles.Icon__grid_active_span : ''}></span>
+            <span className={(currentProject === 8) ? styles.Icon__grid_active_span : ''}></span>
           }
         </div>
       }
