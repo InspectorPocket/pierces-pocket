@@ -71,11 +71,83 @@
     }
 }
 
-// breakpoint fixes size for heading
-@media screen and (min-width: 728px) {
+@media (min-width: 320px) {
     .intro {
-        &__heading {
-            // font-size: 5vw;
-        }
+        // padding: 0 rem(8);
+    }
+}
+@media (min-width: 460px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 620px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 728px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 880px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1024px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1140px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1280px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1336px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1440px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1700px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 1920px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 2100px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 2400px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 2800px) {
+    .intro {
+        
+    }
+}
+@media (min-width: 3400px) {
+    .intro {
+        
     }
 }

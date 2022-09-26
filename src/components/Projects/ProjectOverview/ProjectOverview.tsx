@@ -12,41 +12,40 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 
 import styles from './ProjectOverview.module.scss';
+import Intro from '../../Intro/Intro'
 
 
 let _pProps: ProjectsProps;
 
 interface ProjectsOverviewProps {
   projects: typeof _pProps[];
+  setActiveProject: Function;
 }
 
-const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
+const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveProject }) => {
   
-  const imgUrl: string = '/images/';
-  let slide1: Array<any> = [];
-  let slide2: Array<any> = [];
-  let slide3: Array<any> = [];
+  const loadedProjects: Array<any> = projects;
 
-  let [slideIndex, setSlideIndex] = useState(1);
-  let [totalSlides, setTotalSlides] = useState(0);
+  const imgUrl: string = '/images/';
+  // let slide1: Array<any> = [];
+  // let slide2: Array<any> = [];
+  // let slide3: Array<any> = [];
+
+  // let [slideIndex, setSlideIndex] = useState(1);
+  // let [totalSlides, setTotalSlides] = useState(0);
   let [activeState, setActiveState] = useState(false);
 
-  projects.map(project => {
-    if (project.id === 0 || project.id === 1 || project.id === 2) {
-      slide1.push(project);
-    } 
-    if (project.id === 3 || project.id === 4 || project.id === 5) {
-      slide2.push(project);
-    }
-    if (project.id === 6 || project.id === 7 || project.id === 8) {
-      slide3.push(project);
-    }
-  })
+  // projects.map(project => {
+  //   loadedProjects.push(project);
+  // })
 
 
   return (
     <div className={styles.ProjectOverview}>
-      <Swiper
+
+      <Intro page="projects"></Intro>
+
+      {/* <Swiper
         spaceBetween={16}
         slidesPerView={1}
         pagination={{ type: "progressbar" }}
@@ -63,111 +62,43 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects }) => {
           const swiperEl: any = document.querySelector(".mySwiperProjectOverview");
           setTotalSlides(totalSlides = swiperEl.querySelectorAll(".swiper-slide").length)
         }}
-      >
+      > */}
         {/* TODO Lazy load images? */}
         {/* TOTO Make coontainer local to components so the slider will go off screen for mobile */}
-        { slide1.length != 0 && projects &&
-          <SwiperSlide className={styles.mySwiper__swiper_slide}>
 
-            {slide1.map(project => (
+        { projects && loadedProjects.map(project => (
 
-              // TODO Make this a component
-              // TODO make active on click
-              <Link to={{
-                  pathname: `/project/${project.title.toLowerCase().split(' ').join('-')}`,
-                  state: { project: project, projects: projects }
-                }}
-                key={project.id} className={styles.ProjectOverview__project}
-                onClick={() => {setActiveState(!activeState)
-              }}>
+          <Link to={{
+            pathname: `/projects/${project.title.toLowerCase().split(' ').join('-')}`,
+            state: { project: project, projects: projects }
+          }}
+            key={project.id} className={styles.ProjectOverview__project}
+            onClick={(e) => {
+              setActiveState(!activeState);
+              // pass active project up to projects component
+              setActiveProject(project)
+          }}>
 
-                <div className={styles.ProjectOverview__project__img}>
-                  <img src={ (imgUrl + project.img) } />
-                </div>
+          <div className={styles.ProjectOverview__project__img}>
+            <img src={ (imgUrl + project.img) } />
+          </div>
 
-                <div className={styles.ProjectOverview__project__text}>
-                  <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
-                  <h6 className={styles.ProjectOverview__project__text__vocation}>{ project.vocation }</h6>
-                </div>
+          <div className={styles.ProjectOverview__project__text}>
+            <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
+            <h6 className={styles.ProjectOverview__project__text__vocation}>{ project.vocation }</h6>
+          </div>
 
-              </Link>
+          </Link>
 
-            ))}
-
-          </SwiperSlide>
-        }
-        { slide2.length != 0 &&
-          <SwiperSlide className={styles.mySwiper__swiper_slide}>
-            
-            {slide2.map(project => (
-
-              <Link to={{
-                pathname: `/project/${project.id}`,
-                state: { project: project, projects: projects }
-              }} key={project.id} className={styles.ProjectOverview__project}>
-
-                <div className={styles.ProjectOverview__project__img}>
-                  <img src={ (imgUrl + project.img) } />
-                </div>
-
-                <div className={styles.ProjectOverview__project__text}>
-                  <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
-                  <h6 className={styles.ProjectOverview__project__text__vocation}>{ project.vocation }</h6>
-                </div>
-
-              </Link>
-
-            ))}
-
-          </SwiperSlide>
-        }
-        { slide3.length != 0 &&
-          <SwiperSlide className={styles.mySwiper__swiper_slide}>
-            
-            {slide3.map(project => (
-
-              <Link to={{
-                pathname: `/project/${project.id}`,
-                state: { project: project, projects: projects }
-              }} key={project.id} className={styles.ProjectOverview__project}>
-
-                <div className={styles.ProjectOverview__project__img}>
-                  <img src={ (imgUrl + project.img) } />
-                </div>
-
-                <div className={styles.ProjectOverview__project__text}>
-                  <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
-                  <h6 className={styles.ProjectOverview__project__text__vocation}>{ project.vocation }</h6>
-                </div>
-
-              </Link>
-
-            ))}
-
-            <Link to={{
-                  pathname: `/extras`
-                }} className={styles.ProjectOverview__project}>
-
-                {/* <div className={styles.ProjectOverview__project__img}>
-                  <img src={ (imgUrl + project.img) } />
-                </div> */}
-
-                <div className={styles.ProjectOverview__project__text}>
-                  <h4 className={styles.ProjectOverview__project__text__heading}>Extras</h4>
-                  <h6 className={styles.ProjectOverview__project__text__vocation}>See more goodies here</h6>
-                </div>
-
-              </Link>
-
-          </SwiperSlide>
-        }
-        { totalSlides > 1 &&
+        ))}
+        
+        {/* { totalSlides > 1 &&
           <div className='swiper-pagination swiper-pagination-numbers'>
             <h6 className='swiper-pagination-number swiper-pagination-number-count'>{slideIndex}</h6>
             <h6 className='swiper-pagination-number swiper-pagination-number-total'>{totalSlides}</h6>
           </div>
-        }
-      </Swiper>
+        } */}
+      {/* </Swiper> */}
     </div>
   );
   

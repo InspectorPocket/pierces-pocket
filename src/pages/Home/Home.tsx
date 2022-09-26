@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Home.module.scss';
-import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
-import useFetch from "../../hooks/useFetch";
+import React from 'react';
 import ProjectsProps from "../../props/projectsProps";
 import Intro from '../../components/Intro/Intro';
 
@@ -12,12 +8,6 @@ import LineText from "../../components/Content/LineText/LineText";
 import Email from "../../components/Content/Email/Email";
 
 const Home: React.FC<ProjectsProps> = () => {
-
-  {/* <div className={columns.col}></div>
-    <div className={columns.col}></div>
-    <div className={columns.col}></div>
-    <div className={columns.col}></div>
-    <div className={columns.col}></div> */}
 
   return (
     <div className={`${intro.intro}`}>
@@ -31,6 +21,7 @@ const Home: React.FC<ProjectsProps> = () => {
       </div>
       <Circles />
     </div>
+    
   );
 }
 

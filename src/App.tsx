@@ -7,7 +7,6 @@ import Projects from './pages/Projects/Projects';
 import './styles.scss';
 import Panels from './components/Panels/Panels';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Project from "./components/Projects/Project/Project";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
@@ -25,9 +24,6 @@ function App() {
             </Route>
             <Route path="/projects">
               <Projects />
-            </Route>
-            <Route path="/project/:id">
-              <Project />
             </Route>
             <Route path="/extras">
               <Extras />
