@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Project1.module.scss';
+import styles from './Project2.module.scss';
 import ProjectsProps from "../../../props/projectsProps";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +18,6 @@ import NextProject from '../../../components/Content/NextProject/NextProject';
 
 let _pProps: ProjectsProps;
 
-// TODO Shared props for all projects
 interface ProjectProps {
   projects?: typeof _pProps[];
   project?: typeof _pProps;

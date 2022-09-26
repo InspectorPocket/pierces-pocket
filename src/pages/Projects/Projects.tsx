@@ -12,6 +12,7 @@ import Loading from '../../components/Loading/Loading';
 import Icon from '../../components/Icon/Icon';
 
 import Project1 from '../Projects/Project1/Project1';
+import Project2 from '../Projects/Project2/Project2';
 
 let _pProps: ProjectsProps;
 
@@ -40,6 +41,7 @@ const Projects: React.FC<ProjectsProps> = () => {
 
   let [currentProject, setCurrentProject] = useState();
   let [currentProjectId, setCurrentProjectId] = useState();
+  let [nextProjectId, setNextProjectId] = useState();
   
   const urlId = useParams();
 
@@ -48,6 +50,29 @@ const Projects: React.FC<ProjectsProps> = () => {
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id);
     setHideProjectsMenu(!hideProjectsMenu);
   }
+  
+  const setNextProject = (activeProject: any) => {
+    setCurrentProject(currentProject => currentProject = projects![activeProject.id + 1]);
+    setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
+    // scroll to top of page
+  }
+
+  // let projectsToShow: any;
+  // if (projects) {
+  //   projectsToShow = loadedProjects.map(project => {
+  //     switch (project.id) {
+  //       case 0:
+  //         return <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />;
+  //       case 1:
+  //         return <Project2 project={currentProject} projects={projects} setNextProject={setNextProject} />;
+      
+  //       default:
+  //         break;
+  //     }
+  //     console.log(project.id);
+      
+  //   });
+  // }
 
   return (
     <div className={styles.projects}>
@@ -57,19 +82,19 @@ const Projects: React.FC<ProjectsProps> = () => {
 
         {/* Pierce's Pocket */}
         { projects && currentProject && currentProjectId === 0 &&
-          <Project1 project={currentProject} projects={projects} />
+          <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />
         }
 
         {/* LocalThrones */}
-        {/* { project.id === 1 &&
-          <Project2 project={project} projects={projects} />
-        } */}
+        { projects && currentProject && currentProjectId === 1 &&
+          <Project2 project={currentProject} projects={projects} setNextProject={setNextProject} />
+        }
 
       </div>
 
       {/* Projects Overview */}
       { projects && 
-        <div className={`${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
+        <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
           <ProjectOverview projects={projects} setActiveProject={setActiveProject} />
         </div>
       }

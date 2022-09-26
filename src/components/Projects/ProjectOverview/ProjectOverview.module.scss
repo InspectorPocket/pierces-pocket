@@ -1,7 +1,12 @@
 @import '/src/sass/essentials';
 
 .ProjectOverview {
-    // @extend %f-c-col;
+    &__wrapper {
+        position: relative;
+        height: 100%;
+    }
+    position: absolute;
+    height: 100%;
     &__project {
         display: flex;
         width: 100%;
