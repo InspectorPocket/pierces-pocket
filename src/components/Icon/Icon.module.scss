@@ -121,6 +121,11 @@
             }
         }
     }
+    &_no_pad {
+        min-width: auto;
+        min-height: auto;
+        padding: 0;
+    }
     &:hover & {
         &__menu {
             & > span {

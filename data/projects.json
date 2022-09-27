@@ -15,7 +15,7 @@
       "title": "LocalThrones",
       "vocation": "UX Design",
       "img": "main.jpeg",
-      "colour": "#F7E16A",
+      "colour": "#F9C13F",
       "ux": true,
       "dev": false,
       "brand": true
@@ -25,7 +25,7 @@
       "title": "Fluid Ads",
       "vocation": "Graphic Design & Front End Development",
       "img": "main.jpeg",
-      "colour": "#29D8E6",
+      "colour": "#1DAFB4",
       "ux": true,
       "dev": true,
       "brand": false

@@ -8,6 +8,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    padding: 0 5.5555vw;
     &__project {
         display: flex;
         width: 100%;
@@ -71,7 +72,7 @@
                         width: 100%;
                         position: absolute;
                         transform: translateX(-100%);
-                        transition: .4s ease-in-out;
+                        transition: .5s ease-in-out;
                     }
                 }
                 & > h6 {
@@ -83,9 +84,9 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            height: 70px;
             & > img, & > svg {
-                height: 100%;
+                max-width: 40px;
+                max-height: 70px;
             }
             &__outline, &__full {
                 position: absolute;
@@ -110,7 +111,7 @@
                     &__bar {
                         & > span {
                             transform: translateX(0);
-                            transition: .2s ease-in-out;
+                            transition: .3s ease-in-out;
                         }
                     }
                 }

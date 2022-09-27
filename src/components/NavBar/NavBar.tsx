@@ -17,7 +17,7 @@ const NavBar: FC<NavBarProps> = () => {
       <Logo />
 
       <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
-        <Icon icon="menu" iconIndex={0} active={(menuFocus)} onClick={() => {
+        <Icon icon="menu" active={(menuFocus)} onClick={() => {
           setOpen(!navOpen);
           setMenuFocus(!menuFocus);
         }} />

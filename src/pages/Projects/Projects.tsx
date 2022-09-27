@@ -103,7 +103,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       { projects &&
         <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
 
-          <Icon icon="projects" iconIndex={0} 
+          <Icon icon="projects" 
             currentProject={currentProjectId}
             projectsNumber={loadedProjects.length}
             onClick={() => setHideProjectsMenu(!hideProjectsMenu)}

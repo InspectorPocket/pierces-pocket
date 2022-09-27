@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-  let backgroundColour: string = colours.darker;
+  let backgroundColour: string = colours.grey1;
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>

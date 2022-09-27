@@ -9,6 +9,7 @@
     transition: .2s;
     margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
     margin-bottom: rem(20);
+    padding: 0 5.5555vw;
     &__heading {
         display: flex;
         // justify-content: center;

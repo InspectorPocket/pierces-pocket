@@ -3,36 +3,34 @@ import colours from '../../sass/_foundation/_colours.module.scss';
 
 interface NavItemProps {
   icon: string;
-  iconIndex: number;
+  noPadding?: boolean;
   onClick?: any;
   active?: boolean;
   projectsNumber?: any;
   currentProject?: number;
 }
 
-const Icon: React.FC<NavItemProps> = ({icon, iconIndex, active, onClick, projectsNumber, currentProject}) => {
-  // object array? assign id with value. pass in value as icon and assign id
-  const availableIcons = [
-    'icon'
-  ];
+const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, projectsNumber, currentProject}) => {
+
+  const availableIcons: any = {
+    react: 'react',
+    xd: 'xd',
+    ai: 'ai'
+  };
   
   let outputIcon = '';
 
-  function iconSelector(icon:string, index: number) {
-    if (icon != 'menu') {
-      outputIcon = availableIcons[0];
-    } else {
-      outputIcon = 'menu';
+  function iconSelector(icon:string) {
+    if (icon != 'menu' && icon != 'projects') {
+      outputIcon = availableIcons[icon];
     }
   }
-
-  let iconColour: string = colours.dark;
   
-  iconSelector(icon, iconIndex);
+  iconSelector(icon);
 
   return (
-    <a className={styles.Icon} onClick={onClick}>
-      { icon != 'menu' && icon != 'projects' && <img src={outputIcon} alt="" /> }
+    <a className={`${styles.Icon} ${noPadding ? styles.Icon_no_pad : ''}`} onClick={onClick}>
+      { icon != 'menu' && icon != 'projects' && <img src={'/images/icons/' + outputIcon + '.svg'} alt="" /> }
       { icon == 'menu' &&
         <div className={`${styles.Icon__menu} ${(active ? styles.Icon__menu_focus : '')}`}>
           <span></span>
@@ -42,7 +40,7 @@ const Icon: React.FC<NavItemProps> = ({icon, iconIndex, active, onClick, project
       }
       { icon == 'projects' &&
         <div className={`${styles.Icon__grid} ${((projectsNumber == 1) ? styles.Icon__grid_big : '')} ${((projectsNumber >= 6) ? styles.Icon__grid_small : '')} ${(active ? styles.Icon__grid_active : '')}`}>
-          {/* TODO replace with for loop and pass through class data to 1 span */}
+          {/* TODO replace with for loop OR switch statement, and pass through class data to 1 span */}
           <span className={currentProject === 0 ? styles.Icon__grid_active_span : ''}></span>
           { projectsNumber > 1 &&
             <span className={(currentProject === 1) ? styles.Icon__grid_active_span : ''}></span>

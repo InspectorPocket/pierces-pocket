@@ -8,4 +8,7 @@
 @import '/src/sass/_layout/mg_pd';
 // @import '/src/sass/_abstracts/helpers';
 
-.app { display: flex; }
+.app {
+    display: flex;
+    overflow-x: hidden;
+}

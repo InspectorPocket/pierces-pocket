@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Project1.module.scss';
+import projectStyles from '../Projects.module.scss'
 import ProjectsProps from "../../../props/projectsProps";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
 
 import '../../../sass/_layout/_mg_pd.scss';
 
@@ -35,7 +30,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
   }, []);
 
   return (
-    <div className={styles.Project1}>
+    <div className={projectStyles.project}>
       
       {/* TODO If swiper slide is 1 -> set logo to shrink -> else make full */}
       {/* DO this by passing updated slideIndex up to Logo */}
@@ -58,7 +53,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
         }}
       > */}
 
-          <ProjectIntro img={project!.img} title={project!.title} vocation={project!.vocation} />
+        <ProjectIntro img={project!.img} title={project!.title} vocation={project!.vocation} />
 
 
         {/* Main Content Here */}
