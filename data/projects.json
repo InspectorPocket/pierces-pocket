@@ -4,49 +4,81 @@
       "id": 0,
       "title": "Pierce's Pocket",
       "vocation": "Brand & UX Design, Front End Development",
-      "img": "pierces_pocket.jpeg"
+      "img": "main.jpeg",
+      "colour": "#35485C",
+      "ux": true,
+      "dev": true,
+      "brand": true
     },
     {
       "id": 1,
       "title": "LocalThrones",
       "vocation": "UX Design",
-      "img": "localthrones.jpeg"
+      "img": "main.jpeg",
+      "colour": "#F7E16A",
+      "ux": true,
+      "dev": false,
+      "brand": true
     },
     {
       "id": 2,
       "title": "Fluid Ads",
       "vocation": "Graphic Design & Front End Development",
-      "img": "fluid_ads.jpeg"
+      "img": "main.jpeg",
+      "colour": "#29D8E6",
+      "ux": true,
+      "dev": true,
+      "brand": false
     },
     {
       "id": 3,
       "title": "Wild.Self",
       "vocation": "Brand & UX Design, Front End Development",
-      "img": "wild_self.jpeg"
+      "img": "main.jpeg",
+      "colour": "#E62929",
+      "ux": false,
+      "dev": true,
+      "brand": true
     },
     {
       "id": 4,
       "title": "Clear UK",
       "vocation": "UX Design",
-      "img": "clear_uk.jpeg"
+      "img": "main.jpeg",
+      "colour": "#7DD876",
+      "ux": true,
+      "dev": true,
+      "brand": true
     },
     {
       "id": 5,
       "title": "Codedump",
       "vocation": "Brand & UX Design",
-      "img": "codedump.jpeg"
+      "img": "main.jpeg",
+      "colour": "#D876BD",
+      "ux": true,
+      "dev": true,
+      "brand": true
     },
     {
       "id": 6,
       "title": "Rozafa",
       "vocation": "UX Design",
-      "img": "rozafa.jpeg"
+      "img": "main.jpeg",
+      "colour": "#76D4D8",
+      "ux": true,
+      "dev": true,
+      "brand": true
     },
     {
       "id": 7,
       "title": "Brand Design",
       "vocation": "A collection of branding work",
-      "img": "brand_design.jpeg"
+      "img": "main.jpeg",
+      "colour": "#9646D1",
+      "ux": true,
+      "dev": true,
+      "brand": true
     }
   ]
 }

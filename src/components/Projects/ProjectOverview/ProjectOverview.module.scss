@@ -7,12 +7,15 @@
     }
     position: absolute;
     height: 100%;
+    width: 100%;
     &__project {
         display: flex;
         width: 100%;
         position: relative;
         margin: rem(16) 0;
-        background-color: $grey-100;
+        background-color: $white;
+        border: 1px solid $grey-100;
+        transition: .2s ease-in-out;
         &:nth-of-type(1) {
             margin-top: rem(12);
         }
@@ -21,34 +24,107 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 126px;
-            min-width: 126px;
-            max-width: 126px;
+            position: relative;
+            height: 122px;
+            min-width: 38.197%;
+            max-width: 38.197%;
             // height: 12vh;
             // min-width: 50%;
             overflow: hidden;
-            &:hover {
-                & > img {
-                    // transform: translateY(-12px);
-                    // transition: .3s ease-in-out;
-                }
-            }
             & > img {
                 width: auto;
                 height: 100%;
                 // transition: .4s ease-in-out;
             }
+            &::after {
+                content: '';
+                height: 158px;
+                width: 158px;
+                position: absolute;
+                right: 0;
+                bottom: -12px;
+                border-radius: 0 50% 50% 0;
+                box-shadow: 0 0 0 40px $white;
+            }
         }
         &__text {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 12px;
+            justify-content: flex-end;
+            padding: 12px 16px;
             &__heading {
                 margin-bottom: rem(4);
             }
             &__vocation {
-    
+                display: flex;
+                align-items: center;
+                &__bar {
+                    display: flex;
+                    position: relative;
+                    height: 1px;
+                    width: 24px;
+                    background-color: rgba($color: $dark, $alpha: .2);
+                    margin-right: 12px;
+                    overflow: hidden;
+                    & > span {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        transform: translateX(-100%);
+                        transition: .4s ease-in-out;
+                    }
+                }
+                & > h6 {
+
+                }
+            }
+        }
+        &__logo {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            height: 70px;
+            & > img, & > svg {
+                height: 100%;
+            }
+            &__outline, &__full {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: .5s ease-in-out;
+            }
+            &__outline {
+                opacity: 1;
+            }
+            &__full {
+                opacity: 0;
+            }
+        }
+        &:hover {
+            border: 1px solid $grey-200;
+            transition: .2s ease-in-out;
+        }
+        &:hover & {
+            &__text {
+                &__vocation {
+                    &__bar {
+                        & > span {
+                            transform: translateX(0);
+                            transition: .2s ease-in-out;
+                        }
+                    }
+                }
+            }
+            &__logo {
+                &__outline, &__full {
+                    transition: .3s ease-in-out;
+                }
+                &__outline {
+                    opacity: 0;
+                }
+                &__full {
+                    opacity: 1;
+                }
             }
         }
         &_selected {

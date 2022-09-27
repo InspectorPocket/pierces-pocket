@@ -54,7 +54,6 @@ const Projects: React.FC<ProjectsProps> = () => {
   const setNextProject = (activeProject: any) => {
     setCurrentProject(currentProject => currentProject = projects![activeProject.id + 1]);
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
-    // scroll to top of page
   }
 
   // let projectsToShow: any;
@@ -80,6 +79,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       {/* Current Project */}
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
+        {/* TODO instead of using id, set project load using the url name/id? */}
         {/* Pierce's Pocket */}
         { projects && currentProject && currentProjectId === 0 &&
           <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />
