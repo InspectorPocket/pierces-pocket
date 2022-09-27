@@ -24,6 +24,20 @@ const NavBar: FC<NavBarProps> = () => {
         {/* {navOpen && <Navigation />} */}
         <Navigation navState={(navOpen)} />
       </div>
+
+      {/* Grid Icon */}
+      {/* { projects &&
+        <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
+
+          <Icon icon="projects" 
+            currentProject={currentProjectId}
+            projectsNumber={loadedProjects.length}
+            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
+            active={hideProjectsMenu}
+          />
+
+        </div>
+      } */}
     </div>
   )
 

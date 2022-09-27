@@ -13,7 +13,7 @@ const NavItem: React.FC<NavItemProps> = ({title, destination}) => {
   // if path === destination -> set active
   let [active, setActive] = useState(window.location.pathname);
 
-  console.log(active);
+  // console.log(active);
   
 
   return (

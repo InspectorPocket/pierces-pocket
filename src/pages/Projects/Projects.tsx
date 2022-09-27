@@ -80,6 +80,8 @@ const Projects: React.FC<ProjectsProps> = () => {
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
         {/* TODO instead of using id, set project load using the url name/id? */}
+        {/* OR use a router (like app.ts) and switch through routes depending on url
+            this approach would hopefully allow for the back button and refresh to work as intended */}
         {/* Pierce's Pocket */}
         { projects && currentProject && currentProjectId === 0 &&
           <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />

@@ -15,24 +15,22 @@ function App() {
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
       <Router>
-        <Panels/>
+        <Panels />
         <NavBar />
-        <div className='container'>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/extras">
-              <Extras />
-            </Route>
-            {/* <Route path="*">
-              <NotFound />
-            </Route> */}
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/extras">
+            <Extras />
+          </Route>
+          {/* <Route path="*">
+            <NotFound />
+          </Route> */}
+        </Switch>
       </Router>
     </div>
   );

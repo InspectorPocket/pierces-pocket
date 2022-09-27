@@ -1,13 +1,22 @@
 @import "/src/sass/_foundation/colours.module";
 
 .panel {
-    background: $white;
     height: 100%;
     width: 100%;
-    // border: 1px solid $grey-100;
-    border-left: 0.5px solid $grey-100;
-    border-right: 0.5px solid $grey-100;
-    // position: relative;
-    // padding: 16px;
-    // pointer-events: none;
+    position: relative;
+    &__top, &__bot {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-left: 0.5px solid $grey-100;
+        border-right: 0.5px solid $grey-100;
+        background: rgba($color: $white, $alpha: 1);
+        transition: .4s ease-in-out;
+    }
+    &__top {
+        top: -100%;
+    }
+    &__bot {
+        bottom: -100%;
+    }
 }

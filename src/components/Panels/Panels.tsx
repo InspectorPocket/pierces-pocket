@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Panel from './Panel/Panel';
 import styles from './Panels.module.scss';
 import MediaQuery from 'react-responsive';
+import {Route, Link, useLocation} from 'react-router-dom';
+
+interface PanelsProps {
+
+}
 
 const Panels: React.FC = () => {
   // const isDesktopOrLaptop = useMediaQuery({
@@ -11,14 +16,45 @@ const Panels: React.FC = () => {
   // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+
+  let [topPanelHeight, setTopPanelHeight] = useState('');
+  let [botPanelHeight, setBotPanelHeight] = useState('');
+  const topPanelSizes = [
+    '50%',
+    '25%',
+    'calc(48px + 4.4444vw)',
+    '40px',
+    '16px'
+  ]
+
+  // const setTopPanel = (panel: number) => {
+  //   if (size) {
+  //     return;
+  //   }
+  //   setTopPanelHeight('test')
+  //   setBotPanelHeight('test')
+  // };
+
+  const location = useLocation();
+
+  // if (location.pathname === '/') {
+  //   setTopPanelHeight('calc(48px + 4.4444vw)');
+  //   setTopPanelHeight('calc(-48px - 4.4444vw)');
+  //   console.log('home');
+  // } else if (location.pathname === '/projects') {
+  //   console.log('projects');
+  // } else {
+  //   console.log('project');
+  // }
+
   return (
     <div className={styles.panels}>
-      <Panel/>
-      <Panel/>
-      <Panel/>
+      <Panel defaultValueTop='64px' defaultValueBot='64px' topSize={topPanelHeight} botSize={botPanelHeight}/>
+      <Panel defaultValueTop='39px' defaultValueBot='39px' />
+      <Panel defaultValueTop='16px'  defaultValueBot='16px' />
       {/* 5 */}
       <MediaQuery minWidth={320}>
-        <Panel/>
+        <Panel defaultValueTop='39px' defaultValueBot='0'/>
       </MediaQuery>
       {/* 6 */}
       <MediaQuery minWidth={460}>
@@ -81,10 +117,10 @@ const Panels: React.FC = () => {
       </MediaQuery>
       {/* 23/24 */}
       <MediaQuery minWidth={3400}>
-        <Panel/>
-        <Panel/>
+        <Panel />
+        <Panel />
       </MediaQuery>
-      <Panel/>
+      <Panel defaultValueTop='64px' defaultValueBot='0'/>
     </div>
   )
 };
