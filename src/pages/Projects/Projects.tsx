@@ -16,6 +16,10 @@ import Project2 from '../Projects/Project2/Project2';
 
 let _pProps: ProjectsProps;
 
+interface ProjectsPropsB {
+  hideProjectsMenuOnNav: Function;
+}
+
 interface LocationState {
   projects?: typeof _pProps[];
   project: {
@@ -27,7 +31,7 @@ interface LocationState {
   active?: boolean;
 }
 
-const Projects: React.FC<ProjectsProps> = () => {
+const Projects: React.FC<ProjectsProps & ProjectsPropsB> = ({hideProjectsMenuOnNav}) => {
   // const location = useLocation<LocationState>();
   // const project = location.state.project || { from: { pathname: "/projects" } };
 
@@ -55,6 +59,8 @@ const Projects: React.FC<ProjectsProps> = () => {
     setCurrentProject(currentProject => currentProject = projects![activeProject.id + 1]);
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
   }
+
+  hideProjectsMenuOnNav(!hideProjectsMenu);
 
   // let projectsToShow: any;
   // if (projects) {

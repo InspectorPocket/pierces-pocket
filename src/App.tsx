@@ -11,6 +11,10 @@ import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   let backgroundColour: string = colours.grey1;
+
+  const hideProjectsMenuOnNav = (data: any) => {
+    console.log(data);
+  }
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
@@ -22,7 +26,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/projects">
-            <Projects />
+            <Projects hideProjectsMenuOnNav={hideProjectsMenuOnNav} />
           </Route>
           <Route path="/extras">
             <Extras />
@@ -31,6 +35,18 @@ function App() {
             <NotFound />
           </Route> */}
         </Switch>
+        
+        {/* <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
+
+          <Icon icon="projects" 
+            currentProject={currentProjectId}
+            projectsNumber={loadedProjects.length}
+            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
+            active={hideProjectsMenu}
+          />
+
+        </div> */}
+
       </Router>
     </div>
   );

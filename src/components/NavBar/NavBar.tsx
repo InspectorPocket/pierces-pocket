@@ -5,9 +5,14 @@ import Icon from "../Icon/Icon";
 import Navigation from "./Navigation/Navigation";
 import navBG from '../NavBar/Navigation/Navigation.module.scss';
 
-interface NavBarProps {}
+import ProjectsProps from '../../props/projectsProps';
+import { RouteComponentProps, useLocation } from "react-router-dom";
 
-const NavBar: FC<NavBarProps> = () => {
+interface NavBarProps {
+  // setHideProjectsMenu: Function;
+}
+
+const NavBar: FC<NavBarProps> = ({}) => {
 
   const [navOpen, setOpen] = useState(false);
   const [menuFocus, setMenuFocus] = useState(false);
@@ -26,8 +31,8 @@ const NavBar: FC<NavBarProps> = () => {
       </div>
 
       {/* Grid Icon */}
-      {/* { projects &&
-        <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
+      {/* { projects && */}
+        {/* <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
 
           <Icon icon="projects" 
             currentProject={currentProjectId}
@@ -36,8 +41,8 @@ const NavBar: FC<NavBarProps> = () => {
             active={hideProjectsMenu}
           />
 
-        </div>
-      } */}
+        </div> */}
+      {/* } */}
     </div>
   )
 
