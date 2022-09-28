@@ -6,7 +6,7 @@ interface PanelProps {
   topSize?: string;
   botSize?: string;
 
-  panelState?: string;
+  panelState: string;
   defaultValueTop?: string;
   defaultValueBot?: string;
 }
@@ -18,57 +18,60 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
   let [topPanelSize, setTopPanelSize] = useState('50%');
   let [botPanelSize, setBotPanelSize] = useState('-50%');
 
-  const location = useLocation();
+  // let grrr: string = panelState;
 
-  // if (location.pathname === '/') {
-  //   console.log('closing...');
-  // } else if (location.pathname === '/projects') {
-  //   console.log('push top panels to 25%');
-  //   console.log('push bot panels to 0');
-  // } else {
-  //   console.log('opening panels to set values');
-  // }
+  const location = useLocation();
   
   const setTopSize = (position?: string) => {
     if (location.pathname === '/') {
-      console.log('home');
+      // console.log('home');
       if (position === 'top') return {transform: `translateY(50%)`}
       if (position === 'bot') return {transform: `translateY(-50%)`}
     }
-    if (location.pathname === '/projects') {
-      console.log('projects');
+    if (location.pathname === '/projects') { // || project panel is shown
+      // console.log('projects');
       // TODO set transition on a timeout then set below values
       if (position === 'top') return {transform: `translateY(25%)`}
       if (position === 'bot') return {transform: `translateY(0)`}
     }
     if (location.pathname === '/extras') {
-      console.log('extras');
+      // console.log('extras');
     } else {
-      console.log('project');
+      // console.log('project');
       // TODO set transition on a timeout then set below values
       if (position === 'top') return {transform: `translateY(${defaultValueTop})`}
       if (position === 'bot') return {transform: `translateY(-${defaultValueBot})`}
     }
-    // setTopPanelSize(size.topSize)
-    // setBotPanelSize(size.botSize)
   };
+
+  const setTransition = (position?: string) => {
+    if (position === 'top') return styles.panel__top__transition;
+    if (position === 'bot') return styles.panel__bot__transition;
+  }
   
   return (
     <div className={styles.panel} >
-      {/* <span className={styles.panel__top} 
-        style={
-          location.pathname === '/' ? {transform: `translateY(50%)`} : {transform: `translateY(50%)`} ||
-          location.pathname === '/projects' ? {transform: `translateY(25%)`} : {transform: `translateY(25%)`} ||
-          location.pathname === "/projects/pierce's-pocket" ? {transform: `translateY(${defaultValue})`} : {transform: `translateY(${defaultValue})`}
-        }
-      >       */}
-      <span className={styles.panel__top} style={setTopSize('top')}></span>
-      <span className={styles.panel__bot} style={setTopSize('bot')}></span>
-      {/* <span className={styles.panel__bot} 
-        style={
-          location.pathname === '/' ? {transform: `translateY(-50%)`} : {transform: `translateY(-50%)`} ||
-          location.pathname === '/projects' ? {transform: `translateY(-${defaultValue})`} : {transform: `translateY(-${defaultValue})`}
-        }></span> */}
+
+      { panelState && panelState === 'close' &&
+        <div>
+          <span className={styles.panel__top} style={{transform: `translateY(50%)`}}></span>
+          <span className={styles.panel__bot} style={{transform: `translateY(-50%)`}}></span>
+        </div>
+      }
+      {/* TODO make these not a class so the animation can dynamically be intersected */}
+      { panelState && panelState === 'fixed' &&
+        <div>
+          <span className={styles.panel__top} style={setTopSize('top')}></span>
+          <span className={styles.panel__bot} style={setTopSize('bot')}></span>
+        </div>
+      }
+      { panelState && panelState === 'transition' &&
+        <div>
+          <span className={`${styles.panel__top} ${setTransition('top')}`}></span>
+          <span className={`${styles.panel__bot} ${setTransition('bot')}`}></span>
+        </div>
+      }
+
     </div>
   )
 };

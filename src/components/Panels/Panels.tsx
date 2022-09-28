@@ -5,10 +5,10 @@ import MediaQuery from 'react-responsive';
 import {Route, Link, useLocation} from 'react-router-dom';
 
 interface PanelsProps {
-
+  state: string;
 }
 
-const Panels: React.FC = () => {
+const Panels: React.FC<PanelsProps> = ({state}) => {
   // const isDesktopOrLaptop = useMediaQuery({
   //   query: '(min-width: 1224px)'
   // })
@@ -16,6 +16,9 @@ const Panels: React.FC = () => {
   // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+
+  console.log(state);
+  
 
   let [topPanelHeight, setTopPanelHeight] = useState('');
   let [botPanelHeight, setBotPanelHeight] = useState('');
@@ -49,78 +52,78 @@ const Panels: React.FC = () => {
 
   return (
     <div className={styles.panels}>
-      <Panel defaultValueTop='64px' defaultValueBot='64px' topSize={topPanelHeight} botSize={botPanelHeight}/>
-      <Panel defaultValueTop='39px' defaultValueBot='39px' />
-      <Panel defaultValueTop='16px'  defaultValueBot='16px' />
+      <Panel panelState={state} defaultValueTop='64px' defaultValueBot='64px'/>
+      <Panel panelState={state} defaultValueTop='39px' defaultValueBot='39px' />
+      <Panel panelState={state} defaultValueTop='16px'  defaultValueBot='16px' />
       {/* 5 */}
       <MediaQuery minWidth={320}>
-        <Panel defaultValueTop='39px' defaultValueBot='0'/>
+        <Panel panelState={state} defaultValueTop='39px' defaultValueBot='0'/>
       </MediaQuery>
       {/* 6 */}
       <MediaQuery minWidth={460}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 7 */}
       <MediaQuery minWidth={620}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 8 */}
       <MediaQuery minWidth={728}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 9 */}
       <MediaQuery minWidth={880}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 10 */}
       <MediaQuery minWidth={1024}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 11 */}
       <MediaQuery minWidth={1140}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 12 */}
       <MediaQuery minWidth={1280}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 13 */}
       <MediaQuery minWidth={1336}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 14 */}
       <MediaQuery minWidth={1440}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 15 */}
       <MediaQuery minWidth={1700}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 16 */}
       <MediaQuery minWidth={1920}>
-        <Panel/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 17/18 */}
       <MediaQuery minWidth={2100}>
-        <Panel/>
-        <Panel/>
+        <Panel panelState={state}/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 19/20 */}
       <MediaQuery minWidth={2400}>
-        <Panel/>
-        <Panel/>
+        <Panel panelState={state}/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 21/22 */}
       <MediaQuery minWidth={2800}>
-        <Panel/>
-        <Panel/>
+        <Panel panelState={state}/>
+        <Panel panelState={state}/>
       </MediaQuery>
       {/* 23/24 */}
       <MediaQuery minWidth={3400}>
-        <Panel />
-        <Panel />
+        <Panel panelState={state} />
+        <Panel panelState={state} />
       </MediaQuery>
-      <Panel defaultValueTop='64px' defaultValueBot='0'/>
+      <Panel panelState={state} defaultValueTop='64px' defaultValueBot='0'/>
     </div>
   )
 };

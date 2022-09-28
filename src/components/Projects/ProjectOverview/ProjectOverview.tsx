@@ -42,7 +42,6 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveP
 
   return (
     <div className={styles.ProjectOverview__wrapper}>
-      <Intro page="projects"></Intro>
       <div className={styles.ProjectOverview}>
 
         {/* TODO Lazy load images? */}

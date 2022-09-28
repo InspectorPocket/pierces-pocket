@@ -1,5 +1,22 @@
 @import "/src/sass/_foundation/colours.module";
 
+@keyframes transitionTop {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(80%);
+    }
+}
+@keyframes transitionBot {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-80%);
+    }
+}
+
 .panel {
     height: 100%;
     width: 100%;
@@ -15,8 +32,14 @@
     }
     &__top {
         top: -100%;
+        &__transition {
+            animation: transitionTop 2.8s cubic-bezier(.41,.03,.57,.81);
+        }
     }
     &__bot {
         bottom: -100%;
+        &__transition {
+            animation: transitionBot 2.8s cubic-bezier(.41,.03,.57,.81);
+        }
     }
 }

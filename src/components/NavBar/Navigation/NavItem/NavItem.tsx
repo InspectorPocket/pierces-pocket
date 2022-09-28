@@ -6,9 +6,11 @@ import { useParams } from "react-router";
 interface NavItemProps {
   title: string;
   destination: string;
+  // onClick: any;
+  setTransition: Function;
 }
 
-const NavItem: React.FC<NavItemProps> = ({title, destination}) => {
+const NavItem: React.FC<NavItemProps> = ({title, destination, setTransition}) => {
 
   // if path === destination -> set active
   let [active, setActive] = useState(window.location.pathname);
@@ -18,7 +20,12 @@ const NavItem: React.FC<NavItemProps> = ({title, destination}) => {
 
   return (
     <li className={`${styles.NavItem} ${active ? styles.NavItem_selected : ''}`}>
-      <Link to={`/${destination}`}>{title}</Link>
+      <Link to={`/${destination}`} onClick={() => {
+        setTransition(destination != '' ? 'transition' : 'close');
+        // setState(!state);
+      }}>
+        {title}
+      </Link>
     </li>
   )
 };

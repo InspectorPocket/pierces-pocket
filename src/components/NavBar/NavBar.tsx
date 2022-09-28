@@ -5,21 +5,18 @@ import Icon from "../Icon/Icon";
 import Navigation from "./Navigation/Navigation";
 import navBG from '../NavBar/Navigation/Navigation.module.scss';
 
-import ProjectsProps from '../../props/projectsProps';
-import { RouteComponentProps, useLocation } from "react-router-dom";
-
 interface NavBarProps {
-  // setHideProjectsMenu: Function;
+  setTransition: Function;
 }
 
-const NavBar: FC<NavBarProps> = ({}) => {
+const NavBar: FC<NavBarProps> = ({setTransition}) => {
 
   const [navOpen, setOpen] = useState(false);
   const [menuFocus, setMenuFocus] = useState(false);
 
   return (
     <div className={styles.NavBar}>
-      <Logo />
+      <Logo setTransition={setTransition}/>
 
       <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
         <Icon icon="menu" active={(menuFocus)} onClick={() => {
@@ -27,22 +24,8 @@ const NavBar: FC<NavBarProps> = ({}) => {
           setMenuFocus(!menuFocus);
         }} />
         {/* {navOpen && <Navigation />} */}
-        <Navigation navState={(navOpen)} />
+        <Navigation navState={(navOpen)} setTransition={setTransition} />
       </div>
-
-      {/* Grid Icon */}
-      {/* { projects && */}
-        {/* <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
-
-          <Icon icon="projects" 
-            currentProject={currentProjectId}
-            projectsNumber={loadedProjects.length}
-            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
-            active={hideProjectsMenu}
-          />
-
-        </div> */}
-      {/* } */}
     </div>
   )
 

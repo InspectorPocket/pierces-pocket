@@ -11,6 +11,7 @@
     margin-bottom: rem(20);
     padding: 0 5.5555vw;
     z-index: 20;
+    pointer-events: none;
     &__heading {
         display: flex;
         // justify-content: center;
@@ -19,7 +20,6 @@
         text-align: left;
         // calculate vh + vw
         width: auto;
-        pointer-events: none;
         /*
         &_top {
             padding-top: calc(6.6666vw + #{rem(46) + #{rem(32)}});

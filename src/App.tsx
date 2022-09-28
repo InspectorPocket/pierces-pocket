@@ -1,5 +1,5 @@
 // npx generate-react-cli component MyComponent
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import colours from './sass/_foundation/_colours.module.scss';
 import Home from './pages/Home/Home';
 import Extras from './pages/Extras/Extras';
@@ -12,21 +12,24 @@ import NavBar from "./components/NavBar/NavBar";
 function App() {
   let backgroundColour: string = colours.grey1;
 
-  const hideProjectsMenuOnNav = (data: any) => {
-    console.log(data);
+  let [transitionType, setTransitionType] = useState('');
+
+  const setTransition = (type: string) => {
+    console.log('transition: ' + type)
+    // open and close states for home closing and projects opening
+    setTransitionType(type);
   }
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
       <Router>
-        <Panels />
-        <NavBar />
+        <NavBar setTransition={setTransition} />
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route path="/projects">
-            <Projects hideProjectsMenuOnNav={hideProjectsMenuOnNav} />
+            <Projects />
           </Route>
           <Route path="/extras">
             <Extras />
@@ -35,18 +38,9 @@ function App() {
             <NotFound />
           </Route> */}
         </Switch>
-        
-        {/* <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
-
-          <Icon icon="projects" 
-            currentProject={currentProjectId}
-            projectsNumber={loadedProjects.length}
-            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
-            active={hideProjectsMenu}
-          />
-
-        </div> */}
-
+        <Panels state={transitionType} />
+        {/* { transitionType === 'transition' &&
+        } */}
       </Router>
     </div>
   );

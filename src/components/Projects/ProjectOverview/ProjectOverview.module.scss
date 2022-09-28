@@ -6,9 +6,10 @@
         height: 100%;
     }
     position: absolute;
-    height: 100%;
     width: 100%;
     padding: 0 5.5555vw;
+    padding-top: calc(6.6666vw + 2.875rem + 1.5rem + 1.25rem + #{rem(40)} + #{rem(16)});
+    padding-bottom: rem(64);
     &__project {
         display: flex;
         width: 100%;

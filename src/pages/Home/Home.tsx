@@ -6,6 +6,7 @@ import intro from '../../components/Intro/Intro.module.scss';
 import Circles from '../../components/Circles/Circles';
 import LineText from "../../components/Content/LineText/LineText";
 import Email from "../../components/Content/Email/Email";
+import Panels from '../../components/Panels/Panels';
 
 const Home: React.FC<ProjectsProps> = () => {
 

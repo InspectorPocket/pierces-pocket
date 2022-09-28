@@ -5,10 +5,17 @@ import colours from '../../sass/_foundation/_colours.module.scss';
 
 import logo from '../../../assets/logo.svg';
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  setTransition: Function;
+}
+
+const Logo: React.FC<LogoProps> = ({setTransition}) => {
 
   return (
-    <Link to="/" className={styles.Logo__container}>
+    <Link to="/" className={styles.Logo__container}onClick={() => {
+      setTransition("close");
+      // setState(!state);
+    }}>
       {/* <img src={logo} alt="logo" /> */}
       <div className={styles.Logo}>
         {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 44">
