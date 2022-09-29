@@ -29,6 +29,7 @@ const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, project
   iconSelector(icon);
 
   return (
+    // TODO If link is true a tag else div
     <a className={`${styles.Icon} ${noPadding ? styles.Icon_no_pad : ''}`} onClick={onClick}>
       { icon != 'menu' && icon != 'projects' && <img src={'/images/icons/' + outputIcon + '.svg'} alt="" /> }
       { icon == 'menu' &&

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { RouteComponentProps, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import useFetch from "../../hooks/useFetch";
 import styles from './Projects.module.scss';
-import { RouteComponentProps, useLocation } from "react-router-dom";
 
 import ProjectsProps from "../../props/projectsProps";
 
@@ -45,12 +46,46 @@ const Projects: React.FC<ProjectsProps> = () => {
   let [currentProjectId, setCurrentProjectId] = useState();
   let [nextProjectId, setNextProjectId] = useState();
   
+  const location = useLocation();
+  
+  const projectsUrlMatch = new RegExp('\^/projects/?$');
+  useEffect(() => {
+    let cleanup = true;
+    if (cleanup) {
+      window.onpopstate = e => {
+        if (projectsUrlMatch.test(window.location.pathname)) {
+          setHideProjectsMenu(true);
+          setCurrentProject(currentProject => currentProject = undefined);
+          console.log('projects page');
+          
+        } else {
+          setHideProjectsMenu(false);
+          console.log('other page');
+        }
+      }
+    }
+    cleanup = false;
+  }, []);
+
+  // function SomeComponent() {
+  
+  //   useEffect(() => {
+      
+  //     setPath(location.pathname)
+  //   }, [location]);
+    
+  // }
+  // SomeComponent();
+  // console.log(path);
+  
   const urlId = useParams();
 
-  const setActiveProject = (activeProject: any) => {
+  const setActiveProject = (activeProject: any, fromOverview: boolean = false) => {
     setCurrentProject(currentProject => currentProject = activeProject);
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id);
-    setHideProjectsMenu(!hideProjectsMenu);
+    if (fromOverview) {
+      setHideProjectsMenu(!hideProjectsMenu);
+    }
     setTransition(!transition);
   }
   
@@ -59,59 +94,52 @@ const Projects: React.FC<ProjectsProps> = () => {
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
   }
 
-  // let projectsToShow: any;
-  // if (projects) {
-  //   projectsToShow = loadedProjects.map(project => {
-  //     switch (project.id) {
-  //       case 0:
-  //         return <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />;
-  //       case 1:
-  //         return <Project2 project={currentProject} projects={projects} setNextProject={setNextProject} />;
-      
-  //       default:
-  //         break;
-  //     }
-  //     console.log(project.id);
-      
-  //   });
-  // }
-
   return (
     <div className={styles.projects}>
 
       {/* TODO Move to position when projects button is pressed */}
-      <Panels state={'fixed'} />
+      {/* <Panels state={'fixed'} /> */}
 
-      {/* Current Project */}
-      <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
+      <Router>
 
-        {/* TODO instead of using id, set project load using the url name/id? */}
-        {/* OR use a router (like app.ts) and switch through routes depending on url
-            this approach would hopefully allow for the back button and refresh to work as intended */}
-        {/* Pierce's Pocket */}
-        { projects && currentProject && currentProjectId === 0 &&
-          <Project1 project={currentProject} projects={projects} setNextProject={setNextProject} />
-        }
+        {/* Current Project */}
+        <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
-        {/* LocalThrones */}
-        { projects && currentProject && currentProjectId === 1 &&
-          <Project2 project={currentProject} projects={projects} setNextProject={setNextProject} />
-        }
+          <Switch>
 
-      </div>
+            {/* Pierce's Pocket */}
 
-      { projects && 
-        <Intro page="projects" />
-      }
-      {/* Projects Overview */}
-      { projects && 
-        <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
-          <ProjectOverview projects={projects} setActiveProject={setActiveProject} />
+              <Route exact path="/projects/pierce's-pocket">
+                <Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />
+              </Route>
+
+            {/* Localthrones */}
+            {/* { projects &&
+              <Route exact path="/projects/localthrones">
+                <Project2 project={currentProject} projects={projects} setActiveProject={setActiveProject} setNextProject={setNextProject} />
+              </Route>
+            } */}
+            
+          </Switch>
+
         </div>
-      }
+
+        <Route>
+          { projects && 
+            <Intro page="projects" />
+          }
+          {/* Projects Overview */}
+          { projects && 
+            <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
+              <ProjectOverview projects={projects} setActiveProject={setActiveProject} />
+            </div>
+          }
+        </Route>
+
+      </Router>
 
       {/* Grid Icon */}
-      { projects &&
+
         <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
 
           <Icon icon="projects" 
@@ -122,7 +150,7 @@ const Projects: React.FC<ProjectsProps> = () => {
           />
 
         </div>
-      }
+
 
       {/* TODO Fix this to load on every project */}
       {/* TODO Fix this to load on first load of projects */}

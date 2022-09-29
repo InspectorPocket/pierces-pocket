@@ -1,12 +1,13 @@
 // npx generate-react-cli component MyComponent
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import colours from './sass/_foundation/_colours.module.scss';
+import './styles.scss';
+
 import Home from './pages/Home/Home';
 import Extras from './pages/Extras/Extras';
 import Projects from './pages/Projects/Projects';
-import './styles.scss';
 import Panels from './components/Panels/Panels';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   let [transitionType, setTransitionType] = useState('');
 
   const setTransition = (type: string) => {
-    console.log('transition: ' + type)
+    // console.log('transition: ' + type)
     // open and close states for home closing and projects opening
     setTransitionType(type);
   }
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/projects">
+          <Route exact path="/projects">
             <Projects />
           </Route>
           <Route path="/extras">

@@ -10,6 +10,7 @@ import Image from '../../../components/Content/Image/Image';
 import LineText from '../../../components/Content/LineText/LineText';
 import CardText from '../../../components/Content/CardText/CardText';
 import NextProject from '../../../components/Content/NextProject/NextProject';
+import { mainModule } from 'process';
 
 let _pProps: ProjectsProps;
 
@@ -18,15 +19,24 @@ interface ProjectProps {
   projects?: typeof _pProps[];
   project?: typeof _pProps;
   setNextProject: Function;
+  setActiveProject: Function;
 }
 
-const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProject}) => {
+const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProject, setActiveProject}) => {
+
+  const thisProjectId: number = 0;
+  const thisProject: typeof project = projects![thisProjectId];
 
   let [slideIndex, setSlideIndex] = useState(1);
   let [totalSlides, setTotalSlides] = useState(0);
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+    let cleanup = true;
+    if (cleanup) {
+      window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+      setActiveProject(thisProject);
+    }
+    cleanup = false;
   }, []);
 
   return (
@@ -53,7 +63,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
         }}
       > */}
 
-        <ProjectIntro img={project!.img} title={project!.title} vocation={project!.vocation} />
+        <ProjectIntro thisId={0} title={"Pierce's Pocket"} vocation={"Brand & UX Design, Front End Development"} />
 
 
         {/* Main Content Here */}
@@ -123,7 +133,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
             <h3 className='mg-b-20'>Future Plans</h3>
             <p className='mg-r-64 mg-b-16'>I developed the app with React and used Sass for the styling.</p>
             <p className='mg-b-16'>You can view the code over on <a href="https://github.com/InspectorPocket/pierces-pocket">GitHub</a>.</p>
-            <NextProject project={project} projects={projects} setNextProject={setNextProject} />
+            <NextProject project={thisProject} projects={projects} setNextProject={setNextProject} />
           </div>
 
 

@@ -17,7 +17,7 @@ const Panels: React.FC<PanelsProps> = ({state}) => {
   // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
-  console.log(state);
+  // console.log(state);
   
 
   let [topPanelHeight, setTopPanelHeight] = useState('');

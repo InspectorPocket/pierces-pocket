@@ -4,22 +4,18 @@ import ProjectProps from "../../../../props/projectsProps"
 
 import Icon from '../../../Icon/Icon';
 
+interface ProjectIntroProps {
+  thisId: number;
+}
 
-const ProjectIntro: React.FC<ProjectProps> = (project) => {
+const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = (project, {thisId}) => {
 
-  const imgUrl: string = '/images/project';
-
-  let [projId, setProjId] = useState(0);
-  if (project && project.id) {
-    setProjId(project.id);
-  }
+  const imgUrl: string = `/images/project${(project.thisId + 1)}/`;
 
   return (
     <div className={styles.ProjectIntro}>
       <div className={styles.ProjectIntro__img}>
-        {/* TODO Fix getting corrent image url */}
-        <span style={{backgroundImage: `url("${(imgUrl + (projId + 1) + '/' + project.img)}")`}} />
-        {/* <img src={ (imgUrl + img) } /> */}
+        <span style={{backgroundImage: `url("${imgUrl}main.jpeg")`}} />
       </div>
       <div className={styles.ProjectIntro__title}>
         <h2 className={styles.ProjectIntro__title__heading}>{project.title}</h2>

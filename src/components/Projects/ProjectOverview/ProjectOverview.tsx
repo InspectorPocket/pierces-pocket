@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import ProjectProps from "../../../pages/Home/Home";
 // import useFetch from "../../../hooks/useFetch";
 import ProjectsProps from "../../../props/projectsProps";
@@ -55,7 +56,7 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveP
             key={project.id} className={styles.ProjectOverview__project}
             onClick={() => {
               setActiveState(!activeState);
-              setActiveProject(project)
+              setActiveProject(project, true)
           }}>
 
           <div className={styles.ProjectOverview__project__img}>
