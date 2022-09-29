@@ -7,14 +7,15 @@ import logo from '../../../assets/logo.svg';
 
 interface LogoProps {
   setTransition: Function;
+  closeMenu: Function;
 }
 
-const Logo: React.FC<LogoProps> = ({setTransition}) => {
+const Logo: React.FC<LogoProps> = ({setTransition, closeMenu}) => {
 
   return (
     <Link to="/" className={styles.Logo__container}onClick={() => {
       setTransition("close");
-      // setState(!state);
+      closeMenu();
     }}>
       {/* <img src={logo} alt="logo" /> */}
       <div className={styles.Logo}>

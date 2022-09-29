@@ -28,6 +28,19 @@
             }
         }
     }
+    &__cover {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        visibility: hidden;
+        &_open {
+            visibility: visible;
+        }
+    }
     display: flex;
     flex-direction: column;
     align-items: flex-end;
