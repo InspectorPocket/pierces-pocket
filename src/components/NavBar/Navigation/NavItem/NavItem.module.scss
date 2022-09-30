@@ -6,58 +6,86 @@
     &::before {
         content: none;
     }
-    &__link {
+    &__link, &__home {
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        padding: rem(12) rem(16) rem(12) 0;
         color: $dark;
         font-weight: 200;
         &::after {
             content: '';
             height: 1px;
             width: rem(48);
-            // border-radius: 2px;
             background-color: $dark;
             position: absolute;
             top: calc(50% + 1px);
-            left: calc(100% + #{rem(4)});
-            transform: translateX(rem(40));
             transition: .4s ease-in-out;
         }
         &:hover {
             color: $darker;
             &::after {
-                transform: translateX(0);
                 transition: .3s ease-in-out;
             }
         }
+        &_selected {
+            color: $darker;
+            font-weight: 400;
+            &::after {
+                height: 2px;
+                transition: .2s ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    transform: translateX(0) translateY(-2px);
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
     }
-    &_selected {
-        color: $darker;
-        font-weight: 400;
+    &__link {
+        justify-content: flex-end;
+        width: 100%;
+        padding: rem(12) rem(16) rem(12) 0;
         &::after {
-            transform: translateX(-4px) translateY(-2px);
-            height: 2px;
-            transition: .2s ease-in-out;
+            left: calc(100% + #{rem(4)});
+            transform: translateX(rem(40));
         }
         &:hover {
             &::after {
-                transform: translateX(0) translateY(-2px);
-                transition: .3s ease-in-out;
+                transform: translateX(0);
+            }
+        }
+        &_selected {
+            &::after {
+                transform: translateX(-4px) translateY(-2px);
+            }
+        }
+    }
+    &__home {
+        padding: rem(12) rem(16) rem(12) 0;
+        &::after {
+            right: calc(100% + #{rem(4)});
+            transform: translateX(rem(-40));
+        }
+        &:hover {
+            &::after {
+                transform: translateX(rem(-8));
+            }
+        }
+        &_selected {
+            &::after {
+                transform: translateX(-4px) translateY(-2px);
             }
         }
     }
 }
 
-@media (max-width: 360px) {
-    .NavItem {
-        & > a {
-            &::after {
-                left: 100%;
-            }
-        }
-    }
-}
+// @media (max-width: 360px) {
+//     .NavItem {
+//         & > a {
+//             &::after {
+//                 left: 100%;
+//             }
+//         }
+//     }
+// }

@@ -1,5 +1,14 @@
 @import '/src/sass/essentials';
 
-.home {
+.Home {
     width: 100%;
+    position: relative;
+    transition: .2s;
+    // margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
+    padding: 0 5.5555vw;
+    z-index: 20;
+    &__nav {
+        position: absolute;
+        bottom: 2.2222vw;
+    }
 }

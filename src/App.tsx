@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import colours from './sass/_foundation/_colours.module.scss';
 import './styles.scss';
 
-import Home from './pages/Home/Home';
-import Extras from './pages/Extras/Extras';
-import Projects from './pages/Projects/Projects';
 import Panels from './components/Panels/Panels';
 import NavBar from "./components/NavBar/NavBar";
+
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Projects from './pages/Projects/Projects';
+import Extras from './pages/Extras/Extras';
 
 function App() {
   let backgroundColour: string = colours.grey1;
@@ -27,7 +29,10 @@ function App() {
         <NavBar setTransition={setTransition} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home setTransition={setTransition} />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
           <Route exact path="/projects">
             <Projects />
@@ -39,7 +44,7 @@ function App() {
             <NotFound />
           </Route> */}
         </Switch>
-        <Panels state={transitionType} />
+        {/* <Panels state={transitionType} /> */}
         {/* { transitionType === 'transition' &&
         } */}
       </Router>

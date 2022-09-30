@@ -1,24 +1,27 @@
 import React from 'react';
 import ProjectsProps from "../../props/projectsProps";
-import Intro from '../../components/Intro/Intro';
+import styles from './Home.module.scss'
 
-import intro from '../../components/Intro/Intro.module.scss';
+import NavItem from '../../components/NavBar/Navigation/NavItem/NavItem';
 import Circles from '../../components/Circles/Circles';
 import LineText from "../../components/Content/LineText/LineText";
 import Email from "../../components/Content/Email/Email";
 import Panels from '../../components/Panels/Panels';
 
-const Home: React.FC<ProjectsProps> = () => {
+interface HomeProps {
+  setTransition: Function;
+}
+
+const Home: React.FC<ProjectsProps & HomeProps> = (setTransition) => {
 
   return (
-    <div className={`${intro.intro}`}>
-      <div>
-        <Intro page="home" />
-        <LineText
-          font='p'
-          content='UX/UI &amp; Brand Designer. Expanded into a Front End Developer. Now married all skills to become a Design Engineer.'
-        />
-        <Email point={true} topSpace={true} />
+    <div className={styles.Home}>
+      <div className={styles.Home__nav}>
+        {/* TODO make transition work here */}
+        {/* <NavItem title="home" destination="" setTransition={setTransition} /> */}
+        <NavItem title="projects" destination="projects" homePage={true} />
+        <NavItem title="about" destination="about" homePage={true} />
+        <NavItem title="extras" destination="extras" homePage={true} />
       </div>
       <Circles />
     </div>

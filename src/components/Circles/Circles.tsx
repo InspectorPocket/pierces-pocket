@@ -1,31 +1,52 @@
 import React, { FC } from 'react';
 import Circle from './Circle/Circle';
 import styles from './Circles.module.scss';
+import colours from '../../sass/_foundation/_colours.module.scss';
 
 interface CirclesProps {}
 
 const Circles: FC<CirclesProps> = () => {
 
+  let backgroundColour: string = colours.darker;
+
+  function hexToRGB(hex: string, alpha: number) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+    if (alpha) {
+        return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+    } else {
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+  }
+
   return (
-    <div className={styles.Circles}>
-      {/* <Circle opacity="0.05" size="560px" position="translateX(0)" />
-      <Circle opacity="0.1" size="490px" position="translateX(0)" />
-      <Circle opacity="0.15" size="420px" position="translateX(0)" />
-      <Circle opacity="0.2" size="356px" position="translateX(0)" />
-      <Circle opacity="0.25" size="288px" position="translateX(0)" />
-      <Circle opacity="0.3" size="216px" position="translateX(0)" />
-      <Circle opacity="0.35" size="158px" position="translateX(0)" />
-      <Circle opacity="0.4" size="96px" position="translateX(0)" />
-      <Circle opacity="0.45" size="40px" position="translateX(0)" /> */}
-      <Circle opacity="0.05" size="90vw" position="translateY(0)" />
-      <Circle opacity="0.1" size="78vw" position="translateY(0)" />
-      <Circle opacity="0.15" size="66vw" position="translateY(0)" />
-      <Circle opacity="0.2" size="55vw" position="translateY(0)" />
-      <Circle opacity="0.25" size="45vw" position="translateY(0)" />
-      <Circle opacity="0.3" size="34vw" position="translateY(0)" />
-      <Circle opacity="0.35" size="24vw" position="translateY(0)" />
-      <Circle opacity="0.4" size="16vw" position="translateY(0)" />
-      <Circle opacity="0.45" size="8vw" position="translateY(0)" />
+    <div className={styles.Circles__wrapper}>
+    
+      <div className={styles.Circles}>
+        <span className={`${styles.Circle} ${styles.Circle__1}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.03)}}>
+          <span className={`${styles.Circle} ${styles.Circle__2}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.1)}}>
+            <span className={`${styles.Circle} ${styles.Circle__3}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.22)}}>
+              <span className={`${styles.Circle} ${styles.Circle__4}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.22)}}>
+                <span className={`${styles.Circle} ${styles.Circle__5}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.3)}}>
+                  <span className={`${styles.Circle} ${styles.Circle__6}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.35)}}>
+                    <span className={`${styles.Circle} ${styles.Circle__7}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.45)}}>
+                      <span className={`${styles.Circle} ${styles.Circle__8}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.5)}}>
+                        <span className={`${styles.Circle} ${styles.Circle__9}`} style={{backgroundColor: hexToRGB(backgroundColour, 0.55)}}>
+                          <span className={`${styles.Circle} ${styles.Circle__10}`} style={{backgroundColor: hexToRGB(backgroundColour, .9)}}>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </div>
+
     </div>
   )
 };

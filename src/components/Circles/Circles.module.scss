@@ -1,11 +1,121 @@
+@import "/src/sass/_foundation/colours.module";
+
 .Circles {
+    &__wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform:  translateY(33vh);
+    justify-content: center;
+    position: absolute;
+    left: 17.5%;
+    min-height: 75vh;
+    min-width: 75vh;
+    max-height: 75vh;
+    max-width: 75vh;
+}
+
+@keyframes rotat {
+    0% {
+        transform: rotate(0deg)
+    }
+    60% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.Circle {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotat infinite;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    &__1 {
+        width: 100%;
+        height: 100%;
+        animation-duration: 10s;
+    }
+    &__2 {
+        width: 80%;
+        height: 80%;
+        left: 6%;
+        bottom: 6%;
+        animation-delay: 8s;
+        animation-duration: 30s;
+    }
+    &__3 {
+        width: 80.5%;
+        height: 80.5%;
+        left: 9.8%;
+        bottom: 3.5%;
+        animation-delay: 7s;
+        animation-duration: 27s;
+    }
+    &__4 {
+        width: 84.5%;
+        height: 84.5%;
+        left: 8.7%;
+        bottom: 3%;
+        animation-delay: 6s;
+        animation-duration: 24s;
+    }
+    &__5 {
+        width: 80.5%;
+        height: 80.5%;
+        left: 4.5%;
+        bottom: 4.5%;
+        animation-delay: 5s;
+        animation-duration: 21s;
+    }
+    &__6 {
+        width: 75.3%;
+        height: 75.3%;
+        left: 11.6%;
+        bottom: 3.8%;
+        animation-delay: 4s;
+        animation-duration: 18s;
+    }
+    &__7 {
+        width: 70.9%;
+        height: 70.9%;
+        left: 6%;
+        bottom: 14.5%;
+        animation-delay: 3s;
+        animation-duration: 15s;
+    }
+    &__8 {
+        width: 63.4%;
+        height: 63.4%;
+        left: 10%;
+        bottom: 20.6%;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+    &__9 {
+        width: 46%;
+        height: 46%;
+        left: 10.5%;
+        bottom: 10.5%;
+        animation-delay: 1s;
+        animation-duration: 9s;
+    }
+    &__10 {
+        width: 40%;
+        height: 40%;
+        left: 11.5%;
+        bottom: 20%;
+        animation-duration: 6s;
+    }
 }
