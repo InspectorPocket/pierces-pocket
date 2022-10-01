@@ -12,9 +12,10 @@ import Intro from '../../components/Intro/Intro';
 import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
 import Loading from '../../components/Loading/Loading';
 import Icon from '../../components/Icon/Icon';
+import ProjectIntro from '../../components/Projects/Project/ProjectIntro/ProjectIntro';
 
 import Project1 from '../Projects/Project1/Project1';
-import Project2 from '../Projects/Project2/Project2';
+// import Project2 from '../Projects/Project2/Project2';
 
 let _pProps: ProjectsProps;
 
@@ -108,10 +109,9 @@ const Projects: React.FC<ProjectsProps> = () => {
           <Switch>
 
             {/* Pierce's Pocket */}
-
-              <Route exact path="/projects/pierce's-pocket">
-                <Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />
-              </Route>
+            <Route exact path="/projects/pierce's-pocket">
+              <Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />
+            </Route>
 
             {/* Localthrones */}
             {/* { projects &&
@@ -125,8 +125,10 @@ const Projects: React.FC<ProjectsProps> = () => {
         </div>
 
         <Route>
-          { projects && 
+          { projects &&
+          <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
             <Intro page="projects" />
+          </div>
           }
           {/* Projects Overview */}
           { projects && 

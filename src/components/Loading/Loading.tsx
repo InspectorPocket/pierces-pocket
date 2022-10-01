@@ -10,12 +10,12 @@ const Loading: React.FC<LoadingProps> = () => {
 return (
   <div className={styles.Loading}>
     
-    <Circle opacity="0.05" size="85vw" />
-    <Circle opacity="0.1" size="70vw" />
-    <Circle opacity="0.15" size="55vw" />
-    <Circle opacity="0.2" size="40vw" />
-    <Circle opacity="0.25" size="25vw" />
-    <Circle opacity="0.45" size="10vw" />
+    <Circle opacity="0.05" width="85vw" height="85vw" />
+    <Circle opacity="0.1" width="70vw" height="70vw" />
+    <Circle opacity="0.15" width="55vw" height="55vw" />
+    <Circle opacity="0.2" width="40vw" height="40vw" />
+    <Circle opacity="0.25" width="25vw" height="25vw" />
+    <Circle opacity="0.45" width="10vw" height="10vw" />
 
   </div>
 )

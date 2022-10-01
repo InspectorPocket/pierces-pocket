@@ -13,7 +13,7 @@ import Projects from './pages/Projects/Projects';
 import Extras from './pages/Extras/Extras';
 
 function App() {
-  let backgroundColour: string = colours.grey1;
+  let backgroundColour: string = colours.white;
 
   let [transitionType, setTransitionType] = useState('');
 

@@ -5,26 +5,39 @@ import ProjectProps from "../../../../props/projectsProps"
 import Icon from '../../../Icon/Icon';
 
 interface ProjectIntroProps {
-  thisId: number;
+  imgUrl: string;
+  title: string;
+  vocation: string;
+  brand: {
+    ai: string;
+    xd: string;
+    react: string;
+  }
 }
 
-const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = (project, {thisId}) => {
+const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = ({imgUrl, title, vocation, brand}) => {
 
-  const imgUrl: string = `/images/project${(project.thisId + 1)}/`;
+  console.log(imgUrl);
 
   return (
     <div className={styles.ProjectIntro}>
       <div className={styles.ProjectIntro__img}>
-        <span style={{backgroundImage: `url("${imgUrl}main.jpeg")`}} />
+        <span style={{backgroundImage: `url("/images/${imgUrl}main.jpeg")`}} />
       </div>
       <div className={styles.ProjectIntro__title}>
-        <h2 className={styles.ProjectIntro__title__heading}>{project.title}</h2>
-        <h6 className={styles.ProjectIntro__title__vocation}>{project.vocation}</h6>
+        <h2 className={styles.ProjectIntro__title__heading}>{title}</h2>
+        <h6 className={styles.ProjectIntro__title__vocation}>{vocation}</h6>
       </div>
       <div className={styles.ProjectIntro__software}>
-        <Icon icon="ai" noPadding={true} />
-        <Icon icon="xd" noPadding={true} />
-        <Icon icon="react" noPadding={true} />
+        { brand.ai &&
+          <Icon icon='ai' noPadding={true} />
+        }
+        { brand.xd &&
+          <Icon icon='xd' noPadding={true} />
+        }
+        { brand.react &&
+          <Icon icon='react' noPadding={true} />
+        }
       </div>
     </div>
   )

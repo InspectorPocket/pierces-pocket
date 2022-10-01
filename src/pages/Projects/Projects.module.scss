@@ -32,5 +32,78 @@
 }
 
 .project {
-    
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+    position: relative;
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-radius: 50%;
+        z-index: -1;
+        height: 100%;
+        width: 200vw;
+    }
+
+    &__intro, &__dark_grey_circle, &__light_grey_circle, &__outro {
+        position: relative;
+        padding: 0 5.5555vw;
+        &::before {
+            content: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-radius: 50%;
+            z-index: -1;
+            height: 100%;
+            width: 200vw;
+        }
+    }
+    &__no_circle {
+        &::before {
+            content: none;
+        }
+    }
+    &__outro {
+        z-index: 1;
+        padding-top: rem(40);
+        padding-bottom: rem(32);
+        &::before {
+            transform: translateX(calc(-50%));
+            background-color: $grey-200;
+            height: 200%;
+        }
+    }
+    &__nextProject {
+        position: relative;
+    }
+    &__pagination {
+        min-height: rem(48);
+        max-height: rem(48);
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 2.2222vw;
+        padding: rem(16);
+        z-index: 5;
+        &__number {
+            color: $white;
+        }
+        &__bar {
+            height: 1px;
+            width: rem(40);
+            position: relative;
+            margin: 0 rem(8);
+            background-color: rgba($color: $white, $alpha: .5);
+            & > span {
+                height: 100%;
+                position: absolute;
+                background-color: $white;
+            }
+        }
+    }
 }

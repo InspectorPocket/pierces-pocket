@@ -42,6 +42,7 @@ md, sm, xs, mob = desktop, landscape tablet, portrait tablet, and mobile breakpo
     &-48 { #{$type}-#{$dir}: rem(48); }
     &-56 { #{$type}-#{$dir}: rem(56); }
     &-64 { #{$type}-#{$dir}: rem(64); }
+    &-204 { #{$type}-#{$dir}: rem(204); }
 }
 @mixin margins($size: '') {
     @if $size != '' {

@@ -20,27 +20,37 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
 
   // let grrr: string = panelState;
 
+  const projectsUrlMatch = new RegExp('\^/projects/?$');
+
   const location = useLocation();
   
   const setTopSize = (position?: string) => {
     if (location.pathname === '/') {
-      // console.log('home');
+      console.log('home');
       if (position === 'top') return {transform: `translateY(50%)`}
       if (position === 'bot') return {transform: `translateY(-50%)`}
     }
     if (location.pathname === '/projects') { // || project panel is shown
       // console.log('projects');
       // TODO set transition on a timeout then set below values
-      if (position === 'top') return {transform: `translateY(25%)`}
-      if (position === 'bot') return {transform: `translateY(0)`}
+      if (projectsUrlMatch.test(location.pathname)) {
+        if (position === 'top') return {transform: `translateY(25%)`}
+        if (position === 'bot') return {transform: `translateY(0)`}
+        console.log('projects');
+        
+      } else {
+        if (position === 'top') return {transform: `translateY(${defaultValueTop})`}
+        if (position === 'bot') return {transform: `translateY(-${defaultValueBot})`}
+        console.log('individual project');
+        
+      }
     }
     if (location.pathname === '/extras') {
       // console.log('extras');
     } else {
       // console.log('project');
       // TODO set transition on a timeout then set below values
-      if (position === 'top') return {transform: `translateY(${defaultValueTop})`}
-      if (position === 'bot') return {transform: `translateY(-${defaultValueBot})`}
+      
     }
   };
 
