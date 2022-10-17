@@ -15,13 +15,17 @@ import Extras from './pages/Extras/Extras';
 function App() {
   let backgroundColour: string = colours.white;
 
-  let [transitionType, setTransitionType] = useState('');
+  let [timer, setTimer] = useState(false);
+  let [transitionType, setTransitionType] = useState('close');
 
   const setTransition = (type: string) => {
     // console.log('transition: ' + type)
     // open and close states for home closing and projects opening
     setTransitionType(type);
   }
+
+  // console.log(transitionType);
+  
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
@@ -35,6 +39,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/projects">
+            <Panels state='transition' />
             <Projects />
           </Route>
           <Route path="/extras">
@@ -44,8 +49,9 @@ function App() {
             <NotFound />
           </Route> */}
         </Switch>
-        {/* <Panels state={transitionType} /> */}
+        {/* TODO This transition is always to open up the current panels */}
         {/* { transitionType === 'transition' &&
+          <Panels state={transitionType} />
         } */}
       </Router>
     </div>

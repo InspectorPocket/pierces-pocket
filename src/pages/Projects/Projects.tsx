@@ -156,9 +156,9 @@ const Projects: React.FC<ProjectsProps> = () => {
 
       {/* TODO Fix this to load on every project */}
       {/* TODO Fix this to load on first load of projects */}
-      {/* { currentProject &&
+      { currentProject &&
         <Panels state={'transition'} />
-      } */}
+      }
 
       { error && <div>{ error }</div> }
       { isPending && <Loading /> }

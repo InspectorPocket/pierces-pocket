@@ -13,6 +13,7 @@ import LineText from '../../../components/Content/LineText/LineText';
 import CardText from '../../../components/Content/CardText/CardText';
 import NextProject from '../../../components/Content/NextProject/NextProject';
 import { mainModule } from 'process';
+import Panels from '../../../components/Panels/Panels';
 
 let _pProps: ProjectsProps;
 
@@ -65,6 +66,8 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
 
   return (
     <div className={projectStyles.project__wrapper}>
+
+      <Panels state={'fixed'} />
       
       <ProjectIntro imgUrl={imgUrl} title={"Pierce's Pocket"} vocation={"Brand & UX Design, Front End Development"} brand={brand} />
       

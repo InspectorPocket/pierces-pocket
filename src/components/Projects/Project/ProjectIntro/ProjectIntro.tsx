@@ -17,8 +17,6 @@ interface ProjectIntroProps {
 
 const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = ({imgUrl, title, vocation, brand}) => {
 
-  console.log(imgUrl);
-
   return (
     <div className={styles.ProjectIntro}>
       <div className={styles.ProjectIntro__img}>

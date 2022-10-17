@@ -6,9 +6,10 @@ import {Route, Link, useLocation} from 'react-router-dom';
 
 interface PanelsProps {
   state: string;
+  bg?: boolean;
 }
 
-const Panels: React.FC<PanelsProps> = ({state}) => {
+const Panels: React.FC<PanelsProps> = ({state, bg}) => {
   // const isDesktopOrLaptop = useMediaQuery({
   //   query: '(min-width: 1224px)'
   // })
@@ -51,7 +52,7 @@ const Panels: React.FC<PanelsProps> = ({state}) => {
   // }
 
   return (
-    <div className={styles.panels}>
+    <div className={`${styles.panels} ${bg ? styles.panels_bg : ''}`}>
       <Panel panelState={state} defaultValueTop='64px' defaultValueBot='64px'/>
       <Panel panelState={state} defaultValueTop='39px' defaultValueBot='39px' />
       <Panel panelState={state} defaultValueTop='16px'  defaultValueBot='16px' />
