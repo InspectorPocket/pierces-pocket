@@ -1,6 +1,7 @@
 // npx generate-react-cli component MyComponent
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import colours from './sass/_foundation/_colours.module.scss';
 import './styles.scss';
 
@@ -12,7 +13,7 @@ import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
 import Extras from './pages/Extras/Extras';
 
-function App() {
+const App: React.FC = () => {
   let backgroundColour: string = colours.white;
 
   let [timer, setTimer] = useState(false);
@@ -25,35 +26,40 @@ function App() {
   }
 
   // console.log(transitionType);
+
+  const history = useHistory() 
+
+   useEffect(() => {
+      return history.listen((location) => { 
+         console.log(`You changed the page to: ${location.pathname}`) 
+      }) 
+   },[history]) 
   
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
-      <Router>
-        <NavBar setTransition={setTransition} />
-        <Switch>
-          <Route exact path="/">
-            <Home setTransition={setTransition} />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/projects">
-            <Panels state='transition' />
-            <Projects />
-          </Route>
-          <Route path="/extras">
-            <Extras />
-          </Route>
-          {/* <Route path="*">
-            <NotFound />
-          </Route> */}
-        </Switch>
-        {/* TODO This transition is always to open up the current panels */}
-        {/* { transitionType === 'transition' &&
-          <Panels state={transitionType} />
-        } */}
-      </Router>
+      <NavBar setTransition={setTransition} />
+      <Switch>
+        <Route exact path="/">
+          <Home setTransition={setTransition} />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/extras">
+          <Extras />
+        </Route>
+        {/* <Route path="*">
+          <NotFound />
+        </Route> */}
+      </Switch>
+      {/* TODO This transition is always to open up the current panels */}
+      {/* { transitionType === 'transition' &&
+        <Panels state={transitionType} />
+      } */}
     </div>
   );
 }

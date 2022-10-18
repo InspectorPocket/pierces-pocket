@@ -31,6 +31,7 @@ interface LocationState {
 }
 
 const Projects: React.FC<ProjectsProps> = () => {
+  
   // const location = useLocation<LocationState>();
   // const project = location.state.project || { from: { pathname: "/projects" } };
 
@@ -44,7 +45,7 @@ const Projects: React.FC<ProjectsProps> = () => {
 
   let [transition, setTransition] = useState(false);
   let [currentProject, setCurrentProject] = useState();
-  let [currentProjectId, setCurrentProjectId] = useState();
+  let [currentProjectId, setCurrentProjectId] = useState(99);
   let [nextProjectId, setNextProjectId] = useState();
   
   const location = useLocation();
@@ -67,17 +68,6 @@ const Projects: React.FC<ProjectsProps> = () => {
     }
     cleanup = false;
   }, []);
-
-  // function SomeComponent() {
-  
-  //   useEffect(() => {
-      
-  //     setPath(location.pathname)
-  //   }, [location]);
-    
-  // }
-  // SomeComponent();
-  // console.log(path);
   
   const urlId = useParams();
 
@@ -95,12 +85,53 @@ const Projects: React.FC<ProjectsProps> = () => {
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
   }
 
+
+  // const [count, setCount] = useState(99);
+
+  // useEffect(() => {
+  //   setCurrentProjectId(JSON.parse(window.localStorage.getItem('currentProjectId') || '99'));
+  // }, []);
+
+  // useEffect(() => {
+  //   window.localStorage.setItem('currentProjectId', JSON.stringify(currentProjectId) || '99');
+  // }, [currentProjectId]);
+
+  // const increaseCount = () => {
+  //   return setCount(count + 1);
+  // }
+  // const decreaseCount = () => {
+  //   return setCount(count - 1)
+  // }
+
+  // const [input, setInput] = useState("");
+  // const [item, setComponent] = useLocalStorage("currentProjectId");
+
+  // function useLocalStorage(key: string) {
+  //   const [state, setState] = useState(localStorage.getItem(key));
+  //   function setStorage(item: string) {
+  //     localStorage.setItem(key, item);
+  //     setState(item);
+  //   }
+  //   return [state, setStorage];
+  // }
+
+  let [idLocal, setIdLocal] = useState(localStorage.getItem("currentProjectId"));
+
+  // useEffect(() => {
+  //   localStorage.setItem('id', idLocal!);
+  // }, [idLocal])
+  console.log(idLocal);
+  
+
+  const setLocalStore = (projectId: number) => {
+    setIdLocal(JSON.stringify(projectId));
+    // return;
+  }
+
   return (
     <div className={styles.projects}>
 
-      {/* TODO Move to position when projects button is pressed */}
-      {/* <Panels state={'fixed'} /> */}
-
+      
       <Router>
 
         {/* Current Project */}
@@ -114,26 +145,24 @@ const Projects: React.FC<ProjectsProps> = () => {
             </Route>
 
             {/* Localthrones */}
-            {/* { projects &&
-              <Route exact path="/projects/localthrones">
-                <Project2 project={currentProject} projects={projects} setActiveProject={setActiveProject} setNextProject={setNextProject} />
-              </Route>
-            } */}
+            <Route exact path="/projects/localthrones">
+              <h1>Localthrones</h1>
+            </Route>
             
           </Switch>
 
         </div>
 
         <Route>
-          { projects &&
+          {/* { projects &&
           <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
             <Intro page="projects" />
           </div>
-          }
+          } */}
           {/* Projects Overview */}
           { projects && 
             <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
-              <ProjectOverview projects={projects} setActiveProject={setActiveProject} />
+              <ProjectOverview projects={projects} setActiveProject={setActiveProject} setLocalStore={setLocalStore} />
             </div>
           }
         </Route>

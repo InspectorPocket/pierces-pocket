@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 // import ProjectProps from "../../../pages/Home/Home";
 // import useFetch from "../../../hooks/useFetch";
 import ProjectsProps from "../../../props/projectsProps";
@@ -21,9 +21,10 @@ let _pProps: ProjectsProps;
 interface ProjectsOverviewProps {
   projects: typeof _pProps[];
   setActiveProject: Function;
+  setLocalStore: Function;
 }
 
-const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveProject }) => {
+const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveProject, setLocalStore }) => {
   
   const loadedProjects: Array<any> = projects;
 
@@ -40,6 +41,9 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveP
   //   loadedProjects.push(project);
   // })
 
+  let history = useHistory();
+  console.log(history);
+  
 
   return (
     <div className={styles.ProjectOverview__wrapper}>
@@ -56,7 +60,9 @@ const ProjectOverview: React.FC<ProjectsOverviewProps> = ({ projects, setActiveP
             key={project.id} className={styles.ProjectOverview__project}
             onClick={() => {
               setActiveState(!activeState);
-              setActiveProject(project, true)
+              setActiveProject(project, true);
+              setLocalStore(project.id);
+              history.push(`/projects/${project.title.toLowerCase().split(' ').join('-')}`);
           }}>
 
           <div className={styles.ProjectOverview__project__img}>
