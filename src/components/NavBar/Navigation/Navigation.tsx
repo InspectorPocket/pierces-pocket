@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { RouteComponentProps, useLocation } from "react-router-dom";
+import React from 'react';
 import styles from './Navigation.module.scss';
 
 import NavItem from '../Navigation/NavItem/NavItem';

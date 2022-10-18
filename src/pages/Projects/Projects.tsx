@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { RouteComponentProps, useLocation } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import useFetch from "../../hooks/useFetch";
 import styles from './Projects.module.scss';
 
@@ -131,29 +131,21 @@ const Projects: React.FC<ProjectsProps> = () => {
   return (
     <div className={styles.projects}>
 
-      
-      <Router>
 
         {/* Current Project */}
         <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
 
-          <Switch>
+          {/* <Routes>
 
-            {/* Pierce's Pocket */}
-            <Route exact path="/projects/pierce's-pocket">
-              <Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />
-            </Route>
+            <Route path="/projects/pierce's-pocket" 
+              element={<Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />} />
 
-            {/* Localthrones */}
-            <Route exact path="/projects/localthrones">
-              <h1>Localthrones</h1>
-            </Route>
+            <Route path="/projects/localthrones" element={<h1>Localthrones</h1>} />
             
-          </Switch>
+          </Routes> */}
 
         </div>
 
-        <Route>
           {/* { projects &&
           <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
             <Intro page="projects" />
@@ -165,29 +157,25 @@ const Projects: React.FC<ProjectsProps> = () => {
               <ProjectOverview projects={projects} setActiveProject={setActiveProject} setLocalStore={setLocalStore} />
             </div>
           }
-        </Route>
-
-      </Router>
 
       {/* Grid Icon */}
+      <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
 
-        <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
+        <Icon icon="projects" 
+          currentProject={currentProjectId}
+          projectsNumber={loadedProjects.length}
+          onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
+          active={hideProjectsMenu}
+        />
 
-          <Icon icon="projects" 
-            currentProject={currentProjectId}
-            projectsNumber={loadedProjects.length}
-            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
-            active={hideProjectsMenu}
-          />
-
-        </div>
+      </div>
 
 
       {/* TODO Fix this to load on every project */}
       {/* TODO Fix this to load on first load of projects */}
-      { currentProject &&
+      {/* { currentProject &&
         <Panels state={'transition'} />
-      }
+      } */}
 
       { error && <div>{ error }</div> }
       { isPending && <Loading /> }

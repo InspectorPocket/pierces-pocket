@@ -21,9 +21,9 @@ const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProj
 
       { projects && project &&
         <Link to={{
-            pathname: `/projects/${nextProject.title.toLowerCase().split(' ').join('-')}`,
-            state: { project: project, projects: projects }
-          }} key={project.id === projects.length - 1 ? 0 : project.id + 1}
+            pathname: `/projects/${nextProject.title.toLowerCase().split(' ').join('-')}`}}
+            state={{ project: project, projects: projects }}
+            key={project.id === projects.length - 1 ? 0 : project.id + 1}
           onClick={() => {
             setNextProject(project)
         }}>

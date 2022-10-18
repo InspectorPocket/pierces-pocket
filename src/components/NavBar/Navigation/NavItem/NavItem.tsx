@@ -15,8 +15,11 @@ const NavItem: React.FC<NavItemProps> = ({title, destination, setTransition, clo
   
   return (
     <li className={styles.NavItem}>
-      <NavLink to={`/${destination}`} className={`${homePage ? styles.NavItem__home : styles.NavItem__link}`}
-        exact activeClassName={`${homePage ? styles.NavItem__home_selected : styles.NavItem__link_selected}`}
+      <NavLink
+        to={`/${destination}`}
+        className={({ isActive }) =>
+          isActive ? `${homePage ? styles.NavItem__home : styles.NavItem__link} ${homePage ? styles.NavItem__home_selected : styles.NavItem__link_selected}` : `${homePage ? styles.NavItem__home : styles.NavItem__link}`
+        }
         onClick={() => {
           if (setTransition) setTransition(destination != '' ? 'transition' : 'close');
           if (closeMenu) closeMenu();

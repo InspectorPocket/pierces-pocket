@@ -1,7 +1,6 @@
 // npx generate-react-cli component MyComponent
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import colours from './sass/_foundation/_colours.module.scss';
 import './styles.scss';
 
@@ -26,36 +25,19 @@ const App: React.FC = () => {
   }
 
   // console.log(transitionType);
-
-  const history = useHistory() 
-
-   useEffect(() => {
-      return history.listen((location) => { 
-         console.log(`You changed the page to: ${location.pathname}`) 
-      }) 
-   },[history]) 
-  
   
   return (
     <div className="app" style={{backgroundColor: backgroundColour}}>
       <NavBar setTransition={setTransition} />
-      <Switch>
-        <Route exact path="/">
-          <Home setTransition={setTransition} />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/projects">
-          <Projects />
-        </Route>
-        <Route path="/extras">
-          <Extras />
-        </Route>
+      <Routes>
+        <Route path="/" element={<Home setTransition={setTransition} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects/*" element={<Projects />} />
+        <Route path="/extras" element={<Extras />} />
         {/* <Route path="*">
           <NotFound />
         </Route> */}
-      </Switch>
+      </Routes>
       {/* TODO This transition is always to open up the current panels */}
       {/* { transitionType === 'transition' &&
         <Panels state={transitionType} />
