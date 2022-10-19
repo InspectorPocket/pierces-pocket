@@ -237,8 +237,34 @@
                 }
             }
         }
-        &_selected {
-            background-color: $grey-200;
+        &_active {
+            border: 1px solid $grey-300;
+            &:hover {
+                border: 1px solid $grey-400;
+            }
+        }
+        &_active & {
+            &__text {
+                &__vocation {
+                    &__bar {
+                        & > span {
+                            transform: translateX(0);
+                            transition: .3s ease-in-out;
+                        }
+                    }
+                }
+            }
+            &__logo {
+                &__outline, &__full {
+                    transition: .3s ease-in-out;
+                }
+                &__outline {
+                    opacity: 0;
+                }
+                &__full {
+                    opacity: 1;
+                }
+            }
         }
     }
 

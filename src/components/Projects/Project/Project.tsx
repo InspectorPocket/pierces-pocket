@@ -14,7 +14,6 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId}) => {
   const project = getProject(projectId);
 
   useEffect(() => {
-    window.localStorage.setItem('projectIndex', JSON.stringify(project!.index));
     setCurrentProjectId(project!.index);
   }, [JSON.stringify(project!.index)]);
 

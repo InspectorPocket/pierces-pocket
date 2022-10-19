@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, Routes, Route } from 'react-router-dom';
+import { NavLink, useLocation, Routes, Route } from 'react-router-dom';
 import { getProjects } from '../../api/projects';
+import { hexToRGB } from '../../helpers/utils';
 
 import styles from './Projects.module.scss';
 
@@ -90,8 +91,13 @@ const Projects: React.FC = () => {
             {/* TODO Lazy load images? */}
             { projects && projects.map(({ title, colour, ux, dev, brand, graphic, id, index }) => (
 
-              <Link to={id} key={id}
-                className={styles.ProjectOverview__project}
+              <NavLink to={id} key={id}
+                className={({ isActive }) =>
+                  isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project}`
+                }
+                style={({ isActive }) => ({
+                  borderColor: isActive ? hexToRGB(colour, 0.2) : ''
+                })}
                 state= {{ index: index }}
                 onClick={() => setActiveProject(index) }>
 
@@ -126,7 +132,7 @@ const Projects: React.FC = () => {
 
                 </div>
 
-              </Link>
+              </NavLink>
 
             ))}
 

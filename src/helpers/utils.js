@@ -1,20 +1,11 @@
-import { useState, useEffect } from 'react';
+export function hexToRGB(hex, alpha) {
+  var r = parseInt(hex.slice(1, 3), 16),
+      g = parseInt(hex.slice(3, 5), 16),
+      b = parseInt(hex.slice(5, 7), 16);
 
-const ResetProject = (project) => {
-//   const [data, setData] = useState(null);
-//   const [isPending, setIsPending] = useState(true);
-//   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    let cleanup = true;
-    if (cleanup) {
-      window.scrollTo({top: 0, left: 0, behavior: 'auto'});
-      project();
-    }
-    cleanup = false;
-  }, []);
-
-  return;
+  if (alpha) {
+      return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+  } else {
+      return "rgb(" + r + ", " + g + ", " + b + ")";
+  }
 }
- 
-export default ResetProject;

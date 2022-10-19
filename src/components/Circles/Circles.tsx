@@ -2,24 +2,13 @@ import React, { FC } from 'react';
 import Circle from './Circle/Circle';
 import styles from './Circles.module.scss';
 import colours from '../../sass/_foundation/_colours.module.scss';
+import { hexToRGB } from '../../helpers/utils';
 
 interface CirclesProps {}
 
 const Circles: FC<CirclesProps> = () => {
 
   let backgroundColour: string = colours.darker;
-
-  function hexToRGB(hex: string, alpha: number) {
-    var r = parseInt(hex.slice(1, 3), 16),
-        g = parseInt(hex.slice(3, 5), 16),
-        b = parseInt(hex.slice(5, 7), 16);
-
-    if (alpha) {
-        return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
-    } else {
-        return "rgb(" + r + ", " + g + ", " + b + ")";
-    }
-  }
 
   return (
     <div className={styles.Circles__wrapper}>
