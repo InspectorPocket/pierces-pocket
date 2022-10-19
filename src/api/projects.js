@@ -1,5 +1,6 @@
 const projects = [
     {
+        index: 0,
         title: "Pierce's Pocket",
         id: "pierce's-pocket",
         description: "Brand & UX Design, Front End Development",
@@ -42,6 +43,7 @@ const projects = [
         ]
     },
     {
+        index: 1,
         title: "LocalThrones",
         id: "localthrones",
         description: "UX Design",
@@ -84,6 +86,7 @@ const projects = [
         ]
     },
     {
+        index: 2,
         title: "Fluid Ads",
         id: "fluid-ads",
         description: "Graphic Design & Front End Development",
@@ -126,6 +129,7 @@ const projects = [
         ]
     },
     {
+        index: 3,
         title: "Wild.Self",
         id: "wild-self",
         description: "Brand & UX Design, Front End Development",
@@ -168,6 +172,7 @@ const projects = [
         ]
     },
     {
+        index: 4,
         title: "Clear UK",
         id: "clear-uk",
         description: "UX Design",
@@ -210,6 +215,7 @@ const projects = [
         ]
     },
     {
+        index: 5,
         title: "Codedump",
         id: "codedump",
         description: "Brand & UX Design",
@@ -252,6 +258,7 @@ const projects = [
         ]
     },
     {
+        index: 6,
         title: "Rozafa",
         id: "rozafa",
         description: "UX Design",
@@ -294,8 +301,9 @@ const projects = [
         ]
     },
     {
+        index: 7,
         title: "Brand Design",
-        id: "pierce's-pocket",
+        id: "brand-design",
         description: "A collection of branding work",
         colour: "#9646D1",
         ux: false,

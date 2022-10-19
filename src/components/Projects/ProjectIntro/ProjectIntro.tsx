@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ProjectIntro.module.scss';
-import ProjectProps from "../../../../props/projectsProps"
+import ProjectProps from "../../../props/projectsProps"
 
-import Icon from '../../../Icon/Icon';
+import Icon from '../../Icon/Icon';
 
 interface ProjectIntroProps {
   imgUrl: string;

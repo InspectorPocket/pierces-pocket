@@ -1,83 +1,55 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useLocation } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import useFetch from "../../hooks/useFetch";
+import { Link, useLocation, Routes, Route } from 'react-router-dom';
+import { getProjects } from '../../api/projects';
+
 import styles from './Projects.module.scss';
 
-import ProjectsProps from "../../props/projectsProps";
-
-import Panels from '../../components/Panels/Panels'
-import Intro from '../../components/Intro/Intro';
-import ProjectOverview from "../../components/Projects/ProjectOverview/ProjectOverview";
-import Loading from '../../components/Loading/Loading';
 import Icon from '../../components/Icon/Icon';
-import ProjectIntro from '../../components/Projects/Project/ProjectIntro/ProjectIntro';
+import Intro from '../../components/Intro/Intro';
+import Panels from '../../components/Panels/Panels'
+import Loading from '../../components/Loading/Loading';
 
+import Project from '../../components/Projects/Project/Project';
 import Project1 from '../Projects/Project1/Project1';
 // import Project2 from '../Projects/Project2/Project2';
 
-let _pProps: ProjectsProps;
+const Projects: React.FC = () => {
 
-interface LocationState {
-  projects?: typeof _pProps[];
-  project: {
-    id: number;
-    title: string;
-    vocation: string;
-    img: string;
-  }
-  active?: boolean;
-}
-
-const Projects: React.FC<ProjectsProps> = () => {
-  
-  // const location = useLocation<LocationState>();
-  // const project = location.state.project || { from: { pathname: "/projects" } };
-
-  // TODO Can I put Project data here instead of making a call?
-  const { error, isPending, data: projects } = useFetch('http://localhost:8020/projects');
-
-  let loadedProjects: Array<any> = [];
+  const imgUrl: string = '/images/';
+  const projects: Array<any> = getProjects();
+  const projectsUrlMatch = new RegExp('\^/projects/?$');
+  const location = useLocation();
+  const regexPathname = projectsUrlMatch.test(location.pathname);
   
   let [hideProjectsMenu, setHideProjectsMenu] = useState(true);
-  if (projects) loadedProjects = projects;
-
+  let [showGrid, setShowGrid] = useState(false);
   let [transition, setTransition] = useState(false);
-  let [currentProject, setCurrentProject] = useState();
+
   let [currentProjectId, setCurrentProjectId] = useState(99);
+  let [currentProject, setCurrentProject] = useState();
   let [nextProjectId, setNextProjectId] = useState();
-  
-  const location = useLocation();
-  
-  const projectsUrlMatch = new RegExp('\^/projects/?$');
+
   useEffect(() => {
     let cleanup = true;
     if (cleanup) {
-      window.onpopstate = e => {
-        if (projectsUrlMatch.test(window.location.pathname)) {
-          setHideProjectsMenu(true);
-          setCurrentProject(currentProject => currentProject = undefined);
-          console.log('projects page');
-          
-        } else {
-          setHideProjectsMenu(false);
-          console.log('other page');
-        }
+      if (regexPathname) {
+        setHideProjectsMenu(true);
+        setShowGrid(false);
+      } else if (!regexPathname) {
+        setHideProjectsMenu(false);
+        setShowGrid(true);
       }
-    }
+    };
     cleanup = false;
-  }, []);
-  
-  const urlId = useParams();
+  }, [location]);
 
-  const setActiveProject = (activeProject: any, fromOverview: boolean = false) => {
-    setCurrentProject(currentProject => currentProject = activeProject);
-    setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id);
-    if (fromOverview) {
-      setHideProjectsMenu(!hideProjectsMenu);
-    }
-    setTransition(!transition);
+  const setActiveProject = (index: number) => {
+    setCurrentProjectId(currentProjectId => currentProjectId = index);
+    setHideProjectsMenu(false);
+    setShowGrid(true);
+    // if (fromOverview) {
+      // setTransition(!transition);
+    // }
   }
   
   const setNextProject = (activeProject: any) => {
@@ -85,85 +57,90 @@ const Projects: React.FC<ProjectsProps> = () => {
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
   }
 
-
-  // const [count, setCount] = useState(99);
-
-  // useEffect(() => {
-  //   setCurrentProjectId(JSON.parse(window.localStorage.getItem('currentProjectId') || '99'));
-  // }, []);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('currentProjectId', JSON.stringify(currentProjectId) || '99');
-  // }, [currentProjectId]);
-
-  // const increaseCount = () => {
-  //   return setCount(count + 1);
-  // }
-  // const decreaseCount = () => {
-  //   return setCount(count - 1)
-  // }
-
-  // const [input, setInput] = useState("");
-  // const [item, setComponent] = useLocalStorage("currentProjectId");
-
-  // function useLocalStorage(key: string) {
-  //   const [state, setState] = useState(localStorage.getItem(key));
-  //   function setStorage(item: string) {
-  //     localStorage.setItem(key, item);
-  //     setState(item);
-  //   }
-  //   return [state, setStorage];
-  // }
-
-  let [idLocal, setIdLocal] = useState(localStorage.getItem("currentProjectId"));
-
-  // useEffect(() => {
-  //   localStorage.setItem('id', idLocal!);
-  // }, [idLocal])
-  console.log(idLocal);
-  
-
-  const setLocalStore = (projectId: number) => {
-    setIdLocal(JSON.stringify(projectId));
-    // return;
-  }
-
   return (
     <div className={styles.projects}>
 
+      {/* Current Project */}
+      <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
+        <Routes>
 
-        {/* Current Project */}
-        <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
+          <Route path=':projectId/*' element={<Project setCurrentProjectId={setCurrentProjectId} />} />
 
-          {/* <Routes>
+          {/* <Route path="/projects/pierce's-pocket" 
+            element={<Project1 project={currentProject} projects={projects} setActiveProject={setActiveProject} setNextProject={setNextProject} />} /> */}
 
-            <Route path="/projects/pierce's-pocket" 
-              element={<Project1 project={currentProject} projects={projects!} setActiveProject={setActiveProject} setNextProject={setNextProject} />} />
+          {/* <Route path="/projects/pierce's-pocket" element={<h1>Pierce's Pocket</h1>} />
+          <Route path="/projects/localthrones" element={<h1>Localthrones</h1>} /> */}
+          
+        </Routes>
+      </div>
 
-            <Route path="/projects/localthrones" element={<h1>Localthrones</h1>} />
-            
-          </Routes> */}
 
-        </div>
+      {/* Projects Overview */}
+      { projects &&
+      <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
+        <Intro page="projects" />
+      </div>
+      }
+      { projects && 
+        <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
 
-          {/* { projects &&
-          <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
-            <Intro page="projects" />
+          <div className={styles.ProjectOverview}>
+
+            {/* TODO Lazy load images? */}
+            { projects && projects.map(({ title, colour, ux, dev, brand, graphic, id, index }) => (
+
+              <Link to={id} key={id}
+                className={styles.ProjectOverview__project}
+                state= {{ index: index }}
+                onClick={() => setActiveProject(index) }>
+
+                <div className={styles.ProjectOverview__project__img}>
+                  <img src={ (imgUrl + id + '/main.jpeg') } />
+                </div>
+
+                <div className={styles.ProjectOverview__project__text}>
+
+                  <h4 className={styles.ProjectOverview__project__text__heading}>{ title }</h4>
+
+                  <div className={styles.ProjectOverview__project__text__vocation}>
+
+                    <div className={styles.ProjectOverview__project__text__vocation__bar}>
+                      <span style={{backgroundColor: colour}}></span>
+                    </div>
+
+                    <h6>
+                      { ux ? "UX" : "" }
+                      { ux && dev || ux && brand ? " / " : "" }
+                      { dev ? "Dev" : "" }
+                      { dev && brand ? " / " : "" }
+                      { brand ? "Brand" : "" }
+                    </h6>
+                    
+                  </div>
+
+                  <div className={styles.ProjectOverview__project__logo}>
+                    <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + id + '/logo_outline.svg') } />
+                    <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + id + '/logo.svg') } />
+                  </div>
+
+                </div>
+
+              </Link>
+
+            ))}
+
           </div>
-          } */}
-          {/* Projects Overview */}
-          { projects && 
-            <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
-              <ProjectOverview projects={projects} setActiveProject={setActiveProject} setLocalStore={setLocalStore} />
-            </div>
-          }
+        </div>
+      }
+
 
       {/* Grid Icon */}
-      <div className={`${styles.projects__gridview} ${currentProject ? '' : styles.projects__gridview_hide}`}>
+      <div className={`${styles.projects__gridview} ${showGrid ? '' : styles.projects__gridview_hide}`}>
 
         <Icon icon="projects" 
           currentProject={currentProjectId}
-          projectsNumber={loadedProjects.length}
+          projectsNumber={projects.length}
           onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
           active={hideProjectsMenu}
         />
@@ -176,9 +153,6 @@ const Projects: React.FC<ProjectsProps> = () => {
       {/* { currentProject &&
         <Panels state={'transition'} />
       } */}
-
-      { error && <div>{ error }</div> }
-      { isPending && <Loading /> }
 
     </div>
   );

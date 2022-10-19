@@ -7,7 +7,7 @@ import '../../../sass/_layout/_mg_pd.scss';
 import colours from "../../../sass/_foundation/_colours.module.scss";
 
 import Circle from '../../../components/Circles/Circle/Circle';
-import ProjectIntro from '../../../components/Projects/Project/ProjectIntro/ProjectIntro';
+import ProjectIntro from '../../../components/Projects/ProjectIntro/ProjectIntro';
 import Image from '../../../components/Content/Image/Image';
 import LineText from '../../../components/Content/LineText/LineText';
 import CardText from '../../../components/Content/CardText/CardText';
