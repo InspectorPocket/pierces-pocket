@@ -8,13 +8,14 @@ import styles from './Projects.module.scss';
 import Icon from '../../components/Icon/Icon';
 import Intro from '../../components/Intro/Intro';
 import Panels from '../../components/Panels/Panels'
-import Loading from '../../components/Loading/Loading';
 
 import Project from '../../components/Projects/Project/Project';
-import Project1 from '../Projects/Project1/Project1';
-// import Project2 from '../Projects/Project2/Project2';
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  trackMenuHide: Function;
+}
+
+const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
   const imgUrl: string = '/images/';
   const projects: Array<any> = getProjects();
@@ -47,6 +48,7 @@ const Projects: React.FC = () => {
     if (cleanup) {
       if (hideProjectsMenu) setPanelState('projects');
       else if (!hideProjectsMenu) setPanelState('fixed');
+      trackMenuHide(hideProjectsMenu)
     };
     cleanup = false;
   }, [hideProjectsMenu])

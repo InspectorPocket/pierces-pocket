@@ -7,9 +7,10 @@ import navBG from '../NavBar/Navigation/Navigation.module.scss';
 
 interface NavBarProps {
   setTransition: Function;
+  trackMenuHide?: boolean;
 }
 
-const NavBar: FC<NavBarProps> = ({setTransition}) => {
+const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
 
   const [navOpen, setOpen] = useState(false);
   const [menuFocus, setMenuFocus] = useState(false);
@@ -18,7 +19,7 @@ const NavBar: FC<NavBarProps> = ({setTransition}) => {
     setOpen(false);
     setMenuFocus(false);
   }
-
+  
   return (
     <div className={styles.NavBar}>
       <span className={`${navBG.Navigation__cover} ${(navOpen ? navBG.Navigation__cover_open : '')}`}
@@ -27,7 +28,7 @@ const NavBar: FC<NavBarProps> = ({setTransition}) => {
           setMenuFocus(false);
         }}></span>
       
-      <Logo setTransition={setTransition} closeMenu={closeMenu} />
+      <Logo setTransition={setTransition} closeMenu={closeMenu} trackMenuHide={trackMenuHide} />
 
       <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
         <Icon icon="menu" active={(menuFocus)} onClick={() => {
