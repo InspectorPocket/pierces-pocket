@@ -157,7 +157,7 @@ const PiercesPocket: React.FC<ProjectProps> = ({project, projects, setNextProjec
         </div>
 
         <div className={`${projectStyles.project__nextProject}`}>
-          <NextProject project={thisProject} projects={projects} setNextProject={setNextProject} />
+          {/* <NextProject project={thisProject} projects={projects} setNextProject={setNextProject} /> */}
 
           {/* Pagination */}
           <div className={`${projectStyles.project__pagination}`}>

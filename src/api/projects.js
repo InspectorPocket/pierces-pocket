@@ -11,36 +11,37 @@ const projects = [
         graphic: true,
         resources: [
             {
-            name: "Why React Hooks?",
-            id: "why-react-hooks",
-            description:
-                "In this post you'll learn why the React team dedicated so many resources to creating and releasing React Hooks. Along the way, you'll also get a soft introduction to the main aspects of the React Hooks API."
+                name: "Why React Hooks?",
+                id: "why-react-hooks",
+                description:
+                    "In this post you'll learn why the React team dedicated so many resources to creating and releasing React Hooks. Along the way, you'll also get a soft introduction to the main aspects of the React Hooks API."
             },
             {
-            name: "Introduction to props in React",
-            id: "react-props",
-            description:
-                "In this post you'll learn how to properly use props to pass data to components in React."
+                name: "Introduction to props in React",
+                id: "react-props",
+                description:
+                    "In this post you'll learn how to properly use props to pass data to components in React."
             },
             {
-            name: "Understanding React's useRef Hook",
-            id: "useref",
-            description:
-                "In this post you'll learn how and why you can use React's useRef Hook to persist values across renders without causing a re-render."
+                name: "Understanding React's useRef Hook",
+                id: "useref",
+                description:
+                    "In this post you'll learn how and why you can use React's useRef Hook to persist values across renders without causing a re-render."
             },
             {
-            name: "JSX Tips and Gotchas for Beginners",
-            id: "jsx",
-            description:
-                "In this post you'll learn all the tips and gotchas associated with JSX."
+                name: "JSX Tips and Gotchas for Beginners",
+                id: "jsx",
+                description:
+                    "In this post you'll learn all the tips and gotchas associated with JSX."
             },
             {
-            name: "Guide to React Context",
-            id: "react-context",
-            description:
-                "In this post you'll learn why, how, when, and when not to utilize React's Context API."
+                name: "Guide to React Context",
+                id: "react-context",
+                description:
+                    "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: `Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site.`
     },
     {
         index: 1,
@@ -83,7 +84,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 2,
@@ -126,7 +128,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 3,
@@ -169,7 +172,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 4,
@@ -212,7 +216,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 5,
@@ -255,7 +260,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 6,
@@ -298,7 +304,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
         index: 7,
@@ -341,7 +348,8 @@ const projects = [
             description:
                 "In this post you'll learn why, how, when, and when not to utilize React's Context API."
             }
-        ]
+        ],
+        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     }
 ];
   

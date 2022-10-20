@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
         <Routes>
 
-          <Route path=':projectId/*' element={<Project setCurrentProjectId={setCurrentProjectId} />} />
+          <Route path=':projectId/*' element={<Project projects={projects} setCurrentProjectId={setCurrentProjectId} setNextProject={setNextProject} />} />
 
           {/* <Route path="/projects/pierce's-pocket" 
             element={<Project1 project={currentProject} projects={projects} setActiveProject={setActiveProject} setNextProject={setNextProject} />} /> */}
