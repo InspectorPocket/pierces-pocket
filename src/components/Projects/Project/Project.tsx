@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProject } from '../../../api/projects';
 
+
 import projectStyles from '../../../pages/Projects/Projects.module.scss'
 // import styles from './Project.module.scss';
 import '../../../sass/_layout/_mg_pd.scss';
@@ -10,6 +11,9 @@ import colours from "../../../sass/_foundation/_colours.module.scss";
 import ProjectIntro from '../ProjectIntro/ProjectIntro';
 import Circle from '../../Circles/Circle/Circle';
 import NextProject from '../../Content/NextProject/NextProject';
+import LineText from '../../Content/LineText/LineText';
+import Image from '../../Content/Image/Image';
+import CardText from '../../Content/CardText/CardText';
 
 interface ProjectProps {
   setCurrentProjectId: any;
@@ -21,7 +25,8 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
 
   // Main Variables
   const { projectId } = useParams();
-  const project = getProject(projectId);
+  const project = getProject(projectId || '');
+  const imgUrl: string = `${projectId}/`;
   let brand: any = {
     ai: true,
     xd: true,
@@ -64,17 +69,51 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
     cleanup = false;
   }, [project]);
 
-
   return (
     <div ref={topRef} className={projectStyles.project__wrapper}>
 
       <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} brand={brand} />
 
       <div className={projectStyles.project}>
+        {/* Content */}
+        { project && project.resources.map((resource) => (
+          <div className={resource.class}>
+            <h3 className={resource.titleClass}>{resource.name}</h3>
+            {/* TODO replace these with specific classes so it can be made responsive */}
+            <Circle
+              colour={resource.circle?.colour}
+              opacity={resource.circle?.opacity}
+              width={resource.circle?.width}
+              height={resource.circle?.height}
+              transform={resource.circle?.transform}
+              top={resource.circle?.top}
+            />
+            { resource.content?.map((section) => {
+              if (section.component === 'lineText') {
+                return <LineText spacing={section.spacing} font={section.font} content={section.content} />
+              }
+              if (section.component === 'cardText') {
+                return <CardText spacing={section.spacing} content={section.content || ''} colour={section.colour} />
+              }
+              if (section.component === 'image') {
+                if (!section.src2) {
+                  return <Image src={`${projectId}/${section.src}`} alt={section.alt!} margin={section.margin} />
+                }
+                if (section.src2) {
+                  return <Image src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
+                }
+              }
+              if (section.component === 'paragraph') {
+                return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+                    .split('\n').join('<br>') || ''}}
+                  ></p>
+              }
+            })}
+          </div>
+        ))}
 
-
-        <div className={`${projectStyles.project__outro}`}
-          style={{paddingTop: '2.5rem', paddingBottom: '2rem', zIndex: 1}}>
+        {/* Outro */}
+        <div className={`${projectStyles.project__outro} pd-t-40 pd-b-32 z-1`}>
           <Circle
             colour={colours.grey1}
             transform={'translateX(-50%)'}
@@ -84,6 +123,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
           <p id='project_outro' />
         </div>
 
+        {/* Next Project */}
         <div className={`${projectStyles.project__nextProject}`}>
           <NextProject project={project} projects={projects} setNextProject={setNextProject} />
 

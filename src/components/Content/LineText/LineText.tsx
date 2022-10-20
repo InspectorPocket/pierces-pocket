@@ -3,8 +3,8 @@ import styles from './LineText.module.scss';
 import '../../../sass/_layout/_mg_pd.scss';
 
 interface LineTextProps {
-  font: "p" | "h5";
-  content: string;
+  font?: string;
+  content?: string;
   spacing?: number;
 }
 

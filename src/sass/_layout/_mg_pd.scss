@@ -40,8 +40,20 @@ md, sm, xs, mob = desktop, landscape tablet, portrait tablet, and mobile breakpo
     &-40 { #{$type}-#{$dir}: rem(40); }
     &-44 { #{$type}-#{$dir}: rem(44); }
     &-48 { #{$type}-#{$dir}: rem(48); }
+    &-52 { #{$type}-#{$dir}: rem(52); }
     &-56 { #{$type}-#{$dir}: rem(56); }
+    &-60 { #{$type}-#{$dir}: rem(60); }
     &-64 { #{$type}-#{$dir}: rem(64); }
+    &-68 { #{$type}-#{$dir}: rem(68); }
+    &-72 { #{$type}-#{$dir}: rem(72); }
+    &-76 { #{$type}-#{$dir}: rem(76); }
+    &-80 { #{$type}-#{$dir}: rem(80); }
+    &-84 { #{$type}-#{$dir}: rem(84); }
+    &-88 { #{$type}-#{$dir}: rem(88); }
+    &-92 { #{$type}-#{$dir}: rem(92); }
+    &-96 { #{$type}-#{$dir}: rem(96); }
+    &-100 { #{$type}-#{$dir}: rem(100); }
+    &-104 { #{$type}-#{$dir}: rem(104); }
     &-204 { #{$type}-#{$dir}: rem(204); }
 }
 @mixin margins($size: '') {
