@@ -7,9 +7,10 @@ import {Route, Link, useLocation} from 'react-router-dom';
 interface PanelsProps {
   state: string;
   bg?: boolean;
+  showGrid?: boolean;
 }
 
-const Panels: React.FC<PanelsProps> = ({state, bg}) => {
+const Panels: React.FC<PanelsProps> = ({state, bg, showGrid}) => {
   // const isDesktopOrLaptop = useMediaQuery({
   //   query: '(min-width: 1224px)'
   // })
@@ -20,9 +21,6 @@ const Panels: React.FC<PanelsProps> = ({state, bg}) => {
 
   // console.log(state);
   
-
-  let [topPanelHeight, setTopPanelHeight] = useState('');
-  let [botPanelHeight, setBotPanelHeight] = useState('');
   const topPanelSizes = [
     '50%',
     '25%',
@@ -31,100 +29,81 @@ const Panels: React.FC<PanelsProps> = ({state, bg}) => {
     '16px'
   ]
 
-  // const setTopPanel = (panel: number) => {
-  //   if (size) {
-  //     return;
-  //   }
-  //   setTopPanelHeight('test')
-  //   setBotPanelHeight('test')
-  // };
-
-  const location = useLocation();
-
-  // if (location.pathname === '/') {
-  //   setTopPanelHeight('calc(48px + 4.4444vw)');
-  //   setTopPanelHeight('calc(-48px - 4.4444vw)');
-  //   console.log('home');
-  // } else if (location.pathname === '/projects') {
-  //   console.log('projects');
-  // } else {
-  //   console.log('project');
-  // }
-
   return (
     <div className={`${styles.panels} ${bg ? styles.panels_bg : ''}`}>
-      <Panel panelState={state} defaultValueTop='64px' defaultValueBot='64px'/>
-      <Panel panelState={state} defaultValueTop='39px' defaultValueBot='39px' />
-      <Panel panelState={state} defaultValueTop='16px'  defaultValueBot='16px' />
+      {/* TODO useState to cycle values on different screen sizes */}
+      <Panel panelState={state} showGrid={showGrid} defaultValueTop='64px' defaultValueBot='64px'/>
+      <Panel panelState={state} showGrid={showGrid} defaultValueTop='39px' defaultValueBot='39px' />
+      <Panel panelState={state} showGrid={showGrid} defaultValueTop='16px'  defaultValueBot='16px' />
       {/* 5 */}
       <MediaQuery minWidth={320}>
-        <Panel panelState={state} defaultValueTop='39px' defaultValueBot='0'/>
+        <Panel panelState={state} showGrid={showGrid} defaultValueTop='39px' defaultValueBot='0'/>
       </MediaQuery>
       {/* 6 */}
       <MediaQuery minWidth={460}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 7 */}
       <MediaQuery minWidth={620}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 8 */}
       <MediaQuery minWidth={728}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 9 */}
       <MediaQuery minWidth={880}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 10 */}
       <MediaQuery minWidth={1024}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 11 */}
       <MediaQuery minWidth={1140}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 12 */}
       <MediaQuery minWidth={1280}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 13 */}
       <MediaQuery minWidth={1336}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 14 */}
       <MediaQuery minWidth={1440}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 15 */}
       <MediaQuery minWidth={1700}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 16 */}
       <MediaQuery minWidth={1920}>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 17/18 */}
       <MediaQuery minWidth={2100}>
-        <Panel panelState={state}/>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 19/20 */}
       <MediaQuery minWidth={2400}>
-        <Panel panelState={state}/>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 21/22 */}
       <MediaQuery minWidth={2800}>
-        <Panel panelState={state}/>
-        <Panel panelState={state}/>
+        <Panel panelState={state} showGrid={showGrid}/>
+        <Panel panelState={state} showGrid={showGrid}/>
       </MediaQuery>
       {/* 23/24 */}
       <MediaQuery minWidth={3400}>
-        <Panel panelState={state} />
-        <Panel panelState={state} />
+        <Panel panelState={state} showGrid={showGrid} />
+        <Panel panelState={state} showGrid={showGrid} />
       </MediaQuery>
-      <Panel panelState={state} defaultValueTop='64px' defaultValueBot='0'/>
+      <Panel panelState={state} showGrid={showGrid} defaultValueTop='64px' defaultValueBot='0'/>
     </div>
   )
 };

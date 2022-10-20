@@ -104,6 +104,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                 }
               }
               if (section.component === 'paragraph') {
+                // TODO Add ability to add inline links
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
                   ></p>

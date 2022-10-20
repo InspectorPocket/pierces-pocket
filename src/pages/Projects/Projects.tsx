@@ -24,11 +24,9 @@ const Projects: React.FC = () => {
   
   let [hideProjectsMenu, setHideProjectsMenu] = useState(true);
   let [showGrid, setShowGrid] = useState(false);
-  let [transition, setTransition] = useState(false);
-
   let [currentProjectId, setCurrentProjectId] = useState(99);
-  let [currentProject, setCurrentProject] = useState();
-  let [nextProjectId, setNextProjectId] = useState();
+  
+  let [panelState, setPanelState] = useState('projects');
 
   useEffect(() => {
     let cleanup = true;
@@ -44,42 +42,44 @@ const Projects: React.FC = () => {
     cleanup = false;
   }, [location]);
 
+  useEffect(() => {
+    let cleanup = true;
+    if (cleanup) {
+      if (hideProjectsMenu) setPanelState('projects');
+      else if (!hideProjectsMenu) setPanelState('fixed');
+    };
+    cleanup = false;
+  }, [hideProjectsMenu])
+
   const setActiveProject = (index: number) => {
     setCurrentProjectId(currentProjectId => currentProjectId = index);
     setHideProjectsMenu(false);
     setShowGrid(true);
-    // if (fromOverview) {
-      // setTransition(!transition);
-    // }
   }
   
   const setNextProject = (activeProject: any) => {
-    setCurrentProject(currentProject => currentProject = projects![activeProject.id + 1]);
     setCurrentProjectId(currentProjectId => currentProjectId = activeProject.id + 1);
   }
 
   return (
     <div className={styles.projects}>
 
+      {/* Panels */}
+      <Panels state={panelState} showGrid={showGrid} />
+      
+
       {/* Current Project */}
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
         <Routes>
-
           <Route path=':projectId/*' element={<Project projects={projects} setCurrentProjectId={setCurrentProjectId} setNextProject={setNextProject} />} />
-
-          {/* <Route path="/projects/pierce's-pocket" 
-            element={<Project1 project={currentProject} projects={projects} setActiveProject={setActiveProject} setNextProject={setNextProject} />} /> */}
-
-          {/* <Route path="/projects/pierce's-pocket" element={<h1>Pierce's Pocket</h1>} />
-          <Route path="/projects/localthrones" element={<h1>Localthrones</h1>} /> */}
-          
         </Routes>
       </div>
 
 
       {/* Projects Overview */}
       { projects &&
-      <div className={`container ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
+      <div className={`container z-10 ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}
+        style={{pointerEvents: 'none'}}>
         <Intro page="projects" />
       </div>
       }
@@ -152,13 +152,6 @@ const Projects: React.FC = () => {
         />
 
       </div>
-
-
-      {/* TODO Fix this to load on every project */}
-      {/* TODO Fix this to load on first load of projects */}
-      {/* { currentProject &&
-        <Panels state={'transition'} />
-      } */}
 
     </div>
   );

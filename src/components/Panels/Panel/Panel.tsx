@@ -6,53 +6,32 @@ interface PanelProps {
   topSize?: string;
   botSize?: string;
 
+  showGrid?: boolean;
   panelState: string;
   defaultValueTop?: string;
   defaultValueBot?: string;
 }
 
-const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValueTop, defaultValueBot}) => {
+const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValueTop, defaultValueBot, showGrid}) => {
 
-  // let [topPanelSize, setTopPanelSize] = useState(topSize ? topSize : '50%');
-  // let [botPanelSize, setBotPanelSize] = useState(botSize ? botSize : '-50%');
-  let [topPanelSize, setTopPanelSize] = useState('50%');
-  let [botPanelSize, setBotPanelSize] = useState('-50%');
+  let [topPanelSize, setTopPanelSize] = useState('translateY(25%)');
+  let [botPanelSize, setBotPanelSize] = useState('translateY(0)');
 
-  // let grrr: string = panelState;
-
-  const projectsUrlMatch = new RegExp('\^/projects/?$');
-
-  const location = useLocation();
-  
-  const setTopSize = (position?: string) => {
-    if (location.pathname === '/') {
-      console.log('home');
-      if (position === 'top') return {transform: `translateY(50%)`}
-      if (position === 'bot') return {transform: `translateY(-50%)`}
-    }
-    if (location.pathname === '/projects') { // || project panel is shown
-      // console.log('projects');
-      // TODO set transition on a timeout then set below values
-      if (projectsUrlMatch.test(location.pathname)) {
-        if (position === 'top') return {transform: `translateY(25%)`}
-        if (position === 'bot') return {transform: `translateY(0)`}
-        console.log('projects');
-        
-      } else {
-        if (position === 'top') return {transform: `translateY(${defaultValueTop})`}
-        if (position === 'bot') return {transform: `translateY(-${defaultValueBot})`}
-        console.log('individual project');
-        
+  useEffect(() => {
+    let cleanup = true;
+    if (cleanup) {
+      if (panelState === 'projects') {
+        setTopPanelSize(`translateY(25%)`);
+        if (showGrid) setBotPanelSize(`translateY(-${defaultValueBot})`);
+        else setBotPanelSize(`translateY(0)`);
       }
-    }
-    if (location.pathname === '/extras') {
-      // console.log('extras');
-    } else {
-      // console.log('project');
-      // TODO set transition on a timeout then set below values
-      
-    }
-  };
+      else if (panelState === 'fixed') {
+        setTopPanelSize(`translateY(${defaultValueTop})`);
+        setBotPanelSize(`translateY(-${defaultValueBot})`);
+      }
+    };
+    cleanup = false;
+  }, [panelState, showGrid])
 
   const setTransition = (position?: string) => {
     if (position === 'top') return styles.panel__top__transition;
@@ -62,17 +41,10 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
   return (
     <div className={styles.panel} >
 
-      { panelState && panelState === 'close' &&
+      { panelState &&
         <div>
-          <span className={styles.panel__top} style={{transform: `translateY(50%)`}}></span>
-          <span className={styles.panel__bot} style={{transform: `translateY(-50%)`}}></span>
-        </div>
-      }
-      {/* TODO make these not a class so the animation can dynamically be intersected */}
-      { panelState && panelState === 'fixed' &&
-        <div>
-          <span className={styles.panel__top} style={setTopSize('top')}></span>
-          <span className={styles.panel__bot} style={setTopSize('bot')}></span>
+          <span className={styles.panel__top} style={{transform: topPanelSize}} />
+          <span className={styles.panel__bot} style={{transform: botPanelSize}} />
         </div>
       }
       { panelState && panelState === 'transition' &&

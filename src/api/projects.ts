@@ -119,7 +119,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Design",
                 titleClass: 'mg-b-20',
-                id: "logo",
+                id: "design",
                 class: `${projectStyles.project__light_grey_circle} pd-t-40 pd-b-40 z-1`,
                 circle: {
                     colour: colours.grey1,
@@ -182,9 +182,9 @@ const projects: ProjectsProps[]  = [
                 ]
             },
             {
-                name: "Logo",
+                name: "Development",
                 titleClass: 'mg-b-20',
-                id: "logo",
+                id: "development",
                 class: `${projectStyles.project__light_grey_circle} mg-t-32`,
                 circle: {
                     colour: 'transparent',
@@ -205,6 +205,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
+                        // TODO Add ability to add inline links
                         content: `You can view the code over on GitHub.`,
                         margin: 'mg-b-32'
                     },
