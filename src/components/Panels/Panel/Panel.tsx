@@ -20,7 +20,11 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
   useEffect(() => {
     let cleanup = true;
     if (cleanup) {
-      if (panelState === 'projects') {
+      if (panelState === 'home') {
+        setTopPanelSize(`translateY(50%)`);
+        setBotPanelSize(`translateY(-50%)`);
+      }
+      else if (panelState === 'projects') {
         setTopPanelSize(`translateY(25%)`);
         if (showGrid) setBotPanelSize(`translateY(-${defaultValueBot})`);
         else setBotPanelSize(`translateY(0)`);
@@ -43,8 +47,8 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
 
       { panelState &&
         <div>
-          <span className={styles.panel__top} style={{transform: topPanelSize}} />
-          <span className={styles.panel__bot} style={{transform: botPanelSize}} />
+          <span className={`${styles.panel__top} ${panelState === 'home' ? styles.panel_noY : ''}`} style={{transform: topPanelSize}} />
+          <span className={`${styles.panel__bot} ${panelState === 'home' ? styles.panel_noY : ''}`} style={{transform: botPanelSize}} />
         </div>
       }
       { panelState && panelState === 'transition' &&

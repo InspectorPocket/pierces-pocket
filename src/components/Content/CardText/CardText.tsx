@@ -10,7 +10,7 @@ interface CardTextProps {
 const CardText: React.FC<CardTextProps> = ({spacing, content, colour}) => {
   return (
 
-    <div className={`${styles.CardText} ${spacing ? `mg-t-${spacing} mg-b-${spacing}` : ''}`}
+    <div className={`cardText ${styles.CardText} ${spacing ? `mg-t-${spacing} mg-b-${spacing}` : ''}`}
       style={{backgroundColor: colour ? colour : ''}}>
       <p>
         {content}

@@ -44,4 +44,8 @@
             animation: transitionBot 2.8s cubic-bezier(.41,.03,.57,.81);
         }
     }
+    &_noY {
+        border-bottom: 0 solid transparent;
+        border-top: 0 solid transparent;
+    }
 }

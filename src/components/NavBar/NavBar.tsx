@@ -4,6 +4,7 @@ import Logo from "../Logo/Logo";
 import Icon from "../Icon/Icon";
 import Navigation from "./Navigation/Navigation";
 import navBG from '../NavBar/Navigation/Navigation.module.scss';
+import panelWidth from '../../sass/_foundation/_panelWidth.module.scss';
 
 interface NavBarProps {
   setTransition: Function;
@@ -30,7 +31,7 @@ const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
       
       <Logo setTransition={setTransition} closeMenu={closeMenu} trackMenuHide={trackMenuHide} />
 
-      <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
+      <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')} ${panelWidth.panelWidth}`}>
         <Icon icon="menu" active={(menuFocus)} onClick={() => {
           setOpen(!navOpen);
           setMenuFocus(!menuFocus);

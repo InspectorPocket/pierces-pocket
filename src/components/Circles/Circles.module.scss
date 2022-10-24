@@ -1,4 +1,4 @@
-@import "/src/sass/_foundation/colours.module";
+@import '/src/sass/essentials';
 
 .Circles {
     &__wrapper {
@@ -16,10 +16,10 @@
     justify-content: center;
     position: absolute;
     left: 17.5%;
-    min-height: 75vh;
-    min-width: 75vh;
-    max-height: 75vh;
-    max-width: 75vh;
+    min-height: 65vh;
+    min-width: 65vh;
+    max-height: 65vh;
+    max-width: 65vh;
 }
 
 @keyframes rotat {
@@ -117,5 +117,13 @@
         left: 11.5%;
         bottom: 20%;
         animation-duration: 6s;
+    }
+}
+
+@include bp_460 {
+    .Circles {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

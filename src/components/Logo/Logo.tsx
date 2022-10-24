@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import styles from './Logo.module.scss';
 import colours from '../../sass/_foundation/_colours.module.scss';
+import panelWidth from '../../sass/_foundation/_panelWidth.module.scss';
 
 import logo from '../../../assets/logo.svg';
 
@@ -32,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({setTransition, closeMenu, trackMenuHide}) =>
   }, [location, trackMenuHide])
   
   return (
-    <Link to="/" className={styles.Logo__container} onClick={() => {
+    <Link to="/" className={`${styles.Logo__container} ${panelWidth.panelWidth}`} onClick={() => {
       setTransition("close");
       closeMenu();
     }}>
