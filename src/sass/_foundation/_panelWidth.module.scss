@@ -1,229 +1,607 @@
+// TODO expport values and replace in classes
+
+$default: 25;
+$_320: 20;
+$_400: 16.6666;
+$_480: 14.3333;
+$_560: 12.5;
+$_640: 11.1111;
+$_720: 9.95;
+$_800: 9.08;
+$_880: 8.3333;
+$_960: 7.6666;
+$_1040: 7.1111;
+$_1120: 6.6666;
+$_1200: 6.2222;
+$_1280: 5.8333;
+$_1360: 5.2666;
+$_1440: 4.7777;
+$_1520: 4.5333;
+$_1600: 4.35;
+$_1680: 4.15;
+$_1760: 3.966;
+$_1840: 3.85;
+$_1920: 3.6999;
+$_2000: 3.5555;
+$_2080: 3.4666;
+$_2160: 3.3333;
+$_2240: 3.2;
+$_2320: 3.15;
+$_2400: 3.025;
+$_2480: 2.933;
+$_2560: 2.85;
+$_2640: 2.757;
+$_2720: 2.7222;
+$_2800: 2.6333;
+$_2880: 2.5666;
+$_2940: 2.5111;
+$_3020: 2.45;
+$_3100: 2.38;
+$_3180: 2.33;
+$_3260: 2.2666;
+$_3340: 2.2222;
+$_3420: 2.16;
+$_3500: 2.1;
+$_3580: 2.08;
+$_3660: 2.05;
+$_3740: 2;
+$_3820: 1.95;
+
 .panelWidth {
-    width: 20%;
+    width: $default + vw;
+    &_x2 { width: $default * 2 + vw; }
+}
+.panelHeight {
+    height: $default + vw;
+    &_x2 { height: $default * 2 + vw; }
+}
+.panelPadding {
+    &_top { padding-top: 3.3333vw; }
+    &_bot { padding-bottom: 3.3333vw; }
 }
 
 @media (min-width: 320px) {
     .panelWidth { 
-        width: 25%;
+        width: $_320 + vw;
+        &_x2 { width: $_320 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_320 + vw;
+        &_x2 { height: $_320 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 2.5vw; }
+        &_bot { padding-bottom: 2.5vw; }
     }
 }
 @media (min-width: 400px) {
     .panelWidth { 
-        width: 16.6666%;
+        width: $_400 + vw;
+        &_x2 { width: $_400 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_400 + vw;
+        &_x2 { height: $_400 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 2.2222vw; }
+        &_bot { padding-bottom: 2.2222vw; }
     }
 }
 @media (min-width: 480px) {
     .panelWidth { 
-        width: 14.3333%;
+        width: $_480 + vw;
+        &_x2 { width: $_480 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_480 + vw;
+        &_x2 { height: $_480 * 2 + vw; }
     }
 }
 @media (min-width: 560px) {
     .panelWidth { 
-        width: 12.5%;
+        width: $_560 + vw;
+        &_x2 { width: $_560 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_560 + vw;
+        &_x2 { height: $_560 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 2vw; }
+        &_bot { padding-bottom: 2vw; }
     }
 }
 @media (min-width: 640px) {
     .panelWidth { 
-        width: 11.1111%;
+        width: $_640 + vw;
+        &_x2 { width: $_640 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_640 + vw;
+        &_x2 { height: $_640 * 2 + vw; }
     }
 }
 @media (min-width: 720px) {
     .panelWidth { 
-        width: 9.95%;
+        width: $_720 + vw;
+        &_x2 { width: $_720 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_720 + vw;
+        &_x2 { height: $_720 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 1.9vw; }
+        &_bot { padding-bottom: 1.9vw; }
     }
 }
 @media (min-width: 800px) {
     .panelWidth { 
-        width: 9.08%;
+        width: $_800 + vw;
+        &_x2 { width: $_800 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_800 + vw;
+        &_x2 { height: $_800 * 2 + vw; }
     }
 }
 @media (min-width: 880px) {
     .panelWidth { 
-        width: 8.3333%;
+        width: $_880 + vw;
+        &_x2 { width: $_880 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_880 + vw;
+        &_x2 { height: $_880 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 1.6vw; }
+        &_bot { padding-bottom: 1.6vw; }
     }
 }
 @media (min-width: 960px) {
     .panelWidth { 
-        width: 7.6666%;
+        width: $_960 + vw;
+        &_x2 { width: $_960 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_960 + vw;
+        &_x2 { height: $_960 * 2 + vw; }
     }
 }
 @media (min-width: 1040px) {
     .panelWidth { 
-        width: 7.1111%;
+        width: $_1040 + vw;
+        &_x2 { width: $_1040 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1040 + vw;
+        &_x2 { height: $_1040 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 1.4vw; }
+        &_bot { padding-bottom: 1.4vw; }
     }
 }
 @media (min-width: 1120px) {
     .panelWidth { 
-        width: 6.6666%;
+        width: $_1120 + vw;
+        &_x2 { width: $_1120 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1120 + vw;
+        &_x2 { height: $_1120 * 2 + vw; }
     }
 }
 @media (min-width: 1200px) {
     .panelWidth { 
-        width: 6.2222%;
+        width: $_1200 + vw;
+        &_x2 { width: $_1200 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1200 + vw;
+        &_x2 { height: $_1200 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 1.2vw; }
+        &_bot { padding-bottom: 1.2vw; }
     }
 }
 @media (min-width: 1280px) {
     .panelWidth { 
-        width: 5.8333%;
+        width: $_1280 + vw;
+        &_x2 { width: $_1280 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1280 + vw;
+        &_x2 { height: $_1280 * 2 + vw; }
     }
 }
 @media (min-width: 1360px) {
     .panelWidth { 
-        width: 5.2666%;
+        width: $_1360 + vw;
+        &_x2 { width: $_1360 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1360 + vw;
+        &_x2 { height: $_1360 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 1vw; }
+        &_bot { padding-bottom: 1vw; }
     }
 }
 @media (min-width: 1440px) {
     .panelWidth { 
-        width: 4.7777%;
+        width: $_1440 + vw;
+        &_x2 { width: $_1440 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1440 + vw;
+        &_x2 { height: $_1440 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.85vw; }
+        &_bot { padding-bottom: 0.85vw; }
     }
 }
 @media (min-width: 1520px) {
     .panelWidth { 
-        width: 4.5333%;
+        width: $_1520 + vw;
+        &_x2 { width: $_1520 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1520 + vw;
+        &_x2 { height: $_1520 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.75vw; }
+        &_bot { padding-bottom: 0.75vw; }
     }
 }
 @media (min-width: 1600px) {
     .panelWidth { 
-        width: 4.35%;
+        width: $_1600 + vw;
+        &_x2 { width: $_1600 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1600 + vw;
+        &_x2 { height: $_1600 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.7vw; }
+        &_bot { padding-bottom: 0.7vw; }
     }
 }
 @media (min-width: 1680px) {
     .panelWidth { 
-        width: 4.15%;
+        width: $_1680 + vw;
+        &_x2 { width: $_1680 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1680 + vw;
+        &_x2 { height: $_1680 * 2 + vw; }
     }
 }
 @media (min-width: 1760px) {
     .panelWidth { 
-        width: 3.966%;
+        width: $_1760 + vw;
+        &_x2 { width: $_1760 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1760 + vw;
+        &_x2 { height: $_1760 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.6vw; }
+        &_bot { padding-bottom: 0.6vw; }
     }
 }
 @media (min-width: 1840px) {
     .panelWidth { 
-        width: 3.85%;
+        width: $_1840 + vw;
+        &_x2 { width: $_1840 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1840 + vw;
+        &_x2 { height: $_1840 * 2 + vw; }
     }
 }
 @media (min-width: 1920px) {
     .panelWidth { 
-        width: 3.6999%;
+        width: $_1920 + vw;
+        &_x2 { width: $_1920 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_1920 + vw;
+        &_x2 { height: $_1920 * 2 + vw; }
     }
 }
 @media (min-width: 2000px) {
     .panelWidth { 
-        width: 3.5555%;
+        width: $_2000 + vw;
+        &_x2 { width: $_2000 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2000 + vw;
+        &_x2 { height: $_2000 * 2 + vw; }
     }
 }
 @media (min-width: 2080px) {
     .panelWidth { 
-        width: 3.4666%;
+        width: $_2080 + vw;
+        &_x2 { width: $_2080 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2080 + vw;
+        &_x2 { height: $_2080 * 2 + vw; }
     }
 }
 @media (min-width: 2160px) {
     .panelWidth { 
-        width: 3.3333%;
+        width: $_2160 + vw;
+        &_x2 { width: $_2160 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2160 + vw;
+        &_x2 { height: $_2160 * 2 + vw; }
     }
 }
 @media (min-width: 2240px) {
     .panelWidth { 
-        width: 3.2%;
+        width: $_2240 + vw;
+        &_x2 { width: $_2240 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2240 + vw;
+        &_x2 { height: $_2240 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.5vw; }
+        &_bot { padding-bottom: 0.5vw; }
     }
 }
 @media (min-width: 2320px) {
     .panelWidth { 
-        width: 3.15%;
+        width: $_2320 + vw;
+        &_x2 { width: $_2320 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2320 + vw;
+        &_x2 { height: $_2320 * 2 + vw; }
     }
 }
 @media (min-width: 2400px) {
     .panelWidth { 
-        width: 3.025%;
+        width: $_2400 + vw;
+        &_x2 { width: $_2400 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2400 + vw;
+        &_x2 { height: $_2400 * 2 + vw; }
     }
 }
 @media (min-width: 2480px) {
     .panelWidth { 
-        width: 2.933%;
+        width: $_2480 + vw;
+        &_x2 { width: $_2480 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2480 + vw;
+        &_x2 { height: $_2480 * 2 + vw; }
     }
 }
 @media (min-width: 2560px) {
     .panelWidth { 
-        width: 2.85%;
+        width: $_2560 + vw;
+        &_x2 { width: $_2560 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2560 + vw;
+        &_x2 { height: $_2560 * 2 + vw; }
     }
 }
 @media (min-width: 2640px) {
     .panelWidth { 
-        width: 2.757%;
+        width: $_2640 + vw;
+        &_x2 { width: $_2640 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2640 + vw;
+        &_x2 { height: $_2640 * 2 + vw; }
     }
 }
 @media (min-width: 2720px) {
     .panelWidth { 
-        width: 2.7222%;
+        width: $_2720 + vw;
+        &_x2 { width: $_2720 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2720 + vw;
+        &_x2 { height: $_2720 * 2 + vw; }
+    }
+    .panelPadding {
+        &_top { padding-top: 0.4vw; }
+        &_bot { padding-bottom: 0.4vw; }
     }
 }
 @media (min-width: 2800px) {
     .panelWidth { 
-        width: 2.6333%;
+        width: $_2800 + vw;
+        &_x2 { width: $_2800 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2800 + vw;
+        &_x2 { height: $_2800 * 2 + vw; }
     }
 }
 @media (min-width: 2880px) {
     .panelWidth { 
-        width: 2.5666%;
+        width: $_2880 + vw;
+        &_x2 { width: $_2880 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2880 + vw;
+        &_x2 { height: $_2880 * 2 + vw; }
     }
 }
 @media (min-width: 2940px) {
     .panelWidth { 
-        width: 2.5111%;
+        width: $_2940 + vw;
+        &_x2 { width: $_2940 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_2940 + vw;
+        &_x2 { height: $_2940 * 2 + vw; }
     }
 }
 @media (min-width: 3020px) {
     .panelWidth { 
-        width: 2.45%;
+        width: $_3020 + vw;
+        &_x2 { width: $_3020 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3020 + vw;
+        &_x2 { height: $_3020 * 2 + vw; }
     }
 }
 @media (min-width: 3100px) {
     .panelWidth { 
-        width: 2.38%;
+        width: $_3100 + vw;
+        &_x2 { width: $_3100 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3100 + vw;
+        &_x2 { height: $_3100 * 2 + vw; }
     }
 }
 @media (min-width: 3180px) {
     .panelWidth { 
-        width: 2.33%;
+        width: $_3180 + vw;
+        &_x2 { width: $_3180 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3180 + vw;
+        &_x2 { height: $_3180 * 2 + vw; }
     }
 }
 @media (min-width: 3260px) {
     .panelWidth { 
-        width: 2.2666%;
+        width: $_3260 + vw;
+        &_x2 { width: $_3260 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3260 + vw;
+        &_x2 { height: $_3260 * 2 + vw; }
     }
 }
 @media (min-width: 3340px) {
     .panelWidth { 
-        width: 2.2222%;
+        width: $_3340 + vw;
+        &_x2 { width: $_3340 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3340 + vw;
+        &_x2 { height: $_3340 * 2 + vw; }
     }
 }
 @media (min-width: 3420px) {
     .panelWidth { 
-        width: 2.16%;
+        width: $_3420 + vw;
+        &_x2 { width: $_3420 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3420 + vw;
+        &_x2 { height: $_3420 * 2 + vw; }
     }
 }
 @media (min-width: 3500px) {
     .panelWidth { 
-        width: 2.1%;
+        width: $_3500 + vw;
+        &_x2 { width: $_3500 * 2 + vw; }
     }
-}
-@media (min-width: 3580px) {
-    .panelWidth { 
-        width: 2.1%;
+    .panelHeight { 
+        height: $_3500 + vw;
+        &_x2 { height: $_3500 * 2 + vw; }
     }
 }
 @media (min-width: 3660px) {
     .panelWidth { 
-        width: 2.05%;
+        width: $_3660 + vw;
+        &_x2 { width: $_3660 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3660 + vw;
+        &_x2 { height: $_3660 * 2 + vw; }
     }
 }
 @media (min-width: 3740px) {
     .panelWidth { 
-        width: 2%;
+        width: $_3740 + vw;
+        &_x2 { width: $_3740 * 2 + vw; }
+    }
+    .panelHeight { 
+        height: $_3740 + vw;
+        &_x2 { height: $_3740 * 2 + vw; }
     }
 }
 @media (min-width: 3820px) {
     .panelWidth { 
-        width: 1.95%;
+        width: $_3820 + vw;
+        &_x2 { width: $_3820 * 2 + vw; }
     }
+    .panelHeight { 
+        height: $_3820 + vw;
+        &_x2 { height: $_3820 * 2 + vw; }
+    }
+}
+
+:export {
+    default: $default;
+    _320: $_320;
+    _400: $_400;
+    _480: $_480;
+    _560: $_560;
+    _640: $_640;
+    _720: $_720;
+    _800: $_800;
+    _880: $_880;
+    _960: $_960;
+    _1040: $_1040;
+    _1120: $_1120;
+    _1200: $_1200;
+    _1280: $_1280;
+    _1360: $_1360;
+    _1440: $_1440;
+    _1520: $_1520;
+    _1600: $_1600;
+    _1680: $_1680;
+    _1760: $_1760;
+    _1840: $_1840;
+    _1920: $_1920;
+    _2000: $_2000;
+    _2080: $_2080;
+    _2160: $_2160;
+    _2240: $_2240;
+    _2320: $_2320;
+    _2400: $_2400;
+    _2480: $_2480;
+    _2560: $_2560;
+    _2640: $_2640;
+    _2720: $_2720;
+    _2800: $_2800;
+    _2880: $_2880;
+    _2940: $_2940;
+    _3020: $_3020;
+    _3100: $_3100;
+    _3180: $_3180;
+    _3260: $_3260;
+    _3340: $_3340;
+    _3420: $_3420;
+    _3500: $_3500;
+    _3580: $_3580;
+    _3660: $_3660;
+    _3740: $_3740;
+    _3820: $_3820;
 }

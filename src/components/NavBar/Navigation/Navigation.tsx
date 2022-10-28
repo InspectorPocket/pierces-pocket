@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Navigation.module.scss';
+import panelWidth from '../../../sass/_foundation/_panelWidth.module.scss'
 
 import NavItem from '../Navigation/NavItem/NavItem';
+import Panel from '../../Panels/Panel/Panel';
 
 interface NavigationProps {
   navState?: boolean;
@@ -10,6 +12,8 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({navState, setTransition, closeMenu}) => {
+
+  let [state, setState] = useState('nav');
 
   return (
     <div className={`${styles.Navigation__container}`}>
@@ -23,6 +27,10 @@ const Navigation: React.FC<NavigationProps> = ({navState, setTransition, closeMe
           setState(!state);
         }} /> */}
       </ul>
+      <div className={`${styles.panels} ${panelWidth.panelWidth_x2}`}>
+        <Panel panelState={navState ? 'nav-open' : 'nav'} />
+        <Panel panelState={navState ? 'nav-open' : 'nav'} />
+      </div>
     </div>
   )
 };

@@ -21,21 +21,29 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
     let cleanup = true;
     if (cleanup) {
       if (panelState === 'home') {
-        setTopPanelSize(`translateY(50%)`);
-        setBotPanelSize(`translateY(-50%)`);
+        setTopPanelSize(`51%`);
+        setBotPanelSize(`51%`);
       }
       else if (panelState === 'projects') {
-        setTopPanelSize(`translateY(25%)`);
-        if (showGrid) setBotPanelSize(`translateY(-${defaultValueBot})`);
-        else setBotPanelSize(`translateY(0)`);
+        setTopPanelSize(`144px`);
+        if (showGrid) setBotPanelSize(`-${defaultValueBot}`);
+        else setBotPanelSize(`0`);
+      }
+      else if (panelState === 'nav') {
+        setTopPanelSize(`0`);
+        setBotPanelSize(`0`);
+      }
+      else if (panelState === 'nav-open') {
+        setTopPanelSize(`51%`);
+        setBotPanelSize(`51%`);
       }
       else if (panelState === 'fixed') {
-        setTopPanelSize(`translateY(${defaultValueTop})`);
-        setBotPanelSize(`translateY(-${defaultValueBot})`);
+        setTopPanelSize(`${defaultValueTop}`);
+        setBotPanelSize(`${defaultValueBot}`);
       }
     };
     cleanup = false;
-  }, [panelState, showGrid])
+  }, [panelState, showGrid, defaultValueTop, defaultValueBot])
 
   const setTransition = (position?: string) => {
     if (position === 'top') return styles.panel__top__transition;
@@ -45,10 +53,12 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
   return (
     <div className={styles.panel} >
 
-      { panelState &&
+      { panelState && panelState !== 'transition' &&
         <div>
-          <span className={`${styles.panel__top} ${panelState === 'home' ? styles.panel_noY : ''}`} style={{transform: topPanelSize}} />
-          <span className={`${styles.panel__bot} ${panelState === 'home' ? styles.panel_noY : ''}`} style={{transform: botPanelSize}} />
+          <span className={`${styles.panel__top} ${panelState === 'home' || panelState === 'nav' || panelState === 'nav-open' ? styles.panel_noBorder : ''}`}
+            style={{height: topPanelSize}} />
+          <span className={`${styles.panel__bot} ${panelState === 'home' || panelState === 'nav' || panelState === 'nav-open' ? styles.panel_noBorder : ''}`}
+            style={{height: botPanelSize}} />
         </div>
       }
       { panelState && panelState === 'transition' &&

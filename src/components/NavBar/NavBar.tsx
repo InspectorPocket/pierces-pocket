@@ -22,7 +22,7 @@ const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
   }
   
   return (
-    <div className={styles.NavBar}>
+    <div className={`${styles.NavBar} ${panelWidth.panelHeight}`}>
       <span className={`${navBG.Navigation__cover} ${(navOpen ? navBG.Navigation__cover_open : '')}`}
         onClick={() => {
           setOpen(false);

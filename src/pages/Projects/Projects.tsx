@@ -4,6 +4,7 @@ import { getProjects } from '../../api/projects';
 import { hexToRGB } from '../../helpers/utils';
 
 import styles from './Projects.module.scss';
+import panelWidth from '../../sass/_foundation/_panelWidth.module.scss'
 
 import Icon from '../../components/Icon/Icon';
 import Intro from '../../components/Intro/Intro';
@@ -144,7 +145,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
 
       {/* Grid Icon */}
-      <div className={`${styles.projects__gridview} ${showGrid ? '' : styles.projects__gridview_hide}`}>
+      <div className={`${styles.projects__gridview} ${panelWidth.panelWidth} ${panelWidth.panelHeight} ${showGrid ? '' : styles.projects__gridview_hide}`}>
 
         <Icon icon="projects" 
           currentProject={currentProjectId}

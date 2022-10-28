@@ -2,14 +2,17 @@
 @import '/src/sass/_abstracts/transitions';
 
 .intro {
+    display: flex;
+    justify-content: center;
     width: 100%;
     // height: 100vh;
     position: relative;
     text-align: center;
     transition: .2s;
-    margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
-    margin-bottom: rem(20);
-    padding: 0 5.5555vw;
+    // margin-top: calc(6.6666vw + #{rem(46) + #{rem(24)}});
+    margin-top: rem(60);
+    // margin-bottom: rem(20);
+    // padding: 0 5.5555vw;
     z-index: 20;
     // pointer-events: none;
     &__heading {

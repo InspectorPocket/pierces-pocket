@@ -19,11 +19,10 @@
     &__gridview {
         display: flex;
         justify-content: center;
+        align-items: center;
         position: fixed;
         bottom: 0;
         left: 0;
-        width: 20%;
-        padding: 2.2222vw 0;
         z-index: 20;
         &_hide {
             display: none;

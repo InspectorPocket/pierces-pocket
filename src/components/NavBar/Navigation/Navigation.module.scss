@@ -6,28 +6,28 @@
         height: 100%;
         position: relative;
     }
-    &__bg {
-        &::before {
-            content: '';
-            height: 100%;
-            top: 0;
-            position: fixed;
-            background-color: rgba($color: $white, $alpha: 0.9);
-            // background-color: rgba($color: $yellow, $alpha: 0.9);
-            z-index: -1;
-            width: 40vw;
-            // border-left: .5px solid $grey-100;
-            right: 0;
-            transform: translateX(40vw);
-            transition: .4s ease-in-out;
-        }
-        &_open {
-            &::before {
-                transform: translateX(0) !important;
-                transition: .3s ease-in-out;
-            }
-        }
-    }
+    // &__bg {
+    //     &::before {
+    //         content: '';
+    //         height: 100%;
+    //         top: 0;
+    //         position: fixed;
+    //         background-color: rgba($color: $white, $alpha: 0.9);
+    //         // background-color: rgba($color: $yellow, $alpha: 0.9);
+    //         z-index: -1;
+    //         width: 40vw;
+    //         // border-left: .5px solid $grey-100;
+    //         right: 0;
+    //         transform: translateX(40vw);
+    //         transition: .4s ease-in-out;
+    //     }
+    //     &_open {
+    //         &::before {
+    //             transform: translateX(0) !important;
+    //             transition: .3s ease-in-out;
+    //         }
+    //     }
+    // }
     &__cover {
         position: fixed;
         top: 0;
@@ -50,6 +50,7 @@
     right: 0;
     top: 0;
     padding-top: calc(2.2222vw + #{rem(60)});
+    z-index: 5;
     // TODO remove bg colour on larger displays that have the space to not overlsp on content
 
     transform:
@@ -60,8 +61,16 @@
         transform:
             translateX(0)
             translateY(calc(-2.2222vw - #{rem(48)}));
-        transition: .3s ease-in-out;
+        transition: .4s ease-in-out;
     }
+}
+
+.panels {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
 }
 
 @include bp_320 {

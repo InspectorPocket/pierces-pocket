@@ -3,9 +3,10 @@
 .NavBar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
-    padding: 2.2222vw 0;
+    // padding: 2.2222vw 0;
     z-index: 30;
     &__menu {
         display: flex;
@@ -14,118 +15,5 @@
         flex-direction: column;
         position: relative;
         width: 20%;
-    }
-}
-
-@include bp_320 {
-    .NavBar {
-        &__menu {
-            width: 25%;
-        }
-    }
-}
-@include bp_460 {
-    .NavBar {
-        &__menu {
-            width: 16.6666%;
-        }
-    }
-}
-@include bp_620 {
-    .NavBar {
-        &__menu {
-            width: 14.3333%;
-        }
-    }
-}
-@include bp_728 {
-    .NavBar {
-        &__menu {
-            width: 12.5%;
-        }
-    }
-}
-@include bp_880 {
-    .NavBar {
-        &__menu {
-            width: 11.1111%;
-        }
-    }
-}
-@include bp_1024 {
-    .NavBar {
-        &__menu {
-            width: 10%;
-        }
-    }
-}
-@include bp_1140 {
-    .NavBar {
-        &__menu {
-            width: 9%;
-        }
-    }
-}
-@include bp_1280 {
-    .NavBar {
-        &__menu {
-            width: 8.3333%;
-        }
-    }
-}
-@include bp_1336 {
-    .NavBar {
-        &__menu {
-            width: 7.5%;
-        }
-    }
-}
-@include bp_1440 {
-    .NavBar {
-        &__menu {
-            width: 7%;
-        }
-    }
-}
-@include bp_1700 {
-    .NavBar {
-        &__menu {
-            width: 6.5%;
-        }
-    }
-}
-@include bp_1920 {
-    .NavBar {
-        &__menu {
-            width: 6%;
-        }
-    }
-}
-@include bp_2100 {
-    .NavBar {
-        &__menu {
-            width: 5.5%;
-        }
-    }
-}
-@include bp_2400 {
-    .NavBar {
-        &__menu {
-            width: 5%;
-        }
-    }
-}
-@include bp_2800 {
-    .NavBar {
-        &__menu {
-            width: 4.5%;
-        }
-    }
-}
-@include bp_3400 {
-    .NavBar {
-        &__menu {
-            width: 4.2%;
-        }
     }
 }
