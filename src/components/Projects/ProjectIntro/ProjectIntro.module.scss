@@ -5,47 +5,87 @@ $top_spacing: 6.6666vw + #{rem(44)};
 .ProjectIntro {
     position: relative;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__img {
         display: flex;
-        position: relative;
+        position: absolute;
         width: 100%;
-        height: 82.8133%;
-        // height: calc(100% - (#{$top_spacing}) - 148px);
+        height: 100vh;
+        max-width: rem(2000);
         & > span {
             width: 100%;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
+        &__cover {
+            position: absolute;
+            bottom: -88px;
+            min-height: 1700px;
+            min-width: 1700px;
+            // width: 185%;
+            // max-width: 3820px;
+            z-index: 2;
+            opacity: 0;
+            transition: .2s ease-in-out;
+            &__left {
+                right: calc(50% + 101px);
+            }
+            &__right {
+                left: calc(50% + 101px);
+                transform: rotateY(180deg);
+            }
+        }
     }
     &__title {
+        &__wrapper {
+            position: absolute;
+            width: 100%;
+            max-width: rem(700);
+            bottom: rem(80);
+        }
         display: flex;
         flex-direction: column;
         position: relative;
         // margin-top: rem(16);
         // margin-bottom: rem(16);
         padding: 0 5.5555vw;
-        transform: translateY(-24px);
-        &::before, &::after {
+        &__wave {
+            &__filled {
+
+            }
+            &__outline {
+
+            }
+        }
+        &::before {
             content: '';
             position: absolute;
             left: 50%;
             border-radius: 50%;
-        }
-        &::before {
             width: 282vw;
             height: 282vw;
-            top: rem(-36);
-            transform: translateX(calc(-50% - #{rem(48)}));
+            max-width: 2200px;
+            max-height: 1800px;
+            top: rem(-32);
+            transform: translateX(-55%);
             background-color: $white;
         }
-        &::after {
-            width: 302vw;
-            height: 302vw;
-            top: rem(-56);
-            transform: translateX(calc(-50% - #{rem(28)}));
-            border: 1px solid $white;
-        }
+        // &::after {
+            // content: '';
+            // position: absolute;
+            // left: 50%;
+            // border-radius: 50%;
+        //     width: 302vw;
+        //     height: 302vw;
+        //     max-width: 2000px;
+        //     max-height: 2000px;
+        //     top: rem(-56);
+        //     transform: translateX(calc(-50% - #{rem(28)}));
+        //     border: 1px solid $white;
+        // }
         &__heading {
             margin-bottom: rem(6);
             z-index: 2;
@@ -59,9 +99,9 @@ $top_spacing: 6.6666vw + #{rem(44)};
         align-items: center;
         justify-content: flex-end;
         position: absolute;
-        bottom: 0;
         right: 0;
-        padding: 2.2222vw 3.3333vw;
+        top: calc(100% + 6px);
+        padding: 0 5.5555vw;
         & > a {
             display: flex;
             align-items: center;
@@ -70,6 +110,73 @@ $top_spacing: 6.6666vw + #{rem(44)};
             height: 48px;
             & > img, & > svg {
                 max-width: rem(20);
+            }
+        }
+    }
+}
+
+@media (min-width: 560px) {
+    .ProjectIntro {
+        &__title {
+            &::before {
+                top: rem(-40);
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .ProjectIntro {
+        &__title {
+            &::before {
+                top: rem(-48);
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .ProjectIntro {
+        &__title {
+            padding: 0;
+        }
+        &__software {
+            padding: 0;   
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .ProjectIntro {
+        &__title {
+            &__wrapper {
+                bottom: rem(64);
+            }
+        }
+        &__software {
+            top: calc(100% - 14px);
+        }
+    }
+}
+
+@media (min-width: 1040px) {
+    .ProjectIntro {
+        &__img {
+            &__cover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .ProjectIntro {
+        &__title {
+            &::before {
+                // width: 2200px;
+                // height: 1800px;
+                // transform: translateX(-50%);
+                // top: rem(-72);
             }
         }
     }

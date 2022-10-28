@@ -4,6 +4,7 @@
     // @extend %f-c-col;
     position: relative;
     width: 100%;
+    background-color: $grey-100;
     &__wrapper {
         height: 100%;
         position: fixed;
@@ -36,6 +37,9 @@
         overflow: hidden;
     }
     position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     &__circle {
         position: absolute;
         top: 0;
