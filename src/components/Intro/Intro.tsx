@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './Intro.module.scss';
 
 interface IntroProps {
@@ -6,30 +6,9 @@ interface IntroProps {
   scrollable?: boolean;
 }
 
-// function UserGreeting(props) {
-//   return <h1>Welcome back!</h1>;
-// }
-
-// function GuestGreeting(props) {
-//   return <h1>Please sign up.</h1>;
-// }
-
-// function Greeting(props) {
-//   const isLoggedIn = props.isLoggedIn;
-//   if (isLoggedIn) {
-//     return <UserGreeting />;
-//   }
-//   return <GuestGreeting />;
-// }
-
-// const root = ReactDOM.createRoot(document.getElementById('root')); 
-// // Try changing to isLoggedIn={true}:
-// root.render(<Greeting isLoggedIn={false} />);
-
 const Intro: React.FC<IntroProps> = ({page, scrollable}) => {
 
   return (
-    // set state based on input from parent page
     <div className={styles.intro}>
       { page === 'home' &&
         <h1 className={`${styles.intro__heading}`}>Pierce<br/>Woods</h1>

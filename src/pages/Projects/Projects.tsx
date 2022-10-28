@@ -6,10 +6,9 @@ import { hexToRGB } from '../../helpers/utils';
 import styles from './Projects.module.scss';
 import panelWidth from '../../sass/_foundation/_panelWidth.module.scss'
 
+import Panels from '../../components/Panels/Panels'
 import Icon from '../../components/Icon/Icon';
 import Intro from '../../components/Intro/Intro';
-import Panels from '../../components/Panels/Panels'
-
 import Project from '../../components/Projects/Project/Project';
 
 interface ProjectsProps {

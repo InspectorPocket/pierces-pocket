@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Panel from './Panel/Panel';
 import styles from './Panels.module.scss';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
-import {Route, Link, useLocation} from 'react-router-dom';
 
 import panelWidth from '../../sass/_foundation/_panelWidth.module.scss'
 
@@ -117,8 +116,6 @@ const Panels: React.FC<PanelsProps> = ({state, bg, showGrid}) => {
       else if (is3740) setPanelHeight(panelWidth._3740);
       else if (is3820) setPanelHeight(panelWidth._3820);
       else setPanelHeight(panelWidth.default);
-      console.log('Height:', panelHeight);
-      
     };
     cleanup = false;
   }, [is320, is400, is480, is560, is640, is720, is800, is880, is960, is1040, is1120, is1200, is1280, is1360, is1440, is1520, is1600, is1680, is1760, is1840, is1920, is2000, is2080, is2160, is2240, is2320, is2400, is2480, is2560, is2640, is2720, is2800, is2880, is2960, is3020, is3100, is3180, is3260, is3340, is3420, is3500, is3580, is3660, is3740, is3820]);

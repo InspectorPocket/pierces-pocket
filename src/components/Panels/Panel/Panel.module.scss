@@ -21,6 +21,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    pointer-events: none;
     &__top, &__bot {
         height: 100%;
         width: 100%;
@@ -29,6 +30,7 @@
         border-right: 0.5px solid $grey-100;
         background: rgba($color: $white, $alpha: 1);
         transition: .4s ease-in-out;
+        pointer-events: none;
     }
     &__top {
         top: 0;

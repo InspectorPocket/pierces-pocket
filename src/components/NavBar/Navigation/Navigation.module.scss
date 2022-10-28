@@ -6,28 +6,6 @@
         height: 100%;
         position: relative;
     }
-    // &__bg {
-    //     &::before {
-    //         content: '';
-    //         height: 100%;
-    //         top: 0;
-    //         position: fixed;
-    //         background-color: rgba($color: $white, $alpha: 0.9);
-    //         // background-color: rgba($color: $yellow, $alpha: 0.9);
-    //         z-index: -1;
-    //         width: 40vw;
-    //         // border-left: .5px solid $grey-100;
-    //         right: 0;
-    //         transform: translateX(40vw);
-    //         transition: .4s ease-in-out;
-    //     }
-    //     &_open {
-    //         &::before {
-    //             transform: translateX(0) !important;
-    //             transition: .3s ease-in-out;
-    //         }
-    //     }
-    // }
     &__cover {
         position: fixed;
         top: 0;
@@ -37,6 +15,7 @@
         width: 100vw;
         height: 100vh;
         visibility: hidden;
+        pointer-events: none;
         &_open {
             visibility: visible;
         }
@@ -44,15 +23,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    // width: 200%;
-    // height: calc(100% + 2.2222vw + #{rem(60)});
     position: absolute;
     right: 0;
     top: 0;
     padding-top: calc(2.2222vw + #{rem(60)});
     z-index: 5;
     // TODO remove bg colour on larger displays that have the space to not overlsp on content
-
     transform:
         translateX(calc(100% + #{rem(60)}))
         translateY(calc(-2.2222vw - #{rem(48)}));
@@ -71,6 +47,7 @@
     right: 0;
     top: 0;
     display: flex;
+    pointer-events: none;
 }
 
 @include bp_320 {
