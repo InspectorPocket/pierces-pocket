@@ -3,6 +3,8 @@ import styles from './NextProject.module.scss';
 import { Link } from 'react-router-dom';
 import ProjectsProps from '../../../props/projectsProps'
 
+import panelWidth from '../../../sass/_foundation/_panelWidth.module.scss';
+
 let _pProps: ProjectsProps;
 
 interface NextProjectProps {
@@ -24,9 +26,9 @@ const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProj
             pathname: `/projects/${nextProject.id}`}}
             state={{ project: project, projects: projects }}
             key={project.index === projects.length - 1 ? 0 : project.index + 1}
-          onClick={() => {
-            setNextProject(nextProject)
-        }}>
+            onClick={() => {
+              setNextProject(nextProject)
+          }}>
           <h6>Next Project</h6>
           { projects && project.index < projects.length &&
             <h4>{projects[project.index + 1].title}</h4>
@@ -34,6 +36,7 @@ const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProj
           { projects && project.index === projects.length - 1 &&
             <h4>{projects[0].title}</h4>
           }
+          <div className={panelWidth.panelHeight}></div>
         </Link>
       }
 

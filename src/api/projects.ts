@@ -4,7 +4,6 @@ import projectStyles from '../pages/Projects/Projects.module.scss';
 interface ContentProps {
     component: string,
     content?: string,
-    spacing?: number,
     font?: string,
     src?: string,
     src2?: string,
@@ -59,7 +58,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -70,28 +69,29 @@ const projects: ProjectsProps[]  = [
                 },
                 content: [
                     {
-                        component: 'lineText',
-                        spacing: 20,
-                        font: 'p',
+                        component: 'paragraph',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
                     {
                         component: 'image',
                         src: 'main.jpeg',
-                        alt: '',
-                        margin: 'mg-b-16'
+                        alt: ''
+                    },
+                    {
+                        component: 'lineText',
+                        font: 'p',
+                        content: "The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at."
                     },
                     {
                         component: 'paragraph',
-                        content: "The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at.\n\nThe name Pierce's Pocket ties into the idea of having a portfolio in a digital pocket! A mobile first design was ideal for the idea."
+                        content: "The name Pierce's Pocket ties into the idea of having a portfolio in a digital pocket! A mobile first design was ideal for the idea."
                     }
                 ]
             },
             {
                 name: "Logo",
-                titleClass: 'mg-b-20',
                 id: "logo",
-                class: `${projectStyles.project__dark_grey_circle} pd-t-44 pd-b-72 z-2`,
+                class: `bg-g2 z-2`,
                 circle: {
                     colour: colours.grey2,
                     transform: 'translateX(calc(-50% - 56px))',
@@ -104,23 +104,20 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'lineText',
-                        spacing: 16,
                         font: 'h5',
                         content: "The design utilises the golden ratio."
                     },
                     {
                         component: 'image',
                         src: 'main.jpeg',
-                        alt: '',
-                        margin: 'mg-b-16'
+                        alt: ''
                     }
                 ]
             },
             {
                 name: "Design",
-                titleClass: 'mg-b-20',
                 id: "design",
-                class: `${projectStyles.project__light_grey_circle} pd-t-40 pd-b-40 z-1`,
+                class: `bg-g1 z-3`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(-50%)',
@@ -131,23 +128,19 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The style is simple but effective. Less is always more. I opted for a monochrome aesthetic, leaving space for images and slight accents to bring in the colours and adds the spice!`,
-                        margin: 'mg-b-16 mg-r-64'
+                        content: `The style is simple but effective. Less is always more. I opted for a monochrome aesthetic, leaving space for images and slight accents to bring in the colours and adds the spice!`
                     },
                     {
                         component: 'cardText',
-                        spacing: 16,
-                        content: "Creative freedom allowed for a less than conventional grid system. Whilst the traditional rules of spacing are applied, the grid follows the same layout as the panels in the background.",
+                        content: 'Creative freedom allowed for a less than conventional grid system. Whilst the traditional rules of spacing are applied, the grid follows the same layout as the panels in the background.',
                         colour: colours.grey2
                     },
                     {
                         component: 'paragraph',
-                        content: `To add to the classy - clean - feel, I wanted a serif title with a smooth sans-serif body.`,
-                        margin: 'mg-b-16 mg-r-64'
+                        content: `To add to the classy - clean - feel, I wanted a serif title with a smooth sans-serif body.`
                     },
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'h5',
                         content: "Playfair Display and Open Sans dance harmoniously together on a white canvas."
                     },
@@ -155,7 +148,7 @@ const projects: ProjectsProps[]  = [
                         component: 'image',
                         src: 'main.jpeg',
                         alt: '',
-                        margin: 'mg-b-8'
+                        margin: 'tight'
                     },
                     {
                         component: 'image',
@@ -163,13 +156,13 @@ const projects: ProjectsProps[]  = [
                         src2: 'main.jpeg',
                         alt: '',
                         alt2: '',
-                        margin: 'mg-b-8'
+                        margin: 'tight'
                     },
                     {
                         component: 'image',
                         src: 'main.jpeg',
                         alt: '',
-                        margin: 'mg-b-8'
+                        margin: 'tight'
                     },
                     {
                         component: 'image',
@@ -177,15 +170,14 @@ const projects: ProjectsProps[]  = [
                         src2: 'main.jpeg',
                         alt: '',
                         alt2: '',
-                        margin: 'mg-b-16'
+                        margin: 'tight'
                     }
                 ]
             },
             {
                 name: "Development",
-                titleClass: 'mg-b-20',
                 id: "development",
-                class: `${projectStyles.project__light_grey_circle} mg-t-32`,
+                class: `bg-w z-4`,
                 circle: {
                     colour: 'transparent',
                     transform: 'translateX(calc(-50% - 56px))',
@@ -194,20 +186,17 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `I developed the app with React and used Sass for styling.`,
-                        margin: 'mg-b-16 mg-r-64'
+                        content: `I developed the app with React and used Sass for styling.`
                     },
                     {
                         component: 'cardText',
-                        spacing: 16,
                         content: "I had never used react before starting this project – however I was familiar with Angular – so it didn’t take too long to get things moving.",
                         colour: colours.grey1
                     },
                     {
                         component: 'paragraph',
                         // TODO Add ability to add inline links
-                        content: `You can view the code over on GitHub.`,
-                        margin: 'mg-b-32'
+                        content: `You can view the code over on GitHub.`
                     },
                 ]
             }
@@ -228,7 +217,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -240,7 +229,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -263,7 +251,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -275,7 +263,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -298,7 +285,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -310,7 +297,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -333,7 +319,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -345,7 +331,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -368,7 +353,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -380,7 +365,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -403,7 +387,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -415,7 +399,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },
@@ -438,7 +421,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `${projectStyles.project__intro} mg-t-8 mg-b-8 pd-b-20 z-1`,
+                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
                 circle: {
                     colour: colours.grey1,
                     transform: 'translateX(calc(-50% - 112px))',
@@ -450,7 +433,6 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'lineText',
-                        spacing: 20,
                         font: 'p',
                         content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
                     },

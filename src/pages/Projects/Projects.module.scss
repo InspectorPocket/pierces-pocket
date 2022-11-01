@@ -38,7 +38,7 @@
     }
     position: relative;
     width: 100%;
-    max-width: 700px;
+    max-width: rem(556);
     margin: 0 auto;
     &__circle {
         position: absolute;
@@ -49,20 +49,33 @@
         height: 100%;
         width: 200vw;
     }
-
-    &__intro, &__dark_grey_circle, &__light_grey_circle, &__outro {
+    &__section, &__outro {
         position: relative;
         padding-left: 5.5555vw;
         padding-right: 5.5555vw;
+    }
+    &__section {
+        margin-bottom: rem(32);
+        &:not(:first-child) {
+            & > h3 {
+                padding-top: rem(32);
+            }
+        }
+        & > h3 {
+            margin-bottom: rem(24);
+        }
+        & > p {
+            margin-bottom: rem(20);
+        }
         &::before {
-            content: none;
+            content: '';
             position: absolute;
-            top: 0;
-            left: 50%;
-            border-radius: 50%;
+            width: 100vw;
+            height: calc(100% + 48px);
+            // background-color: aliceblue !important;
             z-index: -1;
-            height: 100%;
-            width: 200vw;
+            left: 50%;
+            transform: translateX(calc(-50%)) skewY(2deg);
         }
     }
     &__no_circle {
@@ -71,28 +84,38 @@
         }
     }
     &__outro {
-        z-index: 1;
+        z-index: 10;
         padding-top: rem(40);
         padding-bottom: rem(32);
+        max-width: rem(360);
+        margin: 0 auto;
+        padding: rem(32) 5.5555vw;
+        text-align: center;
         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-radius: 50%;
+            z-index: -1;
+            width: 300vw;
+            height: 225vw;
             transform: translateX(calc(-50%));
             background-color: $grey-200;
-            height: 200%;
         }
     }
     &__nextProject {
         position: relative;
+        z-index: 15;
     }
     &__pagination {
-        min-height: rem(48);
-        max-height: rem(48);
         display: flex;
         align-items: center;
         position: absolute;
         right: 0;
         bottom: 0;
-        margin: 2.2222vw;
-        padding: rem(16);
+        margin: 0 2.2222vw;
+        padding: 0 rem(16);
         z-index: 5;
         &__number {
             color: $white;
@@ -282,6 +305,14 @@
             min-width: auto;
         }
     }
+    .project {
+        &__section {
+            padding: 0;
+        }
+        &__outro {
+            padding: rem(32) 0;
+        }
+    }
 }
 
 @media (min-width: 800px) {
@@ -292,10 +323,24 @@
     }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1040px) {
     .ProjectOverview {
         &__project {
             margin: rem(24) rem(12) 0;
         }
+    }
+    .project {
+        max-width: rem(700);
+        &__outro {
+            &::before {
+                width: 225vw;
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .project {
+        
     }
 }

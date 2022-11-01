@@ -22,7 +22,7 @@ const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = ({imgUrl, title
   return (
     <div className={styles.ProjectIntro}>
       <img src="/images/image_cover.svg" alt="Image Cover Left" className={`${styles.ProjectIntro__img__cover} ${styles.ProjectIntro__img__cover__left}`} />
-      <img src="/images/image_cover.svg" alt="Image Cover Left" className={`${styles.ProjectIntro__img__cover} ${styles.ProjectIntro__img__cover__right}`} />
+      {/* <img src="/images/image_cover.svg" alt="Image Cover Left" className={`${styles.ProjectIntro__img__cover} ${styles.ProjectIntro__img__cover__right}`} /> */}
       <div className={styles.ProjectIntro__img}>
         <span style={{backgroundImage: `url("/images/${imgUrl}main.jpeg")`}} />
       </div>

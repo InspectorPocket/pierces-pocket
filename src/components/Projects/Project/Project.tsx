@@ -7,6 +7,7 @@ import projectStyles from '../../../pages/Projects/Projects.module.scss'
 // import styles from './Project.module.scss';
 import '../../../sass/_layout/_mg_pd.scss';
 import colours from "../../../sass/_foundation/_colours.module.scss";
+import panelWidth from '../../../sass/_foundation/_panelWidth.module.scss';
 
 import ProjectIntro from '../ProjectIntro/ProjectIntro';
 import Circle from '../../Circles/Circle/Circle';
@@ -63,7 +64,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   useEffect(() => {
     let cleanup = true;
     if (cleanup) {
-      window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+      // window.scrollTo({top: 0, left: 0, behavior: 'auto'});
       calculatePagination();
     }
     cleanup = false;
@@ -77,23 +78,23 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
       <div className={projectStyles.project}>
         {/* Content */}
         { project && project.resources.map((resource) => (
-          <div className={resource.class}>
+          <div className={`${projectStyles.project__section} ${resource.class}`}>
             <h3 className={resource.titleClass}>{resource.name}</h3>
             {/* TODO replace these with specific classes so it can be made responsive */}
-            <Circle
+            {/* <Circle
               colour={resource.circle?.colour}
               opacity={resource.circle?.opacity}
               width={resource.circle?.width}
               height={resource.circle?.height}
               transform={resource.circle?.transform}
               top={resource.circle?.top}
-            />
+            /> */}
             { resource.content?.map((section) => {
               if (section.component === 'lineText') {
-                return <LineText spacing={section.spacing} font={section.font} content={section.content} />
+                return <LineText font={section.font} content={section.content} />
               }
               if (section.component === 'cardText') {
-                return <CardText spacing={section.spacing} content={section.content || ''} colour={section.colour} />
+                return <CardText content={section.content || ''} colour={section.colour} />
               }
               if (section.component === 'image') {
                 if (!section.src2) {
@@ -104,23 +105,22 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                 }
               }
               if (section.component === 'paragraph') {
-                // TODO Add ability to add inline links
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
                   ></p>
               }
+              // if (section.component === 'paragraph' && section.link) {
+              //   // TODO Add ability to add inline links
+              //   return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+              //       .split('<a/>').join(`<a href="${section.link.url}" >${section.link.content}<a/>`) || ''}}
+              //     ></p>
+              // }
             })}
           </div>
         ))}
 
         {/* Outro */}
-        <div className={`${projectStyles.project__outro} pd-t-40 pd-b-32 z-1`}>
-          <Circle
-            colour={colours.grey1}
-            transform={'translateX(-50%)'}
-            width={'200vw'}
-            height={'150%'}
-          />
+        <div className={`${projectStyles.project__outro} z-1`}>
           <p id='project_outro' />
         </div>
 
@@ -129,7 +129,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
           <NextProject project={project} projects={projects} setNextProject={setNextProject} />
 
           {/* Pagination */}
-          <div className={`${projectStyles.project__pagination}`}>
+          <div className={`${projectStyles.project__pagination} ${panelWidth.panelHeight}`}>
             <h6 className={`${projectStyles.project__pagination__number}`}>{project!.index + 1}</h6>
             <span className={`${projectStyles.project__pagination__bar}`}>
               <span style={{width: `${progressBar}%`}} />

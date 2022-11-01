@@ -15,12 +15,12 @@ const Image: React.FC<ImageProps> = ({ src, alt, src2, alt2, margin, width, heig
   return (
     <div className={styles.Image}>
       { src && !src2 &&
-        <div className={`${styles.Image__one} ${margin}`}>
+        <div className={`${styles.Image__one} ${margin && margin === 'tight' ? styles.Image__one_tight : styles.Image__one_full}`}>
           <img src={`/images/${src}`} alt={alt} width={width} height={height} />
         </div>
       }
       { src && src2 &&
-        <div className={`${styles.Image__two} ${margin}`}>
+        <div className={`${styles.Image__two} ${margin && margin === 'tight' ? styles.Image__two_tight : styles.Image__two_full}`}>
           <img src={`/images/${src}`} alt={alt} />
           <img src={`/images/${src2}`} alt={alt2} />
         </div>

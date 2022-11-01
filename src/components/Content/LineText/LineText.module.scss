@@ -1,10 +1,11 @@
 @import '/src/sass/essentials';
 @import '/src/sass/_abstracts/transitions';
+@import 'src/sass/_foundation/panelWidth.module.scss';
 
 .LineText {
     position: relative;
     text-align: left;
-    margin-left: calc(20vw - #{rem(16)});
+    margin: rem(20) 0 rem(20) rem(64);
     &::before {
         content: '';
         position: absolute;
@@ -21,5 +22,16 @@
         &_20 {
             margin: rem(20) 0;
         }
+    }
+}
+
+@media (min-width: 640px) {
+    .LineText { 
+        margin: rem(24) rem(72);
+    }
+}
+@media (min-width: 1200px) {
+    .LineText { 
+        margin: rem(24) rem(88);
     }
 }

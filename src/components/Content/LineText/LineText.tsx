@@ -11,7 +11,7 @@ interface LineTextProps {
 const LineText: FC<LineTextProps> = ({font, content, spacing}) => {
   return (
 
-    <div className={`${styles.LineText} ${spacing ? `mg-t-${spacing} mg-b-${spacing}` : ''}`}>
+    <div className={`${styles.LineText}`}>
       { font === 'p' && <p>{content}</p> }
       { font === 'h5' && <h5>{content}</h5> }
     </div>
