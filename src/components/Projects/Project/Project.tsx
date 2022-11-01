@@ -80,15 +80,6 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
         { project && project.resources.map((resource) => (
           <div className={`${projectStyles.project__section} ${resource.class}`}>
             <h3 className={resource.titleClass}>{resource.name}</h3>
-            {/* TODO replace these with specific classes so it can be made responsive */}
-            {/* <Circle
-              colour={resource.circle?.colour}
-              opacity={resource.circle?.opacity}
-              width={resource.circle?.width}
-              height={resource.circle?.height}
-              transform={resource.circle?.transform}
-              top={resource.circle?.top}
-            /> */}
             { resource.content?.map((section) => {
               if (section.component === 'lineText') {
                 return <LineText font={section.font} content={section.content} />
@@ -104,17 +95,16 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                   return <Image src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
                 }
               }
-              if (section.component === 'paragraph') {
+              if (section.component === 'paragraph' && !section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
                   ></p>
               }
-              // if (section.component === 'paragraph' && section.link) {
-              //   // TODO Add ability to add inline links
-              //   return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
-              //       .split('<a/>').join(`<a href="${section.link.url}" >${section.link.content}<a/>`) || ''}}
-              //     ></p>
-              // }
+              if (section.component === 'paragraph' && section.link) {
+                return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+                    .split('<a/>').join(`<a href="${section.link.url}" target="_blank" >${section.link.content}<a/>`) || ''}}
+                  ></p>
+              }
             })}
           </div>
         ))}

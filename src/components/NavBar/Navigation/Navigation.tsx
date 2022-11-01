@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({navState, setTransition, closeMe
       <ul className={`${styles.Navigation} ${(navState ? styles.Navigation_open : '')}`}>
         <NavItem title="projects" destination="projects" setTransition={setTransition} closeMenu={closeMenu} />
         <NavItem title="about" destination="about" setTransition={setTransition} closeMenu={closeMenu} />
-        <NavItem title="extras" destination="extras" setTransition={setTransition} closeMenu={closeMenu} />
+        {/* <NavItem title="extras" destination="extras" setTransition={setTransition} closeMenu={closeMenu} /> */}
         {/* <NavItem title="extras" destination="extras" onClick={() => {
           setTransition('transition');
           setState(!state);

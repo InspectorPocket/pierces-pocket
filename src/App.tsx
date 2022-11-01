@@ -33,7 +33,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home setTransition={setTransition} />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects/*" element={<Projects trackMenuHide={trackMenuHide} />} />
-          <Route path="/extras" element={<Extras />} />
+          {/* <Route path="/extras" element={<Extras />} /> */}
           {/* <Route path="*">
             <NotFound />
           </Route> */}

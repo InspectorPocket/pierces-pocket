@@ -11,6 +11,10 @@ interface ContentProps {
     alt2?: string,
     margin?: string,
     colour?: string,
+    link?: {
+        url: string,
+        content: string
+    }
 }
 
 interface ResourcesProps {
@@ -18,14 +22,6 @@ interface ResourcesProps {
     id: string,
     titleClass?: string,
     class: string,
-    circle: {
-        colour: string,
-        transform: string,
-        top?: string,
-        width?: string,
-        height?: string,
-        opacity?: string,
-    },
     content: ContentProps[]
 }
 
@@ -59,14 +55,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'paragraph',
@@ -92,11 +80,6 @@ const projects: ProjectsProps[]  = [
                 name: "Logo",
                 id: "logo",
                 class: `bg-g2 z-2`,
-                circle: {
-                    colour: colours.grey2,
-                    transform: 'translateX(calc(-50% - 56px))',
-                    width: '250vw'
-                },
                 content: [
                     {
                         component: 'paragraph',
@@ -118,13 +101,6 @@ const projects: ProjectsProps[]  = [
                 name: "Design",
                 id: "design",
                 class: `bg-g1 z-3`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(-50%)',
-                    width: '350vw',
-                    height: 'calc(100% + 60px)',
-                    top: '-60px'
-                },
                 content: [
                     {
                         component: 'paragraph',
@@ -178,11 +154,6 @@ const projects: ProjectsProps[]  = [
                 name: "Development",
                 id: "development",
                 class: `bg-w z-4`,
-                circle: {
-                    colour: 'transparent',
-                    transform: 'translateX(calc(-50% - 56px))',
-                    width: '250vw'
-                },
                 content: [
                     {
                         component: 'paragraph',
@@ -195,8 +166,11 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        // TODO Add ability to add inline links
-                        content: `You can view the code over on GitHub.`
+                        content: `You can view the code over on <a/>.`,
+                        link: {
+                            url: 'https://github.com/InspectorPocket/pierces-pocket',
+                            content: 'GitHub'
+                        }
                     },
                 ]
             }
@@ -217,15 +191,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "The Project",
                 id: "the-project",
-                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
+                class: ``,
                 content: [
                     {
                         component: 'lineText',
@@ -252,14 +218,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',
@@ -286,14 +244,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',
@@ -320,14 +270,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',
@@ -354,14 +296,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',
@@ -388,14 +322,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',
@@ -422,14 +348,6 @@ const projects: ProjectsProps[]  = [
                 name: "The Project",
                 id: "the-project",
                 class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                circle: {
-                    colour: colours.grey1,
-                    transform: 'translateX(calc(-50% - 112px))',
-                    top: '-52px',
-                    width: '240vw',
-                    height: 'calc(130% + 104px)',
-                    opacity: '1'
-                },
                 content: [
                     {
                         component: 'lineText',

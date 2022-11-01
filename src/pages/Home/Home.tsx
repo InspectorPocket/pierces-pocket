@@ -23,7 +23,7 @@ const Home: React.FC<ProjectsProps & HomeProps> = ({setTransition}) => {
           {/* <NavItem title="home" destination="" setTransition={setTransition} /> */}
           <NavItem title="projects" destination="projects" homePage={true} setTransition={setTransition} />
           <NavItem title="about" destination="about" homePage={true} setTransition={setTransition} />
-          <NavItem title="extras" destination="extras" homePage={true} setTransition={setTransition} />
+          {/* <NavItem title="extras" destination="extras" homePage={true} setTransition={setTransition} /> */}
         </ul>
       </div>
       <Circles />
