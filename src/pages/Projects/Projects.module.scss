@@ -55,14 +55,10 @@
         padding-right: 5.5555vw;
     }
     &__section {
-        margin-bottom: rem(32);
-        &:not(:first-child) {
-            & > h3 {
-                padding-top: rem(32);
-            }
-        }
+        margin-bottom: rem(48);
         & > h3 {
             margin-bottom: rem(24);
+            padding-top: rem(32);
         }
         & > p {
             margin-bottom: rem(20);
@@ -71,9 +67,10 @@
             content: '';
             position: absolute;
             width: 100vw;
-            height: calc(100% + 48px);
+            height: calc(100% + 50px);
             // background-color: aliceblue !important;
             z-index: -1;
+            top: -1px;
             left: 50%;
             transform: translateX(calc(-50%)) skewY(2deg);
         }

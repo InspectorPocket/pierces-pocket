@@ -44,7 +44,7 @@ const projects: ProjectsProps[]  = [
         index: 0,
         title: "Pierce's Pocket",
         id: "pierce's-pocket",
-        description: "Brand & UX Design, Front End Development",
+        description: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work. The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at.",
         colour: "#35485C",
         ux: true,
         dev: true,
@@ -52,117 +52,151 @@ const projects: ProjectsProps[]  = [
         graphic: true,
         resources: [
             {
-                name: "The Project",
-                id: "the-project",
-                class: `z-1`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
-                    },
-                    {
-                        component: 'image',
-                        src: 'main.jpeg',
-                        alt: ''
-                    },
-                    {
-                        component: 'lineText',
-                        font: 'p',
-                        content: "The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at."
-                    },
-                    {
-                        component: 'paragraph',
-                        content: "The name Pierce's Pocket ties into the idea of having a portfolio in a digital pocket! A mobile first design was ideal for the idea."
-                    }
-                ]
-            },
-            {
                 name: "Logo",
                 id: "logo",
-                class: `bg-g2 z-2`,
+                class: `bg-g1 z-2`,
                 content: [
                     {
                         component: 'paragraph',
                         content: `When designing the logo I had two things in mind. I wanted it to look like it was cutout of the page, and that two "p's" were present - one inside the other.`
                     },
                     {
+                        component: 'image',
+                        src: 'logo_showcase.png',
+                        alt: ''
+                    },
+                    {
                         component: 'lineText',
-                        font: 'h5',
-                        content: "The design utilises the golden ratio."
+                        font: 'p',
+                        content: "The shortened logo is used on pages where the overlayed panels are shrunk - just like this page you are on now!"
+                    }
+                ]
+            },
+            {
+                name: "Styleguide",
+                id: "styleguide",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The style is simple but effective. Less is always more. I opted for a monochrome aesthetic, leaving space for images and slight accents to bring in the colours, which adds the spice!`
                     },
                     {
                         component: 'image',
-                        src: 'main.jpeg',
+                        src: 'styleguide.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `To add to the classy - clean - feel, I wanted a serif title with a smooth sans-serif body.`
+                    }
+                ]
+            },
+            {
+                name: "First Iteration",
+                id: "first-iteration",
+                class: `bg-g3 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `I started designing this project when I was in my infancy in learning UX Design. The idea of having something covering the content, and then revealing it afterwards began here. This later evolved to the panels you see today.\n\nI used Sketch to design this iteration and later moved to Adobe XD.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'oldPortfolio_2.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'oldPortfolio_3.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'oldPortfolio_4.png',
                         alt: ''
                     }
                 ]
             },
             {
-                name: "Design",
-                id: "design",
-                class: `bg-g1 z-3`,
+                name: "Second Iteration",
+                id: "first-iteration",
+                class: `bg-g3 z-2`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The style is simple but effective. Less is always more. I opted for a monochrome aesthetic, leaving space for images and slight accents to bring in the colours and adds the spice!`
+                        content: `This project has been in the works for a while, meeting multiple iterations. Each iteration added a new element that would be carried forwards into the final design.`
                     },
                     {
-                        component: 'cardText',
-                        content: 'Creative freedom allowed for a less than conventional grid system. Whilst the traditional rules of spacing are applied, the grid follows the same layout as the panels in the background.',
-                        colour: colours.grey2
+                        component: 'image',
+                        src: '2ndPortfolio_1.png',
+                        alt: ''
                     },
+                    {
+                        component: 'image',
+                        src: '2ndPortfolio_2.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: '2ndPortfolio_3.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: '2ndPortfolio_4.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Final Design",
+                id: "final-design",
+                class: `bg-g2 z-3`,
+                content: [
                     {
                         component: 'paragraph',
-                        content: `To add to the classy - clean - feel, I wanted a serif title with a smooth sans-serif body.`
+                        content: `For the final design I opted with a simple and clean look. The monochromatic aesthetic leaves a minimalistic feel, allowing for projects and other accents to draw focus.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'main.png',
+                        alt: ''
                     },
                     {
                         component: 'lineText',
-                        font: 'h5',
-                        content: "Playfair Display and Open Sans dance harmoniously together on a white canvas."
-                    },
-                    {
-                        component: 'image',
-                        src: 'main.jpeg',
-                        alt: '',
-                        margin: 'tight'
-                    },
-                    {
-                        component: 'image',
-                        src: 'main.jpeg',
-                        src2: 'main.jpeg',
-                        alt: '',
-                        alt2: '',
-                        margin: 'tight'
-                    },
-                    {
-                        component: 'image',
-                        src: 'main.jpeg',
-                        alt: '',
-                        margin: 'tight'
-                    },
-                    {
-                        component: 'image',
-                        src: 'main.jpeg',
-                        src2: 'main.jpeg',
-                        alt: '',
-                        alt2: '',
-                        margin: 'tight'
+                        content: `The final implementation turned out like the final design looks, so feel free to explore this website to see!`,
+                        font: 'p'
                     }
                 ]
             },
             {
                 name: "Development",
                 id: "development",
-                class: `bg-w z-4`,
+                class: `bg-g1 z-4`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `I developed the app with React and used Sass for styling.`
+                        content: `I developed the app with React and used Sass for styling. Using components allows projects to be loaded dynamically. I used a separate file for adding project content, and the Project component will loop through the project array to dynamically generate content on the fly.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'code_data.png',
+                        alt: ''
                     },
                     {
                         component: 'cardText',
-                        content: "I had never used react before starting this project – however I was familiar with Angular – so it didn’t take too long to get things moving.",
-                        colour: colours.grey1
+                        content: "A new panel is added every 80px of the screen width being expanded, adding panels all the way upto ultrawide resolution. Depending on the page being viewed, depends on the height these panels are set.\n\nFor example, the page you are viewing now closes most of the panels, but leave some open for the menu buttons to be navigatable.",
+                        colour: colours.grey2
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The grid menu button on the bottom left corner is also dynamic. The amount of grid items that is shown is dependant on the amount of projects available - and the current project number will reflect the active state of the grid.`
+                    },
+                    {
+                        component: 'lineText',
+                        content: `I had never used React before starting this project – however I was familiar with Angular – so it didn’t take too long to get things moving.`,
+                        font: 'p'
                     },
                     {
                         component: 'paragraph',
@@ -173,9 +207,53 @@ const projects: ProjectsProps[]  = [
                         }
                     },
                 ]
-            }
+            },
+            {
+                name: "Future Plans",
+                id: "future-plans",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Some ideas didn't make it to the current implimentation, however they remain on the back burner and will be implemented later.\n\nFor example, I want to add the option to choose a certain theme that will carry through the website. Like dark mode, but introduces background designs and specific colours, carefully chosen to compliment each other.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'theme_1.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'theme_2.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'theme_3.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'theme_4.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Once I add a custom cursor to the site, the idea was to add fun little characters that can either follow the cursor around - or just be interactable. Scattering these illustrations around the site would add some unique personality, and could even be themed with the project being viewed.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'character_customisation.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The next step was to add a menu bar that allowed for cursor and character customisation - soley for the fun of it!`
+                    }
+                ]
+            },
         ],
-        outro: `Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site.`
+        outro: `Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site!`
     },
     {
         index: 1,

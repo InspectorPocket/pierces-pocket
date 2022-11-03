@@ -64,7 +64,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   useEffect(() => {
     let cleanup = true;
     if (cleanup) {
-      // window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+      window.scrollTo({top: 0, left: 0, behavior: 'auto'});
       calculatePagination();
     }
     cleanup = false;
@@ -73,7 +73,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   return (
     <div ref={topRef} className={projectStyles.project__wrapper}>
 
-      <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} brand={brand} />
+      <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} brand={brand} colour={project!.colour} />
 
       <div className={projectStyles.project}>
         {/* Content */}

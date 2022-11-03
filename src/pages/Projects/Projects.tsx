@@ -103,8 +103,8 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                 state= {{ index: index }}
                 onClick={() => setActiveProject(index) }>
 
-                <div className={styles.ProjectOverview__project__img}>
-                  <img src={ (imgUrl + id + '/main.jpeg') } />
+                <div className={styles.ProjectOverview__project__img} style={{backgroundColor: colour}}>
+                  <img src={ (imgUrl + id + '/main.png') } />
                 </div>
 
                 <div className={styles.ProjectOverview__project__text}>

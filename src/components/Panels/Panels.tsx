@@ -306,7 +306,7 @@ const Panels: React.FC<PanelsProps> = ({state, bg, showGrid}) => {
         <Panel panelState={state} showGrid={showGrid} defaultValueTop={`${Number(panelHeight) / 4}vw`}  defaultValueBot={`0`} />
       </MediaQuery>
 
-      <MediaQuery maxWidth={320}>
+      <MediaQuery maxWidth={319}>
         <Panel panelState={state} showGrid={showGrid} defaultValueTop={`${Number(panelHeight) / 4}vw`}  defaultValueBot={`0`} />
       </MediaQuery>
       <MediaQuery minWidth={320}>

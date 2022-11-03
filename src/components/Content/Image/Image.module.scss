@@ -3,14 +3,14 @@
 .Image {
     &__one, &__two {
         display: flex;
-        & img {
-            margin-left: -5.5vw;
-            margin-right: -5.5vw;
-        }
+        // & img {
+        //     margin-left: -5.5vw;
+        //     margin-right: -5.5vw;
+        // }
     }
     &__one {
         & img {
-            width: calc(100% + 11vw);
+            width: 100%;
         }
         &_full {
             margin-bottom: rem(20);
@@ -24,13 +24,13 @@
         &_full {
             margin-bottom: rem(20);
             & img {
-                width: calc(50% - #{rem(10)} + 5.5vw);
+                width: calc(50% - #{rem(10)});
             }
         }
         &_tight {
             margin-bottom: rem(8);
             & img {
-                width: calc(50% - #{rem(4)} + 5.5vw);
+                width: calc(50% - #{rem(4)});
             }
         }
     }
@@ -38,17 +38,6 @@
 
 @media (min-width: 560px) {
     .Image {
-        &__one, &__two {
-            & img {
-                margin-left: 0;
-                margin-right: 0;
-            }
-        }
-        &__one {
-            & img {
-                width: 100%;
-            }
-        }
         &__two {
             justify-content: space-between;
             &_full {

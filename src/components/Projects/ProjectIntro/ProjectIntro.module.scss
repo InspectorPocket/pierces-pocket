@@ -10,15 +10,17 @@ $top_spacing: 6.6666vw + #{rem(44)};
     align-items: center;
     &__img {
         display: flex;
-        position: absolute;
+        position: relative;
         width: 100%;
-        height: calc(100vh + 16px);
-        max-width: rem(2000);
+        height: calc(100% - 192px);
+        max-width: rem(1920);
+        padding: 4.4444vw 0 2.2222vw;
         & > span {
             width: 100%;
+            height: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
+            background-size: contain;
         }
         &__cover {
             position: absolute;
@@ -29,65 +31,30 @@ $top_spacing: 6.6666vw + #{rem(44)};
             z-index: 5;
         }
     }
-    &__title {
-        &__wrapper {
-            position: absolute;
-            width: 100%;
-            max-width: rem(556);
-            bottom: rem(80);
-            z-index: 3;
-        }
+    &__content {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: rem(556);
         position: relative;
-        // margin-top: rem(16);
-        // margin-bottom: rem(16);
-        padding: 0 5.5555vw;
-        &__wave {
-            &__filled {
-
-            }
-            &__outline {
-
-            }
-        }
-        &::before, &::after {
+        padding: rem(20) 5.5555vw rem(88);
+        z-index: 3;
+        &::before {
             content: '';
             position: absolute;
-            left: 50%;
-            border-radius: 50%;
-            width: 282vw;
-            height: 282vw;
-            max-width: 2200px;
-            max-height: 1800px;
-            top: rem(-40);
-            transform: translateX(-55%);
+            top: rem(-12);
+            width: 100vw;
+            height: rem(1000);
             background-color: $white;
+            z-index: -1;
+            left: 50%;
+            transform: translateX(calc(-50%)) skewY(2deg);
         }
-        &::after {
-            background-color: $grey-100;
-            top: rem(100);
-            transform: translateX(calc(-55% - 64px));
-        }
-        // &::after {
-            // content: '';
-            // position: absolute;
-            // left: 50%;
-            // border-radius: 50%;
-        //     width: 302vw;
-        //     height: 302vw;
-        //     max-width: 2000px;
-        //     max-height: 2000px;
-        //     top: rem(-56);
-        //     transform: translateX(calc(-50% - #{rem(28)}));
-        //     border: 1px solid $white;
-        // }
-        &__heading {
-            margin-bottom: rem(6);
-            z-index: 2;
-        }
-        &__vocation {
-            z-index: 2;
+        & > hr {
+            margin: rem(24) 0;
+            background-color: $grey-300;
+            border: 0;
+            height: 1px;
         }
     }
     &__software {
@@ -96,7 +63,8 @@ $top_spacing: 6.6666vw + #{rem(44)};
         justify-content: flex-end;
         position: absolute;
         right: 0;
-        bottom: rem(-80);
+        bottom: 0;
+        // bottom: rem(-80);
         padding: 0 5.5555vw;
         & > a {
             display: flex;
@@ -113,37 +81,39 @@ $top_spacing: 6.6666vw + #{rem(44)};
 
 @media (min-width: 640px) {
     .ProjectIntro {
-        &__title {
-            padding: 0;
-            &::before {
-                top: rem(-48);
-            }
+        &__content {
+            padding-left: 0;
+            padding-right: 0;
         }
         &__software {
-            padding: 0;   
+            padding: 0; 
         }
+        &__img {
+            padding: 2.222vw 0;
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .ProjectIntro {
+        &__content {
+            padding-bottom: rem(48);
+        }
+        &__software {
+            top: rem(24);
+            height: rem(48);
+        }
+    }
+}
+    @media (min-width: 880px) {
+    .ProjectIntro {
     }
 }
 
 @media (min-width: 1040px) {
     .ProjectIntro {
-        &__title {
-            &__wrapper {   
-                max-width: rem(700);
-            }
-        }
-    }
-}
-
-@media (min-width: 1280px) {
-    .ProjectIntro {
-        &__title {
-            &__wrapper {   
-                max-width: rem(700);
-            }
-            &::before {
-                top: rem(-52);
-            }
+        &__content {
+            max-width: rem(700);
         }
     }
 }
