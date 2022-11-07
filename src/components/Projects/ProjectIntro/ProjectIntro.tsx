@@ -11,36 +11,49 @@ interface ProjectIntroProps {
   imgUrl: string;
   title: string;
   vocation: string;
-  brand: {
-    ai: string;
-    xd: string;
-    react: string;
+  software: {
+    xd?: boolean,
+    figma?: boolean,
+    sketch?: boolean,
+    react?: boolean,
+    angular?: boolean,
+    wordpress?: boolean,
+    ai?: boolean,
+    animate?: boolean,
+    premiere?: boolean
   }
   colour: string;
 }
 
-const ProjectIntro: React.FC<ProjectProps & ProjectIntroProps> = ({imgUrl, title, vocation, brand, colour}) => {
+const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, software, colour}) => {
 
   return (
     <div className={styles.ProjectIntro} style={{backgroundColor: colour}}>
-      {/* <img src="/images/image_cover.svg" alt="Image Cover Left" className={`${styles.ProjectIntro__img__cover} ${styles.ProjectIntro__img__cover__left}`} /> */}
-      {/* <img src="/images/image_cover.svg" alt="Image Cover Left" className={`${styles.ProjectIntro__img__cover} ${styles.ProjectIntro__img__cover__right}`} /> */}
       <div className={styles.ProjectIntro__img}>
-        {/* <img src={`/images/${imgUrl}main.png`} alt="Image Cover Left" /> */}
         <span style={{backgroundImage: `url("/images/${imgUrl}main.png")`}} />
       </div>
       <div className={styles.ProjectIntro__content}>
         <h2>{title}</h2>
         <div className={`${styles.ProjectIntro__software} ${panelWidth.panelHeight}`}>
-          { brand.ai &&
-            <Icon icon='ai' noPadding={true} />
+          { software && Object.keys(software).map(item => {
+              return <Icon icon={item} noPadding={true} />
+            })
           }
-          { brand.xd &&
-            <Icon icon='xd' noPadding={true} />
-          }
-          { brand.react &&
-            <Icon icon='react' noPadding={true} />
-          }
+          <div className={styles.ProjectIntro__software__details}>
+            { software && Object.keys(software).map(item => {
+                if (item === 'xd') item = 'Adobe XD';
+                if (item === 'figma') item = 'Figma';
+                if (item === 'sketch') item = 'Sketch';
+                if (item === 'react') item = 'React';
+                if (item === 'angular') item = 'Angular';
+                if (item === 'wordpress') item = 'Wordpress';
+                if (item === 'ai') item = 'Adobe Illustrator';
+                if (item === 'animate') item = 'Adobe Animate';
+                if (item === 'premiere') item = 'Adobe Premiere';
+                return <span>{item}</span>
+              })
+            }
+          </div>
         </div>
         <hr />
         <p className={styles.ProjectIntro__title__vocation}>{vocation}</p>

@@ -28,12 +28,6 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   const { projectId } = useParams();
   const project = getProject(projectId || '');
   const imgUrl: string = `${projectId}/`;
-  let brand: any = {
-    ai: true,
-    xd: true,
-    react: true,
-    graphic: false
-  }
 
   // Outro Component
   const outro = document.getElementById('project_outro');
@@ -73,7 +67,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   return (
     <div ref={topRef} className={projectStyles.project__wrapper}>
 
-      <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} brand={brand} colour={project!.colour} />
+      <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} software={project!.software} colour={project!.colour} />
 
       <div className={projectStyles.project}>
         {/* Content */}
@@ -102,7 +96,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
               }
               if (section.component === 'paragraph' && section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
-                    .split('<a/>').join(`<a href="${section.link.url}" target="_blank" >${section.link.content}<a/>`) || ''}}
+                    .split('<a/>').join(`<a href="${section.link.url}" style="color: ${project.colour};" target="_blank" >${section.link.content}<a/>`) || ''}}
                   ></p>
               }
             })}

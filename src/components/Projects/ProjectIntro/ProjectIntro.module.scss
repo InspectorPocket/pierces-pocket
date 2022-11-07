@@ -66,14 +66,48 @@ $top_spacing: 6.6666vw + #{rem(44)};
         bottom: 0;
         // bottom: rem(-80);
         padding: 0 5.5555vw;
+        z-index: 5;
         & > a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 30px;
             height: 48px;
+            pointer-events: none;
             & > img, & > svg {
                 max-width: rem(20);
+            }
+        }
+        &__details {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            bottom: 100%;
+            background-color: $grey-100;
+            padding: rem(12) rem(16);
+            border-radius: 2px;
+            min-width: 200%;
+            max-width: rem(152);
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0;
+            transition: .3s ease-in-out;
+            &::before {
+                content: '';
+                height: rem(12);
+                width: rem(12);
+                position: absolute;
+                top: calc(100% - #{rem(6)});
+                right: rem(10);
+                background-color: $grey-100;
+                transform: rotate(45deg);
+                border-radius: 2px;
+            }
+        }
+        &:hover & {
+            &__details {
+                opacity: 1;
+                transition: .2s ease-in-out;
             }
         }
     }

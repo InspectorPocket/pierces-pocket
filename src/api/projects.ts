@@ -31,10 +31,23 @@ interface ProjectsProps {
     id: string,
     description: string,
     colour: string,
-    ux: boolean,
-    dev: boolean,
-    brand: boolean,
-    graphic: boolean,
+    role: {
+        ux?: boolean,
+        brand?: boolean,
+        graphic?: boolean,
+        dev?: boolean
+    }
+    software: {
+        xd?: boolean,
+        figma?: boolean,
+        sketch?: boolean,
+        react?: boolean,
+        angular?: boolean,
+        wordpress?: boolean,
+        ai?: boolean,
+        animate?: boolean,
+        premiere?: boolean
+    }
     resources: ResourcesProps[],
     outro: string
 }
@@ -46,10 +59,17 @@ const projects: ProjectsProps[]  = [
         id: "pierce's-pocket",
         description: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work. The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at.",
         colour: "#35485C",
-        ux: true,
-        dev: true,
-        brand: true,
-        graphic: true,
+        role: {
+            ux: true,
+            dev: true,
+            graphic: true,
+            brand: true
+        },
+        software: {
+            ai: true,
+            xd: true,
+            react: true
+        },
         resources: [
             {
                 name: "Logo",
@@ -177,7 +197,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `I developed the app with React and used Sass for styling. Using components allows projects to be loaded dynamically. I used a separate file for adding project content, and the Project component will loop through the project array to dynamically generate content on the fly.`
+                        content: `I developed the app with React and Typescript, using Sass for styling. Using components allows projects to be loaded dynamically. I used a separate file for adding project content, and the Project component will loop through the project array to dynamically generate content on the fly.`
                     },
                     {
                         component: 'image',
@@ -205,7 +225,7 @@ const projects: ProjectsProps[]  = [
                             url: 'https://github.com/InspectorPocket/pierces-pocket',
                             content: 'GitHub'
                         }
-                    },
+                    }
                 ]
             },
             {
@@ -257,14 +277,160 @@ const projects: ProjectsProps[]  = [
     },
     {
         index: 1,
+        title: "Wild.Self",
+        id: "wild-self",
+        description: "Wild.Self is a company ran by my dear friend Jenny, who is a fantastic Body Awareness & Self Love Coach. The project was a rebranding from scratch - using Jenny's new ideas as well as existing ideas from her previous brand. ",
+        colour: "#AE2012",
+        role: {
+            ux: true,
+            dev: true,
+            graphic: true,
+            brand: true
+        },
+        software: {
+            ai: true,
+            figma: true,
+            wordpress: true
+        },
+        resources: [
+            {
+                name: "Logo",
+                id: "logo",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The logo design process began with a few simple sketches. It wasn't too long before we are happy with a concept.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'logo_sketch.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Once the concept was decided, I went to work making it an illustration. We decided in the end to move the feather into the middle of the text to replace the "l".`
+                    },
+                    {
+                        component: 'image',
+                        src: 'logo_showcase.jpg',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Typography",
+                id: "typography",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The branding needed to strong and represent self worth, but playful at the same time. The main colour used is a dark red to show confidence. The fonts are more playful, complementing each other nicely.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'typography.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Design",
+                id: "design",
+                class: `bg-g3 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The project was designed in Figma. The feathers were the core grounding point of the brand, so they are featured a lot. The background is a beige colour to look more like paper, that a plain white background would. Take a look at the final designs below.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'home.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'blogs.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'blog.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'contact.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Development",
+                id: "development",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The styling of this project was applied over the top of an existing WordPress theme. A lot of the colours, fonts and basic layouts were achievable through manipulating the themes features. But most of the stylings you see were added through custom CSS.`
+                    },
+                    {
+                        component: 'lineText',
+                        content: `You may notice some last minute design changes on the final published site, but mostly the design stayed the same.`,
+                        font: 'p'
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `You can view the completed website - and it's responsive capabilities - over here on <a/>.`,
+                        link: {
+                            url: 'https://wild-self.de/',
+                            content: 'Wild.Self'
+                        }
+                    }
+                ]
+            },
+            {
+                name: "Social Media",
+                id: "social-media",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `To complete the brand, I replicated the design of the website and fashioned some basic templates for Jenny to manipulate on Canva, and use for Instagram.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'social_paper.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'social_red.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'social_blue.png',
+                        alt: ''
+                    }
+                ]
+            }
+        ],
+        outro: "Wild.Self was a fun project to work on. Having creative freedom to play around with ideas is always welcome, and working on a project that already has copy to work with makes things much easier.\n\nFeel free to check out the next project below."
+    },
+    {
+        index: 2,
         title: "LocalThrones",
         id: "localthrones",
         description: "UX Design",
         colour: "#F7E16A",
-        ux: true,
-        dev: false,
-        brand: false,
-        graphic: false,
+        role: {
+            ux: true,
+            brand: true
+        },
+        software: {
+            figma: true,
+        },
         resources: [
             {
                 name: "The Project",
@@ -282,41 +448,24 @@ const projects: ProjectsProps[]  = [
         outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     },
     {
-        index: 2,
+        index: 3,
         title: "Fluid Ads",
         id: "fluid-ads",
         description: "Graphic Design & Front End Development",
         colour: "#29D8E6",
-        ux: true,
-        dev: true,
-        brand: false,
-        graphic: true,
-        resources: [
-            {
-                name: "The Project",
-                id: "the-project",
-                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
-                content: [
-                    {
-                        component: 'lineText',
-                        font: 'p',
-                        content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
-                    },
-                ]
-            }
-        ],
-        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
-    },
-    {
-        index: 3,
-        title: "Wild.Self",
-        id: "wild-self",
-        description: "Brand & UX Design, Front End Development",
-        colour: "#E62929",
-        ux: true,
-        dev: true,
-        brand: true,
-        graphic: true,
+        role: {
+            ux: true,
+            dev: true,
+            graphic: true
+        },
+        software: {
+            sketch: true,
+            wordpress: true,
+            angular: true,
+            ai: true,
+            animate: true,
+            premiere: true,
+        },
         resources: [
             {
                 name: "The Project",
@@ -339,10 +488,13 @@ const projects: ProjectsProps[]  = [
         id: "clear-uk",
         description: "UX Design",
         colour: "#7DD876",
-        ux: true,
-        dev: true,
-        brand: true,
-        graphic: false,
+        role: {
+            ux: true,
+            brand: true
+        },
+        software: {
+            xd: true
+        },
         resources: [
             {
                 name: "The Project",
@@ -365,10 +517,13 @@ const projects: ProjectsProps[]  = [
         id: "codedump",
         description: "Brand & UX Design",
         colour: "#D876BD",
-        ux: true,
-        dev: true,
-        brand: true,
-        graphic: false,
+        role: {
+            ux: true,
+            brand: true
+        },
+        software: {
+            sketch: true
+        },
         resources: [
             {
                 name: "The Project",
@@ -391,10 +546,13 @@ const projects: ProjectsProps[]  = [
         id: "rozafa",
         description: "UX Design",
         colour: "#76D4D8",
-        ux: true,
-        dev: false,
-        brand: true,
-        graphic: false,
+        role: {
+            ux: true,
+            brand: true
+        },
+        software: {
+            figma: true
+        },
         resources: [
             {
                 name: "The Project",
@@ -417,10 +575,14 @@ const projects: ProjectsProps[]  = [
         id: "brand-design",
         description: "A collection of branding work",
         colour: "#9646D1",
-        ux: false,
-        dev: false,
-        brand: true,
-        graphic: false,
+        role: {
+            brand: true
+        },
+        software: {
+            ai: true,
+            xd: true,
+            sketch: true
+        },
         resources: [
             {
                 name: "The Project",

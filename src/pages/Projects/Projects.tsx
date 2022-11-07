@@ -91,9 +91,9 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
           <div className={styles.ProjectOverview}>
 
             {/* TODO Lazy load images? */}
-            { projects && projects.map(({ title, colour, ux, dev, brand, graphic, id, index }) => (
+            { projects && projects.map(({ title, colour, role, id, index }) => (
 
-              <NavLink to={id} key={id}
+              <NavLink to={id} key={index}
                 className={({ isActive }) =>
                   isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project}`
                 }
@@ -118,11 +118,13 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                     </div>
 
                     <h6>
-                      { ux ? "UX" : "" }
-                      { ux && dev || ux && brand ? " / " : "" }
-                      { dev ? "Dev" : "" }
-                      { dev && brand ? " / " : "" }
-                      { brand ? "Brand" : "" }
+                      { role.ux ? "UX" : "" }
+                      { role.ux && role.dev || role.ux && role.brand || role.ux && role.graphic ? " / " : "" }
+                      { role.dev ? "Dev" : "" }
+                      { role.dev && role.brand || role.dev && role.graphic ? " / " : "" }
+                      { role.brand ? "Brand" : "" }
+                      { role.graphic && role.brand ? " / " : "" }
+                      { role.graphic ? "GD" : "" }
                     </h6>
                     
                   </div>
