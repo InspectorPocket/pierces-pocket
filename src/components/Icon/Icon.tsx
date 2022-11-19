@@ -13,14 +13,16 @@ interface NavItemProps {
 const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, projectsNumber, currentProject}) => {
 
   const availableIcons: any = {
-    react: 'react',
-    wordpress: 'wordpress',
     xd: 'xd',
     figma: 'figma',
     sketch: 'sketch',
-    ai: 'ai'
+    react: 'react',
+    angular: 'angular',
+    wordpress: 'wordpress',
+    ai: 'ai',
+    animate: 'animate',
+    premiere: 'premiere'
   };
-  
   let outputIcon = '';
 
   function iconSelector(icon:string) {

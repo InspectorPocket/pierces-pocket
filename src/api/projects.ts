@@ -279,7 +279,7 @@ const projects: ProjectsProps[]  = [
         index: 1,
         title: "Wild.Self",
         id: "wild-self",
-        description: "Wild.Self is a company ran by my dear friend Jenny, who is a fantastic Body Awareness & Self Love Coach. The project was a rebranding from scratch - using Jenny's new ideas as well as existing ideas from her previous brand. ",
+        description: "Wild.Self is a company ran by my dear friend, who is a fantastic Body Awareness & Self Love Coach. The project was a rebranding from scratch - using new ideas as well as existing ideas from her previous brand. ",
         colour: "#AE2012",
         role: {
             ux: true,
@@ -396,7 +396,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `To complete the brand, I replicated the design of the website and fashioned some basic templates for Jenny to manipulate on Canva, and use for Instagram.`
+                        content: `To complete the brand, I replicated the design of the website and fashioned some basic templates for the client to manipulate on Canva, and use for Instagram.`
                     },
                     {
                         component: 'image',
@@ -422,30 +422,113 @@ const projects: ProjectsProps[]  = [
         index: 2,
         title: "LocalThrones",
         id: "localthrones",
-        description: "UX Design",
-        colour: "#F7E16A",
+        description: "LocalThrones is a work in progress app to help local venues stand out from the crowd. A businesses branding and marketing would be taken care of by LocalThrones, giving the customer full focus on running their business.",
+        colour: "#FFD750",
         role: {
-            ux: true,
-            brand: true
+            ux: true
         },
         software: {
             figma: true,
         },
         resources: [
             {
-                name: "The Project",
-                id: "the-project",
-                class: ``,
+                name: "User Journey",
+                id: "user-journey",
+                class: `bg-g1 z-2`,
                 content: [
+                    {
+                        component: 'paragraph',
+                        content: `I joined this project as a UX Designer with the intention of helping out with front end later on. It was important to establish a coheasive user journey that demonstrates LocalThrones' vision.`
+                    },
                     {
                         component: 'lineText',
                         font: 'p',
-                        content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
+                        content: `The LocalThrones app targets both businesses and customers - so both journeys had to be considered.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `After a few guided meetings and whiteboard sessions, I was able to take all the ideas and goals to map them out into an easily readable flow chart.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'whiteboard.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'user_journey.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'flow_map.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "B2C Design",
+                id: "b2c-app",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `My time at LocalThrones was spent researching competition, organising flows and creating mock-ups for screens. It was a project that we were all working on as a side piece - so progress wasn't as quick as it would have been full time.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'b2c_screens.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `However, we did manage to get screens mocked-up for the majority of the B2C flow.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `You can view the interactive Figma prototype <a/>.`,
+                        link: {
+                            url: 'https://www.figma.com/proto/r3FwRqC3zlgDbKtCCynxSr/LocalThrones?node-id=2%3A69&scaling=scale-down&page-id=2%3A13&starting-point-node-id=2%3A69',
+                            content: 'using this link'
+                        }
                     },
                 ]
-            }
+            },
+            {
+                name: "B2B Design",
+                id: "design",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The B2C designs were a priority, so I didn't get to spend much time mapping out the B2B side of things. I did play around with UI for a deal creation tool that would be included in the platform.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'deal_create_1.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'deal_create_2.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The business app would be tailored to allowing a business to set up their menu, set up deals, customise their brand, and have it all reflect cohesively in their profile.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Just in case you missed it, you can view the screens that are designed using an interactive Figma prototype <a/>.`,
+                        link: {
+                            url: 'https://www.figma.com/proto/r3FwRqC3zlgDbKtCCynxSr/LocalThrones?node-id=2%3A69&scaling=scale-down&page-id=2%3A13&starting-point-node-id=2%3A69',
+                            content: 'using this link'
+                        }
+                    }
+                ]
+            },
         ],
-        outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
+        outro: "As fun and promising this project was, I decided to step back from it to work on some other projects I had in the back burner."
     },
     {
         index: 3,
@@ -459,12 +542,12 @@ const projects: ProjectsProps[]  = [
             graphic: true
         },
         software: {
-            sketch: true,
-            wordpress: true,
-            angular: true,
             ai: true,
             animate: true,
             premiere: true,
+            sketch: true,
+            wordpress: true,
+            angular: true,
         },
         resources: [
             {

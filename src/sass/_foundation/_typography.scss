@@ -94,7 +94,7 @@ html { font-size: 100%; }
 
 // FONT COLOUR
 
-    h1, h2, h3, h4, h5, body, p, h6, span, small, .xsmall, ul, li {
+    h1, h2, h3, h4, h5, body, p, h6, span, small, .xsmall, ul, li, a {
         color: $dark;
     }
 
@@ -103,18 +103,18 @@ html { font-size: 100%; }
     
     p > a {
         padding-bottom: rem(1);
-        @include background-pos(0 100%, repeat-x, rem(4) rem(4));
-        transition: background-size .2s ease-in-out;
+        @include background-pos(0 rem(16), repeat-x, 50px 50px);
+        transition: .2s ease-in-out;
         &::selection { @include selection($blue !important, $dark); }
         &:visited, &:hover, &:active {
-            transition: background-size .2s ease-in-out;
+            transition: .2s ease-in-out;
         }
         &:visited {
             &::selection { @include selection($purple !important, $dark); }
-            color: $purple-dark;
+            text-transform: uppercase;
         }
         &:hover {
-            background-size: rem(5) 42%;
+            @include background-pos(0 12px, repeat-x, 50px 50px);
         }
     }
 

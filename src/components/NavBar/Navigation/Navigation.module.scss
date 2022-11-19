@@ -28,7 +28,6 @@
     top: 0;
     padding-top: calc(2.2222vw + #{rem(60)});
     z-index: 5;
-    // TODO remove bg colour on larger displays that have the space to not overlsp on content
     transform:
         translateX(calc(100% + #{rem(60)}))
         translateY(calc(-2.2222vw - #{rem(48)}));
