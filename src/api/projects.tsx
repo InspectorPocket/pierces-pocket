@@ -1185,17 +1185,175 @@ const projects: ProjectsProps[]  = [
         },
         resources: [
             {
-                name: "The Project",
-                id: "the-project",
-                class: `mg-t-8 mg-b-8 pd-b-20 z-1`,
+                name: "Glassware Games",
+                id: "glassware-games",
+                class: `bg-g1 z-2`,
                 content: [
                     {
-                        component: 'lineText',
-                        font: 'p',
-                        content: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work."
+                        component: 'paragraph',
+                        content: `Glassware Games is a small project me and a few friends started woirking on. I was the Graphic Designer and also the character animator for the game we were creating.`
                     },
+                    {
+                        component: 'image',
+                        src: 'gg_logo.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'tempus_animations.gif',
+                        alt: ''
+                    }
                 ]
-            }
+            },
+            {
+                name: "Nature Stuff",
+                id: "nature-stuff",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Nature Stuff is a mock-up brand I was toying around with. I designed the logo using the Golden Ratio and am happy with how it turned out.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'nature_stuff_logo.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Ashley B. Portraits",
+                id: "ashley-b-portraits",
+                class: `bg-g3 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Ashley is an american based photographer. She reached out asking if I could design her a logo. We went through 3 iterations before she was happy.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'abp_logo_01.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'abp_logo_02.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Bright Spot Wrestling",
+                id: "bright-spot-wrestling",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Bright Spot Wrestling is a startup company to help develop and enrich a pro-wrestling community.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'bsw.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Chunky Critters",
+                id: "chunky-critters",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Meet Tug the chunky pug! This was a idea I had to take peoples pets, photoshop them onto a fatter animal of the same breed, and create an illustration of it to sell as merchandise.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'chunky_pug.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Space Cards",
+                id: "space-cards",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `This is just a fun little concept I was working on. The idea was develop a few of these types of cards, capturing elements of space.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'space_cards.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Navbar Concept",
+                id: "navbar-concept",
+                class: `bg-g3 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `An early iteration of my Portfolio had this navbar. It's a cool design - but didn't fit with the final goals or keeping it clean and minimal.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'navbar_concept.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Alien Animation",
+                id: "alien-animation",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `A college animation project. Created with Adobe Animate.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'alien_animation.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Eggbert Nobacon",
+                id: "eggbert-nobacon",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Here are a collection of characters created for a video game I helped to make during university. You play as an egg - but you have no bacon (bacon is your friend you have to save)`
+                    },
+                    {
+                        component: 'image',
+                        src: '2d_character.png',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "3D Character Design",
+                id: "3d-character-design",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `During university, we were tasked with createng 3D models, for different modules. Here are a collection of those.`
+                    },
+                    {
+                        component: 'image',
+                        src: '3d_character.png',
+                        alt: ''
+                    }
+                ]
+            },
         ],
         outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     }
