@@ -89,6 +89,9 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                   return <Image src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
                 }
               }
+              // if (section.component === 'video') {
+              //   <iframe width="1920" height="1080" src={section.src} title={section.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              // }
               if (section.component === 'paragraph' && !section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}

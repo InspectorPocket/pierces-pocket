@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './NextProject.module.scss';
 import { Link } from 'react-router-dom';
 import ProjectsProps from '../../../props/projectsProps'
@@ -16,7 +16,7 @@ interface NextProjectProps {
 const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProject}) => {
   
   let nextProject: any;
-  if (projects) nextProject = projects[project.index + 1];
+  if (projects && project) nextProject = project.index === projects.length - 1 ? projects[0] : projects[project.index + 1];
   
   return (
     <div className={styles.NextProject}>
@@ -30,12 +30,7 @@ const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProj
               setNextProject(nextProject)
           }}>
           <h6>Next Project</h6>
-          { projects && project.index < projects.length &&
-            <h4>{projects[project.index + 1].title}</h4>
-          }
-          { projects && project.index === projects.length - 1 &&
-            <h4>{projects[0].title}</h4>
-          }
+          <h3>{nextProject.title}</h3>
           <div className={panelWidth.panelHeight}></div>
         </Link>
       }
