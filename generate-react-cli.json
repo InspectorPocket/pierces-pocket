@@ -5,7 +5,7 @@
   "testLibrary": "None",
   "component": {
     "default": {
-      "path": "src/components/Projects",
+      "path": "src/components/Content",
       "withStyle": true,
       "withTest": false,
       "withStory": false,

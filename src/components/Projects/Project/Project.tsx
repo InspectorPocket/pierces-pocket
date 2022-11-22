@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getProject } from '../../../api/projects';
 
 
-import projectStyles from '../../../pages/Projects/Projects.module.scss'
-// import styles from './Project.module.scss';
+// import styles from '../../../pages/Projects/Projects.module.scss'
+import styles from './Project.module.scss';
 import '../../../sass/_layout/_mg_pd.scss';
 import colours from "../../../sass/_foundation/_colours.module.scss";
 import panelWidth from '../../../sass/_foundation/_panelWidth.module.scss';
@@ -15,6 +15,7 @@ import NextProject from '../../Content/NextProject/NextProject';
 import LineText from '../../Content/LineText/LineText';
 import Image from '../../Content/Image/Image';
 import CardText from '../../Content/CardText/CardText';
+import Video from '../../Content/Video/Video';
 
 interface ProjectProps {
   setCurrentProjectId: any;
@@ -65,14 +66,14 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   }, [project]);
 
   return (
-    <div ref={topRef} className={projectStyles.project__wrapper}>
+    <div ref={topRef} className={styles.project__wrapper}>
 
       <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} software={project!.software} colour={project!.colour} />
 
-      <div className={projectStyles.project}>
+      <div className={styles.project}>
         {/* Content */}
         { project && project.resources.map((resource) => (
-          <div className={`${projectStyles.project__section} ${resource.class}`}>
+          <div className={`${styles.project__section} ${resource.class}`}>
             <h3 className={resource.titleClass}>{resource.name}</h3>
             { resource.content?.map((section) => {
               if (section.component === 'lineText') {
@@ -89,9 +90,9 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                   return <Image src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
                 }
               }
-              // if (section.component === 'video') {
-              //   <iframe width="1920" height="1080" src={section.src} title={section.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              // }
+              if (section.component === 'video') {
+                return <Video type={section.videoType} src={section.src} title={section.title} />
+              }
               if (section.component === 'paragraph' && !section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
@@ -107,21 +108,21 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
         ))}
 
         {/* Outro */}
-        <div className={`${projectStyles.project__outro} z-1`}>
+        <div className={`${styles.project__outro} z-1`}>
           <p id='project_outro' />
         </div>
 
         {/* Next Project */}
-        <div className={`${projectStyles.project__nextProject}`}>
+        <div className={`${styles.project__nextProject}`}>
           <NextProject project={project} projects={projects} setNextProject={setNextProject} />
 
           {/* Pagination */}
-          <div className={`${projectStyles.project__pagination} ${panelWidth.panelHeight}`}>
-            <h6 className={`${projectStyles.project__pagination__number}`}>{project!.index + 1}</h6>
-            <span className={`${projectStyles.project__pagination__bar}`}>
+          <div className={`${styles.project__pagination} ${panelWidth.panelHeight}`}>
+            <h6 className={`${styles.project__pagination__number}`}>{project!.index + 1}</h6>
+            <span className={`${styles.project__pagination__bar}`}>
               <span style={{width: `${progressBar}%`}} />
             </span>
-            <h6 className={`${projectStyles.project__pagination__number}`}>{projects!.length}</h6>
+            <h6 className={`${styles.project__pagination__number}`}>{projects!.length}</h6>
           </div>
         </div>
 

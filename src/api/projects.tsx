@@ -3,6 +3,7 @@ import projectStyles from '../pages/Projects/Projects.module.scss';
 
 interface ContentProps {
     component: string,
+    title?: string,
     content?: string,
     font?: string,
     src?: string,
@@ -15,6 +16,7 @@ interface ContentProps {
         url: string,
         content: string
     }
+    videoType?: string;
 }
 
 interface ResourcesProps {
@@ -559,16 +561,11 @@ const projects: ProjectsProps[]  = [
                         component: 'paragraph',
                         content: `One of the earlier projects I worked on was a showreel for the features that Fluid Ads offers. The three main branches of the company were captured in this showreel.`
                     },
-                    // TODO Add video embed functionality nd add youtube embed here
-                    // {
-                    //     component: 'video',
-                    //     src: "https://www.youtube.com/embed/Xja9mu1dvIk",
-                    //     title: "Fluid Ads Digital Platform"
-                    // },
                     {
-                        component: 'image',
-                        src: 'showreel.png',
-                        alt: ''
+                        component: 'video',
+                        videoType: 'iframe',
+                        src: "https://www.youtube.com/embed/Xja9mu1dvIk",
+                        title: "Fluid Ads Digital Platform"
                     },
                     {
                         component: 'paragraph',
@@ -587,20 +584,20 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `At this time Fluid Ads was still developing the advert builder they have now, so the adverts I was creating at this time was using HTML / CSS. Later on this role would shift to building customer ads in the platform.`
+                        content: `At this time Fluid Ads was still developing the advert builder they have now, so the adverts I was creating at this time was using HTML / CSS. Later on this role would shift to building customer ads in the platform. Below are a few examples of the multitude of templates I created.`
                     },
                     {
                         component: 'image',
-                        src: 'adverts_01.png',
+                        src: 'adverts.png',
                         alt: ''
                     },
                     {
                         component: 'paragraph',
-                        content: `Digital and print assets were a core fundamental for the company's growth. The booklets and leaflets created would be shown at events.`
+                        content: `Digital and print assets were a core fundamental for the company's exposure. The booklets and leaflets created would be shown at events.`
                     },
                     {
                         component: 'image',
-                        src: 'print_01.png',
+                        src: 'print.png',
                         alt: ''
                     },
                     {
@@ -613,7 +610,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'digital_01.png',
+                        src: 'digital.png',
                         alt: ''
                     },
                     {
@@ -632,26 +629,21 @@ const projects: ProjectsProps[]  = [
                         content: `As the app was progressing, and nearing the time of release - we realised the website needed an overhaul. Working closely with a UX Designer we began implementing new designs and features. New styles were introduced using the BEM system within SCSS to keep it organised.`
                     },
                     {
+                        component: 'paragraph',
+                        content: `Take a look at the <a/> and browse some of the features for yourself.`,
+                        link: {
+                            url: 'https://fluidads.com/',
+                            content: 'Fluid Ads website'
+                        }
+                    },
+                    {
                         component: 'image',
-                        src: 'website_01.png',
+                        src: 'home.png',
                         alt: ''
                     },
                     {
                         component: 'paragraph',
                         content: `Some of the features included search and filter functionality as well as dynamic carousels that loaded information in from WordPress custom fields. These were implemented with the idea that the marketing department could add new content in WordPress - and it would automatically populate the components.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'feature_01.gif',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `Feel free to take a look at </a> and browse some of the features for yourself`,
-                        link: {
-                            url: 'https://fluidads.com/',
-                            content: 'Fluid Ads website'
-                        }
                     }
                 ]
             },
@@ -665,25 +657,17 @@ const projects: ProjectsProps[]  = [
                         content: `The talented people at Fluid Ads began teaching me Angular5 - the software the app was built with. After some learning I began to work on some components. My main role was adding styling to the platform to make it look pretty.`
                     },
                     {
-                        component: 'paragraph',
-                        content: `I started by implementing the style guide across the platform. I used an <a/> structure to style the components, so it would be consistent across the entirety.`,
-                        link: {
-                            url: 'https://atomicdesign.bradfrost.com/chapter-2/',
-                            content: 'atomic design'
-                        }
-                    },
-                    {
-                        component: 'image',
-                        src: 'components.png',
-                        alt: ''
+                        component: 'lineText',
+                        font: 'p',
+                        content: `I started by implementing the style guide across the platform. I used an atomic design structure to style the components, so it would be consistent across the entirety.`
                     },
                     {
                         component: 'paragraph',
-                        content: `Most of the styling was revamped by me. Some of the front end features and functionality was also my doing, however the majority of the development was done by the very talented team of developers at Fluid Ads.`
+                        content: `Most of the styling was revamped by me. Some of the front end features and functionality was also my doing, however the majority of the back-end development was done by the very talented team of developers at Fluid Ads.`
                     },
                     {
                         component: 'image',
-                        src: 'screen_01.png',
+                        src: 'app.png',
                         alt: ''
                     },
                     {
@@ -712,25 +696,13 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `There were a couple of occasions I was asked to create videos that showcased the platform, so potential customers and investors could see an overview of the features.`
+                        content: `There were a couple of occasions I was asked to create videos that showcased the platform, so potential customers and investors could see an overview of the features. Here is one of the videos shown at the DMEXCO event.`
                     },
                     {
-                        component: 'image', // VIDEO
-                        src: 'video_1.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `These videos would be shown at events alongside the print assets I created.`
-                    },
-                    {
-                        component: 'image', // VIDEO
-                        src: 'video_2.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `I used Adobe Premiere to edit these videos.`
+                        component: 'video',
+                        videoType: 'iframe',
+                        src: "https://www.youtube.com/embed/MPcvdYQZk5s",
+                        title: "Award-winning Ad Builder from Fluid Ads"
                     }
                 ]
             },
@@ -750,11 +722,6 @@ const projects: ProjectsProps[]  = [
                             url: 'https://inmapadvertising.com/',
                             content: 'https://inmapadvertising.com/'
                         }
-                    },
-                    {
-                        component: 'image',
-                        src: 'maps_script.png',
-                        alt: ''
                     },
                     {
                         component: 'paragraph',
