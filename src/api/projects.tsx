@@ -644,6 +644,15 @@ const projects: ProjectsProps[]  = [
                     {
                         component: 'paragraph',
                         content: `Some of the features included search and filter functionality as well as dynamic carousels that loaded information in from WordPress custom fields. These were implemented with the idea that the marketing department could add new content in WordPress - and it would automatically populate the components.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The pricing page required some real workarounds using flexbox and JavaScript. It appears as normal on desktop, however on mobile, the details of a package are hidden behind the card. Once the info button is pressed, the card will flip over - displaying the content.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'pricing.png',
+                        alt: ''
                     }
                 ]
             },
@@ -670,15 +679,16 @@ const projects: ProjectsProps[]  = [
                         src: 'app.png',
                         alt: ''
                     },
-                    {
-                        component: 'paragraph',
-                        content: `I tried to add some interactivity, with nice looking hover states. One of the components I designed and implemented was the options bar in the ad builder. We were trying to understand the best way to show these options without crowding the timeline.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'timeline.gif',
-                        alt: ''
-                    },
+                    // TODO need macbook to edit video and create a gif
+                    // {
+                    //     component: 'paragraph',
+                    //     content: `I tried to add some interactivity, with nice looking hover states. One of the components I designed and implemented was the options bar in the ad builder. We were trying to understand the best way to show these options without crowding the timeline.`
+                    // },
+                    // {
+                    //     component: 'image',
+                    //     src: 'timeline.gif',
+                    //     alt: ''
+                    // },
                     {
                         component: 'paragraph',
                         content: `You can <a/> to use the app, and see if it is something you might use. The technology is great and the team is super helpful and lovely. You can also see my work in action this way - but to launch an advert you must sign up for a package.`,
