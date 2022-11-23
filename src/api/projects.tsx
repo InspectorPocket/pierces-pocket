@@ -784,7 +784,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'flow_map.png',
+                        src: 'user_flow.png',
                         alt: ''
                     }
                 ]
@@ -792,7 +792,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Logo",
                 id: "logo",
-                class: `bg-g1 z-2`,
+                class: `bg-g2 z-2`,
                 content: [
                     {
                         component: 'paragraph',
@@ -800,7 +800,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'logo.png',
+                        src: 'logo_showcase.png',
                         alt: ''
                     }
                 ]
@@ -808,7 +808,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Styleguide",
                 id: "styleguide",
-                class: `bg-g2 z-2`,
+                class: `bg-g3 z-2`,
                 content: [
                     {
                         component: 'paragraph',
@@ -820,7 +820,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'colours.jpg',
+                        src: 'colours.png',
                         alt: ''
                     },
                     {
@@ -833,7 +833,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'typography.jpg',
+                        src: 'typography.png',
                         alt: ''
                     }
                 ]
@@ -849,7 +849,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'atoms.jpg',
+                        src: 'atoms.png',
                         alt: ''
                     },
                     {
@@ -864,7 +864,12 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'skeleton_loader.png',
+                        src: 'skeleton.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'loading.png',
                         alt: ''
                     }
                 ]
@@ -888,17 +893,57 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'screen_01.jpg',
+                        src: 'home.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_02.png',
+                        src: 'about.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_03.png',
+                        src: 'campaigns.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'campaign.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'members.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'spotlight.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'news.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'news_page.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'contact.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'joined.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'not_found.png',
                         alt: ''
                     },
                     {
