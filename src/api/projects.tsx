@@ -980,7 +980,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'user_journey.jpg',
+                        src: 'flow_map.png',
                         alt: ''
                     }
                 ]
@@ -988,7 +988,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Logo",
                 id: "logo",
-                class: `bg-g1 z-2`,
+                class: `bg-g2 z-2`,
                 content: [
                     {
                         component: 'paragraph',
@@ -1008,24 +1008,24 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Styleguide",
                 id: "styleguide",
-                class: `bg-g2 z-2`,
+                class: `bg-g3 z-2`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The red colour was a colour my friend had already decided on, so I chose purple as a complimentary colour that would be associated with any elements distinguishable with the main content elements - like settings or tags for free users.`
+                        content: `The red colour was a colour my friend had already decided on, so I chose purple as a complimentary colour that would be associated with any elements distinguishable with the main content elements - like private settings or tags / filter options.`
                     },
                     {
                         component: 'image',
-                        src: 'colours.jpg',
+                        src: 'colours.png',
                         alt: ''
                     },
                     {
                         component: 'paragraph',
-                        content: `I chose to use Abril Fatface as the heading font and Poppins for the content. These two fonts have curved letters and compliment each other well.`
+                        content: `I chose to use Abril Fatface as the main heading font and Poppins for everything else. These two fonts have curved letters and compliment each other well.`
                     },
                     {
                         component: 'image',
-                        src: 'typography.jpg',
+                        src: 'typography.png',
                         alt: ''
                     }
                 ]
@@ -1033,7 +1033,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Components",
                 id: "components",
-                class: `bg-g1 z-2`,
+                class: `bg-g2 z-2`,
                 content: [
                     {
                         component: 'paragraph',
@@ -1049,7 +1049,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Design",
                 id: "design",
-                class: `bg-w z-2`,
+                class: `bg-g1 z-2`,
                 content: [
                     {
                         component: 'paragraph',
@@ -1059,23 +1059,38 @@ const projects: ProjectsProps[]  = [
                         component: 'paragraph',
                         content: `You can view and interact with the Adobe XD flow prototype I created <a/>. Or see the final screens presented below.`,
                         link: {
-                            url: '',
+                            url: 'https://xd.adobe.com/view/dc0a9975-0739-43c6-95cb-f1969902e3dc-8959/?fullscreen',
                             content: 'using this link here'
                         }
                     },
                     {
                         component: 'image',
-                        src: 'screen_01.jpg',
+                        src: 'home.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_02.png',
+                        src: 'learn_more.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_03.png',
+                        src: 'register.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'login.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'password_reset.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'home_loggedin_settings.png',
                         alt: ''
                     },
                     {
@@ -1085,9 +1100,60 @@ const projects: ProjectsProps[]  = [
                     {
                         component: 'paragraph',
                         content: `Everything contained within the app would sit inside a grey rounded container. The main content inside would appear in cards. Because the project was to be built in Angular, I liked this design as components can be transitioned in and out.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'dashboard.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'bookmarks.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'posts.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'profile.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'subscription.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'payment.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'email.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'expired.png',
+                        alt: ''
                     }
                 ]
             },
+            {
+                name: "Potential Development",
+                id: "potential-development",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `After the designs were fully realised, I was going to help style the app using SCSS and Angular components...`
+                    }
+                ]
+            }
         ],
         outro: "Codedump development was put on hold, however the designing process allowed me to sharpen my UX Design abilities."
     },
