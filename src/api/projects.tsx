@@ -1041,7 +1041,17 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'components.jpg',
+                        src: 'inputs.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'components.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'components_2.png',
                         alt: ''
                     }
                 ]
