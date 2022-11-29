@@ -1178,7 +1178,7 @@ const projects: ProjectsProps[]  = [
             brand: true
         },
         software: {
-            figma: true
+            xd: true
         },
         resources: [
             {
@@ -1192,7 +1192,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'flow_map.jpg',
+                        src: 'user_flow.png',
                         alt: ''
                     }
                 ]
@@ -1208,7 +1208,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'colours.jpg',
+                        src: 'colours.png',
                         alt: ''
                     },
                     {
@@ -1217,7 +1217,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'typography.jpg',
+                        src: 'typography.png',
                         alt: ''
                     },
                     {
@@ -1243,23 +1243,33 @@ const projects: ProjectsProps[]  = [
                         component: 'paragraph',
                         content: `You can view and interact with the Adobe XD flow prototype I created <a/>. Or see the final screens presented below.`,
                         link: {
-                            url: '',
+                            url: 'https://xd.adobe.com/view/854b9f76-3a66-4fcc-ae59-6d5fb61c09dd-d018/?fullscreen',
                             content: 'using this link here'
                         }
                     },
                     {
                         component: 'image',
-                        src: 'screen_01.jpg',
+                        src: 'home.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_02.png',
+                        src: 'menu.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'screen_03.png',
+                        src: 'menu_item.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'our_story.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'book.png',
                         alt: ''
                     }
                 ]
