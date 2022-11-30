@@ -1299,11 +1299,11 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Glassware Games is a small project me and a few friends started woirking on. I was the Graphic Designer and also the character animator for the game we were creating.`
+                        content: `Glassware Games is a small project me and a few friends started working on. I was the Graphic Designer and also the character animator for the game we were creating.`
                     },
                     {
                         component: 'image',
-                        src: 'gg_logo.png',
+                        src: 'gg_logo.jpg',
                         alt: ''
                     },
                     {
@@ -1320,11 +1320,11 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Nature Stuff is a mock-up brand I was toying around with. I designed the logo using the Golden Ratio and am happy with how it turned out.`
+                        content: `Nature Stuff is a mock-up brand I was toying around with. I designed the logo using the Golden Ratio.`
                     },
                     {
                         component: 'image',
-                        src: 'nature_stuff_logo.png',
+                        src: 'nature_stuff_logo.jpg',
                         alt: ''
                     }
                 ]
@@ -1336,16 +1336,21 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Ashley is an american based photographer. She reached out asking if I could design her a logo. We went through 3 iterations before she was happy.`
+                        content: `Ashley is an american based photographer. She reached out asking if I could design her a logo. We went through 3 iterations before she was happy with the final logo.`
                     },
                     {
                         component: 'image',
-                        src: 'abp_logo_01.png',
+                        src: 'ab_logo_01.jpg',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'abp_logo_02.png',
+                        src: 'ab_logo_02.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'ab_logo_03.jpg',
                         alt: ''
                     }
                 ]
@@ -1361,39 +1366,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'bsw.png',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "Chunky Critters",
-                id: "chunky-critters",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `Meet Tug the chunky pug! This was a idea I had to take peoples pets, photoshop them onto a fatter animal of the same breed, and create an illustration of it to sell as merchandise.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'chunky_pug.png',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "Space Cards",
-                id: "space-cards",
-                class: `bg-g2 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `This is just a fun little concept I was working on. The idea was develop a few of these types of cards, capturing elements of space.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'space_cards.png',
+                        src: 'bsw_logo.jpg',
                         alt: ''
                     }
                 ]
@@ -1415,17 +1388,32 @@ const projects: ProjectsProps[]  = [
                 ]
             },
             {
-                name: "Alien Animation",
-                id: "alien-animation",
-                class: `bg-g2 z-2`,
+                name: "Chunky Critters",
+                id: "chunky-critters",
+                class: `bg-g1 z-2`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `A college animation project. Created with Adobe Animate.`
+                        content: `Meet Tug the chunky pug! This was a idea I had to take peoples pets, photoshop them onto a fatter animal of the same breed, and create an illustration of it, in different scenarios, to sell as merchandise.`
                     },
                     {
                         component: 'image',
-                        src: 'alien_animation.png',
+                        src: 'chunky_bowl.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'chunky_plant.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'chunky_scalf.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'chunky_pipe.png',
                         alt: ''
                     }
                 ]
@@ -1437,7 +1425,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Here are a collection of characters created for a video game I helped to make during university. You play as an egg - but you have no bacon (bacon is your friend you have to save)`
+                        content: `Here are a collection of characters created for a video game I helped to make during university. You play as an egg - but you have no bacon (bacon is your friend you have to save).`
                     },
                     {
                         component: 'image',
@@ -1457,11 +1445,88 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: '3d_character.png',
+                        src: 'barry.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'gross_face.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'gross_front.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'gross_back.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'cabbit_face.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'cabbit_front.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'cabbit_back.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'sunken_player.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'sunken_axelbot.jpg',
+                        alt: ''
+                    },
+                ]
+            },
+            {
+                name: "Alien Animation",
+                id: "alien-animation",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `A college animation project. Created with Adobe Animate.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'alien_animation.png',
                         alt: ''
                     }
                 ]
             },
+            {
+                name: "Space Cards",
+                id: "space-cards",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `This is just a fun little concept I was working on. The idea was develop a few of these types of cards, capturing elements of space and putting a colourful twist on it.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'spacecards_white.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'spacecards_black.png',
+                        alt: ''
+                    }
+                ]
+            }
         ],
         outro: "Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site."
     }
