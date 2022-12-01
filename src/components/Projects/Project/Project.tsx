@@ -91,7 +91,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
                 }
               }
               if (section.component === 'video') {
-                return <Video type={section.videoType} src={section.src} title={section.title} />
+                return <Video type={section.videoType} id={projectId} src={section.src} title={section.title} />
               }
               if (section.component === 'paragraph' && !section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!

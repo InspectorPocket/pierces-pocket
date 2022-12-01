@@ -1381,8 +1381,9 @@ const projects: ProjectsProps[]  = [
                         content: `An early iteration of my Portfolio had this navbar. It's a cool design - but didn't fit with the final goals or keeping it clean and minimal.`
                     },
                     {
-                        component: 'image',
-                        src: 'navbar_concept.png',
+                        component: 'video',
+                        videoType: 'video',
+                        src: 'navbar_concept.mp4',
                         alt: ''
                     }
                 ]
@@ -1425,11 +1426,31 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Here are a collection of characters created for a video game I helped to make during university. You play as an egg - but you have no bacon (bacon is your friend you have to save).`
+                        content: `Here are a collection of characters created for a video game I helped to make during university. You play as an egg - but you have no bacon (bacon is your friend you have to save, and can later play as once complete).`
                     },
                     {
                         component: 'image',
-                        src: '2d_character.png',
+                        src: 'egg_egg.gif',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'egg_frankie.gif',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'egg_baco.gif',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'egg_mushroom.gif',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'egg_bean.gif',
                         alt: ''
                     }
                 ]
@@ -1491,22 +1512,6 @@ const projects: ProjectsProps[]  = [
                 ]
             },
             {
-                name: "Alien Animation",
-                id: "alien-animation",
-                class: `bg-g2 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `A college animation project. Created with Adobe Animate.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'alien_animation.png',
-                        alt: ''
-                    }
-                ]
-            },
-            {
                 name: "Space Cards",
                 id: "space-cards",
                 class: `bg-w z-2`,
@@ -1517,12 +1522,12 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'spacecards_white.png',
+                        src: 'spacecards_black.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'spacecards_black.png',
+                        src: 'spacecards_white.png',
                         alt: ''
                     }
                 ]
@@ -1559,4 +1564,3 @@ export function getProjects() {
 // export function getProjects() {
 //     return projects;
 // }
-  
