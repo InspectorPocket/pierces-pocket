@@ -1,0 +1,57 @@
+@import '/src/sass/essentials';
+@import '/src/sass/_abstracts/transitions';
+
+.intro {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    transition: .2s;
+    margin-top: rem(72);
+    z-index: 20;
+    &__heading {
+        display: flex;
+        position: relative;
+        text-align: left;
+        width: auto;
+    }
+    &__subtext {
+        position: absolute;
+        font-size: rem(12);
+        font-style: italic;
+        top: 1px;
+        &_left {
+            left: 44px;
+        }
+        &_right {
+            left: 88px;
+        }
+    }
+    &__about {
+        justify-content: flex-start;
+        // padding: 0 5.5555vw;
+        width: rem(160);
+        margin-top: rem(88);
+        &__heading {
+        }
+    }
+}
+.scroll {
+    position: absolute;
+    bottom: rem(44);
+    left: 0;
+    right: 0;
+    text-align: center;
+    &::before {
+        content: '';
+    }
+}
+
+@media (min-width: 460px) {
+    .intro {
+        &__about {
+            width: 100%;
+        }
+    }
+}

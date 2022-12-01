@@ -1,72 +1,145 @@
-@font-face {
-    font-family: system-ui;
-    font-style: normal;
-    font-weight: 300;
-    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-}
+@import '/src/sass/essentials';
+
+// p {margin-bottom: 1rem;}
+// h1, h2, h3, h4, h5 {
+//   margin: 3rem 0 1.38rem;
+// }
 
 html { font-size: 100%; }
 
-h1, h2, h3, h4, h5, p, ul, li, a {
-    text-decoration: none;
-    list-style: none;
-    color: $dark;
-    line-height: 1.5;
-}
-h5, p, a, ul, li {
-    text-transform: none;
-    font-size: rem(16);
-    font-weight: 300;
-}
-h1, h2, h3 { transform: translateX(-#{rem(1)}); }
-h1 {
-    font-size: rem(32);
-    font-weight: bold;
-}
-h2 { font-size: rem(28); }
-h3 { font-size: rem(22); }
-h4 { font-size: rem(18); }
-h5 {
-    text-transform: uppercase;
-    letter-spacing: rem(16);
-}
 
-p > a {
-    padding-bottom: rem(1);
-    @include background-pos(0 100%, repeat-x, rem(4) rem(4));
-    transition: background-size .2s ease-in-out;
-    &::selection { @include selection($blue-light !important, $dark); }
-    &:visited, &:hover, &:active {
-        transition: background-size .2s ease-in-out;
-    }
-    &:visited {
-        &::selection { @include selection($purple-light !important, $dark); }
-        color: $purple-dark;
-    }
-    &:hover {
-        background-size: rem(5) 42%;
-    }
-}
+// FONT-FACE DEFINITION
 
-ul > li, ol > li {
-    display: flex;
-    @extend %center-items;
-    position: relative;
-    padding-left: rem(34);
-}
+    @font-face {
+        font-family: system-ui;
+        font-style: normal;
+        font-weight: 300;
+        src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    }
 
-ul > li::before {
-    content: '';
-    display: block;
-    @include absolute-pos(auto, auto, auto, rem(14));
-    @extend %dot;
-    @include size(rem(5));
-    transform: translateY(rem(1));
-}
-ol > li > span {
-    @include user-select(none);
-    min-width: 18px;
-    font-weight: 700;
-    @include absolute-pos(auto, auto, auto, 0);
-    text-align: right;
-}
+    @font-face {
+        font-family: 'Playfair Display', serif;
+        font-style: normal;
+        font-weight: 600;
+        src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+    }
+    
+    @font-face {
+        font-family: 'Open Sans', serif;
+        font-style: normal;
+        font-weight: 300;
+        src: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+    }
+
+
+// FONT RESETS, FONT-FAMILY, LINE-HEIGHT
+
+    h1, h2, h3, h4, h5, body, p, h6, span, .small, .xsmall, a {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    h1, h2, h3 {
+        line-height: 1;
+    }
+
+    h4, h5 {
+        line-height: 1.15;
+    }
+
+    body, p, h6, span, .small, .xsmall, a {
+        font-family: 'Open Sans', system-ui, sans-serif;
+        line-height: 1.45;
+    }
+
+
+// LETTER-SPACING
+
+    h1 { letter-spacing: -1.9px; }
+    h2 { letter-spacing: -1.2px; }
+    h3 { letter-spacing: -0.9px; }
+    h4 { letter-spacing: -0.7px; }
+    h5 { letter-spacing: -0.5px; }
+    small { letter-spacing: 0.5px; }
+
+    h1 { transform: translateX(-2px); }
+    h2 { transform: translateX(rem(-1)); }
+
+
+// FONT SIZE
+
+    h1 { font-size: rem(48); }
+    h2 { font-size: rem(38); }
+    h3 { font-size: rem(30); }
+    h4 { font-size: rem(24); }
+    h5 { font-size: rem(19); }
+    p, span { font-size: rem(15); }
+    h6 { font-size: rem(12); }
+    small { font-size: rem(9.6); }
+    .xsmall { font-size: rem(7.68); }
+
+
+// FONT WEIGHT
+
+    h1 { font-weight: 700; } // bold
+    h2 { font-weight: 600; } // semi-bold
+    h3, h4 { font-weight: 500; } // medium
+    h5, small, .xsmall, a { font-weight: 400; } // regular
+    p, h6 { font-weight: 200; } // light
+
+
+// FONT COLOUR
+
+    h1, h2, h3, h4, h5, body, p, h6, span, small, .xsmall, ul, li, a {
+        color: $dark;
+    }
+
+
+//  LINK STYLING 
+    
+    p > a {
+        padding-bottom: rem(1);
+        @include background-pos(0 rem(16), repeat-x, 50px 50px);
+        transition: .2s ease-in-out;
+        &::selection { @include selection($blue !important, $dark); }
+        &:visited, &:hover, &:active {
+            transition: .2s ease-in-out;
+        }
+        &:visited {
+            &::selection { @include selection($purple !important, $dark); }
+            text-transform: uppercase;
+        }
+        &:hover {
+            @include background-pos(0 12px, repeat-x, 50px 50px);
+        }
+    }
+
+
+// LISTS
+
+    ul > li, ol > li {
+        display: flex;
+        @extend %center-items;
+        position: relative;
+        padding-left: rem(34);
+    }
+
+    ul > li::before {
+        content: '';
+        display: block;
+        @include absolute-pos(auto, auto, auto, rem(14));
+        @extend %dot;
+        @include size(rem(5));
+        transform: translateY(rem(1));
+    }
+    ol > li > span {
+        @include user-select(none);
+        min-width: 18px;
+        font-weight: 700;
+        @include absolute-pos(auto, auto, auto, 0);
+        text-align: right;
+    }

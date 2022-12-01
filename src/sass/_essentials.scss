@@ -1,3 +1,6 @@
+@import '/src/sass/_abstracts/variables';
 @import '/src/sass/_abstracts/functions';
 @import '/src/sass/_abstracts/mixins';
-@import '/src/sass/_foundation/_colours.module.scss';
+@import '/src/sass/_abstracts/placeholders';
+@import '/src/sass/_foundation/_breakpoints.module';
+@import '/src/sass/_foundation/_layout';

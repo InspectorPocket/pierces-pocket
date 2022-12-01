@@ -1,0 +1,156 @@
+// Margins & Paddings
+.center-margin { margin: 0 auto; }
+
+// Element Layout
+
+// Half Width
+.hw {
+    width: 50%;
+}
+// Full Width
+.fw {
+    width: 100%;
+}
+
+/* ANCHOR Margins
+Add values to margin-list as and when needed.
+TO USE IN HTML:
+mg = margin
+pd = padding
+t, r, b, l = top, right, bottom, left
+md, sm, xs, mob = desktop, landscape tablet, portrait tablet, and mobile breakpoints
+"mg-r-24" = margin-right: 24px; (applies on all breakpoints)
+"mg-sm-b-32" = margin-bottom: 32px; (but only applies on small breakpoint)
+"mg-b-32 mg-sm-b-0" =
+        margin-bottom: 32px; (on all breakpoints above small)
+        margin-bottom: 0; (on small breakpoints and lower)
+*/
+
+// TODO change to a map
+@mixin spacing-list($type: 'margin', $dir: '') {
+    &-auto { #{$type}-#{$dir}: auto; }
+    &-0 { #{$type}-#{$dir}: 0; }
+    &-4 { #{$type}-#{$dir}: rem(4); }
+    &-8 { #{$type}-#{$dir}: rem(8); }
+    &-12 { #{$type}-#{$dir}: rem(12); }
+    &-16 { #{$type}-#{$dir}: rem(16); }
+    &-20 { #{$type}-#{$dir}: rem(20); }
+    &-24 { #{$type}-#{$dir}: rem(24); }
+    &-32 { #{$type}-#{$dir}: rem(32); }
+    &-40 { #{$type}-#{$dir}: rem(40); }
+    &-44 { #{$type}-#{$dir}: rem(44); }
+    &-48 { #{$type}-#{$dir}: rem(48); }
+    &-52 { #{$type}-#{$dir}: rem(52); }
+    &-56 { #{$type}-#{$dir}: rem(56); }
+    &-60 { #{$type}-#{$dir}: rem(60); }
+    &-64 { #{$type}-#{$dir}: rem(64); }
+    &-68 { #{$type}-#{$dir}: rem(68); }
+    &-72 { #{$type}-#{$dir}: rem(72); }
+    &-76 { #{$type}-#{$dir}: rem(76); }
+    &-80 { #{$type}-#{$dir}: rem(80); }
+    &-84 { #{$type}-#{$dir}: rem(84); }
+    &-88 { #{$type}-#{$dir}: rem(88); }
+    &-92 { #{$type}-#{$dir}: rem(92); }
+    &-96 { #{$type}-#{$dir}: rem(96); }
+    &-100 { #{$type}-#{$dir}: rem(100); }
+    &-104 { #{$type}-#{$dir}: rem(104); }
+    &-204 { #{$type}-#{$dir}: rem(204); }
+}
+@mixin margins($size: '') {
+    @if $size != '' {
+        &-#{$size} {
+            &-t { @include spacing-list(margin, top); }
+            &-r { @include spacing-list(margin, right); }
+            &-b { @include spacing-list(margin, bottom); }
+            &-l { @include spacing-list(margin, left); }
+        }
+    }
+    @else {
+        &-t { @include spacing-list(margin, top); }
+        &-r { @include spacing-list(margin, right); }
+        &-b { @include spacing-list(margin, bottom); }
+        &-l { @include spacing-list(margin, left); }
+    }
+}
+@mixin paddings($size: '') {
+    @if $size != '' {
+        &-#{$size} {
+            &-t { @include spacing-list(padding, top); }
+            &-r { @include spacing-list(padding, right); }
+            &-b { @include spacing-list(padding, bottom); }
+            &-l { @include spacing-list(padding, left); }
+        }
+    }
+    @else {
+        &-t { @include spacing-list(padding, top); }
+        &-r { @include spacing-list(padding, right); }
+        &-b { @include spacing-list(padding, bottom); }
+        &-l { @include spacing-list(padding, left); }
+    }
+}
+
+.mg-0 { margin: 0; }
+.mg { @include margins; }
+.pd-0 { margin: 0; }
+.pd { @include paddings; }
+
+// TODO Fix this
+// @media (max-width: ($bp-lg - 1px)) {
+//     .hw {
+//         &-md {
+//             width: 50% !important;
+//         }
+//     }
+//     .fw {
+//         &-md {
+//             width: 100% !important;
+//         }
+//     }
+//     .mg { @include margins(md); }
+//     .pd { @include paddings(md); }
+// }
+
+// @media (max-width: ($bp-md - 1px)) {
+//     .hw {
+//         &-sm {
+//             width: 50% !important;
+//         }
+//     }
+//     .fw {
+//         &-sm {
+//             width: 100% !important;
+//         }
+//     }
+//     .mg { @include margins(sm); }
+//     .pd { @include paddings(sm); }
+// }
+
+// @media (max-width: ($bp-sm - 1px)) {
+//     .hw {
+//         &-xs {
+//             width: 50% !important;
+//         }
+//     }
+//     .fw {
+//         &-xs {
+//             width: 100% !important;
+//         }
+//     }
+//     .mg { @include margins(xs); }
+//     .pd { @include paddings(xs); }
+// }
+
+// @media (max-width: ($bp-xs - 1px)) {
+//     .hw {
+//         &-mob {
+//             width: 50% !important;
+//         }
+//     }
+//     .fw {
+//         &-mob {
+//             width: 100% !important;
+//         }
+//     }
+//     .mg { @include margins(mob); }
+//     .pd { @include paddings(mob); }
+// }

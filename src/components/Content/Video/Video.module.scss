@@ -1,0 +1,25 @@
+@import '/src/sass/essentials';
+
+.Video {
+    margin-bottom: rem(20);
+    width: 100%;
+    max-width: rem(556);
+    height: 48vw;
+    & > iframe, & > video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .Video {
+        height: rem(313);
+    }
+}
+
+@media (min-width: 1040px) {
+    .Video {
+        max-width: rem(700);
+        height: rem(394);
+    }
+}

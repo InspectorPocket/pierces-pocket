@@ -1,0 +1,22 @@
+.bg {
+    &-w {
+        &::before, &::after {
+            background-color: $white;
+        }
+    }
+    &-g1 {
+        &::before, &::after {
+            background-color: $grey-100;
+        }
+    }
+    &-g2 {
+        &::before, &::after {
+            background-color: $grey-200;
+        }
+    }
+    &-g3 {
+        &::before, &::after {
+            background-color: $grey-300;
+        }
+    }
+}

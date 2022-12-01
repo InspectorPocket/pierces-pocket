@@ -1,86 +1,227 @@
+@import '../_foundation/panelWidth.module';
+
 .container {
-    padding: 0 25%;
-    display: flex;
+    width: 100%;
 }
 
-// TODO calculate exact percentages for each using MATH
 @media (min-width: 320px) {
-    .container {
-        padding: 0 20%;
+    .container { 
+        // padding: 0 $_320 + vw;
     }
 }
-@media (min-width: 460px) {
-    .container {
-        padding: 0 16.6666%;
+@media (min-width: 400px) {
+    .container { 
+        // padding: 0 $_400 + vw;
+    }
+
+}
+@media (min-width: 480px) {
+    .container { 
+        padding: 0 $_480 + vw;
     }
 }
-@media (min-width: 620px) {
-    .container {
-        padding: 0 14.3333%;
+@media (min-width: 560px) {
+    .container { 
+        padding: 0 $_560 + vw;
     }
 }
-@media (min-width: 728px) {
-    .container {
-        padding: 0 12.5%;
+@media (min-width: 640px) {
+    .container { 
+        padding: 0 $_640 + vw;
+    }
+}
+@media (min-width: 720px) {
+    .container { 
+        padding: 0 $_720 + vw;
+    }
+}
+@media (min-width: 800px) {
+    .container { 
+        padding: 0 $_800 + vw;
     }
 }
 @media (min-width: 880px) {
     .container {
-        padding: 0 22.2222%;
+        padding: 0 $_880 + vw;
     }
 }
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 20%;
+@media (min-width: 960px) {
+    .container { 
+        padding: 0 $_960 + vw;
     }
 }
-@media (min-width: 1140px) {
-    .container {
-        padding: 0 18.2%;
+@media (min-width: 1040px) {
+    .container { 
+        padding: 0 $_1040 + vw;
+    }
+}
+@media (min-width: 1120px) {
+    .container { 
+        padding: 0 $_1120 + vw;
+    }
+}
+@media (min-width: 1200px) {
+    .container { 
+        padding: 0 $_1200 + vw;
     }
 }
 @media (min-width: 1280px) {
     .container {
-        padding: 0 16.6666%;
+        padding: 0 $_1280 + vw;
     }
 }
-@media (min-width: 1336px) {
-    .container {
-        padding: 0 23.1111%;
+@media (min-width: 1360px) {
+    .container { 
+        padding: 0 $_1360 + vw;
     }
 }
 @media (min-width: 1440px) {
-    .container {
-        padding: 0 21.4444%;
+    .container { 
+        padding: 0 $_1440 + vw;
     }
 }
-@media (min-width: 1700px) {
-    .container {
-        padding: 0 20%;
+@media (min-width: 1520px) {
+    .container { 
+        padding: 0 $_1520 + vw;
+    }
+}
+@media (min-width: 1600px) {
+    .container { 
+        padding: 0 $_1600 + vw;
+    }
+}
+@media (min-width: 1680px) {
+    .container { 
+        padding: 0 $_1680 + vw;
+    }
+}
+@media (min-width: 1760px) {
+    .container { 
+        padding: 0 $_1760 + vw;
+    }
+}
+@media (min-width: 1840px) {
+    .container { 
+        padding: 0 $_1840 + vw;
     }
 }
 @media (min-width: 1920px) {
-    .container {
-        padding: 0 25%;
+    .container { 
+        padding: 0 $_1920 + vw;
     }
 }
-@media (min-width: 2100px) {
+@media (min-width: 2000px) {
+    .container { 
+        padding: 0 $_2000 + vw;
+    }
+}
+@media (min-width: 2080px) {
     .container {
-        padding: 0 22.2222%;
+        padding: 0 $_2080 + vw;
+    }
+}
+@media (min-width: 2160px) {
+    .container { 
+        padding: 0 $_2160 + vw;
+    }
+}
+@media (min-width: 2240px) {
+    .container { 
+        padding: 0 $_2240 + vw;
+    }
+}
+@media (min-width: 2320px) {
+    .container { 
+        padding: 0 $_2320 + vw;
     }
 }
 @media (min-width: 2400px) {
-    .container {
-        padding: 0 25%;
+    .container { 
+        padding: 0 $_2400 + vw;
+    }
+}
+@media (min-width: 2480px) {
+    .container { 
+        padding: 0 $_2480 + vw;
+    }
+}
+@media (min-width: 2560px) {
+    .container { 
+        padding: 0 $_2560 + vw;
+    }
+}
+@media (min-width: 2640px) {
+    .container { 
+        padding: 0 $_2640 + vw;
+    }
+}
+@media (min-width: 2720px) {
+    .container { 
+        padding: 0 $_2720 + vw;
     }
 }
 @media (min-width: 2800px) {
-    .container {
-        padding: 0 22.7%;
+    .container { 
+        padding: 0 $_2800 + vw;
     }
 }
-@media (min-width: 3400px) {
+@media (min-width: 2880px) {
+    .container { 
+        padding: 0 $_2880 + vw;
+    }
+}
+@media (min-width: 2940px) {
+    .container { 
+        padding: 0 $_2940 + vw;
+    }
+}
+@media (min-width: 3020px) {
+    .container { 
+        padding: 0 $_3020 + vw;
+    }
+}
+@media (min-width: 3100px) {
+    .container { 
+        padding: 0 $_3100 + vw;
+    }
+}
+@media (min-width: 3180px) {
+    .container { 
+        padding: 0 $_3180 + vw;
+    }
+}
+@media (min-width: 3260px) {
+    .container { 
+        padding: 0 $_3260 + vw;
+    }
+}
+@media (min-width: 3340px) {
     .container {
-        padding: 0 25%;
+        padding: 0 $_3340 + vw;
+    }
+}
+@media (min-width: 3420px) {
+    .container { 
+        padding: 0 $_3420 + vw;
+    }
+}
+@media (min-width: 3500px) {
+    .container { 
+        padding: 0 $_3500 + vw;
+    }
+}
+@media (min-width: 3660px) {
+    .container { 
+        padding: 0 $_3660 + vw;
+    }
+}
+@media (min-width: 3740px) {
+    .container { 
+        padding: 0 $_3740 + vw;
+    }
+}
+@media (min-width: 3820px) {
+    .container { 
+        padding: 0 $_3820 + vw;
     }
 }

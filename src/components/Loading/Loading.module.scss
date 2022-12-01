@@ -1,0 +1,48 @@
+@import '/src/sass/essentials';
+@import '/src/sass/_abstracts/transitions';
+
+@include keyframes(pulse) {
+    0%, 100% {
+        transform: scale(1);
+    }
+    40%, 60% {
+        transform: scale(.7);
+    }
+};
+
+.Loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    & span {
+        &:nth-child(1) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: .5s;
+        }
+        &:nth-child(2) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: .4s;
+        }
+        &:nth-child(3) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: .3s;
+        }
+        &:nth-child(4) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: .2s;
+        }
+        &:nth-child(5) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: .1s;
+        }
+        &:nth-child(6) {
+            animation: pulse 1s infinite ease-in-out;
+            animation-delay: 0;
+        }
+    }
+}

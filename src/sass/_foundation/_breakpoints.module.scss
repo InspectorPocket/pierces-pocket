@@ -1,0 +1,143 @@
+@import '/src/sass/_abstracts/functions';
+
+// BREAKPOINTS
+@mixin bp_320 {
+	@media (max-width: 319px) {
+	  @content;
+	}
+}
+
+@mixin bp_460 {
+	@media (min-width: 460px) {
+	  @content;
+	}
+}
+
+@mixin bp_620 {
+	@media (min-width: 620px) {
+	  @content;
+	}
+}
+
+@mixin bp_728 {
+	@media (min-width: 728px) {
+	  @content;
+	}
+}
+
+@mixin bp_880 {
+	@media (min-width: 880px) {
+	  @content;
+	}
+}
+
+@mixin bp_1024 {
+	@media (min-width: 1024px) {
+	  @content;
+	}
+}
+
+@mixin bp_1140 {
+	@media (min-width: 1140px) {
+	  @content;
+	}
+}
+
+@mixin bp_1280 {
+	@media (min-width: 1280px) {
+	  @content;
+	}
+}
+
+@mixin bp_1336 {
+	@media (min-width: 1336px) {
+	  @content;
+	}
+}
+
+@mixin bp_1440 {
+	@media (min-width: 1440px) {
+	  @content;
+	}
+}
+
+@mixin bp_1700 {
+	@media (min-width: 1700px) {
+	  @content;
+	}
+}
+
+@mixin bp_1920 {
+	@media (min-width: 1920px) {
+	  @content;
+	}
+}
+
+@mixin bp_2100 {
+	@media (min-width: 2100px) {
+	  @content;
+	}
+}
+
+@mixin bp_2400 {
+	@media (min-width: 2400px) {
+	  @content;
+	}
+}
+
+@mixin bp_2800 {
+	@media (min-width: 2800px) {
+	  @content;
+	}
+}
+
+@mixin bp_3400 {
+	@media (min-width: 3400px) {
+	  @content;
+	}
+}
+
+
+// SPECIFIC BREAKPOINTS
+
+// Phone Landscape
+@mixin phone-landscape {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+// Tablet Portrait
+@mixin tablet-portrait {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape and Up
+@mixin tablet-landscape-plus {
+	@media (min-width: #{$screen-tablet-landscape}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape
+@mixin tablet-landscape {
+	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - 1px}) {
+	  @content;
+	}
+}
+
+// Desktop
+@mixin desktop {
+	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - 1px}) {
+	  @content;
+	}
+}
+
+//High resolution screens
+@mixin high-resolution {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}

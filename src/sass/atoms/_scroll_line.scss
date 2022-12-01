@@ -1,0 +1,10 @@
+@import '/src/sass/essentials';
+
+.scroll-line {
+    &::before {
+        content: '';
+        color: $darker;
+        width: 1px;
+        height: 100%;
+    }
+}

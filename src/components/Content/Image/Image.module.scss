@@ -1,0 +1,55 @@
+@import '/src/sass/essentials';
+
+.Image {
+    &__one, &__two {
+        display: flex;
+        // & img {
+        //     margin-left: -5.5vw;
+        //     margin-right: -5.5vw;
+        // }
+    }
+    &__one {
+        & img {
+            width: 100%;
+        }
+        &_full {
+            margin-bottom: rem(20);
+        }
+        &_tight {
+            margin-bottom: rem(8);
+        }
+    }
+    &__two {
+        justify-content: space-between;
+        &_full {
+            margin-bottom: rem(20);
+            & img {
+                width: calc(50% - #{rem(10)});
+            }
+        }
+        &_tight {
+            margin-bottom: rem(8);
+            & img {
+                width: calc(50% - #{rem(4)});
+            }
+        }
+    }
+}
+
+@media (min-width: 560px) {
+    .Image {
+        &__two {
+            justify-content: space-between;
+            &_full {
+                & img {
+                    width: calc(50% - #{rem(10)});
+                }
+            }
+            &_tight {
+                & img {
+                    width: calc(50% - #{rem(4)});
+                }
+            }
+        }
+    }
+}

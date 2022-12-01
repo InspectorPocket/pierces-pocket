@@ -54,78 +54,18 @@
     color: $colour;
 }
 
-// BREAKPOINTS
-@mixin bp_1 {
-	@media (min-width: rem(400)) {
-	  @content;
-	}
-}
-@mixin bp-sm {
-	@media (min-width: rem(600)) {
-	  @content;
-	}
-}
-@mixin bp-md {
-	@media (min-width: rem(960)) {
-	  @content;
-	}
-}
-@mixin bp-lg {
-	@media (min-width: rem(1280)) {
-	  @content;
-	}
-}
-@mixin desktop-hd {
-	@media (min-width: rem(1920)) {
-	  @content;
-	}
-}
-@mixin ultra-wide {
-	@media (min-width: rem(2560)) {
-	  @content;
-	}
-}
-
-// SPECIFIC BREAKPOINTS
-
-// Phone Landscape
-@mixin phone-landscape {
-	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) and (orientation: landscape) {
+// ANIMATION //
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
 		@content;
 	}
-}
-
-// Tablet Portrait
-@mixin tablet-portrait {
-	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) {
-	  @content;
+	@-moz-keyframes #{$animationName} {
+		@content;
 	}
-}
-
-// Tablet Landscape and Up
-@mixin tablet-landscape-plus {
-	@media (min-width: #{$screen-tablet-landscape}) {
-	  @content;
+	@-o-keyframes #{$animationName} {
+		@content;
 	}
-}
-
-// Tablet Landscape
-@mixin tablet-landscape {
-	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - 1px}) {
-	  @content;
-	}
-}
-
-// Desktop
-@mixin desktop {
-	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - 1px}) {
-	  @content;
-	}
-}
-
-//High resolution screens
-@mixin high-resolution {
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	@keyframes #{$animationName} {
 		@content;
 	}
 }

@@ -1,0 +1,11 @@
+@import "/src/sass/_foundation/colours.module";
+
+.Circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 50%;
+    z-index: -1;
+    height: 100%;
+    width: 200vw;
+}

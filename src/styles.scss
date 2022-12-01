@@ -1,5 +1,15 @@
 @import '/src/sass/essentials';
+@import '/src/sass/swiper';
 @import '/src/sass/_abstracts/placeholders';
+@import '/src/sass/_foundation/bg';
 @import '/src/sass/_foundation/reset';
 @import '/src/sass/_foundation/typography';
+@import '/src/sass/_foundation/layout';
 @import '/src/sass/_layout/container';
+@import '/src/sass/_layout/mg_pd';
+// @import '/src/sass/_abstracts/helpers';
+
+.app {
+    display: flex;
+    overflow-x: hidden;
+}

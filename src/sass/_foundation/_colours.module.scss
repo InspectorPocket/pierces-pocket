@@ -1,8 +1,9 @@
 // Colours
 $white: #ffffff;
 $grey-100: #FAFAFA;
-$grey-200: #E7E7E8;
-$grey-400: #A2A1A1;
+$grey-200: #F5F5F5;
+$grey-300: #EFEFEF;
+$grey-400: #BFC5CC;
 $dark: #35485C; 
 $darker: #071F37;
 $black: #191919;
@@ -36,6 +37,7 @@ $shadow-colour: rgba($dark, 0.25);
     white: $white;
     grey1: $grey-100;
     grey2: $grey-200;
+    grey3: $grey-300;
     grey4: $grey-400;
     dark: $dark;
     darker: $darker;
