@@ -20,7 +20,8 @@ interface ProjectIntroProps {
     wordpress?: boolean,
     ai?: boolean,
     animate?: boolean,
-    premiere?: boolean
+    premiere?: boolean,
+    max?: boolean
   }
   colour: string;
 }
@@ -50,6 +51,7 @@ const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, sof
                 if (item === 'ai') item = 'Adobe Illustrator';
                 if (item === 'animate') item = 'Adobe Animate';
                 if (item === 'premiere') item = 'Adobe Premiere';
+                if (item === 'max') item = '3DS Max';
                 return <span>{item}</span>
               })
             }

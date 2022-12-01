@@ -119,12 +119,14 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
                     <h6>
                       { role.ux ? "UX" : "" }
-                      { role.ux && role.dev || role.ux && role.brand || role.ux && role.graphic ? " / " : "" }
+                      { role.ux && role.dev || role.ux && role.brand || role.ux && role.graphic || role.ux && role.threeD ? " / " : "" }
                       { role.dev ? "Dev" : "" }
-                      { role.dev && role.brand || role.dev && role.graphic ? " / " : "" }
+                      { role.dev && role.brand || role.dev && role.graphic || role.dev && role.threeD ? " / " : "" }
                       { role.brand ? "Brand" : "" }
-                      { role.graphic && role.brand ? " / " : "" }
+                      { role.graphic && role.brand || role.brand && role.threeD ? " / " : "" }
                       { role.graphic ? "GD" : "" }
+                      { role.graphic && role.threeD ? " / " : "" }
+                      { role.threeD ? "3D" : "" }
                     </h6>
                     
                   </div>

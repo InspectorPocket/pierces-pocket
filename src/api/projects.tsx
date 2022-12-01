@@ -37,7 +37,8 @@ interface ProjectsProps {
         ux?: boolean,
         brand?: boolean,
         graphic?: boolean,
-        dev?: boolean
+        dev?: boolean,
+        threeD?: boolean
     }
     software: {
         xd?: boolean,
@@ -48,7 +49,8 @@ interface ProjectsProps {
         wordpress?: boolean,
         ai?: boolean,
         animate?: boolean,
-        premiere?: boolean
+        premiere?: boolean,
+        max?: boolean
     }
     resources: ResourcesProps[],
     outro: string
@@ -1284,12 +1286,16 @@ const projects: ProjectsProps[]  = [
         description: "For now, this is just a dump of other bits and bobs that didn't fit as a full project. The extra content will sit in another section in the future, but for now - it is all compiled here.",
         colour: "#35485C",
         role: {
-            brand: true
+            brand: true,
+            graphic: true,
+            threeD: true
         },
         software: {
             ai: true,
             xd: true,
-            sketch: true
+            sketch: true,
+            animate: true,
+            max: true
         },
         resources: [
             {

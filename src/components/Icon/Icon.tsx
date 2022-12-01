@@ -21,7 +21,8 @@ const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, project
     wordpress: 'wordpress',
     ai: 'ai',
     animate: 'animate',
-    premiere: 'premiere'
+    premiere: 'premiere',
+    max: 'max'
   };
   let outputIcon = '';
 
