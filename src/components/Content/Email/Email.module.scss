@@ -16,9 +16,18 @@
         margin-right: 6px;
     }
     & > h6 {
-
+        font-size: rem(14);
     }
     &_mgt_10 {
         margin-top: rem(10);
+    }
+    &_mgl_none {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 640px) {
+    .Email {
+        
     }
 }

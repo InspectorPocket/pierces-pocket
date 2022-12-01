@@ -1,1 +1,93 @@
-.About {}
+.About {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__content {
+        display: flex;
+        & > span {
+            flex-shrink: 0;
+            &:last-of-type {
+                display: none;
+            }
+        }
+    }
+    &__circles {
+        & > div {
+            position: relative;
+            height: 100vw;
+            margin: 40px auto;
+            & > div {
+                overflow: hidden;
+                top: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .About {
+        flex-direction: row-reverse;
+        &__content__wrapper, &__circles {
+            max-width: 50vw;
+            min-width: 50vw;
+        }
+        &__content {
+            padding-bottom: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            &__wrapper {
+                margin-left: 50vw;
+                & > div:first-of-type {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 700px;
+                    & > div {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &__circles {
+            & > div {
+                height: 100vh;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 50%;
+                margin: 0 auto;
+                & > div {
+                    position: relative;
+                    min-height: 44vw;
+                    min-width: 44vw;
+                    max-height: 44vw;
+                    max-width: 44vw;
+                    transform: translateX(0);
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .About {
+        &__content {
+            padding-bottom: 0;
+            & > span {
+                &:last-of-type {
+                    display: flex;
+                }
+            }
+            &__wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                & > div:first-of-type {
+                    max-width: 700px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

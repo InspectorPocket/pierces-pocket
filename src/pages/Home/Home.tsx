@@ -17,7 +17,7 @@ const Home: React.FC<ProjectsProps & HomeProps> = ({setTransition}) => {
   return (
     <div className={styles.Home}>
       <Panels state={'home'} bg={true} />
-      <div className={`${styles.Home__nav__wrapper} ${panelWidth.panelPadding_bot}`}>
+      <div className={`${styles.Home__nav__wrapper} ${panelWidth.homePadding_bot}`}>
         <ul className={`${styles.Home__nav} ${panelWidth.panelWidth}`}>
           {/* TODO make transition work here */}
           {/* <NavItem title="home" destination="" setTransition={setTransition} /> */}

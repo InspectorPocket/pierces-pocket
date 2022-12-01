@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styles from './Intro.module.scss';
+import panelWidth from '../../sass/_foundation/_panelWidth.module.scss'
 
 interface IntroProps {
   page: string;
@@ -9,9 +11,11 @@ interface IntroProps {
 const Intro: React.FC<IntroProps> = ({page, scrollable}) => {
 
   return (
-    <div className={styles.intro}>
-      { page === 'home' &&
-        <h1 className={`${styles.intro__heading}`}>Pierce<br/>Woods</h1>
+    <div className={`${styles.intro} ${page === 'about' ? styles.intro__about : ''}`}>
+      { page === 'about' &&
+      <div className={`${styles.intro__heading} ${styles.intro__about__heading} ${panelWidth.panelPadding_left}`}>
+        <h1>Pierce Woods</h1>
+      </div>
       }
       { page === 'projects' &&
       <div className={`${styles.intro__heading}`}>

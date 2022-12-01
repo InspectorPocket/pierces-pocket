@@ -18,20 +18,24 @@
     & > p, & > h5 {
         padding: rem(6) 0 rem(6) rem(12);
     }
-    &__spacing {
-        &_20 {
-            margin: rem(20) 0;
-        }
+    &_noSpace {
+        margin: rem(20) 0;
     }
 }
 
 @media (min-width: 640px) {
     .LineText { 
         margin: rem(24) rem(72);
+        &_noSpace {
+            margin: rem(24) 0;
+        }
     }
 }
 @media (min-width: 1200px) {
     .LineText { 
         margin: rem(24) rem(88);
+        &_noSpace {
+            margin: rem(24) 0;
+        }
     }
 }

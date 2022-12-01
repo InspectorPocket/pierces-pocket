@@ -100,7 +100,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
               }
               if (section.component === 'paragraph' && section.link) {
                 return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
-                    .split('<a/>').join(`<a href="${section.link.url}" style="background-image: linear-gradient(to right, ${project.colour} 0%, ${project.colour} 100%); background-image: linear-gradient(to right, ${project.colour}8c 0%, ${project.colour}8c 100%);" target="_blank" >${section.link.content}<a/>`) || ''}}
+                    .split('<a/>').join(`<a href="${section.link.url}" style="background-image: linear-gradient(to right, ${project.colour} 0%, ${project.colour} 100%); background-image: linear-gradient(to right, ${project.colour}8c 0%, ${project.colour}8c 100%);" target="_blank" >${section.link.content}</a>`) || ''}}
                   ></p>
               }
             })}

@@ -54,6 +54,11 @@ $_3820: 1.95;
     &_x2 { height: $default * 2 + vw; }
 }
 .panelPadding {
+    padding: $default + vw;
+    &_left { padding-left: calc((#{$default + vw} - 32px) / 2); }
+    &_right { padding-right: calc((#{$default + vw} - 32px) / 2); }
+}
+.homePadding {
     &_top { padding-top: 3.3333vw; }
     &_bot { padding-bottom: 3.3333vw; }
 }
@@ -67,7 +72,12 @@ $_3820: 1.95;
         height: $_320 + vw;
         &_x2 { height: $_320 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_320 + vw;
+        &_left { padding-left: calc((#{$_320 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_320 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 2.5vw; }
         &_bot { padding-bottom: 2.5vw; }
     }
@@ -81,7 +91,12 @@ $_3820: 1.95;
         height: $_400 + vw;
         &_x2 { height: $_400 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_400 + vw;
+        &_left { padding-left: calc((#{$_400 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_400 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 2.2222vw; }
         &_bot { padding-bottom: 2.2222vw; }
     }
@@ -95,6 +110,11 @@ $_3820: 1.95;
         height: $_480 + vw;
         &_x2 { height: $_480 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_480 + vw;
+        &_left { padding-left: calc((#{$_480 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_480 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 560px) {
     .panelWidth { 
@@ -105,7 +125,12 @@ $_3820: 1.95;
         height: $_560 + vw;
         &_x2 { height: $_560 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_560 + vw;
+        &_left { padding-left: calc((#{$_560 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_560 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 2vw; }
         &_bot { padding-bottom: 2vw; }
     }
@@ -119,6 +144,11 @@ $_3820: 1.95;
         height: $_640 + vw;
         &_x2 { height: $_640 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_640 + vw;
+        &_left { padding-left: calc((#{$_640 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_640 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 720px) {
     .panelWidth { 
@@ -129,7 +159,12 @@ $_3820: 1.95;
         height: $_720 + vw;
         &_x2 { height: $_720 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_720 + vw;
+        &_left { padding-left: calc((#{$_720 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_720 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 1.9vw; }
         &_bot { padding-bottom: 1.9vw; }
     }
@@ -143,6 +178,11 @@ $_3820: 1.95;
         height: $_800 + vw;
         &_x2 { height: $_800 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_800 + vw;
+        &_left { padding-left: calc((#{$_800 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_800 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 880px) {
     .panelWidth { 
@@ -153,7 +193,12 @@ $_3820: 1.95;
         height: $_880 + vw;
         &_x2 { height: $_880 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_880 + vw;
+        &_left { padding-left: calc((#{$_880 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_880 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 1.6vw; }
         &_bot { padding-bottom: 1.6vw; }
     }
@@ -167,6 +212,11 @@ $_3820: 1.95;
         height: $_960 + vw;
         &_x2 { height: $_960 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_960 + vw;
+        &_left { padding-left: calc((#{$_960 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_960 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 1040px) {
     .panelWidth { 
@@ -177,7 +227,12 @@ $_3820: 1.95;
         height: $_1040 + vw;
         &_x2 { height: $_1040 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1040 + vw;
+        &_left { padding-left: calc((#{$_1040 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1040 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 1.4vw; }
         &_bot { padding-bottom: 1.4vw; }
     }
@@ -191,6 +246,11 @@ $_3820: 1.95;
         height: $_1120 + vw;
         &_x2 { height: $_1120 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_1120 + vw;
+        &_left { padding-left: calc((#{$_1120 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1120 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 1200px) {
     .panelWidth { 
@@ -201,7 +261,12 @@ $_3820: 1.95;
         height: $_1200 + vw;
         &_x2 { height: $_1200 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1200 + vw;
+        &_left { padding-left: calc((#{$_1200 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1200 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 1.2vw; }
         &_bot { padding-bottom: 1.2vw; }
     }
@@ -215,6 +280,11 @@ $_3820: 1.95;
         height: $_1280 + vw;
         &_x2 { height: $_1280 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_1280 + vw;
+        &_left { padding-left: calc((#{$_1280 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1280 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 1360px) {
     .panelWidth { 
@@ -225,7 +295,12 @@ $_3820: 1.95;
         height: $_1360 + vw;
         &_x2 { height: $_1360 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1360 + vw;
+        &_left { padding-left: calc((#{$_1360 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1360 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 1vw; }
         &_bot { padding-bottom: 1vw; }
     }
@@ -239,7 +314,12 @@ $_3820: 1.95;
         height: $_1440 + vw;
         &_x2 { height: $_1440 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1440 + vw;
+        &_left { padding-left: calc((#{$_1440 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1440 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.85vw; }
         &_bot { padding-bottom: 0.85vw; }
     }
@@ -253,7 +333,12 @@ $_3820: 1.95;
         height: $_1520 + vw;
         &_x2 { height: $_1520 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1520 + vw;
+        &_left { padding-left: calc((#{$_1520 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1520 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.75vw; }
         &_bot { padding-bottom: 0.75vw; }
     }
@@ -267,7 +352,12 @@ $_3820: 1.95;
         height: $_1600 + vw;
         &_x2 { height: $_1600 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1600 + vw;
+        &_left { padding-left: calc((#{$_1600 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1600 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.7vw; }
         &_bot { padding-bottom: 0.7vw; }
     }
@@ -281,6 +371,11 @@ $_3820: 1.95;
         height: $_1680 + vw;
         &_x2 { height: $_1680 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_1680 + vw;
+        &_left { padding-left: calc((#{$_1680 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1680 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 1760px) {
     .panelWidth { 
@@ -291,7 +386,12 @@ $_3820: 1.95;
         height: $_1760 + vw;
         &_x2 { height: $_1760 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_1760 + vw;
+        &_left { padding-left: calc((#{$_1760 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1760 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.6vw; }
         &_bot { padding-bottom: 0.6vw; }
     }
@@ -305,6 +405,11 @@ $_3820: 1.95;
         height: $_1840 + vw;
         &_x2 { height: $_1840 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_1840 + vw;
+        &_left { padding-left: calc((#{$_1840 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1840 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 1920px) {
     .panelWidth { 
@@ -314,6 +419,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_1920 + vw;
         &_x2 { height: $_1920 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_1920 + vw;
+        &_left { padding-left: calc((#{$_1920 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_1920 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 2000px) {
@@ -325,6 +435,11 @@ $_3820: 1.95;
         height: $_2000 + vw;
         &_x2 { height: $_2000 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2000 + vw;
+        &_left { padding-left: calc((#{$_2000 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2000 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2080px) {
     .panelWidth { 
@@ -334,6 +449,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_2080 + vw;
         &_x2 { height: $_2080 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_2080 + vw;
+        &_left { padding-left: calc((#{$_2080 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2080 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 2160px) {
@@ -345,6 +465,11 @@ $_3820: 1.95;
         height: $_2160 + vw;
         &_x2 { height: $_2160 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2160 + vw;
+        &_left { padding-left: calc((#{$_2160 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2160 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2240px) {
     .panelWidth { 
@@ -355,7 +480,12 @@ $_3820: 1.95;
         height: $_2240 + vw;
         &_x2 { height: $_2240 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_2240 + vw;
+        &_left { padding-left: calc((#{$_2240 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2240 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.5vw; }
         &_bot { padding-bottom: 0.5vw; }
     }
@@ -369,6 +499,11 @@ $_3820: 1.95;
         height: $_2320 + vw;
         &_x2 { height: $_2320 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2320 + vw;
+        &_left { padding-left: calc((#{$_2320 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2320 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2400px) {
     .panelWidth { 
@@ -378,6 +513,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_2400 + vw;
         &_x2 { height: $_2400 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_2400 + vw;
+        &_left { padding-left: calc((#{$_2400 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2400 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 2480px) {
@@ -389,6 +529,11 @@ $_3820: 1.95;
         height: $_2480 + vw;
         &_x2 { height: $_2480 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2480 + vw;
+        &_left { padding-left: calc((#{$_2480 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2480 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2560px) {
     .panelWidth { 
@@ -398,6 +543,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_2560 + vw;
         &_x2 { height: $_2560 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_2560 + vw;
+        &_left { padding-left: calc((#{$_2560 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2560 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 2640px) {
@@ -409,6 +559,11 @@ $_3820: 1.95;
         height: $_2640 + vw;
         &_x2 { height: $_2640 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2640 + vw;
+        &_left { padding-left: calc((#{$_2640 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2640 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2720px) {
     .panelWidth { 
@@ -419,7 +574,12 @@ $_3820: 1.95;
         height: $_2720 + vw;
         &_x2 { height: $_2720 * 2 + vw; }
     }
-    .panelPadding {
+    .panelPadding { 
+        padding: $_2720 + vw;
+        &_left { padding-left: calc((#{$_2720 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2720 + vw} - 32px) / 2); }
+    }
+    .homePadding {
         &_top { padding-top: 0.4vw; }
         &_bot { padding-bottom: 0.4vw; }
     }
@@ -433,6 +593,11 @@ $_3820: 1.95;
         height: $_2800 + vw;
         &_x2 { height: $_2800 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2800 + vw;
+        &_left { padding-left: calc((#{$_2800 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2800 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 2880px) {
     .panelWidth { 
@@ -442,6 +607,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_2880 + vw;
         &_x2 { height: $_2880 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_2880 + vw;
+        &_left { padding-left: calc((#{$_2880 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2880 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 2940px) {
@@ -453,6 +623,11 @@ $_3820: 1.95;
         height: $_2940 + vw;
         &_x2 { height: $_2940 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_2940 + vw;
+        &_left { padding-left: calc((#{$_2940 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_2940 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3020px) {
     .panelWidth { 
@@ -462,6 +637,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_3020 + vw;
         &_x2 { height: $_3020 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_3020 + vw;
+        &_left { padding-left: calc((#{$_3020 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3020 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 3100px) {
@@ -473,6 +653,11 @@ $_3820: 1.95;
         height: $_3100 + vw;
         &_x2 { height: $_3100 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_3100 + vw;
+        &_left { padding-left: calc((#{$_3100 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3100 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3180px) {
     .panelWidth { 
@@ -482,6 +667,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_3180 + vw;
         &_x2 { height: $_3180 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_3180 + vw;
+        &_left { padding-left: calc((#{$_3180 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3180 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 3260px) {
@@ -493,6 +683,11 @@ $_3820: 1.95;
         height: $_3260 + vw;
         &_x2 { height: $_3260 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_3260 + vw;
+        &_left { padding-left: calc((#{$_3260 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3260 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3340px) {
     .panelWidth { 
@@ -502,6 +697,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_3340 + vw;
         &_x2 { height: $_3340 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_3340 + vw;
+        &_left { padding-left: calc((#{$_3340 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3340 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 3420px) {
@@ -513,6 +713,11 @@ $_3820: 1.95;
         height: $_3420 + vw;
         &_x2 { height: $_3420 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_3420 + vw;
+        &_left { padding-left: calc((#{$_3420 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3420 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3500px) {
     .panelWidth { 
@@ -522,6 +727,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_3500 + vw;
         &_x2 { height: $_3500 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_3500 + vw;
+        &_left { padding-left: calc((#{$_3500 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3500 + vw} - 32px) / 2); }
     }
 }
 @media (min-width: 3660px) {
@@ -533,6 +743,11 @@ $_3820: 1.95;
         height: $_3660 + vw;
         &_x2 { height: $_3660 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_3660 + vw;
+        &_left { padding-left: calc((#{$_3660 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3660 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3740px) {
     .panelWidth { 
@@ -543,6 +758,11 @@ $_3820: 1.95;
         height: $_3740 + vw;
         &_x2 { height: $_3740 * 2 + vw; }
     }
+    .panelPadding { 
+        padding: $_3740 + vw;
+        &_left { padding-left: calc((#{$_3740 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3740 + vw} - 32px) / 2); }
+    }
 }
 @media (min-width: 3820px) {
     .panelWidth { 
@@ -552,6 +772,11 @@ $_3820: 1.95;
     .panelHeight { 
         height: $_3820 + vw;
         &_x2 { height: $_3820 * 2 + vw; }
+    }
+    .panelPadding { 
+        padding: $_3820 + vw;
+        &_left { padding-left: calc((#{$_3820 + vw} - 32px) / 2); }
+        &_right { padding-right: calc((#{$_3820 + vw} - 32px) / 2); }
     }
 }
 
