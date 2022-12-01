@@ -36,12 +36,12 @@ const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, sof
       <div className={styles.ProjectIntro__content}>
         <h2>{title}</h2>
         <div className={`${styles.ProjectIntro__software} ${panelWidth.panelHeight}`}>
-          { software && Object.keys(software).map(item => {
-              return <Icon icon={item} noPadding={true} />
+          { software && Object.keys(software).map((item, index) => {
+              return <Icon key={index} icon={item} noPadding={true} />
             })
           }
           <div className={styles.ProjectIntro__software__details}>
-            { software && Object.keys(software).map(item => {
+            { software && Object.keys(software).map((item, index) => {
                 if (item === 'xd') item = 'Adobe XD';
                 if (item === 'figma') item = 'Figma';
                 if (item === 'sketch') item = 'Sketch';
@@ -52,7 +52,7 @@ const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, sof
                 if (item === 'animate') item = 'Adobe Animate';
                 if (item === 'premiere') item = 'Adobe Premiere';
                 if (item === 'max') item = '3DS Max';
-                return <span>{item}</span>
+                return <span key={index}>{item}</span>
               })
             }
           </div>

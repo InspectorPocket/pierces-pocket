@@ -47,7 +47,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   const {ref: topRef} = ScrollToTop<HTMLDivElement>()
   function ScrollToTop<T extends HTMLElement>() {
     const topRef = useRef<T>(null)
-    // if (topRef.current) topRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (topRef.current) topRef.current.scrollIntoView({ behavior: 'smooth' });
     return {ref: topRef}
   }
 
@@ -68,38 +68,38 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   return (
     <div ref={topRef} className={styles.project__wrapper}>
 
-      <ProjectIntro imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} software={project!.software} colour={project!.colour} />
+      <ProjectIntro key={project!.index} imgUrl={projectId! + '/'} title={project!.title} vocation={project!.description} software={project!.software} colour={project!.colour} />
 
       <div className={styles.project}>
         {/* Content */}
-        { project && project.resources.map((resource) => (
-          <div className={`${styles.project__section} ${resource.class}`}>
+        { project && project.resources.map((resource, index) => (
+          <div key={index} className={`${styles.project__section} ${resource.class}`}>
             <h3 className={resource.titleClass}>{resource.name}</h3>
-            { resource.content?.map((section) => {
+            { resource.content?.map((section, i) => {
               if (section.component === 'lineText') {
-                return <LineText font={section.font} content={section.content} />
+                return <LineText key={i} font={section.font} content={section.content} />
               }
               if (section.component === 'cardText') {
-                return <CardText content={section.content || ''} colour={section.colour} />
+                return <CardText key={i} content={section.content || ''} colour={section.colour} />
               }
               if (section.component === 'image') {
                 if (!section.src2) {
-                  return <Image src={`${projectId}/${section.src}`} alt={section.alt!} margin={section.margin} />
+                  return <Image key={i} src={`${projectId}/${section.src}`} alt={section.alt!} margin={section.margin} />
                 }
                 if (section.src2) {
-                  return <Image src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
+                  return <Image key={i} src={`${projectId}/${section.src}`} src2={`${projectId}/${section.src2}`} alt={section.alt!} alt2={section.alt2!} margin={section.margin} />
                 }
               }
               if (section.component === 'video') {
-                return <Video type={section.videoType} id={projectId} src={section.src} title={section.title} />
+                return <Video key={i} type={section.videoType} id={projectId} src={section.src} title={section.title} />
               }
               if (section.component === 'paragraph' && !section.link) {
-                return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+                return <p key={i} className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
                   ></p>
               }
               if (section.component === 'paragraph' && section.link) {
-                return <p className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+                return <p key={i} className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('<a/>').join(`<a href="${section.link.url}" style="background-image: linear-gradient(to right, ${project.colour} 0%, ${project.colour} 100%); background-image: linear-gradient(to right, ${project.colour}8c 0%, ${project.colour}8c 100%);" target="_blank" >${section.link.content}</a>`) || ''}}
                   ></p>
               }
