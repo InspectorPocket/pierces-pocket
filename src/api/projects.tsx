@@ -1312,11 +1312,11 @@ const projects: ProjectsProps[]  = [
                         src: 'gg_logo.jpg',
                         alt: ''
                     },
-                    {
-                        component: 'image',
-                        src: 'tempus_animations.gif',
-                        alt: ''
-                    }
+                    // {
+                    //     component: 'image',
+                    //     src: 'tempus_animations.gif',
+                    //     alt: ''
+                    // }
                 ]
             },
             {
