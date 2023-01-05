@@ -1299,6 +1299,22 @@ const projects: ProjectsProps[]  = [
         },
         resources: [
             {
+                name: "Food Party",
+                id: "food-party",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Food party is an illustration I created depicting a nice little hang out around a fire of love.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'gang_illustration.jpg',
+                        alt: ''
+                    }
+                ]
+            },
+            {
                 name: "Glassware Games",
                 id: "glassware-games",
                 class: `bg-g1 z-2`,
