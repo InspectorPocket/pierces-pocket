@@ -59,7 +59,7 @@ html { font-size: 100%; }
 
 // LETTER-SPACING
 
-    h1 { letter-spacing: -1.9px; }
+    h1 { letter-spacing: -1.5px; }
     h2 { letter-spacing: -1.2px; }
     h3 { letter-spacing: -0.9px; }
     h4 { letter-spacing: -0.7px; }
@@ -85,11 +85,11 @@ html { font-size: 100%; }
 
 // FONT WEIGHT
 
-    h1 { font-weight: 700; } // bold
+    h1 { font-weight: 600; } // semi-bold
     h2 { font-weight: 600; } // semi-bold
     h3, h4 { font-weight: 500; } // medium
     h5, small, .xsmall, a { font-weight: 400; } // regular
-    p, h6 { font-weight: 200; } // light
+    p, h6 { font-weight: 300; } // regular
 
 
 // FONT COLOUR
