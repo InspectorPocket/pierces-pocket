@@ -94,7 +94,6 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
             <div className={styles.ProjectOverview__featured__container}>
 
-              <div className={styles.ProjectOverview__featured__main__container}>
 
                 { projects && projects.map((project, index) => (
 
@@ -157,10 +156,6 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
                 ))}
 
-              </div>
-
-              <div className={styles.ProjectOverview__featured__list__container}>
-
                 { projects && projects.map((project, index) => (
 
                   <>
@@ -220,15 +215,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
                 ))}
 
-              </div>
-
-
-            </div>
-
-            
-            <div className={styles.ProjectOverview__grid__container}>
-
-              { projects && projects.map((project, index) => (
+                { projects && projects.map((project, index) => (
 
                 <>
 
@@ -287,8 +274,8 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
               ))}
 
-            </div>
 
+            </div>
 
           </div>
         </div>

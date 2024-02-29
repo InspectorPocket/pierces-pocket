@@ -25,7 +25,7 @@ const Panel: React.FC<PanelProps> = ({topSize, botSize, panelState, defaultValue
         setBotPanelSize(`51%`);
       }
       else if (panelState === 'projects') {
-        setTopPanelSize(`144px`);
+        setTopPanelSize(`128px`);
         if (showGrid) setBotPanelSize(`${defaultValueBot}`);
         else setBotPanelSize(`0`);
       }
