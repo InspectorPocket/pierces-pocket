@@ -727,7 +727,7 @@ const projects: ProjectsProps[]  = [
     {
         index: 4,
         title: "Logos & Illustrations",
-        id: "extras",
+        id: "logos-illustrations",
         description: "For now, this is just a dump of other bits and bobs that didn't fit as a full project. The extra content will sit in another section in the future, but for now - it is all compiled here.",
         colour: "#35485C",
         featured: false,

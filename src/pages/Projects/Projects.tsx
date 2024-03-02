@@ -88,22 +88,16 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
       { projects && 
         <div className={`${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
 
+          <div className={styles.ProjectOverview__wrapper}>
 
-
-          <div className={styles.ProjectOverview}>
-
-            <div className={styles.ProjectOverview__featured__container}>
-
+            <div className={styles.ProjectOverview}>
 
                 { projects && projects.map((project, index) => (
 
-                  <>
-
-                    { project.featured &&
                     
                       <NavLink to={project.id} key={index}
                         className={({ isActive }) =>
-                          isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__featured__main} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project} ${styles.ProjectOverview__featured__main}`
+                          isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project} `
                         }
                         style={({ isActive }) => ({
                           borderColor: isActive ? hexToRGB(project.colour, 0.5) : ''
@@ -112,7 +106,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                         onClick={() => setActiveProject(index) }>
 
                         <div className={styles.ProjectOverview__project__img} style={{backgroundColor: project.colour}}>
-                          <img src={ (imgUrl + project.id + '/thumbnail.png') } />
+                          <img src={ (imgUrl + project.id + '/main.png') } />
                         </div>
 
                         <div className={styles.ProjectOverview__project__text}>
@@ -139,145 +133,26 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                             
                           </div>
 
-                          <p className={styles.ProjectOverview__featured__main__description}>{ project.description }</p>
+                          {/* <p className={styles.ProjectOverview__featured__main__description}>{ project.description }</p> */}
 
                           <div className={styles.ProjectOverview__project__logo}>
                             <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
                             <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
                           </div>
 
-                        </div>
-
-                      </NavLink>
-
-                    }
-
-                  </>
-
-                ))}
-
-                { projects && projects.map((project, index) => (
-
-                  <>
-
-                    { project.featured_list &&
-                    
-                      <NavLink to={project.id} key={index}
-                        className={({ isActive }) =>
-                          isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__featured__list} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project} ${styles.ProjectOverview__featured__list}`
-                        }
-                        style={({ isActive }) => ({
-                          borderColor: isActive ? hexToRGB(project.colour, 0.5) : ''
-                        })}
-                        state= {{ index: index }}
-                        onClick={() => setActiveProject(index) }>
-
-                        <div className={styles.ProjectOverview__project__img} style={{backgroundColor: project.colour}}>
-                          <img src={ (imgUrl + project.id + '/thumbnail.png') } />
-                        </div>
-
-                        <div className={styles.ProjectOverview__project__text}>
-
-                          <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
-
-                          <div className={styles.ProjectOverview__project__text__vocation}>
-
-                            <div className={styles.ProjectOverview__project__text__vocation__bar}>
-                              <span style={{backgroundColor: project.colour}}></span>
-                            </div>
-
-                            <h6>
-                              { project.role.ux ? "UX" : "" }
-                              { project.role.ux && project.role.dev || project.role.ux && project.role.brand || project.role.ux && project.role.graphic || project.role.ux && project.role.threeD ? " / " : "" }
-                              { project.role.dev ? "Dev" : "" }
-                              { project.role.dev && project.role.brand || project.role.dev && project.role.graphic || project.role.dev && project.role.threeD ? " / " : "" }
-                              { project.role.brand ? "Brand" : "" }
-                              { project.role.graphic && project.role.brand || project.role.brand && project.role.threeD ? " / " : "" }
-                              { project.role.graphic ? "GD" : "" }
-                              { project.role.graphic && project.role.threeD ? " / " : "" }
-                              { project.role.threeD ? "3D" : "" }
-                            </h6>
-                            
-                          </div>
-
-                          <div className={styles.ProjectOverview__project__logo}>
-                            <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
-                            <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
-                          </div>
+                          <span className={styles.ProjectOverview__project__gradient} style={{backgroundColor: project.colour}}></span>
 
                         </div>
 
                       </NavLink>
 
-                    }
-
-                  </>
 
                 ))}
-
-                { projects && projects.map((project, index) => (
-
-                <>
-
-                  { !project.featured && !project.featured_list &&
-                  
-                    <NavLink to={project.id} key={index}
-                      className={({ isActive }) =>
-                        isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__grid} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project} ${styles.ProjectOverview__grid}`
-                      }
-                      style={({ isActive }) => ({
-                        borderColor: isActive ? hexToRGB(project.colour, 0.5) : ''
-                      })}
-                      state= {{ index: index }}
-                      onClick={() => setActiveProject(index) }>
-
-                      <div className={styles.ProjectOverview__project__img} style={{backgroundColor: project.colour}}>
-                        <img src={ (imgUrl + project.id + '/thumbnail.png') } />
-                      </div>
-
-                      <div className={styles.ProjectOverview__project__text}>
-
-                        <h4 className={styles.ProjectOverview__project__text__heading}>{ project.title }</h4>
-
-                        <div className={styles.ProjectOverview__project__text__vocation}>
-
-                          <div className={styles.ProjectOverview__project__text__vocation__bar}>
-                            <span style={{backgroundColor: project.colour}}></span>
-                          </div>
-
-                          <h6>
-                            { project.role.ux ? "UX" : "" }
-                            { project.role.ux && project.role.dev || project.role.ux && project.role.brand || project.role.ux && project.role.graphic || project.role.ux && project.role.threeD ? " / " : "" }
-                            { project.role.dev ? "Dev" : "" }
-                            { project.role.dev && project.role.brand || project.role.dev && project.role.graphic || project.role.dev && project.role.threeD ? " / " : "" }
-                            { project.role.brand ? "Brand" : "" }
-                            { project.role.graphic && project.role.brand || project.role.brand && project.role.threeD ? " / " : "" }
-                            { project.role.graphic ? "GD" : "" }
-                            { project.role.graphic && project.role.threeD ? " / " : "" }
-                            { project.role.threeD ? "3D" : "" }
-                          </h6>
-                          
-                        </div>
-
-                        <div className={styles.ProjectOverview__project__logo}>
-                          <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
-                          <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
-                        </div>
-
-                      </div>
-
-                    </NavLink>
-
-                  }
-
-                </>
-
-              ))}
-
 
             </div>
 
           </div>
+
         </div>
       }
 
