@@ -20,6 +20,8 @@ const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, project
     angular: 'angular',
     wordpress: 'wordpress',
     ai: 'ai',
+    photoshop: 'photoshop',
+    indesign: 'indesign',
     animate: 'animate',
     premiere: 'premiere',
     max: 'max'

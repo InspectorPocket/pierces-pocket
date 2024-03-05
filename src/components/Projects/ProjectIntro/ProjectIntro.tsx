@@ -19,6 +19,8 @@ interface ProjectIntroProps {
     angular?: boolean,
     wordpress?: boolean,
     ai?: boolean,
+    photoshop?: boolean,
+    indesign?: boolean,
     animate?: boolean,
     premiere?: boolean,
     max?: boolean
@@ -49,6 +51,8 @@ const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, sof
                 if (item === 'angular') item = 'Angular';
                 if (item === 'wordpress') item = 'Wordpress';
                 if (item === 'ai') item = 'Adobe Illustrator';
+                if (item === 'photoshop') item = 'Adobe Photoshop';
+                if (item === 'indesign') item = 'Adobe InDesign';
                 if (item === 'animate') item = 'Adobe Animate';
                 if (item === 'premiere') item = 'Adobe Premiere';
                 if (item === 'max') item = '3DS Max';

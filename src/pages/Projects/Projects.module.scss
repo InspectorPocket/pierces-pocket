@@ -1,12 +1,14 @@
 @import '/src/sass/essentials';
 
+// Hangles wrapper and Grid icon
 .projects {
     // @extend %f-c-col;
     position: relative;
     width: 100%;
-    background-color: $grey-100;
+    background-color: $grey-200;
     &__wrapper {
         height: 100%;
+        width: 100%;
         position: fixed;
         top: 0;
         left: 0;
@@ -31,62 +33,62 @@
     }
 }
 
+// Handles projects list
 .ProjectOverview {
+    // Wrapper styles to hold it all
     &__wrapper {
         position: relative;
-        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 rem(16);
+        padding-top: rem(128 + 16);
+        padding-bottom: rem(88);
     }
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    // Container
+    max-width: 1240px;
     width: 100%;
-    padding: 0 5.5555vw;
-    padding-top: 144px;
-    padding-bottom: rem(64);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(16);
+
+    // DEFAULTS - Handles each individual project item
     &__project {
         display: flex;
-        width: 100%;
-        min-width: 100%;
-        max-width: rem(382);
+        flex-direction: column;
         position: relative;
-        margin: rem(16) rem(8) 0;
+        
+        height: auto;
+        min-width: 100%;
+
         background-color: $white;
-        border: 1px solid $grey-100;
+        border: 1px solid $grey-300;
         transition: .2s ease-in-out;
+        overflow: hidden;
         & > * { z-index: 1; }
         &__img {
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            height: 122px;
-            min-width: 38.197%;
-            max-width: 38.197%;
-            // height: 12vh;
-            // min-width: 50%;
             overflow: hidden;
+            z-index: 2;
+
+            padding: rem(8);
+            
+            border-right: 1px solid $grey-300;
             & > img {
-                width: auto;
-                height: 100%;
-                // transition: .4s ease-in-out;
-            }
-            &::after {
-                content: '';
-                height: 158px;
-                width: 158px;
-                position: absolute;
-                right: 0;
-                bottom: -12px;
-                border-radius: 0 50% 50% 0;
-                box-shadow: 0 0 0 40px $white;
+                aspect-ratio: 16/9;
+                width: 100%;
+                height: auto;
             }
         }
         &__text {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 12px 16px;
+            padding: rem(24) rem(16) rem(16);
             &__heading {
                 margin-bottom: rem(4);
             }
@@ -96,76 +98,33 @@
                 &__bar {
                     display: flex;
                     position: relative;
-                    height: 1px;
-                    width: 24px;
-                    background-color: rgba($color: $dark, $alpha: .2);
-                    margin-right: 12px;
                     overflow: hidden;
+                    height: 1px;
+                    width: rem(24);
+                    margin-right: rem(12);
+                    background-color: rgba($color: $dark, $alpha: .2);
                     & > span {
+                        position: absolute;
                         height: 100%;
                         width: 100%;
-                        position: absolute;
                         transform: translateX(-100%);
                         transition: .5s ease-in-out;
                     }
-                }
-                & > h6 {
-
                 }
             }
         }
         &__logo {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            bottom: rem(12);
+            right: rem(12);
             & > img, & > svg {
-                max-width: 40px;
-                max-height: 70px;
+                max-width: rem(40);
+                max-height: rem(70);
             }
             &__outline, &__full {
                 position: absolute;
-                top: 0;
+                bottom: 0;
                 right: 0;
-                transition: .5s ease-in-out;
-            }
-            &__outline {
-                opacity: 1;
-            }
-            &__full {
-                opacity: 0;
-            }
-        }
-        &:hover {
-            border: 1px solid $grey-200;
-            transition: .2s ease-in-out;
-        }
-        &:hover & {
-            &__text {
-                &__vocation {
-                    &__bar {
-                        & > span {
-                            transform: translateX(0);
-                            transition: .3s ease-in-out;
-                        }
-                    }
-                }
-            }
-            &__logo {
-                &__outline, &__full {
-                    transition: .3s ease-in-out;
-                }
-                &__outline {
-                    opacity: 0;
-                }
-                &__full {
-                    opacity: 1;
-                }
-            }
-        }
-        &_active {
-            border: 1px solid $grey-300;
-            &:hover {
-                border: 1px solid $grey-400;
             }
         }
         &_active & {
@@ -180,41 +139,145 @@
                 }
             }
             &__logo {
-                &__outline, &__full {
-                    transition: .3s ease-in-out;
-                }
                 &__outline {
-                    opacity: 0;
+                    display: none;
                 }
                 &__full {
                     opacity: 1;
                 }
             }
+            &__gradient {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 38.197%;
+                height: 100%;
+
+                opacity: .06;
+                z-index: -1;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to right, $white, rgba(255, 255, 255, 0));
+                }
+            }
         }
     }
-
 }
 
-@media (min-width: 640px) {
+@media (min-width: 375px) {
     .ProjectOverview {
         &__project {
-            min-width: auto;
+            flex-direction: row;
+            &__img {
+                min-width: rem(131);
+                width: 38.197%;
+                max-width: rem(212);
+            }
+            &__text {
+                padding: rem(48 + 12) rem(16) rem(12);
+            }
+            &__logo {
+                bottom: auto;
+                top: rem(12);
+                &__outline, &__full {
+                    bottom: auto;
+                    top: 0;
+                }
+            }
         }
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 780px) {
     .ProjectOverview {
+        grid-template-columns: 1fr 1fr;
         &__project {
-            margin: rem(20) rem(10) 0;
+            &__text {
+                padding: rem(48 + 16) rem(16) rem(16);
+                &__heading {
+                    margin-bottom: rem(8);
+                }
+            }
+        }
+        // css grid?
+        &__featured {
+            
         }
     }
 }
 
-@media (min-width: 1040px) {
+@media (pointer:coarse) {
     .ProjectOverview {
         &__project {
-            margin: rem(24) rem(12) 0;
+            &__logo {
+                &__outline {
+                    display: none;
+                }
+                &__full {
+                    opacity: 1;
+                }
+            }
+            &__text {
+                &__vocation {
+                    &__bar {
+                        & > span {
+                            transform: translateX(0);
+                            transition: .3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (pointer:fine) {
+    .ProjectOverview {
+        &__project {
+            &__logo {
+                &__outline, &__full {
+                    transition: .3s ease-in-out;
+                }
+                &__outline {
+                    display: block;
+                    opacity: 1;
+                }
+                &__full {
+                    opacity: 0;
+                }
+            }
+            &:hover {
+                border: 1px solid $white;
+                transition: .2s ease-in-out;
+            }
+            &:hover & {
+                &__text {
+                    &__vocation {
+                        &__bar {
+                            & > span {
+                                transform: translateX(0);
+                                transition: .3s ease-in-out;
+                            }
+                        }
+                    }
+                }
+                &__logo {
+                    &__outline, &__full {
+                        transition: .3s ease-in-out;
+                    }
+                    &__outline {
+                        opacity: 0;
+                    }
+                    &__full {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
