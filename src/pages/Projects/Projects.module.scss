@@ -1,11 +1,61 @@
 @import '/src/sass/essentials';
+@import '/src/sass/variables/variables';
 
 // Hangles wrapper and Grid icon
-.projects {
+.Projects {
     // @extend %f-c-col;
     position: relative;
+    display: flex;
     width: 100%;
-    background-color: $grey-200;
+    height: 100%;
+    background-color: $mat-20;
+    border: 1px solid $mat-40;
+    border-radius: $radius-md;
+    padding: $gutter;
+
+    &__Modules {
+        display: grid;
+        gap: 6px;
+        width: 100%;
+        padding: 6px;
+        background-color: $mat-30;
+        border: 1px solid $mat-40;
+        border-radius: $radius-sm;
+        &__TV {
+            background-color: $mat-90;
+            border: 1px solid $mat-60;
+            padding: $pd_md;
+            border-radius: $radius-sm;
+        }
+        &__Block {
+            background-color: $mat-10;
+            border: 1px solid $mat-50;
+            padding: $pd_md;
+            border-radius: $radius-sm;
+        }
+    }
+
+    &__Panel {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: $pd_2xl;
+        flex-grow: 0;
+        position: relative;
+        & > h2 {
+            rotate: -90deg;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            top: $gutter;
+        }
+    }
+
+
+
+
+
+
     &__wrapper {
         height: 100%;
         width: 100%;

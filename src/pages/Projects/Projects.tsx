@@ -64,11 +64,29 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
   }
 
   return (
-    <div className={styles.projects}>
+    <div className={styles.Projects}>
+      {/* Main Module */}
+      <div className={styles.Projects__Modules}>
+        <div className={styles.Projects__Modules__TV}>
+          {/* turn into component */}
+          <div>
+            
+          </div>
+        </div>
+        <div className={styles.Projects__Modules__Block}>
 
-      {/* Panels */}
-      <Panels state={panelState} showGrid={showGrid} />
-      
+        </div>
+      </div>
+      {/* Side Spacing */}
+      <div className={styles.Projects__Panel}>
+        <h2>Projects</h2>
+        <Icon icon="projects" 
+            currentProject={currentProjectId}
+            projectsNumber={projects.length}
+            onClick={() => setHideProjectsMenu(!hideProjectsMenu)}
+            active={hideProjectsMenu}
+        />
+      </div>
 
       {/* Current Project */}
       <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
@@ -80,21 +98,21 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
       {/* Projects Overview */}
       { projects &&
-      <div className={`container z-10 ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}
+      <div className={`z-10 ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}
         style={{pointerEvents: 'none'}}>
-        <Intro page="projects" />
+        {/* <Intro page="projects" /> */}
       </div>
       }
       { projects && 
-        <div className={`${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}>
+        <div className={`${styles.Projects__wrapper} ${(hideProjectsMenu ? '' : styles.Projects__wrapper_hide)}`}>
 
           <div className={styles.ProjectOverview__wrapper}>
 
-            <div className={styles.ProjectOverview}>
+            {/* <div className={styles.ProjectOverview}>
 
                 { projects && projects.map((project, index) => (
 
-                    
+                    // TODO make into a component?
                       <NavLink to={project.id} key={index}
                         className={({ isActive }) =>
                           isActive ? `${styles.ProjectOverview__project} ${styles.ProjectOverview__project_active}` : `${styles.ProjectOverview__project} `
@@ -133,8 +151,6 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                             
                           </div>
 
-                          {/* <p className={styles.ProjectOverview__featured__main__description}>{ project.description }</p> */}
-
                           <div className={styles.ProjectOverview__project__logo}>
                             <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
                             <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
@@ -149,7 +165,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
                 ))}
 
-            </div>
+            </div> */}
 
           </div>
 
@@ -158,7 +174,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
 
 
       {/* Grid Icon */}
-      <div className={`${styles.projects__gridview} ${panelWidth.panelWidth} ${panelWidth.panelHeight} ${showGrid ? '' : styles.projects__gridview_hide}`}>
+      {/* <div className={`${styles.projects__gridview} ${panelWidth.panelWidth} ${panelWidth.panelHeight} ${showGrid ? '' : styles.projects__gridview_hide}`}>
 
         <Icon icon="projects" 
           currentProject={currentProjectId}
@@ -167,7 +183,7 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
           active={hideProjectsMenu}
         />
 
-      </div>
+      </div> */}
 
     </div>
   );

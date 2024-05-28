@@ -33,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({setTransition, closeMenu, trackMenuHide}) =>
   }, [location, trackMenuHide])
   
   return (
-    <Link to="/" className={`${styles.Logo__container} ${panelWidth.panelWidth}`} onClick={() => {
+    <Link to="/" className={`${styles.Logo__container}`} onClick={() => {
       setTransition("close");
       closeMenu();
     }}>

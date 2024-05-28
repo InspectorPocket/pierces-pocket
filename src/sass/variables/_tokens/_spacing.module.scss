@@ -1,0 +1,64 @@
+@import '/src/sass/variables/_primitives/integers';
+
+/* Desktop */
+/* numbers */
+$pd_3xs: $integers-4;
+$pd_2xs: $integers-8;
+$pd_xs: $integers-12;
+$pd_sm: $integers-16;
+$pd_md: $integers-20;
+$pd_ml: $integers-24;
+$pd_lg: $integers-32;
+$pd_xl: $integers-40;
+$pd_2xl: $integers-48;
+$pd_3xl: $integers-64;
+$pd_4xl: $integers-80;
+$pd_5xl: $integers-104;
+
+/* tokens */
+$gutter: $pd_md;
+$margins: $pd-xl;
+
+$logo_width: $pd_2xl;
+
+:export {
+    margins: $margins;
+}
+
+/* Tablet */
+/* numbers */
+// $margin-gutter: $integers-20;
+// $margin-margins: $integers-32;
+// $padding-3xs: $integers-4;
+// $padding-2xs: $integers-8;
+// $padding-xs: $integers-12;
+// $padding-sm: $integers-16;
+// $padding-md: $integers-20;
+// $padding-ml: $integers-24;
+// $padding-lg: $integers-28;
+// $padding-xl: $integers-32;
+// $padding-2xl: $integers-44;
+// $padding-3xl: $integers-56;
+// $padding-4xl: $integers-72;
+// $padding-5xl: $integers-96;
+// $width-artboard: 768px;
+// $width-column-1-col: 0px;
+
+/* Mobile */
+/* numbers */
+// $margin-gutter: $integers-20;
+// $margin-margins: $integers-20;
+// $padding-3xs: $integers-4;
+// $padding-2xs: $integers-8;
+// $padding-xs: $integers-10;
+// $padding-sm: $integers-12;
+// $padding-md: $integers-16;
+// $padding-ml: $integers-20;
+// $padding-lg: $integers-24;
+// $padding-xl: $integers-32;
+// $padding-2xl: $integers-40;
+// $padding-3xl: $integers-48;
+// $padding-4xl: $integers-64;
+// $padding-5xl: $integers-88;
+// $width-artboard: 375px;
+// $width-column-1-col: 0px;

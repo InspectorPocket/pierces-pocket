@@ -1,0 +1,127 @@
+@import '/src/sass/variables/_primitives/colour-palette';
+@import '/src/sass/variables/_tokens/materials.module';
+@import '/src/sass/variables/_tokens/themes.module';
+
+// Might have to swtich to css variables to make the light dark and colour theme switches work properly.
+
+/* Light */
+/* colors */
+$black: $black;
+$white: $white;
+
+/* materials */
+// Grayscale values of the projects. Value of these variables should be able to change by the user when a new material is selected.
+$mat-10: $material-10;
+$mat-20: $material-20;
+$mat-30: $material-30;
+$mat-40: $material-40;
+$mat-50: $material-50;
+$mat-60: $material-60;
+$mat-70: $material-70;
+$mat-80: $material-80;
+$mat-90: $material-90;
+$mat-100: $material-100;
+$mat-110: $material-110;
+$mat-120: $material-120;
+
+/* paint */
+// the colours that are used in the design. Value should be able to be switched by the user or by project/branch basis.
+$paint-10: $colour-10;
+$paint-20: $colour-20;
+$paint-30: $colour-30;
+$paint-40: $colour-40;
+$paint-50: $colour-50;
+$paint-60: $colour-60;
+$paint-70: $colour-70;
+$paint-80: $colour-80;
+$paint-90: $colour-90;
+$paint-100: $colour-100;
+$paint-110: $colour-110;
+$paint-120: $colour-120;
+
+/* text */
+$text-primary: $material-100;
+$text-primary-invert: $material-20;
+
+$text-secondary: $material-70;
+$text-secondary-invert: $material-40;
+$text-tertiary: $material-50;
+
+$text-invert: $paint-20;
+$text-primary: $paint-110;
+$text-secondary: $paint-90;
+$text-tertiary: $paint-80;
+
+
+/* Dark */
+/* colors */
+// $black: $colours-white;
+// $white: $colours-black;
+// $paint-10: $material-120;
+// $paint-100: $material-30;
+// $paint-110: $material-20;
+// $paint-120: $material-10;
+// $paint-20: $material-110;
+// $paint-30: $material-100;
+// $paint-40: $material-90;
+// $paint-50: $material-80;
+// $paint-60: $material-70;
+// $paint-70: $material-60;
+// $paint-80: $material-50;
+// $paint-90: $material-40;
+// $paint-error: $colours-red-40;
+// $paint-overlay: $materials-transparent-black-40;
+// $paint-centre-10: $centre-120;
+// $paint-centre-100: $centre-30;
+// $paint-centre-110: $centre-20;
+// $paint-centre-120: $centre-10;
+// $paint-centre-20: $centre-110;
+// $paint-centre-30: $centre-100;
+// $paint-centre-40: $centre-90;
+// $paint-centre-50: $centre-80;
+// $paint-centre-60: $centre-70;
+// $paint-centre-70: $centre-60;
+// $paint-centre-80: $centre-50;
+// $paint-centre-90: $centre-40;
+// $paint-lower-10: $lower-120;
+// $paint-lower-100: $lower-30;
+// $paint-lower-110: $lower-20;
+// $paint-lower-120: $lower-10;
+// $paint-lower-20: $lower-110;
+// $paint-lower-30: $lower-100;
+// $paint-lower-40: $lower-90;
+// $paint-lower-50: $lower-80;
+// $paint-lower-60: $lower-70;
+// $paint-lower-70: $lower-60;
+// $paint-lower-80: $lower-50;
+// $paint-lower-90: $lower-40;
+// $paint-upper-10: $upper-120;
+// $paint-upper-100: $upper-30;
+// $paint-upper-110: $upper-20;
+// $paint-upper-120: $upper-10;
+// $paint-upper-20: $upper-110;
+// $paint-upper-30: $upper-100;
+// $paint-upper-40: $upper-90;
+// $paint-upper-50: $upper-80;
+// $paint-upper-60: $upper-70;
+// $paint-upper-70: $upper-60;
+// $paint-upper-80: $upper-50;
+// $paint-upper-90: $upper-40;
+// $text-border: $colours-red-40;
+// $text-primary: $material-20;
+// $text-primary-invert: $material-100;
+// $text-secondary: $material-40;
+// $text-secondary-invert: $material-80;
+// $text-tertiary: $material-50;
+// $text-centre-invert: $centre-110;
+// $text-centre-primary: $centre-20;
+// $text-centre-secondary: $centre-50;
+// $text-centre-tertiary: $centre-40;
+// $text-lower-invert: $lower-110;
+// $text-lower-primary: $lower-20;
+// $text-lower-secondary: $lower-50;
+// $text-lower-tertiary: $lower-40;
+// $text-upper-invert: $upper-110;
+// $text-upper-primary: $upper-20;
+// $text-upper-secondary: $upper-50;
+// $text-upper-tertiary: $upper-40;

@@ -22,7 +22,7 @@ const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
   }
   
   return (
-    <div className={`${styles.NavBar} ${panelWidth.panelHeight}`}>
+    <div className={styles.NavBar}>
       <span className={`${navBG.Navigation__cover} ${(navOpen ? navBG.Navigation__cover_open : '')}`}
         onClick={() => {
           setOpen(false);
@@ -31,7 +31,7 @@ const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
       
       <Logo setTransition={setTransition} closeMenu={closeMenu} trackMenuHide={trackMenuHide} />
 
-      <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')} ${panelWidth.panelWidth}`}>
+      <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
         <Icon icon="menu" active={(menuFocus)} onClick={() => {
           setOpen(!navOpen);
           setMenuFocus(!menuFocus);
