@@ -1,18 +1,34 @@
 @import '/src/sass/variables/_primitives/colour-palette';
 
 // /* colors */
-$colour-10: $lime-10;
-$colour-20: $lime-20;
-$colour-30: $lime-30;
-$colour-40: $lime-40;
-$colour-50: $lime-50;
-$colour-60: $lime-60;
-$colour-70: $lime-70;
-$colour-80: $lime-80;
-$colour-90: $lime-90;
-$colour-100: $lime-100;
-$colour-110: $lime-110;
-$colour-120: $lime-120;
+$paint-10: $lime-10;
+$paint-20: $lime-20;
+$paint-30: $lime-30;
+$paint-40: $lime-40;
+$paint-50: $lime-50;
+$paint-60: $lime-60;
+$paint-70: $lime-70;
+$paint-80: $lime-80;
+$paint-90: $lime-90;
+$paint-100: $lime-100;
+$paint-110: $lime-110;
+$paint-120: $lime-120;
+
+:export {
+    paint-10: $paint-10;
+    paint-20: $paint-20;
+    paint-30: $paint-30;
+    paint-40: $paint-40;
+    paint-50: $paint-50;
+    paint-60: $paint-60;
+    paint-70: $paint-70;
+    paint-80: $paint-80;
+    paint-90: $paint-90;
+    paint-100: $paint-100;
+    paint-110: $paint-110;
+    paint-120: $paint-120;
+}
+
 // $lower-10: $colours-red-10;
 // $lower-100: $colours-red-100;
 // $lower-110: $colours-red-110;

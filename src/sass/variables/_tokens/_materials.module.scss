@@ -15,6 +15,21 @@ $material-100: $neutral-100;
 $material-110: $neutral-110;
 $material-120: $neutral-120;
 
+:export {
+    mat-10: $material-10;
+    mat-20: $material-20;
+    mat-30: $material-30;
+    mat-40: $material-40;
+    mat-50: $material-50;
+    mat-60: $material-60;
+    mat-70: $material-70;
+    mat-80: $material-80;
+    mat-90: $material-90;
+    mat-100: $material-100;
+    mat-110: $material-110;
+    mat-120: $material-120;
+}
+
 // /* Steel */
 // /* colors */
 // $material-10: $steel-10;

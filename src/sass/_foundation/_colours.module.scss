@@ -1,3 +1,28 @@
+@import '/src/sass/variables/_primitives/colour-palette';
+@import '/src/sass/variables/_tokens/materials.module';
+@import '/src/sass/variables/_tokens/themes.module';
+
+// Might have to swtich to css variables to make the light dark and colour theme switches work properly.
+
+/* Light */
+/* colors */
+$black: $black;
+$white: $white;
+
+/* text */
+
+$text-primary: $material-100;
+$text-primary-invert: $material-20;
+
+$text-secondary: $material-70;
+$text-secondary-invert: $material-40;
+$text-tertiary: $material-50;
+
+$text-invert: $paint-20;
+$text-primary: $paint-110;
+$text-secondary: $paint-90;
+$text-tertiary: $paint-80;
+
 // Colours
 $white: #ffffff;
 $grey-100: #FAFAFA;
@@ -7,7 +32,6 @@ $grey-400: #BFC5CC;
 $grey-500: #889099;
 $dark: #35485C; 
 $darker: #071F37;
-$black: #191919;
 
 $pink: #FF7878; 
 
@@ -43,7 +67,7 @@ $shadow-colour: rgba($dark, 0.25);
     grey5: $grey-500;
     dark: $dark;
     darker: $darker;
-    black: $black;
+    black: $text-primary;
 
     pink: $pink;
 }

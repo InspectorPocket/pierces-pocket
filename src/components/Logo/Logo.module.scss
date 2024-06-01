@@ -19,23 +19,23 @@
     & > svg, & > img {
         @include size(100%);
     }
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        width: 9.7778px;
-        height: 23px;
-        border-radius: 0 0 5px 5px;;
-        background-color: $darker;
-        transition: 1s ease-in-out;
-    }
-    &:hover {
-        @extend %trans-short;
-        opacity: 1;
-    }
-    &_short {
-        &::before {
-            height: 0;
-        }
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 50%;
+    //     width: 9.7778px;
+    //     height: 23px;
+    //     border-radius: 0 0 5px 5px;;
+    //     background-color: $darker;
+    //     transition: 1s ease-in-out;
+    // }
+    // &:hover {
+    //     @extend %trans-short;
+    //     opacity: 1;
+    // }
+    // &_short {
+    //     &::before {
+    //         height: 0;
+    //     }
+    // }
 }

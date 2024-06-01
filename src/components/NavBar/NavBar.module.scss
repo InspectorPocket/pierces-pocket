@@ -12,6 +12,7 @@
     height: calc(100% - ($margins * 2));
     flex-direction: column;
     z-index: 30;
+    
     &__menu {
         display: flex;
         justify-content: center;

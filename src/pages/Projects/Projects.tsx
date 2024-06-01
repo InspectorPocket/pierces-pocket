@@ -68,18 +68,105 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
       {/* Main Module */}
       <div className={styles.Projects__Modules}>
         <div className={styles.Projects__Modules__TV}>
-          {/* turn into component */}
+          {/* Put Project Module in here and pull out the info for the description */}
           <div>
-            
+          <Routes>
+          <Route path=':projectId/*' element={<Project projects={projects} setCurrentProjectId={setCurrentProjectId} setNextProject={setNextProject} />} />
+        </Routes>
           </div>
         </div>
-        <div className={styles.Projects__Modules__Block}>
+        <div className={`${styles.Projects__Modules__Block}`}>
+          {/* <ProjectDesc /> */}
+          <div className={`${styles.lightModule} ${styles.ProjectDescription}`}>
+            <div className={styles.ProjectDescription__Description}>
+              <h2>LocalThrones</h2>
+              <p>I was commissioned to create a logo for an electronic producer under the name Hanja. Hanja is the Korean name for Han Chinese characters (Chinese: 漢字; pinyin: hànzì). More specifically, it refers to those Chinese characters borrowed from Chinese and incorporated into the Korean language with Korean pronunciation. The task was to design the logo as well as envision the brand identity.</p>
+            </div>
+            <div className={styles.ProjectDescription__Tags}>
+              <h6>TAGS</h6>
+              <h6>
+              {/* <h6 style={{color: project.colour}}> */}
+                Test Tag
+                {/* { project.    role.ux ? "UX" : "" }
+                { project.role.ux && project.role.dev || project.role.ux && project.role.brand || project.role.ux && project.role.graphic || project.role.ux && project.role.threeD ? " / " : "" }
+                { project.role.dev ? "Dev" : "" }
+                { project.role.dev && project.role.brand || project.role.dev && project.role.graphic || project.role.dev && project.role.threeD ? " / " : "" }
+                { project.role.brand ? "Brand" : "" }
+                { project.role.graphic && project.role.brand || project.role.brand && project.role.threeD ? " / " : "" }
+                { project.role.graphic ? "GD" : "" }
+                { project.role.graphic && project.role.threeD ? " / " : "" }
+                { project.r     ole.threeD ? "3D" : "" } */}
+              </h6>
+            </div>
+          </div>
+          { projects && 
+            <div className={styles.Projects__Modules__Block__Items}>
+              { projects && projects.map((project, index) => (
 
+                // TODO make into a component?
+                // <ProjectTab className={blue} project=fuelius />
+                // Set all the colour combinations in here
+                <NavLink to={project.id} key={index}
+                  className={({ isActive }) =>
+                    isActive ? `${styles.lightModule} ${styles.ProjectTab} ${styles.ProjectTab__Active}` : `${styles.lightModule} ${styles.ProjectTab} `
+                  }
+                  style={({ isActive }) => ({
+                    borderColor: isActive ? hexToRGB(project.colour, 0.5) : ''
+                  })}
+                  state= {{ index: index }}
+                  onClick={() => setActiveProject(index) }>
+
+                  {/* TODO Make separate component and pass colours into it */}
+                  <div className={styles.ClickyButton} style={{backgroundColor: project.colour}}>
+                    {/* TODO Make separate component and pass colours into it */}
+                    {/* <ClickyButton /> */}
+                  </div>
+
+                  <h3>{ project.title }</h3>
+
+                  {/* <div className={styles.ProjectOverview__project__text}>
+
+                    
+
+                    <div className={styles.ProjectOverview__project__text__vocation}>
+
+                      <div className={styles.ProjectOverview__project__text__vocation__bar}>
+                        <span style={{backgroundColor: project.colour}}></span>
+                      </div>
+
+                      <h6>
+                        { project.role.ux ? "UX" : "" }
+                        { project.role.ux && project.role.dev || project.role.ux && project.role.brand || project.role.ux && project.role.graphic || project.role.ux && project.role.threeD ? " / " : "" }
+                        { project.role.dev ? "Dev" : "" }
+                        { project.role.dev && project.role.brand || project.role.dev && project.role.graphic || project.role.dev && project.role.threeD ? " / " : "" }
+                        { project.role.brand ? "Brand" : "" }
+                        { project.role.graphic && project.role.brand || project.role.brand && project.role.threeD ? " / " : "" }
+                        { project.role.graphic ? "GD" : "" }
+                        { project.role.graphic && project.role.threeD ? " / " : "" }
+                        { project.role.threeD ? "3D" : "" }
+                      </h6>
+                      
+                    </div>
+
+                    <div className={styles.ProjectOverview__project__logo}>
+                      <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
+                      <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
+                    </div>
+
+                    <span className={styles.ProjectOverview__project__gradient} style={{backgroundColor: project.colour}}></span>
+
+                  </div> */}
+
+                </NavLink>
+
+              ))}
+            </div>
+          }
         </div>
       </div>
       {/* Side Spacing */}
       <div className={styles.Projects__Panel}>
-        <h2>Projects</h2>
+        <h1>PROJECTS</h1>
         <Icon icon="projects" 
             currentProject={currentProjectId}
             projectsNumber={projects.length}
@@ -89,28 +176,27 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
       </div>
 
       {/* Current Project */}
-      <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
+      {/* <div className={(hideProjectsMenu ? styles.projects__wrapper_hide : '')}>
         <Routes>
           <Route path=':projectId/*' element={<Project projects={projects} setCurrentProjectId={setCurrentProjectId} setNextProject={setNextProject} />} />
         </Routes>
-      </div>
+      </div> */}
 
 
       {/* Projects Overview */}
-      { projects &&
+      {/* { projects &&
       <div className={`z-10 ${styles.projects__wrapper} ${(hideProjectsMenu ? '' : styles.projects__wrapper_hide)}`}
         style={{pointerEvents: 'none'}}>
-        {/* <Intro page="projects" /> */}
       </div>
-      }
-      { projects && 
+      } */}
+      {/* { projects && 
         <div className={`${styles.Projects__wrapper} ${(hideProjectsMenu ? '' : styles.Projects__wrapper_hide)}`}>
 
           <div className={styles.ProjectOverview__wrapper}>
 
-            {/* <div className={styles.ProjectOverview}>
+            <div className={styles.ProjectOverview}> */}
 
-                { projects && projects.map((project, index) => (
+                {/* { projects && projects.map((project, index) => (
 
                     // TODO make into a component?
                       <NavLink to={project.id} key={index}
@@ -163,14 +249,14 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                       </NavLink>
 
 
-                ))}
+                ))} */}
 
-            </div> */}
+            {/* </div>
 
           </div>
 
         </div>
-      }
+      } */}
 
 
       {/* Grid Icon */}

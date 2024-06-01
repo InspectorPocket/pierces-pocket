@@ -1,9 +1,33 @@
 @import '/src/sass/essentials';
 @import '/src/sass/variables/variables';
 
-// Hangles wrapper and Grid icon
+// TODO turn this into a mixin to pass the value into
+.lineClamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+
+// Move these into proper files
+.ellipsis {
+    text-overflow: ellipsis;
+  
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+.lightModule {
+    background-color: $mat-10;
+    border: 1px solid $mat-50;
+    padding: $pd_md;
+    border-radius: $radius-sm;
+}
+
+// Handles Grid Position
 .Projects {
-    // @extend %f-c-col;
     position: relative;
     display: flex;
     width: 100%;
@@ -15,9 +39,11 @@
 
     &__Modules {
         display: grid;
-        gap: 6px;
+        grid-template-columns: calc(100% / 1.618) 1fr;
+        gap: $pd_6;
+
         width: 100%;
-        padding: 6px;
+        padding: $pd_6;
         background-color: $mat-30;
         border: 1px solid $mat-40;
         border-radius: $radius-sm;
@@ -28,10 +54,18 @@
             border-radius: $radius-sm;
         }
         &__Block {
-            background-color: $mat-10;
-            border: 1px solid $mat-50;
-            padding: $pd_md;
-            border-radius: $radius-sm;
+            display: grid;
+            // grid-template-rows: 1fr 1fr;
+            gap: $pd_6;
+            &__Description {
+                
+            }
+            &__Items {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: $pd_6;
+            }
         }
     }
 
@@ -42,7 +76,7 @@
         width: $pd_2xl;
         flex-grow: 0;
         position: relative;
-        & > h2 {
+        & > h1 {
             rotate: -90deg;
             position: relative;
             display: flex;
@@ -50,38 +84,60 @@
             top: $gutter;
         }
     }
+}
 
-
-
-
-
-
-    &__wrapper {
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        opacity: 1;
-        overflow: auto;
-        &_hide {
-            opacity: 0;
-            pointer-events: none;
+.ProjectDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    &__Description {
+        & > h2 {
+            margin-bottom: $pd_md;
+        }
+        & > p {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* number of lines to show */
+                    line-clamp: 4; 
+            -webkit-box-orient: vertical;
         }
     }
-    &__gridview {
+    &__Tags {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 20;
-        &_hide {
-            display: none;
-        }
+        justify-content: space-between;
+        padding-top: $pd_md;
+        margin-top: $pd_md;
+        border-top: 1px solid $mat-30;
+    }
+    // height: 100%;
+}
+
+// TODO Move to separate component
+.ClickyButton {
+    min-width: rem(36);
+    min-width: rem(36);
+    min-height: rem(36);
+    min-height: rem(36);
+    margin-right: $pd_sm;
+}
+
+// TODO Move to separate component
+.ProjectTab {
+    display: flex;
+    align-items: center;
+    padding-top: $pd_sm;
+    padding-bottom: $pd_sm;
+    &__Active {
+
+    }
+
+    & > h3 {
+
     }
 }
+
+
 
 // Handles projects list
 .ProjectOverview {

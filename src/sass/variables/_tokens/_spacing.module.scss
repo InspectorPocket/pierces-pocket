@@ -2,18 +2,22 @@
 
 /* Desktop */
 /* numbers */
-$pd_3xs: $integers-4;
-$pd_2xs: $integers-8;
-$pd_xs: $integers-12;
-$pd_sm: $integers-16;
-$pd_md: $integers-20;
-$pd_ml: $integers-24;
-$pd_lg: $integers-32;
-$pd_xl: $integers-40;
-$pd_2xl: $integers-48;
-$pd_3xl: $integers-64;
-$pd_4xl: $integers-80;
-$pd_5xl: $integers-104;
+$pd_3: $int-3;
+$pd_6: $int-6;
+$pd_9: $int-9;
+
+$pd_3xs: $int-4;
+$pd_2xs: $int-8;
+$pd_xs: $int-12;
+$pd_sm: $int-16;
+$pd_md: $int-20;
+$pd_ml: $int-24;
+$pd_lg: $int-32;
+$pd_xl: $int-40;
+$pd_2xl: $int-48;
+$pd_3xl: $int-64;
+$pd_4xl: $int-80;
+$pd_5xl: $int-104;
 
 /* tokens */
 $gutter: $pd_md;
@@ -27,38 +31,38 @@ $logo_width: $pd_2xl;
 
 /* Tablet */
 /* numbers */
-// $margin-gutter: $integers-20;
-// $margin-margins: $integers-32;
-// $padding-3xs: $integers-4;
-// $padding-2xs: $integers-8;
-// $padding-xs: $integers-12;
-// $padding-sm: $integers-16;
-// $padding-md: $integers-20;
-// $padding-ml: $integers-24;
-// $padding-lg: $integers-28;
-// $padding-xl: $integers-32;
-// $padding-2xl: $integers-44;
-// $padding-3xl: $integers-56;
-// $padding-4xl: $integers-72;
-// $padding-5xl: $integers-96;
+// $margin-gutter: $int-20;
+// $margin-margins: $int-32;
+// $padding-3xs: $int-4;
+// $padding-2xs: $int-8;
+// $padding-xs: $int-12;
+// $padding-sm: $int-16;
+// $padding-md: $int-20;
+// $padding-ml: $int-24;
+// $padding-lg: $int-28;
+// $padding-xl: $int-32;
+// $padding-2xl: $int-44;
+// $padding-3xl: $int-56;
+// $padding-4xl: $int-72;
+// $padding-5xl: $int-96;
 // $width-artboard: 768px;
 // $width-column-1-col: 0px;
 
 /* Mobile */
 /* numbers */
-// $margin-gutter: $integers-20;
-// $margin-margins: $integers-20;
-// $padding-3xs: $integers-4;
-// $padding-2xs: $integers-8;
-// $padding-xs: $integers-10;
-// $padding-sm: $integers-12;
-// $padding-md: $integers-16;
-// $padding-ml: $integers-20;
-// $padding-lg: $integers-24;
-// $padding-xl: $integers-32;
-// $padding-2xl: $integers-40;
-// $padding-3xl: $integers-48;
-// $padding-4xl: $integers-64;
-// $padding-5xl: $integers-88;
+// $margin-gutter: $int-20;
+// $margin-margins: $int-20;
+// $padding-3xs: $int-4;
+// $padding-2xs: $int-8;
+// $padding-xs: $int-10;
+// $padding-sm: $int-12;
+// $padding-md: $int-16;
+// $padding-ml: $int-20;
+// $padding-lg: $int-24;
+// $padding-xl: $int-32;
+// $padding-2xl: $int-40;
+// $padding-3xl: $int-48;
+// $padding-4xl: $int-64;
+// $padding-5xl: $int-88;
 // $width-artboard: 375px;
 // $width-column-1-col: 0px;

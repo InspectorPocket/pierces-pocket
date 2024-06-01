@@ -23,22 +23,13 @@ const NavBar: FC<NavBarProps> = ({setTransition, trackMenuHide}) => {
   
   return (
     <div className={styles.NavBar}>
-      <span className={`${navBG.Navigation__cover} ${(navOpen ? navBG.Navigation__cover_open : '')}`}
-        onClick={() => {
-          setOpen(false);
-          setMenuFocus(false);
-        }}></span>
-      
       <Logo setTransition={setTransition} closeMenu={closeMenu} trackMenuHide={trackMenuHide} />
-
-      <div className={`${styles.NavBar__menu} ${navBG.Navigation__bg} ${(navOpen ? navBG.Navigation__bg_open : '')}`}>
-        <Icon icon="menu" active={(menuFocus)} onClick={() => {
-          setOpen(!navOpen);
-          setMenuFocus(!menuFocus);
-        }} />
-        {/* {navOpen && <Navigation />} */}
-        <Navigation navState={(navOpen)} setTransition={setTransition} closeMenu={closeMenu} />
-      </div>
+      {/* TODO New functionality to move the screen down to reveal the playground below */}
+      <Icon icon="menu" active={(menuFocus)} onClick={() => {
+        setOpen(!navOpen);
+        setMenuFocus(!menuFocus);
+      }} />
+      {/* Deleted Navigation from here but look at older commits in reversion is needed */}
     </div>
   )
 
