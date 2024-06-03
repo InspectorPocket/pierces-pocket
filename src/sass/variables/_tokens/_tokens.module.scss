@@ -1,4 +1,4 @@
-@import '/src/sass/variables/_primitives/colour-palette';
+@import '/src/sass/variables/_primitives/colour-palette.module';
 @import '/src/sass/variables/_tokens/materials.module';
 @import '/src/sass/variables/_tokens/themes.module';
 
@@ -25,18 +25,28 @@ $mat-110: $material-110;
 $mat-120: $material-120;
 
 /* text */
-$text-primary: $material-100;
-$text-primary-invert: $material-20;
+$text-primary: $mat-100;
+$text-primary-invert: $mat-20;
 
-$text-secondary: $material-70;
-$text-secondary-invert: $material-40;
-$text-tertiary: $material-50;
+$text-secondary: $mat-70;
+$text-secondary-invert: $mat-40;
+$text-tertiary: $mat-50;
 
-$text-invert: $paint-20;
-$text-primary: $paint-110;
-$text-secondary: $paint-90;
-$text-tertiary: $paint-80;
+// :export {
+//     white: $white;
+//     black: $black;
 
+//     grey1: $grey-100;
+//     grey2: $grey-200;
+//     grey3: $grey-300;
+//     grey4: $grey-400;
+//     grey5: $grey-500;
+//     dark: $dark;
+//     darker: $darker;
+//     black: $text-primary;
+
+//     pink: $pink;
+// }
 
 /* Dark */
 /* colors */

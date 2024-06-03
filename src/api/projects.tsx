@@ -85,7 +85,7 @@ const projects: ProjectsProps[]  = [
             {
                 name: "Role",
                 id: "logo",
-                class: `bg-g1 z-2`,
+                class: ``,
                 content: [
                     {
                         component: 'paragraph',
@@ -420,9 +420,9 @@ const projects: ProjectsProps[]  = [
     },
     {
         index: 2,
-        title: "Cosmic Blanket",
-        id: "cosmic-blanket",
-        description: "Cosmic Blanket is a side project of mine that is still in its infancy. The concept is split into two - a planned social presence for illustrations and a sister brand for an app I plan to design.",
+        title: "Cosmic Architect",
+        id: "cosmic-architect",
+        description: "Cosmic Architect is a side project of mine that is still in its infancy. The concept is split into two - a planned social presence for illustrations and a sister brand for an app I plan to design.",
         colour: "#282828",
         featured: false,
         featured_list: true,
@@ -558,7 +558,7 @@ const projects: ProjectsProps[]  = [
     },
     {
         index: 3,
-        title: "North Property Group",
+        title: "North Property",
         id: "north-property-group",
         description: "I worked with North Property Group for only a couple of months, but I managed to help rebrand them and set up email and print templates for them to use going forwards.",
         colour: "#720000",
@@ -878,81 +878,81 @@ const projects: ProjectsProps[]  = [
         ],
         outro: "I learnt so much at Fluid Ads, getting a real taste for version control and agile workflows. Working with UX Designers and Developers really bolstered my ability to grow and I’m so grateful for my time there."
     },
-    {
-        index: 5,
-        title: "Star Citizen Mock UI",
-        id: "star-citizen",
-        description: "Star Citizen is one of the leading space simulation games in the gaming industry. I created a mockup for an interview to see how my game GUI skills held up.",
-        colour: "#23609e",
-        featured: false,
-        featured_list: true,
-        role: {
-            ux: true,
-            dev: false,
-            graphic: true,
-            brand: false
-        },
-        software: {
-            ai: true,
-            figma: true,
-            wordpress: true
-        },
-        resources: [
-            {
-                name: "Showcase",
-                id: "logo",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The task was to create a user interface for an in game crate, that would handle a volitile material. The material would only be able to last in the storage container for a set amount of time before exploding.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'main_crate.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_integrity_crate.jpg',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "Close Ups",
-                id: "typography",
-                class: `bg-w z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The following is a couple of different screenshots when interacting with the crate at different stages of inventory management.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'main_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_main_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'inventory_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_integrity_inventory.png',
-                        alt: ''
-                    }
-                ]
-            }
-        ],
-        outro: "I enjoyed working on this task and branching out into a different discipline of UI than web, however my true competency is with web UX/UI."
-    },
+    // {
+    //     index: 5,
+    //     title: "Star Citizen Mock UI",
+    //     id: "star-citizen",
+    //     description: "Star Citizen is one of the leading space simulation games in the gaming industry. I created a mockup for an interview to see how my game GUI skills held up.",
+    //     colour: "#23609e",
+    //     featured: false,
+    //     featured_list: true,
+    //     role: {
+    //         ux: true,
+    //         dev: false,
+    //         graphic: true,
+    //         brand: false
+    //     },
+    //     software: {
+    //         ai: true,
+    //         figma: true,
+    //         wordpress: true
+    //     },
+    //     resources: [
+    //         {
+    //             name: "Showcase",
+    //             id: "logo",
+    //             class: `bg-g1 z-2`,
+    //             content: [
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The task was to create a user interface for an in game crate, that would handle a volitile material. The material would only be able to last in the storage container for a set amount of time before exploding.`
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'main_crate.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'danger_integrity_crate.jpg',
+    //                     alt: ''
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             name: "Close Ups",
+    //             id: "typography",
+    //             class: `bg-w z-2`,
+    //             content: [
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The following is a couple of different screenshots when interacting with the crate at different stages of inventory management.`
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'main_full.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'danger_main_full.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'inventory_full.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'danger_integrity_inventory.png',
+    //                     alt: ''
+    //                 }
+    //             ]
+    //         }
+    //     ],
+    //     outro: "I enjoyed working on this task and branching out into a different discipline of UI than web, however my true competency is with web UX/UI."
+    // },
     {
         index: 6,
         title: "LocalThrones",
@@ -1483,118 +1483,118 @@ const projects: ProjectsProps[]  = [
         ],
         outro: "Codedump development was put on hold, however the designing process allowed me to sharpen my UX Design abilities."
     },
-    {
-        index: 9,
-        title: "Rozafa",
-        id: "rozafa",
-        description: "Rozafa was the first potential client of a freelance business, me and some friends were going to start. Rozafa was part of a pitch to show what the branding company was capable of - designing and handling your brand and website.",
-        colour: "#F5B0C5",
-        featured: false,
-        featured_list: false,
-        role: {
-            ux: true,
-            brand: true
-        },
-        software: {
-            xd: true
-        },
-        resources: [
-            {
-                name: "User Journey",
-                id: "user-journey",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The flow of the website was straight forward. The goal of the user is to have customers book a table. Showing deals on the home page and allowing easy navigation to an interactive menu page - and details for each - was the primary step in achieving the users goal.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'user_flow.png',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "Styleguide",
-                id: "styleguide",
-                class: `bg-g2 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The colours I opted with were based on a quick browse on Dribbble to see some greek themed inspiration. The pink and the blue colour works nicely together, and the dark blue font style meets all accessibility requirements with the colours I chose.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'colours.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `I chose Berkshire Squash as the font for the heading, to bring a exotic feel to the site. The main font is Century Gothic - a complimentary font to the headings.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'typography.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `I used the traditional Greek key pattern to have as borders for the content. The same symbol is used in the background at a reduced opacity. You can see this in the next section.`
-                    }
-                ]
-            },
-            {
-                name: "Design",
-                id: "design",
-                class: `bg-w z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The design follows a standard layout of either a full width content block, or split into the necessary number of components. For example; 50:50 for text/content and 33:33:33 for testimonials.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The menu page is interactive and leads to a more detailed view of an item - giving the company choice to add pictures, lore for the dishes or simply ingredients.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `You can view and interact with the Adobe XD flow prototype I created <a/>. Or see the final screens presented below.`,
-                        link: {
-                            url: 'https://xd.adobe.com/view/854b9f76-3a66-4fcc-ae59-6d5fb61c09dd-d018/?fullscreen',
-                            content: 'using this link here'
-                        }
-                    },
-                    {
-                        component: 'image',
-                        src: 'home.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'menu.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'menu_item.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'our_story.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'book.jpg',
-                        alt: ''
-                    }
-                ]
-            },
-        ],
-        outro: "We all got too busy with other responsibilities to continue with the project, so this was our first and last case study, but it was fun to work on together regardless."
-    },
+    // {
+    //     index: 9,
+    //     title: "Rozafa",
+    //     id: "rozafa",
+    //     description: "Rozafa was the first potential client of a freelance business, me and some friends were going to start. Rozafa was part of a pitch to show what the branding company was capable of - designing and handling your brand and website.",
+    //     colour: "#F5B0C5",
+    //     featured: false,
+    //     featured_list: false,
+    //     role: {
+    //         ux: true,
+    //         brand: true
+    //     },
+    //     software: {
+    //         xd: true
+    //     },
+    //     resources: [
+    //         {
+    //             name: "User Journey",
+    //             id: "user-journey",
+    //             class: `bg-g1 z-2`,
+    //             content: [
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The flow of the website was straight forward. The goal of the user is to have customers book a table. Showing deals on the home page and allowing easy navigation to an interactive menu page - and details for each - was the primary step in achieving the users goal.`
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'user_flow.png',
+    //                     alt: ''
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             name: "Styleguide",
+    //             id: "styleguide",
+    //             class: `bg-g2 z-2`,
+    //             content: [
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The colours I opted with were based on a quick browse on Dribbble to see some greek themed inspiration. The pink and the blue colour works nicely together, and the dark blue font style meets all accessibility requirements with the colours I chose.`
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'colours.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `I chose Berkshire Squash as the font for the heading, to bring a exotic feel to the site. The main font is Century Gothic - a complimentary font to the headings.`
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'typography.png',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `I used the traditional Greek key pattern to have as borders for the content. The same symbol is used in the background at a reduced opacity. You can see this in the next section.`
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             name: "Design",
+    //             id: "design",
+    //             class: `bg-w z-2`,
+    //             content: [
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The design follows a standard layout of either a full width content block, or split into the necessary number of components. For example; 50:50 for text/content and 33:33:33 for testimonials.`
+    //                 },
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `The menu page is interactive and leads to a more detailed view of an item - giving the company choice to add pictures, lore for the dishes or simply ingredients.`
+    //                 },
+    //                 {
+    //                     component: 'paragraph',
+    //                     content: `You can view and interact with the Adobe XD flow prototype I created <a/>. Or see the final screens presented below.`,
+    //                     link: {
+    //                         url: 'https://xd.adobe.com/view/854b9f76-3a66-4fcc-ae59-6d5fb61c09dd-d018/?fullscreen',
+    //                         content: 'using this link here'
+    //                     }
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'home.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'menu.png',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'menu_item.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'our_story.jpg',
+    //                     alt: ''
+    //                 },
+    //                 {
+    //                     component: 'image',
+    //                     src: 'book.jpg',
+    //                     alt: ''
+    //                 }
+    //             ]
+    //         },
+    //     ],
+    //     outro: "We all got too busy with other responsibilities to continue with the project, so this was our first and last case study, but it was fun to work on together regardless."
+    // },
     {
         index: 10,
         title: "Logos",

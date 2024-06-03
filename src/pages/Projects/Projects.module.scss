@@ -1,5 +1,10 @@
 @import '/src/sass/essentials';
 @import '/src/sass/variables/variables';
+@import '/src/sass/variables/_primitives/colour-palette.module.scss';
+
+$gentleShadow: rgba($mat-110, 0.15) 0 0 2px;
+$popUpShadow: rgba($mat-110, 0.15) -1px 1px 3px;
+$popInShadow: inset rgba($mat-110, 0.15) -1px 2px 2px;
 
 // TODO turn this into a mixin to pass the value into
 .lineClamp {
@@ -24,6 +29,7 @@
     border: 1px solid $mat-50;
     padding: $pd_md;
     border-radius: $radius-sm;
+    box-shadow: $popUpShadow;
 }
 
 // Handles Grid Position
@@ -36,10 +42,11 @@
     border: 1px solid $mat-40;
     border-radius: $radius-md;
     padding: $gutter;
+    box-shadow: $popInShadow, $gentleShadow;
 
     &__Modules {
-        display: grid;
-        grid-template-columns: calc(100% / 1.618) 1fr;
+        display: flex;
+        // grid-template-columns: calc(100% / 1.618) 1fr;
         gap: $pd_6;
 
         width: 100%;
@@ -47,24 +54,26 @@
         background-color: $mat-30;
         border: 1px solid $mat-40;
         border-radius: $radius-sm;
-        &__TV {
-            background-color: $mat-90;
-            border: 1px solid $mat-60;
-            padding: $pd_md;
-            border-radius: $radius-sm;
-        }
+        box-shadow: $popInShadow;
         &__Block {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             // grid-template-rows: 1fr 1fr;
             gap: $pd_6;
+            width: calc(100% - (100% / 1.618));
             &__Description {
                 
             }
             &__Items {
                 display: grid;
+                flex-direction: column;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
                 gap: $pd_6;
+            }
+
+            &_Active {
+                width: 23%;
             }
         }
     }
@@ -91,16 +100,20 @@
     flex-direction: column;
     justify-content: space-between;
     text-overflow: ellipsis;
+    height: 100%;
     &__Description {
         & > h2 {
             margin-bottom: $pd_md;
         }
-        & > p {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 4; /* number of lines to show */
-                    line-clamp: 4; 
-            -webkit-box-orient: vertical;
+        &__Container {
+            & > p {
+                height: 100%;
+                // overflow: hidden;
+                // display: -webkit-box;
+                // -webkit-line-clamp: 4; /* number of lines to show */
+                //         line-clamp: 4; 
+                // -webkit-box-orient: vertical;
+            }
         }
     }
     &__Tags {
@@ -114,12 +127,138 @@
 }
 
 // TODO Move to separate component
+.TV {
+    &__Frame {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% / 1.618);
+        gap: $pd_md;
+
+        background-color: $mat-90;
+        border: 1px solid $mat-60;
+        padding: $pd_3xs;
+        border-radius: $radius-sm;
+
+        box-shadow: $popUpShadow;
+
+        &_Active {
+            width: 77%;
+        }
+    }
+    display: flex;
+    flex-direction: column;
+    gap: $pd_md;
+    overflow: hidden;
+
+    background-color: $mat-120;
+    border: 1px solid $black;
+    padding: $pd_md;
+    border-radius: $radius-xs;
+
+    &__Top {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        & > div {
+            display: flex;
+            gap: $pd_xs
+        }
+        & h6 {
+            color: $text-primary-invert;
+        }
+        &_Active {
+            display: flex;
+        }
+    }
+
+    &__Content {
+        height: calc(100% - $pd_md);
+        height: 100%;
+        overflow: hidden;
+
+        & img {
+            border-radius: $radius-xs;
+            border: 1px solid $mat-90;
+        }
+
+        &_Active {
+            padding-right: $pd_md;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: $pd_6;
+            }
+               
+            &::-webkit-scrollbar-track {
+                border-radius: $int-9999;
+                border: 1px solid $mat-120;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                width: $pd_6;
+                border-radius: $int-9999;
+            }
+        }
+    }
+}
+
+.Theme {
+    &__Icon {
+
+        &__Green {
+            &__Main {
+                fill: $green-60;
+            }
+        }
+    }
+
+    &__Scroll {
+
+        &__Green {
+            &::-webkit-scrollbar-track {
+                background: $green-110;
+                box-shadow: inset $int-1 0 $green-120, inset (-$int-1) 0 $green-120;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $green-80;
+                border: 1px solid $green-100;
+            }
+        }
+    }
+}
+
+// TODO Move to separate component
 .ClickyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: rem(36);
     min-width: rem(36);
     min-height: rem(36);
     min-height: rem(36);
     margin-right: $pd_sm;
+    &__Main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $pd_lg;
+        height: $pd_lg;
+        border-radius: $radius-md;
+        background-color: $paint-40;
+        border: 1px solid $paint-70;
+        box-shadow: 0 $int-1 $paint-80, 0 $int-2 $paint-100;
+        &__Centre {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $pd_ml;
+            height: $pd_ml;
+            padding: $pd_3;
+            border-radius: $radius-sm;
+            background-color: $paint-20;
+            border: 1px solid $paint-90;
+        }
+    }
 }
 
 // TODO Move to separate component
@@ -155,7 +294,7 @@
     // Container
     max-width: 1240px;
     width: 100%;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr;
     gap: rem(16);
 

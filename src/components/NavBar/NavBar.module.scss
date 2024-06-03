@@ -9,10 +9,11 @@
     top: $margins;
     left: $margins;
     bottom: $margins;
-    height: calc(100% - ($margins * 2));
+    height: calc(100% - ($margins * 2) + $pd_2xs);
     flex-direction: column;
     z-index: 30;
-    
+    width: $pd_lg;
+
     &__menu {
         display: flex;
         justify-content: center;
