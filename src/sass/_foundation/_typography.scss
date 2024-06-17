@@ -41,6 +41,7 @@ html { font-size: 100%; }
 
     h1, h2, h3, h4, h5 {
         font-family: 'Playfair Display', serif;
+        font-family: 'Open Sans', system-ui, sans-serif;
     }
 
     h1, h2, h3 {
@@ -72,11 +73,10 @@ html { font-size: 100%; }
 
 // FONT SIZE
 
-    h1 { font-size: rem(48); }
-    h2 { font-size: rem(38); }
-    h3 { font-size: rem(30); }
-    h4 { font-size: rem(24); }
-    h5 { font-size: rem(19); }
+    h1 { font-size: rem(40); }
+    h2 { font-size: rem(28); }
+    h3 { font-size: rem(17); }
+    h4 { font-size: rem(19); }
     p, span { font-size: rem(15); }
     h6 { font-size: rem(12); }
     small { font-size: rem(9.6); }
@@ -85,9 +85,9 @@ html { font-size: 100%; }
 
 // FONT WEIGHT
 
-    h1 { font-weight: 500; } // semi-bold
-    h2 { font-weight: 500; } // semi-bold
-    h3, h4 { font-weight: 500; } // medium
+    h1 { font-weight: 200; } // semi-bold
+    h2 { font-weight: 200; } // semi-bold
+    h3, h4 { font-weight: 400; } // medium
     h5, small, .xsmall, a { font-weight: 400; } // regular
     p, h6 { font-weight: 300; } // regular
 
@@ -96,6 +96,12 @@ html { font-size: 100%; }
 
     h1, h2, h3, h4, h5, body, p, h6, span, small, .xsmall, ul, li, a {
         color: $dark;
+    }
+
+// FONT CUSTOMISING
+
+    h3 {
+        text-transform: uppercase;
     }
 
 

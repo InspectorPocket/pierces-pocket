@@ -30,7 +30,7 @@ const NextProject: React.FC<NextProjectProps> = ({project, projects, setNextProj
               setNextProject(nextProject)
           }}>
           <h6>Next Project</h6>
-          <h3>{nextProject.title}</h3>
+          <h4>{nextProject.title}</h4>
           <div className={panelWidth.panelHeight}></div>
         </Link>
       }

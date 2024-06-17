@@ -13,6 +13,9 @@
         & > * {
             color: $white;
         }
+        & > h3, h4 {
+            font-size: rem(32);
+        }
     }
     &::before {
         content: '';

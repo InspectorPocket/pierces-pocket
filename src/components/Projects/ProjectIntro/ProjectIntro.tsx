@@ -31,13 +31,10 @@ interface ProjectIntroProps {
 const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, software, colour}) => {
 
   return (
-    <div className={styles.ProjectIntro} style={{backgroundColor: colour}}>
+    <div className={`${styles.ProjectIntro}`}>
       <div className={styles.ProjectIntro__img}>
-        <span style={{backgroundImage: `url("/images/${imgUrl}main.png")`}} />
-      </div>
-      <div className={styles.ProjectIntro__content}>
-        <h2>{title}</h2>
-        <div className={`${styles.ProjectIntro__software} ${panelWidth.panelHeight}`}>
+        <span style={{backgroundImage: `url("/images/${imgUrl}main.jpg")`}}>
+        <div className={`${styles.ProjectIntro__software}`}>
           { software && Object.keys(software).map((item, index) => {
               return <Icon key={index} icon={item} noPadding={true} />
             })
@@ -61,8 +58,15 @@ const ProjectIntro: React.FC<ProjectIntroProps> = ({imgUrl, title, vocation, sof
             }
           </div>
         </div>
-        <hr />
-        <p className={styles.ProjectIntro__title__vocation}>{vocation}</p>
+        </span>
+        
+      </div>
+      <div className={`${styles.ProjectIntro__content}`}>
+        <h1>{title}</h1>
+        {/* <hr /> */}
+        <div className={styles.ProjectIntro__content__desc}>
+          <p>{vocation}</p>
+        </div>
       </div>
     </div>
   )

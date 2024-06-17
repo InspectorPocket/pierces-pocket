@@ -4,57 +4,69 @@ $top_spacing: 6.6666vw + #{rem(44)};
 
 .ProjectIntro {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: calc(4.4444vw + rem(8)) rem(8) rem(8);
+    max-width: rem(560);
+    margin-bottom: rem(20);
+    // padding: rem(20) 0;
     &__img {
         display: flex;
-        position: relative;
         width: 100%;
         height: calc(100% - 192px);
         max-width: rem(1920);
-        padding: 4.4444vw 0 2.2222vw;
+        padding: rem(8);
+        background-color: $dark;
+        border-radius: rem(6) rem(6) 0 0;
+        border-radius: rem(9);
+        box-shadow: 0 0 0 1px $grey-400;
+        z-index: 6;
         & > span {
             width: 100%;
             height: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: contain;
-        }
-        &__cover {
-            position: absolute;
-            top: calc(100% - 240px);
-            min-width: 2400px;
-            right: 50%;
-            transform: translateX(50%);
-            z-index: 5;
+            background-size: cover;
+            border-radius: rem(6);
+            border: 1px solid $darkest;
+            overflow: hidden;
         }
     }
     &__content {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: rem(556);
         position: relative;
-        padding: rem(20) 5.5555vw rem(88);
+        padding: rem(20);
+        padding: rem(20) 0 rem(88);
         z-index: 3;
-        &::before {
-            content: '';
-            position: absolute;
-            top: rem(-12);
-            width: 100vw;
-            height: rem(1000);
-            background-color: $white;
-            z-index: -1;
-            left: 50%;
-            transform: translateX(calc(-50%)) skewY(2deg);
+        background-color: $white;
+        box-shadow: 0 0 0 1px $grey-400;
+        margin-top: 1px;
+        border-radius: rem(9);
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     top: rem(-12);
+        //     width: 100vw;
+        //     height: rem(1000);
+        //     background-color: $white;
+        //     z-index: -1;
+        //     left: 50%;
+        //     transform: translateX(calc(-50%)) skewY(2deg);
+        // }
+        & > h1 {
+            margin: 0 rem(20);
         }
-        & > hr {
-            margin: rem(24) 0;
-            background-color: $grey-300;
-            border: 0;
-            height: 1px;
+        &__desc {
+            margin: 0 rem(12);
+            margin-top: rem(20);
+            padding: rem(12);
+            background: $grey-100;
+            border: 1px solid $grey-300;
+            border-radius: rem(6);
         }
     }
     &__software {
@@ -62,18 +74,20 @@ $top_spacing: 6.6666vw + #{rem(44)};
         align-items: center;
         justify-content: flex-end;
         position: absolute;
-        right: 0;
-        bottom: 0;
-        // bottom: rem(-80);
-        padding: 0 5.5555vw;
-        z-index: 5;
+        border-radius: rem(5);
+        padding: rem(12);
+        
+        right: rem(26);
+        bottom: rem(26);
+        background-color: transparent;
+        border: 1px solid transparent;
         & > a {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 3px;
-            height: 48px;
             pointer-events: none;
+            filter: invert(1);
             &:last-of-type {
                 margin-right: 0;
             }
@@ -85,10 +99,11 @@ $top_spacing: 6.6666vw + #{rem(44)};
             position: absolute;
             display: flex;
             flex-direction: column;
-            bottom: 100%;
-            background-color: $grey-100;
+            bottom: calc(100% + rem(12));
+            right: 0;
+            background-color: $darker;
             padding: rem(12) rem(16);
-            border-radius: 2px;
+            border-radius: rem(5);
             // min-width: 200%;
             // max-width: rem(152);
             z-index: 20;
@@ -96,6 +111,7 @@ $top_spacing: 6.6666vw + #{rem(44)};
             opacity: 0;
             transition: .3s ease-in-out;
             & > span {
+                color: $grey-200;
                 white-space: nowrap;
             }
             &::before {
@@ -104,8 +120,8 @@ $top_spacing: 6.6666vw + #{rem(44)};
                 width: rem(12);
                 position: absolute;
                 top: calc(100% - #{rem(6)});
-                right: rem(10);
-                background-color: $grey-100;
+                right: rem(16);
+                background-color: $darker;
                 transform: rotate(45deg);
                 border-radius: 2px;
             }
@@ -121,39 +137,55 @@ $top_spacing: 6.6666vw + #{rem(44)};
 
 @media (min-width: 640px) {
     .ProjectIntro {
-        &__content {
-            padding-left: 0;
-            padding-right: 0;
-        }
-        &__software {
-            padding: 0; 
-        }
+        padding: 4.4444vw 0;
+        max-width: rem(600);
+        margin-bottom: 0;
         &__img {
-            padding: 2.222vw 0;
+            position: relative;
+            & > span {
+                position: relative;
+            }
         }
-    }
-}
-
-@media (min-width: 720px) {
-    .ProjectIntro {
         &__content {
-            padding-bottom: rem(48);
+            padding: rem(20) rem(8);
         }
         &__software {
-            top: rem(24);
-            height: rem(48);
-        }
-    }
-}
-    @media (min-width: 880px) {
-    .ProjectIntro {
+            right: rem(4);
+            bottom: rem(4);
+            background-color: rgba($dark, .9);
+            border: 1px solid $darker;
+            & > a {
+                filter: invert(0);
+            }
+            &__details {
+                right: calc(100% + rem(12));
+                bottom: 0;
+                &::before {
+                    top: auto;
+                    right: auto;
+                    left: calc(100% - #{rem(6)});
+                    bottom: rem(16);
+                }
+            }
+        }   
     }
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 880px) {
     .ProjectIntro {
-        &__content {
-            max-width: rem(700);
-        }
+        max-width: rem(740);
+    }
+}
+
+@media (min-width: 1020px) {
+    .ProjectIntro {
+        padding: rem(40) 0;
+    }
+}
+
+@media (min-width: 1260px) {
+    .ProjectIntro {
+        padding: rem(40) 0 rem(20);
+        margin-bottom: rem(20);
     }
 }

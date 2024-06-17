@@ -77,6 +77,30 @@ const Icon: React.FC<NavItemProps> = ({icon, noPadding, active, onClick, project
           { projectsNumber > 8 &&
             <span className={(currentProject === 8) ? styles.Icon__grid_active_span : ''}></span>
           }
+          { projectsNumber > 9 &&
+            <span className={(currentProject === 9) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 10 &&
+            <span className={(currentProject === 10) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 11 &&
+            <span className={(currentProject === 11) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 12 &&
+            <span className={(currentProject === 12) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 13 &&
+            <span className={(currentProject === 13) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 14 &&
+            <span className={(currentProject === 14) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 15 &&
+            <span className={(currentProject === 15) ? styles.Icon__grid_active_span : ''}></span>
+          }
+          { projectsNumber > 16 &&
+            <span className={(currentProject === 16) ? styles.Icon__grid_active_span : ''}></span>
+          }
         </div>
       }
     </a>

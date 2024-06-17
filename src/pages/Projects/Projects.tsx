@@ -105,8 +105,13 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                         state= {{ index: index }}
                         onClick={() => setActiveProject(index) }>
 
-                        <div className={styles.ProjectOverview__project__img} style={{backgroundColor: project.colour}}>
-                          <img src={ (imgUrl + project.id + '/thumbnail.png') } />
+                          <div className={styles.ProjectOverview__project__logo}>
+                            <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
+                            <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
+                          </div>
+
+                        <div className={styles.ProjectOverview__project__img} >
+                          <span style={{backgroundColor: project.colour, backgroundImage: `url(${imgUrl + project.id + '/thumbnail.jpg'}`}} />
                         </div>
 
                         <div className={styles.ProjectOverview__project__text}>
@@ -134,11 +139,6 @@ const Projects: React.FC<ProjectsProps> = ({trackMenuHide}) => {
                           </div>
 
                           {/* <p className={styles.ProjectOverview__featured__main__description}>{ project.description }</p> */}
-
-                          <div className={styles.ProjectOverview__project__logo}>
-                            <img className={styles.ProjectOverview__project__logo__outline} src={ (imgUrl + project.id + '/logo_outline.svg') } />
-                            <img className={styles.ProjectOverview__project__logo__full} src={ (imgUrl + project.id + '/logo.svg') } />
-                          </div>
 
                           <span className={styles.ProjectOverview__project__gradient} style={{backgroundColor: project.colour}}></span>
 

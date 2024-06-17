@@ -31,8 +31,8 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
   const imgUrl: string = `${projectId}/`;
 
   // Outro Component
-  const outro = document.getElementById('project_outro');
-  if (outro) outro.innerHTML = project?.outro.split('\n').join('<br>') || '';
+  // const outro = document.getElementById('project_outro');
+  // if (outro) outro.innerHTML = project?.outro.split('\n').join('<br>') || '';
 
   // Progress Bar
   let [progressBar, setprogressBar] = useState(0);
@@ -74,7 +74,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
         {/* Content */}
         { project && project.resources.map((resource, index) => (
           <div key={index} className={`${styles.project__section} ${resource.class}`}>
-            <h3 className={resource.titleClass}>{resource.name}</h3>
+            <h2 className={resource.titleClass}>{resource.name}</h2>
             { resource.content?.map((section, i) => {
               if (section.component === 'lineText') {
                 return <LineText key={i} font={section.font} content={section.content} />
@@ -93,6 +93,14 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
               if (section.component === 'video') {
                 return <Video key={i} type={section.videoType} id={projectId} src={section.src} title={section.title} />
               }
+              if (section.component === 'heading') {
+                return <h3 key={i} className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
+                    .split('\n').join('<br>') || ''}}
+                  ></h3>
+              }
+              // if (section.component === 'list') {
+              //   return <List key={i} content={section.content || ''} colour={section.colour} />
+              // }
               if (section.component === 'paragraph' && !section.link) {
                 return <p key={i} className={section.margin} dangerouslySetInnerHTML={{__html: section.content!
                     .split('\n').join('<br>') || ''}}
@@ -108,9 +116,9 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
         ))}
 
         {/* Outro */}
-        <div className={`${styles.project__outro} z-1`}>
+        {/* <div className={`${styles.project__outro} z-1`}>
           <p id='project_outro' />
-        </div>
+        </div> */}
 
         {/* Next Project */}
         <div className={`${styles.project__nextProject}`}>

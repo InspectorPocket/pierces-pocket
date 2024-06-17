@@ -57,15 +57,19 @@ interface ProjectsProps {
         max?: boolean
     }
     resources: ResourcesProps[],
-    outro: string
+    outro?: string
 }
 
+// TODO - Create a component for list
+// TODO - Add brand stand pics one gotten
+
 const projects: ProjectsProps[]  = [
+    // Acushla goes here <-
     {
         index: 0,
         title: "Fuelius",
         id: "fuelius",
-        description: "Fuelius is a modern and sleek digital agency full of amazing and friendly people. They specialise in creating HubSpot and Umbraco websites.",
+        description: "Fuelius is a digital agency focused on elevating HubSpot and Umbraco websites for clients. I joined as a UX designer, helping rebrand the company, as well as shift the workflow to a more modern Figma design methodology – building templates and connecting design & dev workflows together.",
         colour: "#6E2DF5",
         featured: true,
         featured_list: false,
@@ -83,117 +87,458 @@ const projects: ProjectsProps[]  = [
         },
         resources: [
             {
-                name: "Role",
-                id: "logo",
+                name: "Branding & Website",
+                id: "branding-website",
                 class: `bg-g1 z-2`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `As a UX designer my role here is to take client briefs, understand what they want out of a design and take them through a design process.`
-                    },
-                    {
-                        component: 'lineText',
-                        font: 'p',
-                        content: "This begins with UX research, using methods like competitor analysis, moodboarding, swatch creation and finally wireframing."
+                        content: `I joined around the time the company was ready to re-brand themselves. I was fortunate enough to be able to work on the rebrand project from it’s conceptualisation - providing a lot of creative freedom.`
                     },
                     {
                         component: 'paragraph',
-                        content: `I have also been blessed with the opportunity to rebrand the company, working closely with another UX designer, videographer, developers, tester, content team and the managing director.`
+                        content: 'The work I completed includes; Re-branding (UX, Colours, Typography, Website Design, Slide Deck Design, Email Template Design.'
                     },
-                    {
-                        component: 'cardText',
-                        content: "The branding project is almost complete, and I'm very happy with how it turned out.",
-                        colour: colours.grey2
-                    }
-                ]
-            },
-            {
-                name: "Website",
-                id: "website",
-                class: `bg-g2 z-2`,
-                content: [
+                    // {
+                    //     component: 'list',
+                    //     content: 'Re-branding (UX, Colours, Typography) / Website Design / Slide Deck Design / Email Template Design / Social Templates (left out because the style is very similar to the above)'
+                    // },
                     {
                         component: 'paragraph',
-                        content: `The website is populated with AI generated images from a prompt I created. We then use glass overlays to create accessibility opportunities for text in banners, and also opportunities for fancy hover effects.`
+                        content: `A snippet of each of the above have been chosen for display – but each has more modules and templates completed for them.`
+                    },
+
+                    {
+                        component: 'heading',
+                        content: `Brand`
                     },
                     {
                         component: 'image',
-                        src: 'website_dark.jpg',
+                        src: 'Styleguide_Colours.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'menu_dark.png',
+                        src: 'Styleguide_Typography.png',
                         alt: ''
+                    },
+                    // {
+                    //     component: 'heading',
+                    //     content: `Brand Stand`
+                    // },
+                    // {
+                    //     component: 'image',
+                    //     src: 'menu_dark.png',
+                    //     alt: ''
+                    // },
+                    {
+                        component: 'heading',
+                        content: `Website`
                     },
                     {
                         component: 'paragraph',
-                        content: `Using advanced Figma variables I was able to set up a light and dark mode. Token variables (eg, text-primary, surface-primary, link-colour) would be assigned a value for both light and dark modes. So switching between them was as easy as changing a layer style.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'website_light.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The final developed website will hopefully be live <a/> right now. If not it will be deployed in the very near future.`,
+                        content: `The following screenshot demonstrates some my favourite modules for the site. The designs are meant to go live at any moment, so you can hopefully see the final developed website <a/>.`,
                         link: {
                             url: 'https://fuelius.com',
                             content: 'at this link'
                         }
+                    },
+                    {
+                        component: 'image',
+                        src: 'Website_Showcase.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Website_Menu.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `Slide Decks`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_Cover.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_Effort.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_Prototype.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_CaseStudies.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_Trail.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Slide_Testemonials.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `Email Templates`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Email_Template.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Using light & dark mode Token Variables in Figma meant each of these designs are also available in a light theme.`
                     }
                 ]
             },
             {
-                name: "Branding & Company Deck",
-                id: "typography",
+                name: "Design System",
+                id: "design-system",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Noticing Figma was becoming a powerhouse in the UX world, it was time to move away from XD. I immediately began working on project template for the company to use to help reduce the repetitiveness of beginning each project a new.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The template contains a Primitive → Token variable approach, with dynamic collections to shift between Light/Dark and Desktop/Mobile spacing modes.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Around 20 HubSpot module was then setup – built using custom *Atomic components* – all tied into the variables.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `I won’t go into anymore detail here – for respect to Fuelius’ internal processes – but I have included a couple of screenshots below to demonstrate the complexity of this document. The first showing the spread of created components...`
+                    },
+                    {
+                        component: 'image',
+                        src: 'DesignLibrary_Components.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `And the second showing these components in demo template pages.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'DesignLibrary_Templates.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The new system I would put in place would help communicate designs with developers in an infinitely better way – removing the need for handover documents and allowing Figma dev mode to do most of the heavy lifting. The idea is to free up time for both designers and developers so that we can all focus on creating spicier designs!`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The variables I set up in this template would tie into the core code HubSpot/Umbraco template setup (also being re-vamped to follow this system), meaning developers would have a much easier time getting values to match up with designs. This will hopefully result in way fewer bugs and design inconsistencies.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The system is also be setup to sync with TailwindCSS, meaning my system can extend on top of Tailwind (if required) to save developers even more time.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `All of this process came with highly detailed documents explaining the entire process, so current and future hires would be able to pick up the process.`
+                    },
+                    
+                ]
+            },
+            {
+                name: "Client Work",
+                id: "client-work",
                 class: `bg-g3 z-2`,
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The branding has been carried over to social templates, company decks, eBooks and other documents.`
+                        content: `The main responsibilities of the role was to take client briefs and transform them into a beautiful design. I worked on a fair few projects, but I have highlighted below some of my favourite designs and concepts.`
+                    },
+                    {
+                        component: 'heading',
+                        content: `HealthShield (Concepts)`
                     },
                     {
                         component: 'image',
-                        src: 'deck_casestudy.jpg',
+                        src: 'Client_HealthShield.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `SmartSearch (Concepts)`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Client_SmartSearch1.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'deck_lgimg.jpg',
+                        src: 'Client_SmartSearch2.png',
                         alt: ''
                     },
                     {
                         component: 'image',
-                        src: 'deck_floatingimg.jpg',
+                        src: 'Client_SmartSearch3.png',
                         alt: ''
                     },
-                ]
-            },
-            {
-                name: "HubSpot Collaboration",
-                id: "design",
-                class: `bg-w z-2`,
-                content: [
+                    {
+                        component: 'image',
+                        src: 'Client_SmartSearch4.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `Cambridge Spark (Concepts)`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Client_CambridgeSpark.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `Donorfy`
+                    },
                     {
                         component: 'paragraph',
-                        content: `The branding transcends the purple and pink when collaborating with clients, using their brand colours alongside our own. This example shows the very core brand aethetics (layout, style, type, etc) but using the palette of HubSpot.`
+                        content: `You can see the full design live at <a/>.`,
+                        link: {
+                            url: 'https://donorfy.com',
+                            content: 'donorfy.com'
+                        }
                     },
                     {
                         component: 'image',
-                        src: 'ebook_preview.jpg',
+                        src: 'Client_Donorfy1.png',
                         alt: ''
-                    }
+                    },
+                    {
+                        component: 'image',
+                        src: 'Client_Donorfy2.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `LinkWaste (Concepts)`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Client_LinkWaste.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `CHASE People (Concepts)`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Client_CHASE.jpg',
+                        alt: ''
+                    },
                 ]
-            },
+            }
         ],
         outro: "There is so much more that went into the branding of this project, but I feel the above captures the core essence of the aesthetics."
     },
     {
         index: 1,
+        title: "Cosmic Architect",
+        id: "cosmic-architect",
+        description: "Cosmic Architect is an in progress branding personality for the future projects I would like to work on in my spare time.",
+        colour: "#313131",
+        featured: false,
+        featured_list: true,
+        role: {
+            ux: true,
+            graphic: true,
+            brand: true
+        },
+        software: {
+            figma: true,
+            ai: true,
+            photoshop: true
+        },
+        resources: [
+            {
+                name: "Brand",
+                id: "brand",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `The brand consists of palettes across the entire colour spectrum. Each set of colours will come together in different ways to create new and interesting forms depending on the topic being discussed. Each form indicates a different branch of the umbrella ‘Cosmic Architect‘ brand.`
+                    },
+                    {
+                        component: 'heading',
+                        content: `Colour Palette`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The colours are chosen by me, by hand. Each of the colours are laid out next to each other and are carefully crafted to compliment the colours around each. This process involved tweaking not only the lightness and saturation colour values, but the hues as well.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'ColourPalette.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'heading',
+                        content: `Material Palette`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Each of the colour themes will sit a top of a material, that helps tune the feeling of the over all theme. Different tones of base monochrome, that form the foundation for all the brand applications. This includes borders, backgrounds and other elements that make up the foundations.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `This could be a cooler theme on top of a steel grey material:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'PurpleSteel.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Or a warmer colour palette on top of a stone grey material:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'WarmStone.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Or even a green colour palette on top of a wood like material:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'GreenEarth.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `All colours and materials can be switched around at will using the design system I have set up for this file.`
+                    },
+                    {
+                        component: 'heading',
+                        content: `Careful Colour Application`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Human biological development is closely tied to colour, and colours have very powerful effects on our psyche. We can have different emotional reactions to seeing a red vs a yellow car. We can sense a company is more organic or health focused if their colour palettes are green. Or we feel more trusting towards a company that is blue (this is why most social media companies are blue!). `
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Colour theory is studied deeply in UX design, so I wanted to have a broad spectrum of colours available to help craft certain characters & narratives, as well as help illicit certain feelings depending on what topic or story I want to explore.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Colours will be able to mix together to create certain themes - allowing for an infinite combination of colour schemes to be created for each purpose. A few examples can be seen below:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'ThemeExamples.png',
+                        alt: ''
+                    },
+                ]
+            },
+            {
+                name: "Portfolio 2.0 Application",
+                id: "portfolio-2",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `As you can see from the section above, I have begin testing and experimenting with these colours on a newer version of my portfolio. This version has the designs ready and is currently under development.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Dashboard.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'Project.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'FullScreen.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The main deviation from the brand (as laid out above) is that the colours in the portfolio are tied to specific projects, rather than topics. This is the current theme as of the current website you are viewing, so I’m transferring the colouring system from this version over to the 2.0 version.`
+                    }
+                ]
+            },
+            {
+                name: "App Research",
+                id: "app-research",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `I have plans to develop an application. The Cosmic Architect app will be designed to help show people easily understandable and digestible tools to help uncover the shadows within and face them without fear.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The Cosmic Blanket branch of the app, as mentioned above, is meant to be a safe area people can journal, find meditations, play healing music and ask deep questions about themselves.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `This is still under heavy conceptualisation and planning, however I have conducted some user research worth sharing. I am fortunate enough to be part of a spiritual community that was more than willing to help guide the direction of this from a potential users perspective:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'survey_results.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Collating all this data took a little while, but it has been extremely useful in creating user personas and user flows:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'user_personas.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'user_flow(base).png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `With plenty of detail:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'user_flow(expanded).jpg',
+                        alt: ''
+                    },
+                ]
+            }
+        ],
+        outro: "These projects are a work in progress, and what I have laid out are mainly ideas, but hopefully it give a bit of an insight into my mind when designing."
+    },
+    {
+        index: 2,
         title: "Pierce's Pocket",
-        id: "pierce's-pocket",
+        id: "pierces-pocket",
         description: "Welcome to Pierce’s Pocket! I designed and developed this website as a home for my work. The style is minimal & clean. The work I produce needs to be easily accessible, whilst being pleasant to look at.",
         colour: "#35485C",
         featured: false,
@@ -247,7 +592,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `To add to the classy - clean - feel, I wanted a serif title with a smooth sans-serif body.`
+                        content: `Playfair Display was used in earlier iterations, but I have recently opted for a more modern look to blend in with my new brand direction.`
                     }
                 ]
             },
@@ -293,12 +638,12 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'image',
-                        src: 'main.png',
+                        src: 'main.jpg',
                         alt: ''
                     },
                     {
                         component: 'lineText',
-                        content: `The final implementation turned out like the final design looks, so feel free to explore this website to see!`,
+                        content: `The final implementation turned out like the final design looks (with some slight adjustments here and there), so feel free to explore this website to see!`,
                         font: 'p'
                     }
                 ]
@@ -418,149 +763,12 @@ const projects: ProjectsProps[]  = [
         ],
         outro: `Pierce’s Pocket is a work in progress. I have plans to make it more interactive and make it more like a playground for my coding adventures!\n\nBut for now, feel free to check out the rest of the site!`
     },
-    {
-        index: 2,
-        title: "Cosmic Blanket",
-        id: "cosmic-blanket",
-        description: "Cosmic Blanket is a side project of mine that is still in its infancy. The concept is split into two - a planned social presence for illustrations and a sister brand for an app I plan to design.",
-        colour: "#282828",
-        featured: false,
-        featured_list: true,
-        role: {
-            ux: true,
-            graphic: true,
-            brand: true
-        },
-        software: {
-            figma: true,
-            ai: true,
-            photoshop: true
-        },
-        resources: [
-            {
-                name: "Social Branding",
-                id: "social-branding",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The social prescence has a cream notebook feel to it, and very spacey. The current logo is a blanket made up of the cosmos. The idea is the platform is a safe space for people to explore spiritual and philisophical ideas.`
-                    },
-                    {
-                        component: 'cardText',
-                        content: "I would like to share spiritual and philisophical ideas here. Therefore the idea of the platform is that it is a safe space for people to explore spiritual and philisophical ideas. A shelter from the universe, or a cosmic blanket if you will.",
-                        colour: colours.grey2
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The social prescence has a cream notebook feel to it, and very spacey. The current logo is a blanket made up of the cosmos.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'logo_showcase.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The illustrations that go along with it will be line art and simple/pastel coloured `
-                    },
-                    {
-                        component: 'image',
-                        src: 'colour_drawing.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'coloured_apendage.jpg',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "App Design",
-                id: "app-design",
-                class: `bg-g2 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The App doesn't yet have a name - and therefore is still umbrella-ed under Cosmic Blanket. It will eventually stand on it's own with a refined logo and it's own name.`
-                    },
-                    {
-                        component: 'cardText',
-                        content: "The idea is to create a social platform that people can come and escape the usual travesties of mainstream social platforms. By removing 'Dark UI' elements such as infinite scrolling and tailored algorithms - and instead re-introducing pagination and screen break reminders.",
-                        colour: colours.grey3
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `There will also be a heavy emphasis on wellbeing, offering meditation sessions, spiritual guidance and a place to commune with like minded people.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'app_logo_sidebar.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The user interface still follows themes from Cosmic Blanket, but is cleaner in nature, opting for more etheral visuals and light gradients. The interactable elements will also protrude off the page, adding satisfying interactivity on a micro scale.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'ui_brand_idea.jpg',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "App Research",
-                id: "app-research",
-                class: `bg-w z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `During my time in South America I was fortunate enough to be connected to a community of people. These generous people offered their time to fill out surveys for what they would like to see in an app like this.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'survey_results.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `I then collated all this data into 7 generalised user personas...`
-                    },
-                    {
-                        component: 'image',
-                        src: 'user_personas.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `And a user flow map...`
-                    },
-                    {
-                        component: 'image',
-                        src: 'user_flow(base).png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `With plenty of detail.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'user_flow(expanded).jpg',
-                        alt: ''
-                    },
-                ]
-            }
-        ],
-        outro: "These projects are a work in progress, and what I have laid out are mainly ideas, but hopefully it give a bit of an insight into my mind when designing."
-    },
+    
     {
         index: 3,
         title: "North Property Group",
         id: "north-property-group",
-        description: "I worked with North Property Group for only a couple of months, but I managed to help rebrand them and set up email and print templates for them to use going forwards.",
+        description: "I worked with North Property Group for only a couple of months, but I managed to help rebrand them and set up email and print templates for use going forwards.",
         colour: "#720000",
         featured: false,
         featured_list: false,
@@ -584,7 +792,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `Their original logo was becoming slightly outdated, and with the company growing and evolving, the logo and brand needed to keep up.`
+                        content: `Their original logo was becoming slightly outdated. With the company growing and evolving, the logo and brand needed to keep up.`
                     },
                     {
                         component: 'image',
@@ -593,7 +801,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `The new logo has sharp cutting edges, showing the world they are modern and reliable. The shape works by resembling the 'N' and 'P' from the company name. The pointy right angles serve nicely to represent a house.`
+                        content: `The new logo has sharp cutting edges, showing the world they are modern and reliable. The 'N' and 'P' from the company name form the outline of the icon shape and the pointy right angles are to represent a property.`
                     },
                     {
                         component: 'image',
@@ -613,7 +821,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The shapes used in the logo work well as background assets, breaking up a potentially boring plain background and adding depth to it.`
+                        content: `The logo can be tesselate symetrically with itself to work as background assets, breaking up a potentially boring plain background and adding depth.`
                     },
                     {
                         component: 'image',
@@ -622,7 +830,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `The company worked with different categories of customers, requiring different levels of expertise. This meant an introduction of colours would allow the company to visually break the departments and allow them to be unique and recognisable from a glance.`
+                        content: `The company works with different categories of customers, requiring different levels of expertise. An introduction of a new purple colour would allow the company to visually break the departments and allow each to be unique and recognisable from a glance.`
                     },
                     {
                         component: 'image',
@@ -638,7 +846,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The final project I completed for North Property Group was a pardot email template. I completed the design using Adobe XD.`
+                        content: `The final project I completed for North Property Group was a pardot email template. I completed the design using Adobe XD, and later developed templates in MJML - a library for making email development less of a nightmare.`
                     },
                     {
                         component: 'image',
@@ -647,16 +855,12 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `Once we were happy with the deisng of each possible module, I went to work building the template using MJML - a library for making email development less of a nightmare.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `Once the development wa complete and responsiveness was tested it was time to add in the Pardot meta tags and import it efficiently into Pardot. Now they can clone a master template and reduce modules as needed for the creatio of what ever email they desire.`
+                        content: `Once the development was complete and responsiveness was tested it was time to add in the Pardot meta tags and import it efficiently into Pardot. Now they can clone a master template and reduce modules as needed for the creation of what ever email they desire.`
                     }
                 ]
             }
         ],
-        outro: "I really enjoyed my time at North Property Group and am very grateful to be able to help improve their brand."
+        outro: "I enjoyed my time with North Property Group and am very grateful to be able to help improve their brand."
     },
     {
         index: 4,
@@ -712,7 +916,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `At this time Fluid Ads was still developing the advert builder they have now, so the adverts I was creating at this time was using HTML / CSS. Later on this role would shift to building customer ads in the platform. Below are a few examples of the multitude of templates I created.`
+                        content: `At this time Fluid Ads was still developing the advert builder they have now, so the adverts I was creating at this time was using HTML / CSS. Later on this method would shift to building customer ads in the platform. Below are a few examples of the multitude of templates I created.`
                     },
                     {
                         component: 'image',
@@ -757,14 +961,6 @@ const projects: ProjectsProps[]  = [
                         content: `As the app was progressing, and nearing the time of release - we realised the website needed an overhaul. Working closely with a UX Designer we began implementing new designs and features. New styles were introduced using the BEM system within SCSS to keep it organised.`
                     },
                     {
-                        component: 'paragraph',
-                        content: `Take a look at the <a/> and browse some of the features for yourself.`,
-                        link: {
-                            url: 'https://fluidads.com/',
-                            content: 'Fluid Ads website'
-                        }
-                    },
-                    {
                         component: 'image',
                         src: 'home.png',
                         alt: ''
@@ -791,16 +987,16 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `The talented people at Fluid Ads began teaching me Angular5 - the software the app was built with. After some learning I began to work on some components. My main role was adding styling to the platform to make it look pretty.`
+                        content: `I began learning Angular5 to help with the Apps development. After some learning I began to work on some components. My main role was adding styling to the platform to make it look pretty.`
                     },
                     {
                         component: 'lineText',
                         font: 'p',
-                        content: `I started by implementing the style guide across the platform. I used an atomic design structure to style the components, so it would be consistent across the entirety.`
+                        content: `I started by implementing the styleguide across the platform. I used an atomic design structure to style the components, so it would be consistent across the entirety.`
                     },
                     {
                         component: 'paragraph',
-                        content: `Most of the styling was revamped by me. Some of the front end features and functionality was also my doing, however the majority of the back-end development was done by the very talented team of developers at Fluid Ads.`
+                        content: `I personally revamped most of the styling. Some of the front end features and functionality was also my doing, however the majority of the back-end development was done by the very talented team of developers at Fluid Ads.`
                     },
                     {
                         component: 'image',
@@ -834,7 +1030,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `There were a couple of occasions I was asked to create videos that showcased the platform, so potential customers and investors could see an overview of the features. Here is one of the videos shown at the DMEXCO event.`
+                        content: `On a couple of occasions I was asked to create videos that showcased the platform, so potential customers and investors could see an overview of the features. Here is one of the videos shown at the DMEXCO event.`
                     },
                     {
                         component: 'video',
@@ -863,7 +1059,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: `The script will take you to a page that will give you redirect options - depending on the passed parameters. The redirect will either give you directions to the specified place, or use the company name to show you all available stores. On mobile devices, it will automatically redirect you to Google Maps.`
+                        content: `The link will take you to a page that will give you redirect options - depending on the passed parameters. The redirect will either give you directions to the specified place, or use the company name to show you all available stores. On mobile devices, it will automatically redirect you to Google Maps.`
                     },
                     {
                         component: 'paragraph',
@@ -880,81 +1076,6 @@ const projects: ProjectsProps[]  = [
     },
     {
         index: 5,
-        title: "Star Citizen Mock UI",
-        id: "star-citizen",
-        description: "Star Citizen is one of the leading space simulation games in the gaming industry. I created a mockup for an interview to see how my game GUI skills held up.",
-        colour: "#23609e",
-        featured: false,
-        featured_list: true,
-        role: {
-            ux: true,
-            dev: false,
-            graphic: true,
-            brand: false
-        },
-        software: {
-            ai: true,
-            figma: true,
-            wordpress: true
-        },
-        resources: [
-            {
-                name: "Showcase",
-                id: "logo",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The task was to create a user interface for an in game crate, that would handle a volitile material. The material would only be able to last in the storage container for a set amount of time before exploding.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'main_crate.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_integrity_crate.jpg',
-                        alt: ''
-                    }
-                ]
-            },
-            {
-                name: "Close Ups",
-                id: "typography",
-                class: `bg-w z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `The following is a couple of different screenshots when interacting with the crate at different stages of inventory management.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'main_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_main_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'inventory_full.jpg',
-                        alt: ''
-                    },
-                    {
-                        component: 'image',
-                        src: 'danger_integrity_inventory.png',
-                        alt: ''
-                    }
-                ]
-            }
-        ],
-        outro: "I enjoyed working on this task and branching out into a different discipline of UI than web, however my true competency is with web UX/UI."
-    },
-    {
-        index: 6,
         title: "LocalThrones",
         id: "localthrones",
         description: "LocalThrones was a work in progress app to help local venues stand out from the crowd. A businesses branding and marketing would be taken care of by LocalThrones, giving the customer full focus on running their business.",
@@ -1068,7 +1189,7 @@ const projects: ProjectsProps[]  = [
         outro: "As fun and promising this project was, I decided to step back from it to work on some other projects I had in the back burner."
     }, 
     {
-        index: 7,
+        index: 6,
         title: "Clear UK",
         id: "clear-uk",
         description: "Clear UK is an organisation dedicated to reforming the laws around cannabis and proving the medicine can be a tool to help people. I handled the UX / UI and my friend would handle the development.",
@@ -1270,7 +1391,7 @@ const projects: ProjectsProps[]  = [
         outro: "Unfortunately we didn’t receive any further communications with the organisation once the designs had been completed, so the development halted. However it made for a good project to hone my design abilities."
     },
     {
-        index: 8,
+        index: 7,
         title: "Codedump",
         id: "codedump",
         description: "Codedump was a project idea my talented colleague and friend came up with, where users would be able to store and publish bouts of code. He asked me to help with the design of the website and app.",
@@ -1476,7 +1597,7 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `After the designs were fully realised, I was going to help style the app using SCSS and Angular components...`
+                        content: `After the designs were fully realised, I was going to help style the app using SCSS and Angular components. Codedump development was put on hold, however the designing process allowed me to sharpen my UX Design abilities.`
                     }
                 ]
             }
@@ -1484,7 +1605,7 @@ const projects: ProjectsProps[]  = [
         outro: "Codedump development was put on hold, however the designing process allowed me to sharpen my UX Design abilities."
     },
     {
-        index: 9,
+        index: 8,
         title: "Rozafa",
         id: "rozafa",
         description: "Rozafa was the first potential client of a freelance business, me and some friends were going to start. Rozafa was part of a pitch to show what the branding company was capable of - designing and handling your brand and website.",
@@ -1595,11 +1716,12 @@ const projects: ProjectsProps[]  = [
         ],
         outro: "We all got too busy with other responsibilities to continue with the project, so this was our first and last case study, but it was fun to work on together regardless."
     },
+
     {
-        index: 10,
+        index: 9,
         title: "Logos",
         id: "logos",
-        description: "Brand work is one of my favourite things about digital design. This page houses a few logos I worked on whilst compelting brand work for clients.ß",
+        description: "Brand work is one of my favourite things about digital design. This page houses a few logos I worked on whilst completing brand work for clients.",
         colour: "#35485C",
         featured: false,
         featured_list: false,
@@ -1611,22 +1733,6 @@ const projects: ProjectsProps[]  = [
             ai: true
         },
         resources: [
-            {
-                name: "Food Party",
-                id: "food-party",
-                class: `bg-g1 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `Food party is an illustration I created depicting a nice little hang out around a fire of love.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'gang_illustration.jpg',
-                        alt: ''
-                    }
-                ]
-            },
             {
                 name: "Glassware Games",
                 id: "glassware-games",
@@ -1690,28 +1796,12 @@ const projects: ProjectsProps[]  = [
                         alt: ''
                     }
                 ]
-            },
-            {
-                name: "Wild.Self",
-                id: "wild-self",
-                class: `bg-w z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `Wild.Self is a company run by my dear friend, who is a fantastic Body Awareness & Self Love Coach. The project was a rebranding from scratch - using new ideas as well as existing ideas from her previous brand.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'wild_self.png',
-                        alt: ''
-                    }
-                ]
             }
         ],
         outro: "I always have fun making logos and love the process of coming up with fun ideas. I flourish best when allowed creating freedom."
     },
     {
-        index: 11,
+        index: 10,
         title: "Illustrations & Drawings",
         id: "illustrations-drawings",
         description: "In my spare time and sometimes for commision I will craft a illustration or two. I have also added some drawings I would like to eventually turn into illustrations.",
@@ -1816,14 +1906,17 @@ const projects: ProjectsProps[]  = [
                 content: [
                     {
                         component: 'paragraph',
-                        content: `I've added .`
+                        content: `I have a thousand drawings scattered across all my notebooks, but here are some that were around at the time. I plan to add more but here are just a few for now.`
                     },
                     {
                         component: 'image',
                         src: 'colour_drawing.jpg',
-                        src2: 'coloured_apendage.jpg',
                         alt: '',
-                        alt2: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'coloured_apendage.jpg',
+                        alt: '',
                     },
                     {
                         component: 'image',
@@ -1838,7 +1931,7 @@ const projects: ProjectsProps[]  = [
         outro: "Drawings and illustrations are something I enjoy in my spare time and are usually projects I take on just for fun."
     },
     {
-        index: 12,
+        index: 11,
         title: "Animations",
         id: "animations",
         description: "Here lives some of the most recent animations I have to show. Mainly video game characters!",
@@ -1934,10 +2027,10 @@ const projects: ProjectsProps[]  = [
         outro: "I have been animating for many years now, but I only show the more presentable ones here. The other bits I worked on are dated or too short as projects to show."
     },
     {
-        index: 13,
+        index: 12,
         title: "3D Modelling",
         id: "3d-modelling",
-        description: "Find here a collection of 3D models I have worked on during my time at university.",
+        description: "Find here a collection of 3D models I have worked on during my time at university as well as some more recent work - with more to come.",
         colour: "#35485C",
         featured: false,
         featured_list: false,
@@ -1950,6 +2043,31 @@ const projects: ProjectsProps[]  = [
             max: true
         },
         resources: [
+            {
+                name: "Roadmap Landscape",
+                id: "prodo-roadmap",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Using Blender, I was able to use a noise texture to randomly displace an invisible mesh. I could then use this mesh as a boolean object to then cutout the shape from an array of boxes. I would then map a constant gradient material onto the mesh to help give a sense of height to the landmasses that were generated.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Prodo_Process.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `This allows for an infinite generation of landscapes as I move the noise texture around, and can even be animated for future asset creation. The final result, as a template for them to use in slide decks is below:`
+                    },
+                    {
+                        component: 'image',
+                        src: 'Prodo_Roadmap.png',
+                        alt: ''
+                    }
+                ]
+            },
             {
                 name: "Character Design - Concept to Hi-res",
                 id: "character-design-1",
@@ -1976,7 +2094,7 @@ const projects: ProjectsProps[]  = [
                 ]
             },
             {
-                name: "Character Design - Drawing to 3D",
+                name: "Character Design - Drawing to Render",
                 id: "character-design-2",
                 class: `bg-g2 z-2`,
                 content: [
@@ -2046,6 +2164,135 @@ const projects: ProjectsProps[]  = [
             }
         ],
         outro: "Fun fact - the reason I got into web design/development in the first place was to add all my 3D models into a portfolio showcase! The process hooked me so much I now do it for a living."
+    },
+    {
+        index: 13,
+        title: "UX Extras",
+        id: "ux-extras",
+        description: "I have included some smaller projects I have worked on here to avoid crowding the main projects board.",
+        colour: "#23609e",
+        featured: false,
+        featured_list: true,
+        role: {
+            ux: true,
+            dev: false,
+            graphic: true,
+            brand: false
+        },
+        software: {
+            ai: true,
+            figma: true,
+            wordpress: true
+        },
+        resources: [
+            {
+                name: "Star Citizen - UI Mockup",
+                id: "logo",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `This is a concept for a potential UI display for a crate interaction in the video game Star Citizen.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The task was to create a user interface for an in game crate, that would handle a volitile material. The material would only be able to last in the storage container for a set amount of time before exploding.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'main_crate.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'danger_integrity_crate.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'main_full.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'inventory_full.jpg',
+                        alt: ''
+                    }
+                ]
+            },
+            {
+                name: "Dr Zu's Reiki Healing",
+                id: "dr-zu",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Zu is a dear friend of mine who is focusing on healing people through the metaphysics. She is a qualified doctor who chose a holistic path. I'm happy help her on her journey.`,
+                        // link: {
+                        //     url: 'https://fuelius.com',
+                        //     content: 'at this link'
+                        // }
+                    },
+                    {
+                        component: 'image',
+                        src: 'zu_desktop.png',
+                        alt: ''
+                    },
+                ]
+            },
+            {
+                name: "Wild.Self",
+                id: "wild-self",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `<a/> is a company run by my dear friend, who is a fantastic Body Awareness & Self Love Coach. The project was a rebranding from scratch including a colour palette, logo and website - Designed in Figma and developed in WordPress.`,
+                        link: {
+                            url: 'https://wild-self.de',
+                            content: 'Wild.Self'
+                        }
+                    },
+                    {
+                        component: 'image',
+                        src: 'ws_logo_showcase.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'ws_typography.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'ws_home.jpg',
+                        alt: ''
+                    },
+                    {
+                        component: 'image',
+                        src: 'ws_blogs.jpg',
+                        alt: ''
+                    },
+                ]
+            },
+            {
+                name: "Pop-up UI",
+                id: "popup",
+                class: `bg-w z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Below is a concept for a UI style I was playing around with.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'ui_brand_idea.jpg',
+                        alt: ''
+                    }
+                ]
+            }
+        ],
+        outro: "I enjoyed working on this task and branching out into a different discipline of UI than web, however my true competency is with web UX/UI."
     }
 ];
   
