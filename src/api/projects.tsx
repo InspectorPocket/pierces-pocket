@@ -87,8 +87,8 @@ const projects: ProjectsProps[]  = [
         },
         resources: [
             {
-                name: "Branding & Website",
-                id: "branding-website",
+                name: "Overview",
+                id: "overview",
                 class: `bg-g1 z-2`,
                 content: [
                     {
@@ -97,7 +97,7 @@ const projects: ProjectsProps[]  = [
                     },
                     {
                         component: 'paragraph',
-                        content: 'The work I completed includes; Re-branding (UX, Colours, Typography, Website Design, Slide Deck Design, Email Template Design.'
+                        content: 'The work I completed includes; Re-branding (UX, Colours, Typography), Website Design, Asset Creation, Slide Deck Design, Email Template Design.'
                     },
                     // {
                     //     component: 'list',
@@ -107,30 +107,34 @@ const projects: ProjectsProps[]  = [
                         component: 'paragraph',
                         content: `A snippet of each of the above have been chosen for display – but each has more modules and templates completed for them.`
                     },
-
                     {
                         component: 'heading',
-                        content: `Brand`
+                        content: `Table of Contents`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `<ul style="font-weight:500;"><li>Assets & Website</li><li>Slide Decks</li><li>Client Work</li><li>Design System</li></ul>`,
+                    }
+                ]
+            },
+            {
+                name: "Assets & Website",
+                id: "assets-website",
+                class: `bg-g1 z-2`,
+                content: [
+                    {
+                        component: 'heading',
+                        content: `Assets`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The most recent piece of work outisde of webdesign I completed is with the asset creation, to help the brand come alive.`,
                     },
                     {
                         component: 'image',
-                        src: 'Styleguide_Colours.png',
+                        src: 'Assets.jpg',
                         alt: ''
                     },
-                    {
-                        component: 'image',
-                        src: 'Styleguide_Typography.png',
-                        alt: ''
-                    },
-                    // {
-                    //     component: 'heading',
-                    //     content: `Brand Stand`
-                    // },
-                    // {
-                    //     component: 'image',
-                    //     src: 'menu_dark.png',
-                    //     alt: ''
-                    // },
                     {
                         component: 'heading',
                         content: `Website`
@@ -154,9 +158,16 @@ const projects: ProjectsProps[]  = [
                         alt: ''
                     },
                     {
-                        component: 'heading',
-                        content: `Slide Decks`
-                    },
+                        component: 'paragraph',
+                        content: `Using light & dark mode Token Variables in Figma meant each of these designs are also available in a light theme.`
+                    }
+                ]
+            },
+            {
+                name: "Slide Decks",
+                id: "slde-decks",
+                class: `bg-g1 z-2`,
+                content: [
                     {
                         component: 'image',
                         src: 'Slide_Cover.png',
@@ -186,74 +197,7 @@ const projects: ProjectsProps[]  = [
                         component: 'image',
                         src: 'Slide_Testemonials.png',
                         alt: ''
-                    },
-                    {
-                        component: 'heading',
-                        content: `Email Templates`
-                    },
-                    {
-                        component: 'image',
-                        src: 'Email_Template.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `Using light & dark mode Token Variables in Figma meant each of these designs are also available in a light theme.`
                     }
-                ]
-            },
-            {
-                name: "Design System",
-                id: "design-system",
-                class: `bg-g2 z-2`,
-                content: [
-                    {
-                        component: 'paragraph',
-                        content: `Noticing Figma was becoming a powerhouse in the UX world, it was time to move away from XD. I immediately began working on project template for the company to use to help reduce the repetitiveness of beginning each project a new.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The template contains a Primitive → Token variable approach, with dynamic collections to shift between Light/Dark and Desktop/Mobile spacing modes.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `Around 20 HubSpot module was then setup – built using custom *Atomic components* – all tied into the variables.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `I won’t go into anymore detail here – for respect to Fuelius’ internal processes – but I have included a couple of screenshots below to demonstrate the complexity of this document. The first showing the spread of created components...`
-                    },
-                    {
-                        component: 'image',
-                        src: 'DesignLibrary_Components.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `And the second showing these components in demo template pages.`
-                    },
-                    {
-                        component: 'image',
-                        src: 'DesignLibrary_Templates.png',
-                        alt: ''
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The new system I would put in place would help communicate designs with developers in an infinitely better way – removing the need for handover documents and allowing Figma dev mode to do most of the heavy lifting. The idea is to free up time for both designers and developers so that we can all focus on creating spicier designs!`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The variables I set up in this template would tie into the core code HubSpot/Umbraco template setup (also being re-vamped to follow this system), meaning developers would have a much easier time getting values to match up with designs. This will hopefully result in way fewer bugs and design inconsistencies.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `The system is also be setup to sync with TailwindCSS, meaning my system can extend on top of Tailwind (if required) to save developers even more time.`
-                    },
-                    {
-                        component: 'paragraph',
-                        content: `All of this process came with highly detailed documents explaining the entire process, so current and future hires would be able to pick up the process.`
-                    },
-                    
                 ]
             },
             {
@@ -347,6 +291,60 @@ const projects: ProjectsProps[]  = [
                         src: 'Client_CHASE.jpg',
                         alt: ''
                     },
+                ]
+            },
+            {
+                name: "Design System",
+                id: "design-system",
+                class: `bg-g2 z-2`,
+                content: [
+                    {
+                        component: 'paragraph',
+                        content: `Noticing Figma was becoming a powerhouse in the UX world, it was time to move away from XD. I immediately began working on project template for the company to use to help reduce the repetitiveness of beginning each project a new.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The template contains a Primitive → Token variable approach, with dynamic collections to shift between Light/Dark and Desktop/Mobile spacing modes.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `Around 20 HubSpot module was then setup – built using custom *Atomic components* – all tied into the variables.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `I won’t go into anymore detail here – for respect to Fuelius’ internal processes – but I have included a couple of screenshots below to demonstrate the complexity of this document. The first showing the spread of created components...`
+                    },
+                    {
+                        component: 'image',
+                        src: 'DesignLibrary_Components.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `And the second showing these components in demo template pages.`
+                    },
+                    {
+                        component: 'image',
+                        src: 'DesignLibrary_Templates.png',
+                        alt: ''
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The new system I would put in place would help communicate designs with developers in an infinitely better way – removing the need for handover documents and allowing Figma dev mode to do most of the heavy lifting. The idea is to free up time for both designers and developers so that we can all focus on creating spicier designs!`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The variables I set up in this template would tie into the core code HubSpot/Umbraco template setup (also being re-vamped to follow this system), meaning developers would have a much easier time getting values to match up with designs. This will hopefully result in way fewer bugs and design inconsistencies.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `The system is also be setup to sync with TailwindCSS, meaning my system can extend on top of Tailwind (if required) to save developers even more time.`
+                    },
+                    {
+                        component: 'paragraph',
+                        content: `All of this process came with highly detailed documents explaining the entire process, so current and future hires would be able to pick up the process.`
+                    },
+                    
                 ]
             }
         ],

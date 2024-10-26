@@ -73,7 +73,7 @@ const Project: React.FC<ProjectProps> = ({setCurrentProjectId, projects, setNext
       <div className={styles.project}>
         {/* Content */}
         { project && project.resources.map((resource, index) => (
-          <div key={index} className={`${styles.project__section} ${resource.class}`}>
+          <div key={index} id={resource.id} className={`${styles.project__section} ${resource.class}`}>
             <h2 className={resource.titleClass}>{resource.name}</h2>
             { resource.content?.map((section, i) => {
               if (section.component === 'lineText') {
